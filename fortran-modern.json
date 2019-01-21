@@ -109,6 +109,48 @@
 		},
 
 	// private comment //
+	"private comments: arguments for this <function>":{
+		"prefix": "comment arguments",
+		"body": "! arguments for this <function>",
+		"description": "private comments\n"
+	},
+
+	"private comments: arguments for this <subroutine>":{
+		"prefix": "comment arguments",
+		"body": "! arguments for this <subroutine>",
+		"description": "private comments\n"
+	},
+
+	"private comments: constants for this <function>":{
+		"prefix": "comment constants",
+		"body": "! constants for this <function>",
+		"description": "private comments\n"
+	},
+
+	"private comments: constants for this <module>":{
+		"prefix": "comment constants",
+		"body": "! constants for this <module>",
+		"description": "private comments\n"
+	},
+
+	"private comments: constants for this <program>":{
+		"prefix": "comment constants",
+		"body": "! constants for this <program>",
+		"description": "private comments\n"
+	},
+
+	"private comments: constants for this <subroutine>":{
+		"prefix": "comment constants",
+		"body": "! constants for this <subroutine>",
+		"description": "private comments\n"
+	},
+
+	"private comments: contains":{
+		"prefix": "comment contains",
+		"body": "! contained <subroutine>s and <function>s are below\ncontains",
+		"description": "private comments\nbefore `contains`\n"
+	},
+
 	"private comments: implicit none":{
 		"prefix": "comment implicit none",
 		"body": "! require all variables to be explicitly declared\nimplicit none",
@@ -116,7 +158,7 @@
 	},
 
 	"private comments: <module>s to import":{
-		"prefix": "comment",
+		"prefix": "comment module",
 		"body": "! <module>s to import",
 		"description": "private comments\nbefore `USE ...`\n"
 	},
@@ -124,6 +166,18 @@
 	"private comments: variables for this <function>":{
 		"prefix": "comment variables",
 		"body": "! variables for this <function>",
+		"description": "private comments\n"
+	},
+
+	"private comments: return value of this <function>":{
+		"prefix": "comment return value",
+		"body": "! return value of this <function>",
+		"description": "private comments\n"
+	},
+
+	"private comments: <type>s for this <program>":{
+		"prefix": "comment type",
+		"body": "! <type>s for this <program>",
 		"description": "private comments\n"
 	},
 
