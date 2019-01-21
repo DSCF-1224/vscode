@@ -1,0 +1,142 @@
+{
+	// Place your snippets for fortran-modern here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"module: ISO_FORTRAN_ENV":{
+		"prefix": "module iso_fortran_env",
+		"body": "use, intrinsic :: iso_fortran_env",
+		"description": "module which provides the scalar default-integer named constants\nFortran 2003 and later\n"
+	},
+
+		"ISO_FORTRAN_ENV: IS_IOSTAT_END":{
+			"prefix": "is_iostat_end",
+			"body": "IS_IOSTAT_END( ${1:return value of `IOSTAT`} )",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\ntests whether an variable has the value of the I/O status `end of file`.\n"
+		},
+
+		"ISO_FORTRAN_ENV: IS_IOSTAT_EOR":{
+			"prefix": "is_iostat_eor",
+			"body": "IS_IOSTAT_END( ${1:return value of `IOSTAT`} )",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\ntests whether an variable has the value of the I/O status `end of record`.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: INPUT_UNIT":{
+			"prefix": "parameter INPUT_UNIT",
+			"body": "INPUT_UNIT",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in READ statement.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: OUTPUT_UNIT":{
+			"prefix": "parameter OUTPUT_UNIT",
+			"body": "OUTPUT_UNIT",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in WRITE statement.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: INT16":{
+			"prefix": "parameter INT16",
+			"body": "INT16",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: INT32":{
+			"prefix": "parameter INT32",
+			"body": "INT32",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: INT64":{
+			"prefix": "parameter INT64",
+			"body": "INT64",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: INT16: for <INTEGER> statement":{
+			"prefix": "integer",
+			"body": "integer( kind= INT16 )${1:, attributes} :: $0",
+		},
+
+		"ISO_FORTRAN_ENV: parameter: INT32: for <INTEGER> statement":{
+			"prefix": "integer",
+			"body": "integer( kind= INT32 )${1:, attributes} :: $0",
+		},
+
+		"ISO_FORTRAN_ENV: parameter: INT64: for <INTEGER> statement":{
+			"prefix": "integer",
+			"body": "integer( kind= INT64 )${1:, attributes} :: $0",
+		},
+
+		"ISO_FORTRAN_ENV: parameter: REAL32":{
+			"prefix": "parameter REAL32",
+			"body": "REAL32",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: REAL64":{
+			"prefix": "parameter REAL64",
+			"body": "REAL64",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: REAL128":{
+			"prefix": "parameter REAL128",
+			"body": "REAL128",
+			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n"
+		},
+
+		"ISO_FORTRAN_ENV: parameter: REAL32: for <REAL> statement":{
+			"prefix": "REAL",
+			"body": "real( kind= REAL32 )${1:, attributes} :: $0",
+		},
+
+		"ISO_FORTRAN_ENV: parameter: REAL64: for <REAL> statement":{
+			"prefix": "REAL",
+			"body": "real( kind= REAL64 )${1:, attributes} :: $0",
+		},
+
+		"ISO_FORTRAN_ENV: parameter: REAL128: for <REAL> statement":{
+			"prefix": "REAL",
+			"body": "real( kind= REAL128 )${1:, attributes} :: $0",
+		},
+
+	// private comment //
+	"private comments: implicit none":{
+		"prefix": "comment implicit none",
+		"body": "! require all variables to be explicitly declared\nimplicit none",
+		"description": "private comments\nbefore `implicit none`\n"
+	},
+
+	"private comments: <module>s to import":{
+		"prefix": "comment",
+		"body": "! <module>s to import",
+		"description": "private comments\nbefore `USE ...`\n"
+	},
+
+	"private comments: variables for this <function>":{
+		"prefix": "comment variables",
+		"body": "! variables for this <function>",
+		"description": "private comments\n"
+	},
+
+	"private comments: variables for this <program>":{
+		"prefix": "comment variables",
+		"body": "! variables for this <program>",
+		"description": "private comments\n"
+	},
+
+	"private comments: variables for this <subroutine>":{
+		"prefix": "comment variables",
+		"body": "! variables for this <subroutine>",
+		"description": "private comments\n"
+	},
+
+}

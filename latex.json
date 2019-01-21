@@ -1,0 +1,897 @@
+{
+	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	// [beamer] class
+		
+		// Section 8 // Creating Frames
+
+			// Section 8.1 // The Frame Environment
+
+				"\\frame Environment":{
+					"prefix": "\\frame",
+					"body": [
+						"\\begin{frame}<${1:<overlay specification>}>[${2:<default overlay specification>}][${3:<options>}]{${4:<title>}}{${5:subtitle}}",
+						"\t${0:environment contents}",
+						"\\end{frame}",
+					],
+					"description": "<beamer> Class\nInserts the current page number into a template.\nbeameruserguide.pdf p.064"
+				},
+
+			// Section 8.2 // Components of a Frame
+
+				// Section 8.2.1 // The Headline and Footline
+
+				"\\insertpagenumber":{
+					"prefix": "beamer \\insertpagenumber",
+					"body": "\\insertpagenumber",
+					"description": "<beamer> Class\nInserts the current page number into a template.\nbeameruserguide.pdf p.064"
+				},
+
+				"\\insertsection":{
+					"prefix": "beamer \\insertsection",
+					"body": "\\insertsection",
+					"description": "<beamer> Class\nInserts the current section into a template.\nbeameruserguide.pdf p.064"
+				},
+
+				"\\insertshortauthor":{
+					"prefix": "beamer \\insertshortauthor",
+					"body": "\\insertshortauthor[${1:<options>}]",
+					"description": "<beamer> Class\nInserts the short version of the author into a template.\nbeameruserguide.pdf p.064"
+				},
+
+				"\\insertshortdate":{
+					"prefix": "beamer \\insertshortdate",
+					"body": "\\insertshortdate[${1:<options>}]",
+					"description": "<beamer> Class\nInserts the short version of the date into a template.\nbeameruserguide.pdf p.064"
+				},
+
+				"\\insertshortinstitute":{
+					"prefix": "beamer \\insertshortinstitute",
+					"body": "\\insertshortinstitute[${1:<options>}]",
+					"description": "<beamer> Class\nInserts the short version of the date into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertshortpart":{
+					"prefix": "beamer \\insertshortpart",
+					"body": "\\insertshortpart[${1:<options>}]",
+					"description": "<beamer> Class\nInserts the short version of the part name into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertshortpart":{
+					"prefix": "beamer \\insertshortpart",
+					"body": "\\insertshortpart[${1:<options>}]",
+					"description": "<beamer> Class\nInserts the short version of the part name into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertshorttitle":{
+					"prefix": "beamer \\insertshorttitle",
+					"body": "\\insertshorttitle[${1:<options>}]",
+					"description": "<beamer> Class\nInserts the short version of the document title into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertshortsubtitle":{
+					"prefix": "beamer \\insertshortsubtitle",
+					"body": "\\insertshortsubtitle[${1:<options>}]",
+					"description": "<beamer> Class\nInserts the short version of the document subtitle into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertsubsection":{
+					"prefix": "beamer \\insertsubsection",
+					"body": "\\insertsubsection",
+					"description": "<beamer> Class\nInserts the current subsection into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertsubsubsection":{
+					"prefix": "beamer \\insertsubsubsection",
+					"body": "\\insertsubsubsection",
+					"description": "<beamer> Class\nInserts the current subsubsection into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertframenumber":{
+					"prefix": "beamer \\insertframenumber",
+					"body": "\\insertframenumber",
+					"description": "<beamer> Class\nInserts the number of the current frame (not slide) into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				"\\insertslidenumber":{
+					"prefix": "beamer \\insertslidenumber",
+					"body": "\\insertslidenumber",
+					"description": "<beamer> Class\nInserts the number of the current slide in frame into a template.\nbeameruserguide.pdf p.065"
+				},
+
+				// Section 8.2.6 // The Frame Title
+
+				"\\frametitle":{
+					"prefix": "beamer \\frametitle",
+					"body": "\\frametitle<${1:<overlay specification>}>[${2:<short frame title>}]{${3:<frame title text>}}",
+					"description": "<beamer> Class\nbeameruserguide.pdf p.073"
+				},
+
+				"\\framesubtitle":{
+					"prefix": "beamer \\framesubtitle",
+					"body": "\\framesubtitle<${1:<overlay specification>}>{${2:<frame title text>}}",
+					"description": "<beamer> Class\nbeameruserguide.pdf p.074"
+				},
+
+		// Section 9 // Creating Overlays
+
+			// Section 9.3 // Commands with Overlay Specification
+
+				"\\onslide":{
+					"prefix": "beamer \\onslide",
+					"body": "\\onslide${1:<modifiler>}<${2:<overlay specification>}>{${3:text}}",
+					"description": "<beamer> Class\nbeameruserguide.pdf p.080"
+				},
+
+				"\\only":{
+					"prefix": "beamer \\only",
+					"body": "\\only<${1:<overlay specification>}>{${2:text}}<${3:<overlay specification>}>",
+					"description": "<beamer> Class\nbeameruserguide.pdf p.080"
+				},
+
+				"\\uncover":{
+					"prefix": "beamer \\uncover",
+					"body": "\\uncover<${1:<overlay specification>}>{${2:text}}",
+					"description": "<beamer> Class\nbeameruserguide.pdf p.081"
+				},
+
+				"\\visible":{
+					"prefix": "beamer \\visible",
+					"body": "\\visible<${1:<overlay specification>}>{${2:text}}",
+					"description": "<beamer> Class\nbeameruserguide.pdf p.081"
+				},
+
+		// Section 12 // structuring a presentation: The Local structure
+
+				// Section.12.7 // splitting a frame into multiple columns
+				"beamer <columns> environment option: onlytextwidth":{
+					"prefix": "beamer columns: onlytextwidth",
+					"body": "onlytextwidth, $0",
+					"description": "<beamer> Class\nbeameruserguide.pdf p.127"
+				},
+
+
+	// [siunitx] environment
+		"siunitx Units with value":{
+			"prefix": "siunitx si",
+			"body": "\\SI{$1}{$2}"
+		},
+		
+		"siunitx [ampere] SI base units":{
+			"prefix": "siunitx ampere",
+			"body": "\\ampere"
+		},
+		
+		"siunitx [candela] SI base units":{
+			"prefix": "siunitx candela",
+			"body": "\\candela"
+		},
+		
+		"siunitx [kelvin] SI base units":{
+			"prefix": "siunitx kelvin",
+			"body": "\\kelvin"
+		},
+		
+		"siunitx [kilogram] SI base units":{
+			"prefix": "siunitx kilogram",
+			"body": "\\kilogram"
+		},
+		
+		"siunitx [metre] SI base units":{
+			"prefix": "siunitx metre",
+			"body": "\\metre"
+		},
+		
+		"siunitx [mole] SI base units":{
+			"prefix": "siunitx mole",
+			"body": "\\mole"
+		},
+		
+		"siunitx [second] SI base units":{
+			"prefix": "siunitx second",
+			"body": "\\second"
+		},
+		
+		"siunitx [degree Celsius] Coherent derived units in the SI with special names and symbols":{
+			"prefix": "siunitx Celsius",
+			"body": "\\degreeCelsius"
+		},
+		
+		"siunitx [newton] Coherent derived units in the SI with special names and symbols":{
+			"prefix": "siunitx newton",
+			"body": "\\newton"
+		},
+		
+		"siunitx [radian] Coherent derived units in the SI with special names and symbols":{
+			"prefix": "siunitx radian",
+			"body": "\\radian"
+		},
+		
+		"siunitx [hour] Non-SI units accepted for use with the International System of Units":{
+			"prefix": "siunitx hour",
+			"body": "\\hour"
+		},
+
+	// [tikzpicture] environment
+
+		"tikzpicture environment":{
+			"prefix": "/tikz/environment",
+			"body": [
+				"\\begin{tikzpicture}",
+				"\t$1",
+				"\\end{tikzpicture}"
+			]
+		},
+
+		"tikzpicture origin":{
+			"prefix": "/tikz/origin",
+			"body": "\\path ( 0.0, 0.0 ) node [name=origin, shape=rectangle, anchor=center, draw=none, fill=none] {};",
+		},
+
+		"tikzpicture node single":{
+			"prefix": "/tikz/node",
+			"body": "\\path ( , ) node [name={}, shape={}, anchor={}, draw=none, fill=none] {};",
+		},
+
+		"tikzpicture node on the path":{
+			"prefix": "/tikz/node",
+			"body": "node [pos={}, name={}, shape={}, anchor={}, draw=none, fill=none] {};",
+		},
+
+		"tikzpicture draw current bounding box":{
+			"prefix": "/tikz/current bounding box",
+			"body": " "
+		},
+
+			// Section.13 Specifying Coordinates //
+
+				// Section.13.2 Coordinate Systems //
+					
+					// Section.13.2.3 Node Coordinate System //
+
+						"tikzpicture anchor":{
+							"prefix": "/tikz/anchor",
+							"body": "anchor=${1:<anchor>}, $0",
+							"description": "no default\nSpecifies an anchor of the node.\nManual for Version 3.0.1a p.134\n"
+						},
+
+			// Section.15 Actions on Paths //
+
+				// Section.15.2 Specifying a Color //
+
+					"/tikz/color":{
+						"prefix": "/tikz/color",
+						"body": "color=${1:<color name>}, $0",
+						"description": "no default\nManual for Version 3.0.1a p.165\n"
+					},
+
+				// Section.15.3 Drawing a Path //
+
+					// 15.3.1 Graphic Parameters: Line Width, Line Cap, and Line Join //
+
+						"/tikz/draw":{
+							"prefix": "/tikz/draw",
+							"body": "draw=${1:<color>}, $0",
+							"description": "default is scope’s color setting\nManual for Version 3.0.1a p.165\n"
+						},
+
+						"/tikz/draw=none":{
+							"prefix": "/tikz/draw none",
+							"body": "draw=none, $0",
+							"description": "default is scope’s color setting\nManual for Version 3.0.1a p.165\n"
+						},
+
+						"/tikz/line width":{
+							"prefix": "/tikz/line width",
+							"body": "line width=${1:<dimension>}, $0",
+							"description": "no default\ninitially 0.4pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/ultra thin":{
+							"prefix": "/tikz/ultra thin",
+							"body": "ultra thin, $0",
+							"description": "set the line width 0.1pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/very thin":{
+							"prefix": "/tikz/very thin",
+							"body": "very thin, $0",
+							"description": "set the line width 0.2pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/thin":{
+							"prefix": "/tikz/thin",
+							"body": "thin, $0",
+							"description": "set the line width 0.4pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/semithick":{
+							"prefix": "/tikz/semithick",
+							"body": "semithick, $0",
+							"description": "set the line width 0.6pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/thick":{
+							"prefix": "/tikz/thick",
+							"body": "thick, $0",
+							"description": "set the line width 0.8pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/very thick":{
+							"prefix": "/tikz/very thick",
+							"body": "very thick, $0",
+							"description": "set the line width 1.2pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/ultra thick":{
+							"prefix": "/tikz/ultra thick",
+							"body": "ultra thick, $0",
+							"description": "set the line width 1.6pt\nManual for Version 3.0.1a p.166\n"
+						},
+
+						"/tikz/line cap=butt":{
+							"prefix": "/tikz/line cap butt",
+							"body": "line cap=butt, $0",
+							"description": "no default\ninitially `butt`\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/line cap=rect":{
+							"prefix": "/tikz/line cap rect",
+							"body": "line cap=rect, $0",
+							"description": "no default\ninitially `butt`\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/line cap=round":{
+							"prefix": "/tikz/line cap round",
+							"body": "line cap=round, $0",
+							"description": "no default\ninitially `butt`\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/line join=round":{
+							"prefix": "/tikz/line join round",
+							"body": "line join=round, $0",
+							"description": "no default\ninitially `miter`\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/line join=bevel":{
+							"prefix": "/tikz/line join bevel",
+							"body": "line join=bevel, $0",
+							"description": "no default\ninitially `miter`\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/line join=miter":{
+							"prefix": "/tikz/line join miter",
+							"body": "line join=miter, $0",
+							"description": "no default\ninitially `miter`\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/miter limit":{
+							"prefix": "/tikz/miter limit",
+							"body": "miter limit=${1:<factor>}, $0",
+							"description": "no default\ninitially 10\nManual for Version 3.0.1a p.167\n"
+						},
+
+					// 15.3.2 Graphic Parameters: Dash Pattern //
+
+						"/tikz/dash pattern":{
+							"prefix": "/tikz/dash pattern",
+							"body": "dash pattern=${1:<dash pattern>}, $0",
+							"description": "no default\n[sample] : dash pattern=on 2pt off 3pt on 4pt off 4pt\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/dash phase":{
+							"prefix": "/tikz/dash phase",
+							"body": "dash phase=${1:<dash phase>}, $0",
+							"description": "no default\n[sample] : dash phase=on 20pt off 10pt\nManual for Version 3.0.1a p.167\n"
+						},
+
+						"/tikz/solid":{
+							"prefix": "/tikz/solid",
+							"body": "solid, $0",
+							"description": "Shorthand for setting a solid line as \"dash pattern.\"\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/dotted":{
+							"prefix": "/tikz/dotted",
+							"body": "dotted, $0",
+							"description": "Shorthand for setting a dotted dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/densely dotted":{
+							"prefix": "/tikz/densely dotted",
+							"body": "densely dotted, $0",
+							"description": "Shorthand for setting a densely dotted dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/loosely dotted":{
+							"prefix": "/tikz/loosely dotted",
+							"body": "loosely dotted, $0",
+							"description": "Shorthand for setting a loosely dotted dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/dashed":{
+							"prefix": "/tikz/dashed",
+							"body": "dashed, $0",
+							"description": "Shorthand for setting a dashed dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/densely dashed":{
+							"prefix": "/tikz/densely dashed",
+							"body": "densely dashed, $0",
+							"description": "Shorthand for setting a densely dashed dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/loosely dashed":{
+							"prefix": "/tikz/loosely dashed",
+							"body": "loosely dashed, $0",
+							"description": "Shorthand for setting a loosely dashed dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/dash dot":{
+							"prefix": "/tikz/dash dot",
+							"body": "dash dot, $0",
+							"description": "Shorthand for setting a dashed and dotted dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/densely dash dot":{
+							"prefix": "/tikz/densely dash dot",
+							"body": "densely dash dot, $0",
+							"description": "Shorthand for setting a densely dashed and dotted dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/loosely dash dot":{
+							"prefix": "/tikz/loosely dash dot",
+							"body": "loosely dash dot, $0",
+							"description": "Shorthand for setting a loosely dashed and dotted dash pattern.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/dash dot dot":{
+							"prefix": "/tikz/dash dot dot",
+							"body": "dash dot dot, $0",
+							"description": "Shorthand for setting a dashed and dotted dash pattern with more dots.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/densely dash dot dot":{
+							"prefix": "/tikz/densely dash dot dot",
+							"body": "densely dash dot dot, $0",
+							"description": "Shorthand for setting a densely dashed and dotted dash pattern with more dots.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+						"/tikz/loosely dash dot dot":{
+							"prefix": "/tikz/loosely dash dot dot",
+							"body": "loosely dash dot dot, $0",
+							"description": "Shorthand for setting a loosely dashed and dotted dash pattern with more dots.\nThis is the default.\nManual for Version 3.0.1a p.168\n"
+						},
+
+					// 15.3.4 Graphic Parameters: Double Lines and Bordered Lines //
+
+						"/tikz/double":{
+							"prefix": "/tikz/double",
+							"body": "double=${1:<core color>}, $0",
+							"description": "This option causes “two” lines to be drawn instead of a single one.\ndefault: white\nManual for Version 3.0.1a p.169\n"
+						},
+
+						"/tikz/double distance":{
+							"prefix": "/tikz/double distance",
+							"body": "double distance=${1:<dimension>}, $0",
+							"description": "Sets the distance the “two” lines are spaced apart.\nno default\ninitially 0.6pt\nManual for Version 3.0.1a p.169\n"
+						},
+
+						"/tikz/double distance between line centers":{
+							"prefix": "/tikz/double distance between line centers",
+							"body": "double distance between line centers=${1:<dimension>}, $0",
+							"description": "This option works like double distance, only the distance is not the distance between (inner) borders of the two main lines, but between their centers.\nno default\nManual for Version 3.0.1a p.169\n"
+						},
+
+						"/tikz/double equal sign distance":{
+							"prefix": "/tikz/double equal sign distance",
+							"body": "double equal sign distance",
+							"description": "This style selects a double line distance such that it corresponds to the distance of the two lines in an equal sign.\nstyle, no value\nManual for Version 3.0.1a p.169\n"
+						},
+
+				// Section.15.5 Filling a Path //
+
+					"/tikz/fill":{
+						"prefix": "/tikz/fill",
+						"body": "fill=${1:<color>}, $0",
+						"description": "default is scope’s color setting\nManual for Version 3.0.1a p.170\n"
+					},
+
+					"/tikz/fill none":{
+						"prefix": "/tikz/fill none",
+						"body": "fill=none, $0",
+						"description": "default is scope’s color setting\nManual for Version 3.0.1a p.170\n"
+					},
+
+					// Section.15.5.1 Graphic Parameters: Fill Pattern //
+
+						"/tikz/pattern color":{
+							"prefix": "/tikz/pattern color",
+							"body": " pattern color=${1:<color>}",
+							"description": "This option is used to set the color to be used for form-only patterns.\nno default\nManual for Version 3.0.1a p.171\n"
+						},
+
+			// Section.17 node and edges //
+
+				//  Section.17.2.1 Syntax of the Node Command //
+
+					"tikzpicture syntax of the node command:behind path":{
+						"prefix": "/tikz/node behind path",
+						"body": " behind path",
+						"description": "no value"
+					},
+
+					"tikzpicture syntax of the node command:node contents":{
+						"prefix": "/tikz/node contents",
+						"body": " node contents=${1:<node contents>}",
+					},
+
+					"tikzpicture syntax of the node command:every node":{
+						"prefix": "/tikz/every node",
+						"body": " every node/.style={${1:options}}",
+						"description": "style, initially empty"
+					},
+
+					"tikzpicture syntax of the node command:every <shape> node":{
+						"prefix": "/tikz/every node",
+						"body": " every ${1:<shape>} node/.style={${2:options}}",
+						"description": "style, initially empty"
+					},
+
+					"tikzpicture syntax of the node command:in front of path":{
+						"prefix": "/tikz/node in front of path",
+						"body": " in front of path",
+						"description": "no value"
+					},
+
+					"tikzpicture syntax of the node command:name":{
+						"prefix": "/tikz/node name",
+						"body": " name",
+						"description": "no value"
+					},
+
+					"tikzpicture syntax of the node command:shape":{
+						"prefix": "/tikz/node shape",
+						"body": " shape=${1:<shape>}, $0",
+						"description": "no default, initially 'rectangle'"
+					},
+
+					//  Section.17.2.2 Predefined Shapes //
+					//  Section.17.2.3 Common Options: Separations, Margins, Padding and Border Rotation //
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:inner sep":{
+							"prefix": "/tikz/inner sep",
+							"body": "inner sep=${1:<dimension>}, $0",
+							"description": "no default\ninitially .3333em\nManual for Version 3.0.1a p.218\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:inner xsep":{
+							"prefix": "/tikz/inner xsep",
+							"body": "inner xsep=${1:<dimension>}, $0",
+							"description": "no default\ninitially .3333em\nManual for Version 3.0.1a p.219\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:inner ysep":{
+							"prefix": "/tikz/inner ysep",
+							"body": "inner ysep=${1:<dimension>}, $0",
+							"description": "no default\ninitially .3333em\nManual for Version 3.0.1a p.219\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:outer sep":{
+							"prefix": "/tikz/outer sep",
+							"body": "outer sep=${1:<dimension>}, $0",
+							"description": "no default\nManual for Version 3.0.1a p.219\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:outer xsep":{
+							"prefix": "/tikz/outer xsep",
+							"body": "outer xsep=${1:<dimension>}, $0",
+							"description": "no default\ninitially .5\\pgflinewidth\nManual for Version 3.0.1a p.219\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:outer ysep":{
+							"prefix": "/tikz/outer ysep",
+							"body": "outer ysep=${1:<dimension>}, $0",
+							"description": "no default\ninitially .5\\pgflinewidth\nManual for Version 3.0.1a p.219\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:minimum height":{
+							"prefix": "/tikz/minimum height",
+							"body": "minimum height=${1:<dimension>}, $0",
+							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.219\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:minimum width":{
+							"prefix": "/tikz/minimum width",
+							"body": "minimum width=${1:<dimension>}, $0",
+							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.220\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:minimum size":{
+							"prefix": "/tikz/minimum size",
+							"body": "minimum size=${1:<dimension>}, $0",
+							"description": "no default\nManual for Version 3.0.1a p.220\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:shape aspect":{
+							"prefix": "/tikz/shape aspect",
+							"body": "shape aspect=${1:<dimension>}, $0",
+							"description": "no default\nManual for Version 3.0.1a p.220\n"
+						},
+
+						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:shape border rotate":{
+							"prefix": "/tikz/shape border rotate",
+							"body": "shape border rotate=${1:<angle>}, $0",
+							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.221\n"
+						},
+
+				//  Section.17.4 Text Parameters: Font //
+
+					//  Section.17.4.1 Text Parameters: Color and Opacity //
+
+						"tikzpicture Text Parameters: Font:text":{
+							"prefix": "/tikz/text",
+							"body": "text=${1:<color>},",
+							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.221\n"
+						},
+
+				//  Section.70.3 Curves //
+
+					//  Section.17.4.1 Text Parameters: Color and Opacity //
+
+						"/tikz/out":{
+							"prefix": "/tikz/out",
+							"body": "out=${1:<angle>}",
+							"description": "Section.70.3 Curves\nno default\nManual for Version 3.0.1a p.745\n"
+						},
+
+						"/tikz/in":{
+							"prefix": "/tikz/in",
+							"body": "in=${1:<angle>}",
+							"description": "Section.70.3 Curves\nno default\nManual for Version 3.0.1a p.745\n"
+						},
+
+						"/tikz/out, in":{
+							"prefix": "/tikz/out, in",
+							"body": "out=${1:<angle>}, in=${2:<angle>}",
+							"description": "Section.70.3 Curves\nno default\nManual for Version 3.0.1a p.745\n"
+						},
+
+						"/tikz/relative":{
+							"prefix": "/tikz/relative",
+							"body": "relative=${1:<true or false>}",
+							"description": "Section.70.3 Curves\nno default\nManual for Version 3.0.1a p.746\n"
+						},
+
+						"/tikz/bend left":{
+							"prefix": "/tikz/bend left",
+							"body": "bend left=${1:<angle>}",
+							"description": "Section.70.3 Curves\ndefault: last value\nManual for Version 3.0.1a p.746\n"
+						},
+
+						"/tikz/bend right":{
+							"prefix": "/tikz/bend right",
+							"body": "bend right=${1:<angle>}",
+							"description": "Section.70.3 Curves\ndefault: last value\nManual for Version 3.0.1a p.747\n"
+						},
+
+						"/tikz/looseness":{
+							"prefix": "/tikz/looseness",
+							"body": "looseness=${1:<number>}",
+							"description": "Section.70.3 Curves\nno default\ninitially 1\nManual for Version 3.0.1a p.747\n"
+						},
+
+
+
+			// [arrows.meta] Library //
+
+				// arrow tip //
+					"tikzpicture Library:[arrows.meta] arrow tip:[Arc Barb]":{
+						"prefix": "/tikz/arrowsmeta tip Arc Barb",
+						"body": " Arc Barb[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Bar]":{
+						"prefix": "/tikz/arrowsmeta tip Bar",
+						"body": " Bar[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Bracket]":{
+						"prefix": "/tikz/arrowsmeta tip Bracket",
+						"body": " Bracket[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Circle]":{
+						"prefix": "/tikz/arrowsmeta tip Circle",
+						"body": " Circle[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Diamond]":{
+						"prefix": "/tikz/arrowsmeta tip Diamond",
+						"body": " Diamond[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Ellipse]":{
+						"prefix": "/tikz/arrowsmeta tip Ellipse",
+						"body": " Ellipse[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Hooks]":{
+						"prefix": "/tikz/arrowsmeta tip Hooks",
+						"body": " Hooks[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Implies]":{
+						"prefix": "/tikz/arrowsmeta tip Implies",
+						"body": " Implies[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Kite]":{
+						"prefix": "/tikz/arrowsmeta tip Kite",
+						"body": " Kite[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Latex]":{
+						"prefix": "/tikz/arrowsmeta tip Latex",
+						"body": " Latex[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Parenthesis]":{
+						"prefix": "/tikz/arrowsmeta tip Parenthesis",
+						"body": " Parenthesis[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Rectangle]":{
+						"prefix": "/tikz/arrowsmeta tip Rectangle",
+						"body": " Rectangle[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Square]":{
+						"prefix": "/tikz/arrowsmeta tip Square",
+						"body": " Square[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Stealth]":{
+						"prefix": "/tikz/arrowsmeta tip Stealth",
+						"body": " Stealth[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Straight Barb]":{
+						"prefix": "/tikz/arrowsmeta tip Straight Barb",
+						"body": " Straight Barb[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Triangle]":{
+						"prefix": "/tikz/arrowsmeta tip Triangle",
+						"body": " Triangle[${1:options}]",
+					},
+
+					"tikzpicture Library:[arrows.meta] arrow tip:[Turned Square]":{
+						"prefix": "/tikz/arrowsmeta tip Turned Square",
+						"body": " Turned Square[${1:options}]",
+					},
+
+			// [Pattern] Library //
+
+				"tikzpicture Library:[pattern] [bricks]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=bricks",
+				},
+				
+				"tikzpicture Library:[pattern] [crosshatch]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=crosshatch",
+				},
+				
+				"tikzpicture Library:[pattern] [checkerboard]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=checkerboard",
+				},
+
+				"tikzpicture Library:[pattern] [crosshatch dots]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=crosshatch dots",
+				},
+
+				"tikzpicture Library:[pattern] [dots]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=dots",
+				},
+
+				"tikzpicture Library:[pattern] [fivepointed stars]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=fivepointed stars",
+				},
+
+				"tikzpicture Library:[pattern] [north east lines]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=north east lines",
+				},
+
+				"tikzpicture Library:[pattern] [north west lines]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=north west lines",
+				},
+
+				"tikzpicture Library:[pattern] [grid]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=grid",
+				},
+
+				"tikzpicture Library:[pattern] [horizontal lines]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=horizontal lines",
+				},
+
+				"tikzpicture Library:[pattern] [sixpointed stars]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=sixpointed stars",
+				},
+
+				"tikzpicture Library:[pattern] [vertical lines]":{
+					"prefix": "/tikz/pattern",
+					"body": "pattern=vertical lines",
+				},
+
+			// [Shape] Library //
+
+				"tikzpicture <Shape> Library: circle":{
+					"prefix": "/tikz/shape circle",
+					"body": "shape=circle, $0",
+					"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+				},
+
+					"tikzpicture <Shape> Library: circle: anchor: north west":{
+						"prefix": "/tikz/shape circle anchor north west",
+						"body": "anchor=north west, $0",
+						"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+					},
+
+					"tikzpicture <Shape> Library: circle: anchor: north":{
+						"prefix": "/tikz/shape circle anchor north",
+						"body": "anchor=north, $0",
+						"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+					},
+
+					"tikzpicture <Shape> Library: circle: anchor: north east":{
+						"prefix": "/tikz/shape circle anchor north east",
+						"body": "anchor=north east, $0",
+						"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+					},
+
+					"tikzpicture <Shape> Library: circle: anchor: west":{
+						"prefix": "/tikz/shape circle anchor west",
+						"body": "anchor=west, $0",
+						"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+					},
+
+					"tikzpicture <Shape> Library: circle: anchor: center":{
+						"prefix": "/tikz/shape circle anchor center",
+						"body": "anchor=center, $0",
+						"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+					},
+
+					"tikzpicture <Shape> Library: circle: anchor: east":{
+						"prefix": "/tikz/shape circle anchor east",
+						"body": "anchor=east, $0",
+						"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+					},
+
+				"tikzpicture <rectangle> Library: circle":{
+					"prefix": "/tikz/shape rectangle",
+					"body": "shape=rectangle, $0",
+					"description": "TikZ Environment\nOne of predefined shapes.\nManual for Version 3.0.1a pp.693-694\n"
+				}
+}
