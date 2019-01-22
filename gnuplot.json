@@ -1,0 +1,426 @@
+{
+/*
+	// Place your snippets for Gnuplot here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+
+/* set datafile separator */
+	"set datafile separator":{
+		"prefix": "datafile separator",
+		"body": "datafile separator '${0:chars}'",
+		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．"
+	},
+
+	"set datafile separator: whitespace":{
+		"prefix": "datafile separator",
+		"body": "datafile separator whitespace",
+		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\n同コマンドのデフォルト値"
+	},
+
+	"set datafile separator: tab":{
+		"prefix": "datafile separator",
+		"body": "datafile separator tab",
+		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nタブ区切り"
+	},
+
+	"set datafile separator: comma":{
+		"prefix": "datafile separator",
+		"body": "datafile separator comma",
+		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nコンマ区切り"
+	},
+
+	"set datafile separator: several type":{
+		"prefix": "datafile separator",
+		"body": "datafile separator ${1:type1}|${2:type2}",
+		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nコンマ区切り"
+	},
+
+/* set format */
+
+	"set format":{
+		"prefix": "format",
+		"body": "set format ${1:<axes>} ${2:\"<format-string>\"} ${3:{numeric|timedate|geographic}} # <axes> \"<format-string>\" {numeric|timedate|geographic}",
+		"description": "軸の刻み書式 (format)\nVersion 5.0 patchlevel 6\n"
+	},
+
+	"set format: reset to default":{
+		"prefix": "format (reset to default)",
+		"body": "set format",
+		"description": "軸の刻み書式 (format)\nVersion 5.0 patchlevel 6\n"
+	},
+
+/* set key */
+
+	"set key: all":{
+		"prefix": "key",
+		"body": [
+			"set key # {on|off} {default}",
+			"set key # { {inside|outside} | {lmargin|rmargin|tmargin|bmargin} | {at <position>} }",
+			"set key # {left|right|center} {top|bottom|center}",
+			"set key # {vertical|horizontal} {Left|Right}",
+			"set key # {noopaque|opaque}",
+			"set key # {noreverse|reverse} {noinvert|invert}",
+			"set key # {samplen <sample_length>} {spacing <vertical_spacing>}",
+			"set key # {width <width_increment>} {height <height_increment>}",
+			"set key # {noautotitle|autotitle {columnheader}}",
+			"set key # {title \"<text>\"} {noenhanced|enhanced}",
+			"set key # {font \"<face>,<size>\"} {textcolor <colorspec>}",
+			"set key # {nobox|box {linestyle <style>|linetype <type>|linewidth <width>} }",
+			"set key # {maxcols {<max no. of columns> | auto}}",
+			"set key # {maxrows {<max no. of rows> | auto}}",
+		],
+		"description": "凡例 (key)\nVersion 5.0 patchlevel 6\n"
+	},
+
+/* set terminal */
+
+	/* set terminal wxt */
+
+		"set term: wxt":{
+			"prefix": "term wxt",
+			"body": [
+				"set terminal wxt # {<n>}",
+				"set terminal wxt # {size <width>,<height>} {position <x>,<y>}",
+				"set terminal wxt # {background <rgb_color>}",
+				"set terminal wxt # {noenhanced|enhanced}",
+				"set terminal wxt # {font <font>} {fontscale <scale>}",
+				"set terminal wxt # {title \"title\"}",
+				"set terminal wxt # {linewidth <lw>}",
+				"set terminal wxt # {dashlength <dl>}",
+				"set terminal wxt # {{no}persist}",
+				"set terminal wxt # {{no}raise}",
+				"set terminal wxt # {{no}ctrl}",
+				"set terminal wxt # {close}",
+			],
+			"description": "terminal wxt\nVersion 5.0 patchlevel 6\n"
+		},
+
+/* reset */
+	"reset":{
+		"prefix": "reset",
+		"body": "reset",
+		"description": "setコマンドで定義できる，グラフに関する全てのオプションをデフォルトの値に戻します．"
+	},
+
+	"reset session":{
+		"prefix": "reset session",
+		"body": "reset session",
+		"description": "ユーザ定義変数、ユーザ定義関数すべてを削除し、デフォルトの設定を復帰し、システム全体の初期設定ファイル gnuplotrc と個人用の初期設定ファイル $HOME/.gnuplot を再実行します。"
+	},
+
+"every":{
+	"prefix": "every",
+	"body": "every $1:$2:$3:$4:$5:$6",
+	"description": "描画するデータをデータ集合から周期的にサンプリングする"
+},
+
+"every pass toplines":{
+	"prefix": "every",
+	"body": "every ::${1:Lines}",
+	"description": "描画するデータをデータ集合から周期的にサンプリングする"
+},
+
+/* Greek characters */
+
+	/* capital characters */
+	"greek: Alpha: capital":{
+		"prefix": "Alpha",
+		"body": "\\316\\221",
+		"description": "Greek letter\nAlpha capital\nUTF-8:CE91"
+	},
+
+	"greek: Beta: capital":{
+		"prefix": "Beta",
+		"body": "\\316\\222",
+		"description": "Greek letter\nBeta capital\nUTF-8:CE92"
+	},
+
+	"greek: Gamma: capital":{
+		"prefix": "Gamma",
+		"body": "\\316\\223",
+		"description": "Greek letter\nGamma capital\nUTF-8:CE93"
+	},
+
+	"greek: Delta: capital":{
+		"prefix": "Delta",
+		"body": "\\316\\224",
+		"description": "Greek letter\nDelta capital\nUTF-8:CE94"
+	},
+
+	"greek: Epsilon: capital":{
+		"prefix": "Epsilon",
+		"body": "\\316\\225",
+		"description": "Greek letter\nEpsilon capital\nUTF-8:CE95"
+	},
+
+	"greek: Zeta: capital":{
+		"prefix": "Zeta",
+		"body": "\\316\\226",
+		"description": "Greek letter\nZeta capital\nUTF-8:CE96"
+	},
+
+	"greek: Eta: capital":{
+		"prefix": "Eta",
+		"body": "\\316\\227",
+		"description": "Greek letter\nEta capital\nUTF-8:CE97"
+	},
+
+	"greek: Theta: capital":{
+		"prefix": "Theta",
+		"body": "\\316\\230",
+		"description": "Greek letter\nTheta capital\nUTF-8:CE98"
+	},
+
+	"greek: Iota: capital":{
+		"prefix": "Iota",
+		"body": "\\316\\231",
+		"description": "Greek letter\nIota capital\nUTF-8:CE99"
+	},
+
+	"greek: Kappa: capital":{
+		"prefix": "Kappa",
+		"body": "\\316\\232",
+		"description": "Greek letter\nKappa capital\nUTF-8:CE9A"
+	},
+
+	"greek: Lambda: capital":{
+		"prefix": "Lambda",
+		"body": "\\316\\233",
+		"description": "Greek letter\nLambda capital\nUTF-8:CE9B"
+	},
+
+	"greek: Mu: capital":{
+		"prefix": "Mu",
+		"body": "\\316\\234",
+		"description": "Greek letter\nMu capital\nUTF-8:CE9C"
+	},
+
+	"greek: Nu: capital":{
+		"prefix": "Nu",
+		"body": "\\316\\235",
+		"description": "Greek letter\nNu capital\nUTF-8:CE9D"
+	},
+
+	"greek: Xi: capital":{
+		"prefix": "Xi",
+		"body": "\\316\\236",
+		"description": "Greek letter\nXi capital\nUTF-8:CE9E"
+	},
+
+	"greek: Omicron: capital":{
+		"prefix": "Omicron",
+		"body": "\\316\\237",
+		"description": "Greek letter\nOmicron capital\nUTF-8:CE9F"
+	},
+
+	"greek: Pi: capital":{
+		"prefix": "Pi",
+		"body": "\\316\\240",
+		"description": "Greek letter\nPi capital\nUTF-8:CEA0"
+	},
+
+	"greek: Rho: capital":{
+		"prefix": "Rho",
+		"body": "\\316\\241",
+		"description": "Greek letter\nRho capital\nUTF-8:CEA1"
+	},
+
+	"greek: Sigma: capital":{
+		"prefix": "Sigma",
+		"body": "\\316\\243",
+		"description": "Greek letter\nSigma capital\nUTF-8:CEA3"
+	},
+
+	"greek: Tau: capital":{
+		"prefix": "Tau",
+		"body": "\\316\\244",
+		"description": "Greek letter\nTau capital\nUTF-8:CEA4"
+	},
+
+	"greek: Upsilon: capital":{
+		"prefix": "Upsilon",
+		"body": "\\316\\245",
+		"description": "Greek letter\nUpsilon capital\nUTF-8:CEA5"
+	},
+
+	"greek: Phi: capital":{
+		"prefix": "Phi",
+		"body": "\\316\\246",
+		"description": "Greek letter\nPhi capital\nUTF-8:CEA6"
+	},
+
+	"greek: Chi: capital":{
+		"prefix": "Chi",
+		"body": "\\316\\247",
+		"description": "Greek letter\nChi capital\nUTF-8:CEA7"
+	},
+
+	"greek: Psi: capital":{
+		"prefix": "Psi",
+		"body": "\\316\\250",
+		"description": "Greek letter\nPsi capital\nUTF-8:CEA8"
+	},
+
+	"greek: Omega: capital":{
+		"prefix": "Omega",
+		"body": "\\316\\251",
+		"description": "Greek letter\nOmega capital\nUTF-8:CEA9"
+	},
+
+	/* capital characters */
+	"greek: Alpha: small":{
+		"prefix": "Alpha",
+		"body": "\\316\\261",
+		"description": "Greek letter\nalpha small\nUTF-8:CEB1\n"
+	},
+
+	"greek: Beta: small":{
+		"prefix": "Beta",
+		"body": "\\316\\262",
+		"description": "Greek letter\nbeta small\nUTF-8:CEB2\n"
+	},
+
+	"greek: Gamma: small":{
+		"prefix": "Gamma",
+		"body": "\\316\\263",
+		"description": "Greek letter\ngamma small\nUTF-8:CEB3\n"
+	},
+
+	"greek: Delta: small":{
+		"prefix": "Delta",
+		"body": "\\316\\264",
+		"description": "Greek letter\ndelta small\nUTF-8:CEB4\n"
+	},
+
+	"greek: Epsilon: small":{
+		"prefix": "Epsilon",
+		"body": "\\316\\265",
+		"description": "Greek letter\nepsilon small\nUTF-8:CEB5\n"
+	},
+
+	"greek: Zeta: small":{
+		"prefix": "Zeta",
+		"body": "\\316\\266",
+		"description": "Greek letter\nzeta small\nUTF-8:CEB6\n"
+	},
+
+	"greek: Eta: small":{
+		"prefix": "Eta",
+		"body": "\\316\\267",
+		"description": "Greek letter\neta small\nUTF-8:CEB7\n"
+	},
+
+	"greek: Theta: small":{
+		"prefix": "Theta",
+		"body": "\\316\\270",
+		"description": "Greek letter\ntheta small\nUTF-8:CEB8\n"
+	},
+
+	"greek: Iota: small":{
+		"prefix": "Iota",
+		"body": "\\316\\271",
+		"description": "Greek letter\niota small\nUTF-8:CEB9\n"
+	},
+
+	"greek: Kappa: small":{
+		"prefix": "Kappa",
+		"body": "\\316\\272",
+		"description": "Greek letter\nkappa small\nUTF-8:CEBA\n"
+	},
+
+	"greek: Lambda: small":{
+		"prefix": "Lambda",
+		"body": "\\316\\273",
+		"description": "Greek letter\nlambda small\nUTF-8:CEBB\n"
+	},
+
+	"greek: Mu: small":{
+		"prefix": "Mu",
+		"body": "\\316\\274",
+		"description": "Greek letter\nmu small\nUTF-8:CEBC\n"
+	},
+
+	"greek: Nu: small":{
+		"prefix": "Nu",
+		"body": "\\316\\275",
+		"description": "Greek letter\nnu small\nUTF-8:CEBD\n"
+	},
+
+	"greek: Xi: small":{
+		"prefix": "Xi",
+		"body": "\\316\\276",
+		"description": "Greek letter\nxi small\nUTF-8:CEBE\n"
+	},
+
+	"greek: Omicron: small":{
+		"prefix": "Omicron",
+		"body": "\\316\\277",
+		"description": "Greek letter\nomicron small\nUTF-8:CEBF\n"
+	},
+
+	"greek: Pi: small":{
+		"prefix": "Pi",
+		"body": "\\317\\200",
+		"description": "Greek letter\npi small\nUTF-8:CF80\n"
+	},
+
+	"greek: Rho: small":{
+		"prefix": "Rho",
+		"body": "\\317\\201",
+		"description": "Greek letter\nrho small\nUTF-8:CF81\n"
+	},
+
+	"greek: Sigma: small":{
+		"prefix": "Sigma",
+		"body": "\\317\\203",
+		"description": "Greek letter\nsigma small\nUTF-8:CF83\n"
+	},
+
+	"greek: Tau: small":{
+		"prefix": "Tau",
+		"body": "\\317\\204",
+		"description": "Greek letter\ntau small\nUTF-8:CF84\n"
+	},
+
+	"greek: Upsilon: small":{
+		"prefix": "Upsilon",
+		"body": "\\317\\205",
+		"description": "Greek letter\nupsilon small\nUTF-8:CF85\n"
+	},
+
+	"greek: Phi: small":{
+		"prefix": "Phi",
+		"body": "\\317\\206",
+		"description": "Greek letter\nphi small\nUTF-8:CF86\n"
+	},
+
+	"greek: Chi: small":{
+		"prefix": "Chi",
+		"body": "\\317\\207",
+		"description": "Greek letter\nchi small\nUTF-8:CF87\n"
+	},
+
+	"greek: Psi: small":{
+		"prefix": "Psi",
+		"body": "\\317\\210",
+		"description": "Greek letter\npsi small\nUTF-8:CF88\n"
+	},
+
+	"greek: Omega: small":{
+		"prefix": "Omega",
+		"body": "\\317\\211",
+		"description": "Greek letter\nomega small\nUTF-8:CF89\n"
+	},
+
+}
