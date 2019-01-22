@@ -85,6 +85,26 @@
 
 /* set terminal */
 
+	/* set terminal pngcairo */
+
+		"set term: pngcairo":{
+			"prefix": "term pngcairo",
+			"body": [
+				"set term pngcairo # {noenhanced|enhanced} {mono|color}",
+				"set term pngcairo # {notransparent|transparent} {nocrop|crop} {background <rgbcolor>",
+				"set term pngcairo # {font <font>} {fontscale <scale>}",
+				"set term pngcairo # {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set term pngcairo # {size <XX>{unit},<YY>{unit}}",
+			],
+			"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
+		},
+
+		"set term: pngcairo: crop/nocrop":{
+			"prefix": "term pngcairo crop",
+			"body": "set term pngcairo nocrop|crop # {nocrop|crop}",
+			"description": "terminal pngcairo\ncrop は完成した描画グラフの端の空白領域を取り除いて、結果として画像 サイズを小さくします。デフォルトは nocrop です。\nVersion 5.0 patchlevel 6\n"
+		},
+
 	/* set terminal wxt */
 
 		"set term: wxt":{
@@ -423,4 +443,51 @@
 		"description": "Greek letter\nomega small\nUTF-8:CF89\n"
 	},
 
+/* avaiable font */
+
+	"font: Times New Roman: default":{
+		"prefix": "Times New Roman",
+		"body": "\"Times-New-Roman\"",
+		"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
+	},
+
+	"font: Times New Roman: Normal":{
+		"prefix": "Times New Roman",
+		"body": "\"Times-New-Roman:Normal\"",
+		"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
+	},
+
+	"font: Times New Roman: Italic":{
+		"prefix": "Times New Roman",
+		"body": "\"Times-New-Roman:Italic\"",
+		"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
+	},
+
+	/* Symbol */
+
+	"Symbol: MULTIPLICATION SIGN":{
+		"prefix": "MULTIPLICATION SIGN",
+			"body": "\\264",
+		"description": "Symbol\nMULTIPLICATION SIGN"
+		},
+
+	/* Times New Roman */
+
+	"Times New Roman: LEFT SQUARE BRACKET":{
+		"prefix": "LEFT SQUARE BRACKET",
+		"body": "\\133",
+		"description": "Times New Roman\nLEFT SQUARE BRACKET"
+	},
+
+	"Times New Roman: MULTIPLICATION SIGN":{
+		"prefix": "MULTIPLICATION SIGN",
+			"body": "\\303\\227",
+		"description": "Times New Roman\nMULTIPLICATION SIGN"
+		},
+
+	"Times New Roman: RIGHT SQUARE BRACKET":{
+		"prefix": "RIGHT SQUARE BRACKET",
+		"body": "\\135",
+		"description": "Times New Roman\nRIGHT SQUARE BRACKET"
+	},
 }
