@@ -1,0 +1,355 @@
+{
+	// Place your snippets for vbscript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	// last updated : 2018/10/15
+
+	// Function
+
+		// CDbl Function
+		// https://msdn.microsoft.com/ja-jp/library/cc410210.aspx
+		"Function CDbl ":{
+			"prefix": "CDbl",
+			"body": "CDbl( ${0:expression} )",
+			"description": "Function\n指定された式をバリアント型 (内部処理形式が倍精度浮動小数点数型 (Double) の Variant) に変換して返します。\n"
+		},
+
+		// CreateObject Function
+		// https://msdn.microsoft.com/ja-jp/library/cc410215.aspx
+		"CreateObject Function Simple":{
+			"prefix": "CreateObject",
+			"body": "CreateObject( ${1:servername}.${2:typename} )",
+			"description": "Function\nオートメーション オブジェクトへの参照を作成して返します。"
+		},
+		// MsgBox Function
+		// https://msdn.microsoft.com/ja-jp/library/cc410277.aspx
+		// https://msdn.microsoft.com/ja-jp/library/sfw6660x.aspx
+		"MsgBox Function simple":{
+			"prefix": "MsgBox",
+			"body": "${0:return value} = MsgBox( ${1:prompt} )",
+			"description": "Function\nダイアログ ボックスにメッセージを表示し、ボタンがクリックされるのを待って、どのボタンがクリックされたかを示す値を返します。"
+		},
+
+		"MsgBox Function with buttons":{
+			"prefix": "MsgBox",
+			"body": "${0:return value} = MsgBox( ${1:prompt} , ${2:buttons} )",
+			"description": "Function\nダイアログ ボックスにメッセージを表示し、ボタンがクリックされるのを待って、どのボタンがクリックされたかを示す値を返します。"
+		},
+
+		"MsgBox Function with buttons and title":{
+			"prefix": "MsgBox",
+			"body": "${0:return value} = MsgBox( ${1:prompt} , ${2:buttons} , ${3:title} )",
+			"description": "Function\nダイアログ ボックスにメッセージを表示し、ボタンがクリックされるのを待って、どのボタンがクリックされたかを示す値を返します。"
+		},
+
+			// The buttons argument settings of MsgBox Function
+			"Function MsgBox buttons: vbOKOnly":{
+				"prefix": "MsgBox Button vbOKOnly",
+				"body": "vbOKOnly",
+				"description": "MsgBox Function\nDisplay [OK] button only.\ncorresponding value is 0\n"
+			},
+
+			"Function MsgBox buttons: vbOKCancel":{
+				"prefix": "MsgBox Button vbOKCancel",
+				"body": "vbOKCancel",
+				"description": "MsgBox Function\nDisplay [OK] and [Cancel] buttons.\ncorresponding value is 1\n"
+			},
+
+			"Function MsgBox buttons: vbAbortRetryIgnore":{
+				"prefix": "MsgBox Button vbAbortRetryIgnore",
+				"body": "vbAbortRetryIgnore",
+				"description": "MsgBox Function\nDisplay [Abort], [Retry], and [Ignore] buttons.\ncorresponding value is 2\n"
+			},
+
+			"Function MsgBox buttons: vbYesNoCancel":{
+				"prefix": "MsgBox Button vbYesNoCancel",
+				"body": "vbYesNoCancel",
+				"description": "MsgBox Function\nDisplay [Yes], [No], and [Cancel] buttons.\ncorresponding value is 3\n"
+			},
+
+			"Function MsgBox buttons: vbYesNo":{
+				"prefix": "MsgBox Button vbYesNo",
+				"body": "vbYesNo",
+				"description": "MsgBox Function\nDisplay Yes and No buttons.\ncorresponding value is 4\n"
+			},
+
+			"Function MsgBox buttons: vbRetryCancel":{
+				"prefix": "MsgBox Button vbRetryCancel",
+				"body": "vbRetryCancel",
+				"description": "MsgBox Function\nDisplay Retry and Cancel buttons.\ncorresponding value is 5\n"
+			},
+
+			"Function MsgBox buttons: vbCritical":{
+				"prefix": "MsgBox Button vbCritical",
+				"body": "vbCritical",
+				"description": "MsgBox Function\nDisplay Critical Message icon.\ncorresponding value is 16\n"
+			},
+
+			"Function MsgBox buttons: vbQuestion":{
+				"prefix": "MsgBox Button vbQuestion",
+				"body": "vbQuestion",
+				"description": "MsgBox Function\nDisplay Warning Query icon.\ncorresponding value is 32\n"
+			},
+
+			"Function MsgBox buttons: vbExclamation":{
+				"prefix": "MsgBox Button vbExclamation",
+				"body": "vbExclamation",
+				"description": "MsgBox Function\nDisplay Warning Message icon.\ncorresponding value is 48\n"
+			},
+
+			"Function MsgBox buttons: vbInformation":{
+				"prefix": "MsgBox Button vbInformation",
+				"body": "vbInformation",
+				"description": "MsgBox Function\nDisplay Information Message icon.\ncorresponding value is 64\n"
+			},
+
+			"Function MsgBox buttons: vbDefaultButton1":{
+				"prefix": "MsgBox Button vbDefaultButton1",
+				"body": "vbDefaultButton1",
+				"description": "MsgBox Function\nFirst button is default.\ncorresponding value is 0\n"
+			},
+
+			"Function MsgBox buttons: vbDefaultButton2":{
+				"prefix": "MsgBox Button vbDefaultButton2",
+				"body": "vbDefaultButton2",
+				"description": "MsgBox Function\nSecond button is default.\ncorresponding value is 256\n"
+			},
+
+			"Function MsgBox buttons: vbDefaultButton3":{
+				"prefix": "MsgBox Button vbDefaultButton3",
+				"body": "vbDefaultButton3",
+				"description": "MsgBox Function\nThird button is default.\ncorresponding value is 512\n"
+			},
+
+			"Function MsgBox buttons: vbDefaultButton4":{
+				"prefix": "MsgBox Button vbDefaultButton4",
+				"body": "vbDefaultButton4",
+				"description": "MsgBox Function\nForth button is default.\ncorresponding value is 768\n"
+			},
+
+			"Function MsgBox buttons: vbApplicationModal":{
+				"prefix": "MsgBox Button vbApplicationModal",
+				"body": "vbApplicationModal",
+				"description": "MsgBox Function\nApplication modal.\nThe user must respond to the message box before continuing work in the current application.\ncorresponding value is 0\n"
+			},
+
+			"Function MsgBox buttons: vbSystemModal":{
+				"prefix": "MsgBox Button vbSystemModal",
+				"body": "vbSystemModal",
+				"description": "MsgBox Function\nSystem modal.\nOn Microsoft Win16 systems, all applications are suspended until the user responds to the message box.\nOn Microsoft Win32 systems, this constant provides an application modal message box that always remains on top of any other programs that you have running.\ncorresponding value is 4096\n"
+			},
+
+		// Function VarType
+		// https://msdn.microsoft.com/ja-jp/library/cc392346.aspx
+		// https://msdn.microsoft.com/ja-jp/library/cc392245.aspx
+		"Function VarType":{
+			"prefix": "VarType",
+			"body": "VarType( ${1:varname} )",
+			"description": "Function\n変数の内部処理形式を表す値を返します。\n"
+		},
+
+			"Constant for Function VarType: vbEmpty":{
+				"prefix": "VarType Constant vbEmpty",
+				"body": "vbEmpty",
+				"description": "VarType 関数の定数\n内容 : Empty 値 (未初期化)\n"
+			},
+
+			"Constant for Function VarType: vbNull":{
+				"prefix": "VarType Constant vbNull",
+				"body": "vbNull",
+				"description": "VarType 関数の定数\n内容 : Null 値 (無効な値)\n"
+			},
+
+			"Constant for Function VarType: vbInteger":{
+				"prefix": "VarType Constant vbInteger",
+				"body": "vbInteger",
+				"description": "VarType 関数の定数\n内容 : 整数型 (Integer)\n"
+			},
+
+			"Constant for Function VarType: vbLong":{
+				"prefix": "VarType Constant vbLong",
+				"body": "vbLong",
+				"description": "VarType 関数の定数\n内容 : 長整数型 (Long)\n"
+			},
+
+			"Constant for Function VarType: vbSingle":{
+				"prefix": "VarType Constant vbSingle",
+				"body": "vbSingle",
+				"description": "VarType 関数の定数\n内容 : 単精度浮動小数点数型 (Single)\n"
+			},
+
+			"Constant for Function VarType: vbDouble":{
+				"prefix": "VarType Constant vbDouble",
+				"body": "vbDouble",
+				"description": "VarType 関数の定数\n内容 : 倍精度浮動小数点数型 (Double)\n"
+			},
+
+			"Constant for Function VarType: vbCurrency":{
+				"prefix": "VarType Constant vbCurrency",
+				"body": "vbCurrency",
+				"description": "VarType 関数の定数\n内容 : 通貨型 (Currency)\n"
+			},
+
+			"Constant for Function VarType: vbDate":{
+				"prefix": "VarType Constant vbDate",
+				"body": "vbDate",
+				"description": "VarType 関数の定数\n内容 : 日付型 (Date)\n"
+			},
+
+			"Constant for Function VarType: vbString":{
+				"prefix": "VarType Constant vbString",
+				"body": "vbString",
+				"description": "VarType 関数の定数\n内容 : 文字列型 (String)\n"
+			},
+
+			"Constant for Function VarType: vbObject":{
+				"prefix": "VarType Constant vbObject",
+				"body": "vbObject",
+				"description": "VarType 関数の定数\n内容 : オブジェクト型\n"
+			},
+
+			"Constant for Function VarType: vbError":{
+				"prefix": "VarType Constant vbError",
+				"body": "vbError",
+				"description": "VarType 関数の定数\n内容 : エラー値 (Error)\n"
+			},
+
+			"Constant for Function VarType: vbBoolean":{
+				"prefix": "VarType Constant vbBoolean",
+				"body": "vbBoolean",
+				"description": "VarType 関数の定数\n内容 : ブール型 (Boolean)\n"
+			},
+
+			"Constant for Function VarType: vbVariant":{
+				"prefix": "VarType Constant vbVariant",
+				"body": "vbVariant",
+				"description": "VarType 関数の定数\n内容 : バリアント型 (Variant)\nバリアント型配列にのみ使用\n"
+			},
+
+			"Constant for Function VarType: vbDataObject":{
+				"prefix": "VarType Constant vbDataObject",
+				"body": "vbDataObject",
+				"description": "VarType 関数の定数\n内容 : 非オートメーション オブジェクト\n"
+			},
+
+			"Constant for Function VarType: vbDecimal":{
+				"prefix": "VarType Constant vbDecimal",
+				"body": "vbDecimal",
+				"description": "VarType 関数の定数\n内容 : 10 進型 (Decimal)\n"
+			},
+
+			"Constant for Function VarType: vbByte":{
+				"prefix": "VarType Constant vbByte",
+				"body": "vbByte",
+				"description": "VarType 関数の定数\n内容 : バイト型 (Byte)\n"
+			},
+
+			"Constant for Function VarType: vbArray":{
+				"prefix": "VarType Constant vbArray",
+				"body": "vbArray",
+				"description": "VarType 関数の定数\n内容 : 配列 (Array)\n"
+			},
+
+	// Statements
+
+		// Function Statement
+
+			"ByVal (Function Statement)":{
+				"prefix": "ByVal",
+				"body": "ByVal ${1:varname}",
+				"description": "Function Statement\nの引数\"varname\"が、値渡しで渡されることを示します。\n元のプロシージャーの値は変更されません。"
+			},
+
+			"ByRef (Function Statement)":{
+				"prefix": "ByRef",
+				"body": "ByRef ${1:varname}",
+				"description": "Function Statement\nの引数\"varname\"が、値渡しで渡されることを示します。\n元のプロシージャーの値が変更される可能性があります。"
+			},
+		
+		// Option Explicit Statement
+		// https://msdn.microsoft.com/ja-jp/library/cc392455.aspx
+		"Option Explicit Statement":{
+			"prefix": "Option Explicit",
+			"body": [
+				"REM Forces explicit declaration of all variables in a script.",
+				"Option Explicit",
+			],
+			"description": "Statement\nスクリプト内のすべての変数に対して、明示的な宣言を強制します。"
+		},
+
+		// Set Statement
+		// https://msdn.microsoft.com/ja-jp/library/cc392465.aspx
+		"Set Statement":{
+			"prefix": "Set",
+			"body": "SET ${1:objectvar} = ${2:{objectexpression|New classname|Nothing}}",
+			"description": "Statement\nオブジェクトへの参照を変数またはプロパティに代入するか、プロシージャへの参照をイベントに関連付けます。"
+		},
+
+	// File System Object
+
+		// def
+		"declare the file system object":{
+			"prefix": "fso",
+			"body": [
+				"REM # File System Object",
+				"DIM obj_FSO",
+				"SET obj_FSO = WScript.CreateObject(\"Scripting.FileSystemObject\")",
+			],
+		},
+
+		// methods
+
+			// CreateFolder Method
+			// https://msdn.microsoft.com/ja-jp/library/cc427988.aspx
+			"CreateFolder Method (File System Object)":{
+				"prefix": "CreateFolder",
+				"body": "CreateFolder( ${1:foldername} )",
+				"description": "File System Object\nMethod\nフォルダを作成します。\n"
+			},
+
+			// FileExists Method
+			// https://msdn.microsoft.com/ja-jp/library/cc428005.aspx
+			"FileExists Method (File System Object)":{
+				"prefix": "FileExists",
+				"body": "${1:FileSystemObject}.FileExists( ${2:filespec} )",
+				"description": "File System Object\nMethod\n指定したファイルが存在する場合は、真 (true) を返します。\n存在しない場合は、偽 (false) を返します。\n"
+			},
+
+			// FolderExists Method
+			// https://msdn.microsoft.com/ja-jp/library/cc428005.aspx
+			"FolderExists Method (File System Object)":{
+				"prefix": "FolderExists",
+				"body": "${1:FileSystemObject}.FolderExists( ${2:folderspec} )",
+				"description": "File System Object\nMethod\n指定されたフォルダが存在する場合は、真 (true) を返します。\n存在しない場合は、偽 (false) を返します。\n"
+			},
+
+	// WScript
+
+		// Echo Method
+		"Echo Method (WScript Object)":{
+			"prefix": "WScript.Echo",
+			"body": "WScript.Echo ${0:args...}",
+			"description": "WScript オブジェクト\nダイアログ ボックスまたはコンソールに出力を送ります。\n"
+		},
+
+		// WshShell Object
+
+			// WshShell Object
+			"Run Method (WshShell Object)":{
+				"prefix": "WScript.WshShell Run",
+				"body": "${1:WshShell object}.Run ${0:strCommand}",
+				"description": "WScript オブジェクト\nWshShell オブジェクト\n新しいプロセス内でプログラムを実行します。\n"
+			},
+
+}

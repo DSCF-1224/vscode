@@ -15,6 +15,25 @@
 	}
 */
 
+/* set border */
+
+	"set border: all":{
+		"prefix": "border",
+		"body": [
+			"set border # {<integer>}",
+			"set border # {front | back | behind}",
+			"set border # {linewidth | lw <line_width>}",
+			"set border # {{linestyle | ls <line_style>} | {linetype | lt <line_type>}}",
+		],
+		"description": "set border\nall options\nVersion 5.0 patchlevel 6\n"
+	},
+
+	"set border: unset":{
+		"prefix": "border",
+		"body": "unset border",
+		"description": "set border\ndo not show border\nVersion 5.0 patchlevel 6\n"
+	},
+
 /* set datafile separator */
 	"set datafile separator":{
 		"prefix": "datafile separator",
@@ -85,16 +104,47 @@
 
 /* set terminal */
 
+	/* set terminal emf */
+
+		"set term: emf":{
+			"prefix": "term emf",
+			"body": [
+				"set terminal emf # {color | monochrome}",
+				"set terminal emf # {enhanced {noproportional}}",
+				"set terminal emf # {rounded | butt}",
+				"set terminal emf # {linewidth <LW>} {dashlength <DL>}",
+				"set terminal emf # {size XX,YY} {background <rgb_color>}",
+				"set terminal emf # {font \"<fontname>{,<fontsize>}\"}",
+				"set terminal emf # {fontscale <scale>}",
+			],
+			"description": "terminal emf\nVersion 5.0 patchlevel 6\n"
+		},
+
+	/* set terminal pdfcairo */
+
+		"set term: pdfcairo":{
+			"prefix": "term pdfcairo",
+			"body": [
+				"set terminal pdfcairo # {{no}enhanced} {mono|color}",
+				"set terminal pdfcairo # {font <font>}",
+				"set terminal pdfcairo # {fontscale <scale>}",
+				"set terminal pdfcairo # {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set terminal pdfcairo # {background <rgbcolor>}",
+				"set terminal pdfcairo # {size <XX>{unit},<YY>{unit}}",
+			],
+			"description": "terminal pdfcairo\nVersion 5.0 patchlevel 6\n"
+		},
+
 	/* set terminal pngcairo */
 
 		"set term: pngcairo":{
 			"prefix": "term pngcairo",
 			"body": [
-				"set term pngcairo # {noenhanced|enhanced} {mono|color}",
-				"set term pngcairo # {notransparent|transparent} {nocrop|crop} {background <rgbcolor>",
-				"set term pngcairo # {font <font>} {fontscale <scale>}",
-				"set term pngcairo # {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set term pngcairo # {size <XX>{unit},<YY>{unit}}",
+				"set terminal pngcairo # {noenhanced|enhanced} {mono|color}",
+				"set terminal pngcairo # {notransparent|transparent} {nocrop|crop} {background <rgbcolor>",
+				"set terminal pngcairo # {font <font>} {fontscale <scale>}",
+				"set terminal pngcairo # {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set terminal pngcairo # {size <XX>{unit},<YY>{unit}}",
 			],
 			"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
 		},
@@ -154,295 +204,56 @@
 /* Greek characters */
 
 	/* capital characters */
-	"greek: Alpha: capital":{
-		"prefix": "Alpha",
-		"body": "\\316\\221",
-		"description": "Greek letter\nAlpha capital\nUTF-8:CE91"
-	},
+	"greek: Alpha: capital"   :{ "prefix": "Alpha",   "body": "\\316\\221", "description": "capital greek letter\nUnicode : U+CE91\navailable : Times New Roman\nAlpha\n"   },
+	"greek: Beta: capital"    :{ "prefix": "Beta",    "body": "\\316\\222", "description": "capital greek letter\nUnicode : U+CE92\navailable : Times New Roman\nBeta\n"    },
+	"greek: Gamma: capital"   :{ "prefix": "Gamma",   "body": "\\316\\223", "description": "capital greek letter\nUnicode : U+CE93\navailable : Times New Roman\nGamma\n"   },
+	"greek: Delta: capital"   :{ "prefix": "Delta",   "body": "\\316\\224", "description": "capital greek letter\nUnicode : U+CE94\navailable : Times New Roman\nDelta\n"   },
+	"greek: Epsilon: capital" :{ "prefix": "Epsilon", "body": "\\316\\225", "description": "capital greek letter\nUnicode : U+CE95\navailable : Times New Roman\nEpsilon\n" },
+	"greek: Zeta: capital"    :{ "prefix": "Zeta",    "body": "\\316\\226", "description": "capital greek letter\nUnicode : U+CE96\navailable : Times New Roman\nZeta\n"    },
+	"greek: Eta: capital"     :{ "prefix": "Eta",     "body": "\\316\\227", "description": "capital greek letter\nUnicode : U+CE97\navailable : Times New Roman\nEta\n"     },
+	"greek: Theta: capital"   :{ "prefix": "Theta",   "body": "\\316\\230", "description": "capital greek letter\nUnicode : U+CE98\navailable : Times New Roman\nTheta\n"   },
+	"greek: Iota: capital"    :{ "prefix": "Iota",    "body": "\\316\\231", "description": "capital greek letter\nUnicode : U+CE99\navailable : Times New Roman\nIota\n"    },
+	"greek: Kappa: capital"   :{ "prefix": "Kappa",   "body": "\\316\\232", "description": "capital greek letter\nUnicode : U+CE9A\navailable : Times New Roman\nKappa\n"   },
+	"greek: Lambda: capital"  :{ "prefix": "Lambda",  "body": "\\316\\233", "description": "capital greek letter\nUnicode : U+CE9B\navailable : Times New Roman\nLambda\n"  },
+	"greek: Mu: capital"      :{ "prefix": "Mu",      "body": "\\316\\234", "description": "capital greek letter\nUnicode : U+CE9C\navailable : Times New Roman\nMu\n"      },
+	"greek: Nu: capital"      :{ "prefix": "Nu",      "body": "\\316\\235", "description": "capital greek letter\nUnicode : U+CE9D\navailable : Times New Roman\nNu\n"      },
+	"greek: Xi: capital"      :{ "prefix": "Xi",      "body": "\\316\\236", "description": "capital greek letter\nUnicode : U+CE9E\navailable : Times New Roman\nXi\n"      },
+	"greek: Omicron: capital" :{ "prefix": "Omicron", "body": "\\316\\237", "description": "capital greek letter\nUnicode : U+CE9F\navailable : Times New Roman\nOmicron\n" },
+	"greek: Pi: capital"      :{ "prefix": "Pi",      "body": "\\316\\240", "description": "capital greek letter\nUnicode : U+CEA0\navailable : Times New Roman\nPi\n"      },
+	"greek: Rho: capital"     :{ "prefix": "Rho",     "body": "\\316\\241", "description": "capital greek letter\nUnicode : U+CEA1\navailable : Times New Roman\nRho\n"     },
+	"greek: Sigma: capital"   :{ "prefix": "Sigma",   "body": "\\316\\243", "description": "capital greek letter\nUnicode : U+CEA3\navailable : Times New Roman\nSigma\n"   },
+	"greek: Tau: capital"     :{ "prefix": "Tau",     "body": "\\316\\244", "description": "capital greek letter\nUnicode : U+CEA4\navailable : Times New Roman\nTau\n"     },
+	"greek: Upsilon: capital" :{ "prefix": "Upsilon", "body": "\\316\\245", "description": "capital greek letter\nUnicode : U+CEA5\navailable : Times New Roman\nUpsilon\n" },
+	"greek: Phi: capital"     :{ "prefix": "Phi",     "body": "\\316\\246", "description": "capital greek letter\nUnicode : U+CEA6\navailable : Times New Roman\nPhi\n"     },
+	"greek: Chi: capital"     :{ "prefix": "Chi",     "body": "\\316\\247", "description": "capital greek letter\nUnicode : U+CEA7\navailable : Times New Roman\nChi\n"     },
+	"greek: Psi: capital"     :{ "prefix": "Psi",     "body": "\\316\\250", "description": "capital greek letter\nUnicode : U+CEA8\navailable : Times New Roman\nPsi\n"     },
+	"greek: Omega: capital"   :{ "prefix": "Omega",   "body": "\\316\\251", "description": "capital greek letter\nUnicode : U+CEA9\navailable : Times New Roman\nOmega\n"   },
 
-	"greek: Beta: capital":{
-		"prefix": "Beta",
-		"body": "\\316\\222",
-		"description": "Greek letter\nBeta capital\nUTF-8:CE92"
-	},
-
-	"greek: Gamma: capital":{
-		"prefix": "Gamma",
-		"body": "\\316\\223",
-		"description": "Greek letter\nGamma capital\nUTF-8:CE93"
-	},
-
-	"greek: Delta: capital":{
-		"prefix": "Delta",
-		"body": "\\316\\224",
-		"description": "Greek letter\nDelta capital\nUTF-8:CE94"
-	},
-
-	"greek: Epsilon: capital":{
-		"prefix": "Epsilon",
-		"body": "\\316\\225",
-		"description": "Greek letter\nEpsilon capital\nUTF-8:CE95"
-	},
-
-	"greek: Zeta: capital":{
-		"prefix": "Zeta",
-		"body": "\\316\\226",
-		"description": "Greek letter\nZeta capital\nUTF-8:CE96"
-	},
-
-	"greek: Eta: capital":{
-		"prefix": "Eta",
-		"body": "\\316\\227",
-		"description": "Greek letter\nEta capital\nUTF-8:CE97"
-	},
-
-	"greek: Theta: capital":{
-		"prefix": "Theta",
-		"body": "\\316\\230",
-		"description": "Greek letter\nTheta capital\nUTF-8:CE98"
-	},
-
-	"greek: Iota: capital":{
-		"prefix": "Iota",
-		"body": "\\316\\231",
-		"description": "Greek letter\nIota capital\nUTF-8:CE99"
-	},
-
-	"greek: Kappa: capital":{
-		"prefix": "Kappa",
-		"body": "\\316\\232",
-		"description": "Greek letter\nKappa capital\nUTF-8:CE9A"
-	},
-
-	"greek: Lambda: capital":{
-		"prefix": "Lambda",
-		"body": "\\316\\233",
-		"description": "Greek letter\nLambda capital\nUTF-8:CE9B"
-	},
-
-	"greek: Mu: capital":{
-		"prefix": "Mu",
-		"body": "\\316\\234",
-		"description": "Greek letter\nMu capital\nUTF-8:CE9C"
-	},
-
-	"greek: Nu: capital":{
-		"prefix": "Nu",
-		"body": "\\316\\235",
-		"description": "Greek letter\nNu capital\nUTF-8:CE9D"
-	},
-
-	"greek: Xi: capital":{
-		"prefix": "Xi",
-		"body": "\\316\\236",
-		"description": "Greek letter\nXi capital\nUTF-8:CE9E"
-	},
-
-	"greek: Omicron: capital":{
-		"prefix": "Omicron",
-		"body": "\\316\\237",
-		"description": "Greek letter\nOmicron capital\nUTF-8:CE9F"
-	},
-
-	"greek: Pi: capital":{
-		"prefix": "Pi",
-		"body": "\\316\\240",
-		"description": "Greek letter\nPi capital\nUTF-8:CEA0"
-	},
-
-	"greek: Rho: capital":{
-		"prefix": "Rho",
-		"body": "\\316\\241",
-		"description": "Greek letter\nRho capital\nUTF-8:CEA1"
-	},
-
-	"greek: Sigma: capital":{
-		"prefix": "Sigma",
-		"body": "\\316\\243",
-		"description": "Greek letter\nSigma capital\nUTF-8:CEA3"
-	},
-
-	"greek: Tau: capital":{
-		"prefix": "Tau",
-		"body": "\\316\\244",
-		"description": "Greek letter\nTau capital\nUTF-8:CEA4"
-	},
-
-	"greek: Upsilon: capital":{
-		"prefix": "Upsilon",
-		"body": "\\316\\245",
-		"description": "Greek letter\nUpsilon capital\nUTF-8:CEA5"
-	},
-
-	"greek: Phi: capital":{
-		"prefix": "Phi",
-		"body": "\\316\\246",
-		"description": "Greek letter\nPhi capital\nUTF-8:CEA6"
-	},
-
-	"greek: Chi: capital":{
-		"prefix": "Chi",
-		"body": "\\316\\247",
-		"description": "Greek letter\nChi capital\nUTF-8:CEA7"
-	},
-
-	"greek: Psi: capital":{
-		"prefix": "Psi",
-		"body": "\\316\\250",
-		"description": "Greek letter\nPsi capital\nUTF-8:CEA8"
-	},
-
-	"greek: Omega: capital":{
-		"prefix": "Omega",
-		"body": "\\316\\251",
-		"description": "Greek letter\nOmega capital\nUTF-8:CEA9"
-	},
-
-	/* capital characters */
-	"greek: Alpha: small":{
-		"prefix": "Alpha",
-		"body": "\\316\\261",
-		"description": "Greek letter\nalpha small\nUTF-8:CEB1\n"
-	},
-
-	"greek: Beta: small":{
-		"prefix": "Beta",
-		"body": "\\316\\262",
-		"description": "Greek letter\nbeta small\nUTF-8:CEB2\n"
-	},
-
-	"greek: Gamma: small":{
-		"prefix": "Gamma",
-		"body": "\\316\\263",
-		"description": "Greek letter\ngamma small\nUTF-8:CEB3\n"
-	},
-
-	"greek: Delta: small":{
-		"prefix": "Delta",
-		"body": "\\316\\264",
-		"description": "Greek letter\ndelta small\nUTF-8:CEB4\n"
-	},
-
-	"greek: Epsilon: small":{
-		"prefix": "Epsilon",
-		"body": "\\316\\265",
-		"description": "Greek letter\nepsilon small\nUTF-8:CEB5\n"
-	},
-
-	"greek: Zeta: small":{
-		"prefix": "Zeta",
-		"body": "\\316\\266",
-		"description": "Greek letter\nzeta small\nUTF-8:CEB6\n"
-	},
-
-	"greek: Eta: small":{
-		"prefix": "Eta",
-		"body": "\\316\\267",
-		"description": "Greek letter\neta small\nUTF-8:CEB7\n"
-	},
-
-	"greek: Theta: small":{
-		"prefix": "Theta",
-		"body": "\\316\\270",
-		"description": "Greek letter\ntheta small\nUTF-8:CEB8\n"
-	},
-
-	"greek: Iota: small":{
-		"prefix": "Iota",
-		"body": "\\316\\271",
-		"description": "Greek letter\niota small\nUTF-8:CEB9\n"
-	},
-
-	"greek: Kappa: small":{
-		"prefix": "Kappa",
-		"body": "\\316\\272",
-		"description": "Greek letter\nkappa small\nUTF-8:CEBA\n"
-	},
-
-	"greek: Lambda: small":{
-		"prefix": "Lambda",
-		"body": "\\316\\273",
-		"description": "Greek letter\nlambda small\nUTF-8:CEBB\n"
-	},
-
-	"greek: Mu: small":{
-		"prefix": "Mu",
-		"body": "\\316\\274",
-		"description": "Greek letter\nmu small\nUTF-8:CEBC\n"
-	},
-
-	"greek: Nu: small":{
-		"prefix": "Nu",
-		"body": "\\316\\275",
-		"description": "Greek letter\nnu small\nUTF-8:CEBD\n"
-	},
-
-	"greek: Xi: small":{
-		"prefix": "Xi",
-		"body": "\\316\\276",
-		"description": "Greek letter\nxi small\nUTF-8:CEBE\n"
-	},
-
-	"greek: Omicron: small":{
-		"prefix": "Omicron",
-		"body": "\\316\\277",
-		"description": "Greek letter\nomicron small\nUTF-8:CEBF\n"
-	},
-
-	"greek: Pi: small":{
-		"prefix": "Pi",
-		"body": "\\317\\200",
-		"description": "Greek letter\npi small\nUTF-8:CF80\n"
-	},
-
-	"greek: Rho: small":{
-		"prefix": "Rho",
-		"body": "\\317\\201",
-		"description": "Greek letter\nrho small\nUTF-8:CF81\n"
-	},
-
-	"greek: Sigma: small":{
-		"prefix": "Sigma",
-		"body": "\\317\\203",
-		"description": "Greek letter\nsigma small\nUTF-8:CF83\n"
-	},
-
-	"greek: Tau: small":{
-		"prefix": "Tau",
-		"body": "\\317\\204",
-		"description": "Greek letter\ntau small\nUTF-8:CF84\n"
-	},
-
-	"greek: Upsilon: small":{
-		"prefix": "Upsilon",
-		"body": "\\317\\205",
-		"description": "Greek letter\nupsilon small\nUTF-8:CF85\n"
-	},
-
-	"greek: Phi: small":{
-		"prefix": "Phi",
-		"body": "\\317\\206",
-		"description": "Greek letter\nphi small\nUTF-8:CF86\n"
-	},
-
-	"greek: Chi: small":{
-		"prefix": "Chi",
-		"body": "\\317\\207",
-		"description": "Greek letter\nchi small\nUTF-8:CF87\n"
-	},
-
-	"greek: Psi: small":{
-		"prefix": "Psi",
-		"body": "\\317\\210",
-		"description": "Greek letter\npsi small\nUTF-8:CF88\n"
-	},
-
-	"greek: Omega: small":{
-		"prefix": "Omega",
-		"body": "\\317\\211",
-		"description": "Greek letter\nomega small\nUTF-8:CF89\n"
-	},
-
+	/* small characters */
+	"greek: alpha: small"   :{ "prefix": "alpha",   "body": "\\316\\261", "description": "small greek letter\nUnicode : U+CEB1\navailable : Times New Roman\nalpha\n" },
+	"greek: beta: small"    :{ "prefix": "beta",    "body": "\\316\\262", "description": "small greek letter\nUnicode : U+CEB2\navailable : Times New Roman\nbeta\n" },
+	"greek: gamma: small"   :{ "prefix": "gamma",   "body": "\\316\\263", "description": "small greek letter\nUnicode : U+CEB3\navailable : Times New Roman\ngamma\n" },
+	"greek: delta: small"   :{ "prefix": "delta",   "body": "\\316\\264", "description": "small greek letter\nUnicode : U+CEB4\navailable : Times New Roman\ndelta\n" },
+	"greek: epsilon: small" :{ "prefix": "epsilon", "body": "\\316\\265", "description": "small greek letter\nUnicode : U+CEB5\navailable : Times New Roman\nepsilon\n" },
+	"greek: zeta: small"    :{ "prefix": "zeta",    "body": "\\316\\266", "description": "small greek letter\nUnicode : U+CEB6\navailable : Times New Roman\nzeta\n" },
+	"greek: eta: small"     :{ "prefix": "eta",     "body": "\\316\\267", "description": "small greek letter\nUnicode : U+CEB7\navailable : Times New Roman\neta\n" },
+	"greek: theta: small"   :{ "prefix": "theta",   "body": "\\316\\270", "description": "small greek letter\nUnicode : U+CEB8\navailable : Times New Roman\ntheta\n" },
+	"greek: iota: small"    :{ "prefix": "iota",    "body": "\\316\\271", "description": "small greek letter\nUnicode : U+CEB9\navailable : Times New Roman\niota\n" },
+	"greek: kappa: small"   :{ "prefix": "kappa",   "body": "\\316\\272", "description": "small greek letter\nUnicode : U+CEBA\navailable : Times New Roman\nkappa\n" },
+	"greek: lambda: small"  :{ "prefix": "lambda",  "body": "\\316\\273", "description": "small greek letter\nUnicode : U+CEBB\navailable : Times New Roman\nlambda\n" },
+	"greek: mu: small"      :{ "prefix": "mu",      "body": "\\316\\274", "description": "small greek letter\nUnicode : U+CEBC\navailable : Times New Roman\nmu\n" },
+	"greek: nu: small"      :{ "prefix": "nu",      "body": "\\316\\275", "description": "small greek letter\nUnicode : U+CEBD\navailable : Times New Roman\nnu\n" },
+	"greek: xi: small"      :{ "prefix": "xi",      "body": "\\316\\276", "description": "small greek letter\nUnicode : U+CEBE\navailable : Times New Roman\nxi\n" },
+	"greek: omicron: small" :{ "prefix": "omicron", "body": "\\316\\277", "description": "small greek letter\nUnicode : U+CEBF\navailable : Times New Roman\nomicron\n" },
+	"greek: pi: small"      :{ "prefix": "pi",      "body": "\\317\\200", "description": "small greek letter\nUnicode : U+CF80\navailable : Times New Roman\npi\n" },
+	"greek: rho: small"     :{ "prefix": "rho",     "body": "\\317\\201", "description": "small greek letter\nUnicode : U+CF81\navailable : Times New Roman\nrho\n" },
+	"greek: sigma: small"   :{ "prefix": "sigma",   "body": "\\317\\203", "description": "small greek letter\nUnicode : U+CF83\navailable : Times New Roman\nsigma\n" },
+	"greek: tau: small"     :{ "prefix": "tau",     "body": "\\317\\204", "description": "small greek letter\nUnicode : U+CF84\navailable : Times New Roman\ntau\n" },
+	"greek: upsilon: small" :{ "prefix": "upsilon", "body": "\\317\\205", "description": "small greek letter\nUnicode : U+CF85\navailable : Times New Roman\nupsilon\n" },
+	"greek: phi: small"     :{ "prefix": "phi",     "body": "\\317\\206", "description": "small greek letter\nUnicode : U+CF86\navailable : Times New Roman\nphi\n" },
+	"greek: chi: small"     :{ "prefix": "chi",     "body": "\\317\\207", "description": "small greek letter\nUnicode : U+CF87\navailable : Times New Roman\nchi\n" },
+	"greek: psi: small"     :{ "prefix": "psi",     "body": "\\317\\210", "description": "small greek letter\nUnicode : U+CF88\navailable : Times New Roman\npsi\n" },
+	"greek: omega: small"   :{ "prefix": "omega",   "body": "\\317\\211", "description": "small greek letter\nUnicode : U+CF89\navailable : Times New Roman\nomega\n" },
 /* avaiable font */
 
 	"font: Times New Roman: default":{
@@ -471,23 +282,40 @@
 		"description": "Symbol\nMULTIPLICATION SIGN"
 		},
 
-	/* Times New Roman */
+	/* Unicode */
 
-	"Times New Roman: LEFT SQUARE BRACKET":{
-		"prefix": "LEFT SQUARE BRACKET",
-		"body": "\\133",
-		"description": "Times New Roman\nLEFT SQUARE BRACKET"
-	},
+	"Unicode: EXCLAMATION MARK"   :{ "prefix": "EXCLAMATION MARK",    "body": "\\041", "description": "Unicode : U+0021\nUTF-8 (hex) : 041\navailable : Times New Roman\nName : EXCLAMATION MARK\n" },
+	"Unicode: QUOTATION MARK"     :{ "prefix": "QUOTATION MARK",      "body": "\\042", "description": "Unicode : U+0022\nUTF-8 (hex) : 042\navailable : Times New Roman\nName : QUOTATION MARK\n" },
+	"Unicode: NUMBER SIGN"        :{ "prefix": "NUMBER SIGN",         "body": "\\043", "description": "Unicode : U+0023\nUTF-8 (hex) : 043\navailable : Times New Roman\nName : NUMBER SIGN\n" },
+	"Unicode: DOLLAR SIGN"        :{ "prefix": "DOLLAR SIGN",         "body": "\\044", "description": "Unicode : U+0024\nUTF-8 (hex) : 044\navailable : Times New Roman\nName : DOLLAR SIGN\n" },
+	"Unicode: PERCENT SIGN"       :{ "prefix": "PERCENT SIGN",        "body": "\\045", "description": "Unicode : U+0025\nUTF-8 (hex) : 045\navailable : Times New Roman\nName : PERCENT SIGN\n" },
+	"Unicode: AMPERSAND"          :{ "prefix": "AMPERSAND",           "body": "\\046", "description": "Unicode : U+0026\nUTF-8 (hex) : 046\navailable : Times New Roman\nName : AMPERSAND\n" },
+	"Unicode: APOSTROPHE"         :{ "prefix": "APOSTROPHE",          "body": "\\047", "description": "Unicode : U+0027\nUTF-8 (hex) : 047\navailable : Times New Roman\nName : APOSTROPHE\n" },
+	"Unicode: LEFT PARENTHESIS"   :{ "prefix": "LEFT PARENTHESIS",    "body": "\\050", "description": "Unicode : U+0028\nUTF-8 (hex) : 050\navailable : Times New Roman\nName : LEFT PARENTHESIS\n" },
+	"Unicode: RIGHT PARENTHESIS"  :{ "prefix": "RIGHT PARENTHESIS",   "body": "\\051", "description": "Unicode : U+0029\nUTF-8 (hex) : 051\navailable : Times New Roman\nName : RIGHT PARENTHESIS\n" },
+	"Unicode: ASTERISK"           :{ "prefix": "ASTERISK",            "body": "\\052", "description": "Unicode : U+002A\nUTF-8 (hex) : 052\navailable : Times New Roman\nName : ASTERISK\n" },
+	"Unicode: PLUS SIGN"          :{ "prefix": "PLUS SIGN",           "body": "\\053", "description": "Unicode : U+002B\nUTF-8 (hex) : 053\navailable : Times New Roman\nName : PLUS SIGN\n" },
+	"Unicode: COMMA"              :{ "prefix": "COMMA",               "body": "\\054", "description": "Unicode : U+002C\nUTF-8 (hex) : 054\navailable : Times New Roman\nName : COMMA\n" },
+	"Unicode: HYPHEN-MINUS"       :{ "prefix": "HYPHEN-MINUS",        "body": "\\055", "description": "Unicode : U+002D\nUTF-8 (hex) : 055\navailable : Times New Roman\nName : HYPHEN-MINUS\n" },
+	"Unicode: FULL STOP"          :{ "prefix": "FULL STOP",           "body": "\\056", "description": "Unicode : U+002E\nUTF-8 (hex) : 056\navailable : Times New Roman\nName : FULL STOP\n" },
+	"Unicode: SOLIDUS"            :{ "prefix": "SOLIDUS",             "body": "\\057", "description": "Unicode : U+002F\nUTF-8 (hex) : 057\navailable : Times New Roman\nName : SOLIDUS\n" },
 
-	"Times New Roman: MULTIPLICATION SIGN":{
-		"prefix": "MULTIPLICATION SIGN",
-			"body": "\\303\\227",
-		"description": "Times New Roman\nMULTIPLICATION SIGN"
-		},
+	"Unicode: LEFT SQUARE BRACKET" :{ "prefix": "LEFT SQUARE BRACKET",  "body": "\\133", "description": "Unicode : U+005B\nUTF-8 (hex) : 0113\navailable : Times New Roman\nName : LEFT SQUARE BRACKET\n"  },
+	"Unicode: RIGHT SQUARE BRACKET":{ "prefix": "RIGHT SQUARE BRACKET", "body": "\\135", "description": "Unicode : U+005D\nUTF-8 (hex) : 0135\navailable : Times New Roman\nName : RIGHT SQUARE BRACKET\n" },
 
-	"Times New Roman: RIGHT SQUARE BRACKET":{
-		"prefix": "RIGHT SQUARE BRACKET",
-		"body": "\\135",
-		"description": "Times New Roman\nRIGHT SQUARE BRACKET"
-	},
+	"Unicode: MULTIPLICATION SIGN":{ "prefix": "MULTIPLICATION SIGN", "body": "\\303\\227", "description": "Unicode : U+00D7\nUTF-8 (hex) : 0303 0227\navailable : Times New Roman\nName : MULTIPLICATION SIGN\n" },
+
+
+	"Unicode: ANGSTROM SIGN"        :{ "prefix": "ANGSTROM SIGN",        "body": "\\342\\204\\253", "description": "Unicode : U+212B\nUTF-8 (hex) : e2 84 ab\navailable : Times New Roman\nName : ANGSTROM SIGN\n" },
+	"Unicode: PARTIAL DIFFERENTIAL" :{ "prefix": "PARTIAL DIFFERENTIAL", "body": "\\342\\210\\202", "description": "Unicode : U+2202\nUTF-8 (hex) : e2 88 82\navailable : Times New Roman\nName : PARTIAL DIFFERENTIAL\n" },
+	"Unicode: INCREMENT"            :{ "prefix": "INCREMENT",            "body": "\\342\\210\\206", "description": "Unicode : U+2206\nUTF-8 (hex) : e2 88 86\navailable : Times New Roman\nName : INCREMENT\n" },
+	"Unicode: N-ARY PRODUCT"        :{ "prefix": "N-ARY PRODUCT",        "body": "\\342\\210\\217", "description": "Unicode : U+220F\nUTF-8 (hex) : e2 88 8f\navailable : Times New Roman\nName : N-ARY PRODUCT\n" },
+	"Unicode: N-ARY SUMMATION"      :{ "prefix": "N-ARY SUMMATION",      "body": "\\342\\210\\221", "description": "Unicode : U+2210\nUTF-8 (hex) : e2 88 90\navailable : Times New Roman\nName : N-ARY SUMMATION\n" },
+	"Unicode: MINUS SIGN"           :{ "prefix": "MINUS SIGN",           "body": "\\342\\210\\222", "description": "Unicode : U+2211\nUTF-8 (hex) : e2 88 92\navailable : Times New Roman\nName : MINUS SIGN\n" },
+	"Unicode: DIVISION SLASH"       :{ "prefix": "DIVISION SLASH",       "body": "\\342\\210\\225", "description": "Unicode : U+2215\nUTF-8 (hex) : e2 88 95\navailable : Times New Roman\nName : DIVISION SLASH\n" },
+	"Unicode: BULLET OPERATOR"      :{ "prefix": "BULLET OPERATOR",      "body": "\\342\\210\\231", "description": "Unicode : U+2219\nUTF-8 (hex) : e2 88 99\navailable : Times New Roman\nName : BULLET OPERATOR\n" },
+	"Unicode: SQUARE ROOT"          :{ "prefix": "SQUARE ROOT",          "body": "\\342\\210\\232", "description": "Unicode : U+221A\nUTF-8 (hex) : e2 88 9a\navailable : Times New Roman\nName : SQUARE ROOT\n" },
+	"Unicode: INFINITY"             :{ "prefix": "INFINITY",             "body": "\\342\\210\\236", "description": "Unicode : U+221E\nUTF-8 (hex) : e2 88 9e\navailable : Times New Roman\nName : INFINITY\n" },
+	"Unicode: RIGHT ANGLE"          :{ "prefix": "RIGHT ANGLE",          "body": "\\342\\210\\237", "description": "Unicode : U+221F\nUTF-8 (hex) : e2 88 9f\navailable : Times New Roman\nName : RIGHT ANGLE\n" },
+	"Unicode: INTERSECTION"         :{ "prefix": "INTERSECTION",         "body": "\\342\\210\\251", "description": "Unicode : U+2229\nUTF-8 (hex) : e2 88 a9\navailable : Times New Roman\nName : INTERSECTION\n" },
 }
