@@ -1,0 +1,810 @@
+{
+	// Place your snippets for julia here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	// last update ###### Mon Oct 29 10:32:41 JST 2018
+
+	// Constant
+	"Constant: Base.stdout":{
+		"prefix": "Base.stdout",
+		"body": "Base.stdout",
+		"description": "Constant\nstdout\n",
+	},
+
+
+	// Function
+	"Function: Base.println: all":{
+		"prefix": "Base.println",
+		"body": "Base.println( ${1:io::IO, }${0:xs...} )",
+		"description": "Function\nBase.println\n"
+	},
+
+	"Function: Base.println: stdout":{
+		"prefix": "Base.println",
+		"body": "Base.println( Base.stdout, ${0:xs...} )",
+		"description": "Function\nBase.println\n"
+	},
+
+	// reference
+	"Reference: Function: Base.println":{ "prefix": "Base.println", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.stdout",  "description": "Constant\nBase.stdout\n"  },
+	"Reference: Constant: Base.stdout" :{ "prefix": "Base.stdout",  "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.println", "description": "Function\nBase.println\n" },
+
+	// others
+	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{ "prefix": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE", "body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE", "description": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE" }
+	
+	// Base
+	
+		// Essential
+	
+			// All Objects
+	
+			// Properties of Types
+	
+			// Generic Functions
+	
+			// Syntax
+	
+			// System
+	
+			// Versioning
+	
+			// Errors
+	
+			// Events
+	
+			// Reflection
+	
+			// Internals
+	
+		// Collections and Data Structures
+		// https://docs.julialang.org/en/v1/base/collections/
+	
+			// Iteration
+	
+			// Constructors and Types
+	
+			// General Collections
+	
+			// Iterable Collections
+					
+			// Indexable Collections
+	
+			// Dictionaries
+	
+			// Set-Like Collections
+			// https://docs.julialang.org/en/v1/base/collections/#Set-Like-Collections-1
+	
+	
+			// Dequeues
+			// https://docs.julialang.org/en/v1/base/collections/#Dequeues-1
+	
+			// Utility Collections
+			// https://docs.julialang.org/en/v1/base/collections/#Utility-Collections-1
+	
+		// Mathematics
+		// https://docs.julialang.org/en/v1/base/math/#Mathematics-1
+	
+			// Mathematical Operators
+			// https://docs.julialang.org/en/v1/base/math/#math-ops-1
+	
+			// Mathematical Functions
+			// https://docs.julialang.org/en/v1/base/math/#Mathematical-Functions-1
+	
+				
+	
+		// Numbers
+		// https://docs.julialang.org/en/v1/base/numbers/
+	
+			// Standard Numeric Types
+	
+			// Data Formats
+			
+			// General Number Functions and Constants
+
+			// BigFloats and BigInts
+			// https://docs.julialang.org/en/v1/base/numbers/#BigFloats-and-BigInts-1
+		
+		// String
+	
+		// Arrays
+		// https://docs.julialang.org/en/v1/base/arrays/
+	
+			// Constructors and Types
+			// https://docs.julialang.org/en/v1/base/arrays/#Constructors-and-Types-1
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.AbstractArray
+				"Core.AbstractArray":{
+					"prefix": "AbstractArray",
+					"body": "Core.AbstractArray{ ${1:T}, ${2:N} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nSupertype for `N`-dimensional arrays (or array-like types) with elements of type `T`.\nArray and other types are subtypes of this.\nSee the manual section on the `AbstractArray` interface.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.AbstractVector
+				"Base.AbstractVector":{
+					"prefix": "AbstractVector",
+					"body": "Base.AbstractVector{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nSupertype for one-dimensional arrays (or array-like types) with elements of type `T`.\nAlias for `AbstractArray{T,1}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.AbstractMatrix
+				"Base.AbstractMatrix":{
+					"prefix": "AbstractMatrix",
+					"body": "Base.AbstractMatrix{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nSupertype for two-dimensional arrays (or array-like types) with elements of type `T`.\nAlias for `AbstractArray{T,2}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.AbstractVecOrMat
+				"Base.AbstractVecOrMat":{
+					"prefix": "AbstractVecOrMat",
+					"body": "Base.AbstractVecOrMat{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nUnion type of `AbstractVector{T}` and `AbstractMatrix{T}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.Array
+				"Core.Array as Type":{
+					"prefix": "Array as Type",
+					"body": "Core.Array{ ${1:T}, ${2:N} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\n`N`-dimensional dense array with elements of type `T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.Array
+				"Core.Array as Method (undefined, given the dimension explicitly)":{
+					"prefix": "Array (undefined, given the dimension explicitly)",
+					"body": "Core.Array{ ${1:T}, ${2:N} }( Core.undef, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an uninitialized `N`-dimensional Array containing elements of type `T`.\n`N` can either be supplied explicitly, as in `Array{T,N}(undef, dims)`, or be determined by the length or number of `dims`. `dims` may be a tuple or a series of integer arguments corresponding to the lengths in each dimension.\nIf the rank `N` is supplied explicitly, then it must match the length or number of dims.\nSee undef.\n"
+				},
+	
+				"Core.Array as Method (undefined, determined the dimension by the input)":{
+					"prefix": "Array (undefined, determined the dimension by the input)",
+					"body": "Core.Array{ ${1:T} }( Core.undef, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an uninitialized `N`-dimensional Array containing elements of type `T`.\n`N` can either be supplied explicitly, as in `Array{T,N}(undef, dims)`, or be determined by the length or number of `dims`. `dims` may be a tuple or a series of integer arguments corresponding to the lengths in each dimension.\nIf the rank `N` is supplied explicitly, then it must match the length or number of dims.\nSee undef.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.Array-Tuple{Nothing,Any}
+				"Core.Array as Method (Nothing, given the dimension explicitly)":{
+					"prefix": "Array (Nothing, given the dimension explicitly)",
+					"body": "Core.Array{ ${1:T}, ${2:N} }( Core.nothing, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an `N`-dimensional Array containing elements of type `T`, initialized with `nothing` entries.\nElement type `T` must be able to hold these values, i.e. `Nothing <: T`.\n"
+				},
+	
+				"Core.Array as Method (Nothing, determined the dimension by the input)":{
+					"prefix": "Array (Nothing, determined the dimension by the input)",
+					"body": "Core.Array{ ${1:T} }( Core.nothing, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an `N`-dimensional Array containing elements of type `T`, initialized with `nothing` entries.\nElement type `T` must be able to hold these values, i.e. `Nothing <: T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.Array-Tuple{Missing,Any}
+				"Core.Array as Method (Missing, given the dimension explicitly)":{
+					"prefix": "Array (Missing, given the dimension explicitly)",
+					"body": "Core.Array{ ${1:T}, ${2:N} }( Base.missing, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an `N`-dimensional Array containing elements of type `T`, initialized with `missing` entries.\nElement type `T` must be able to hold these values, i.e. `Missing <: T`.\n"
+				},
+	
+				"Core.Array as Method (Missing, determined the dimension by the input)":{
+					"prefix": "Array (Missing, determined the dimension by the input)",
+					"body": "Core.Array{ ${1:T} }( Base.missing, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an `N`-dimensional Array containing elements of type `T`, initialized with `missing` entries.\nElement type `T` must be able to hold these values, i.e. `Missing <: T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.UndefInitializer
+				"Core.UndefInitializer":{
+					"prefix": "UndefInitializer",
+					"body": "Core.UndefInitializer()",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nSingleton type used in array initialization, indicating the array-constructor-caller would like an uninitialized array.\nSee also undef, an alias for `UndefInitializer()`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.undef
+				"Core.undef":{
+					"prefix": "undef",
+					"body": "Core.undef",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nAlias for `UndefInitializer()`, which constructs an instance of the singleton type `UndefInitializer`, used in array initialization to indicate the array-constructor-caller would like an uninitialized array.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Vector
+				"Base.Vector (Type)":{
+					"prefix": "Vector (Type)",
+					"body": "Base.Vector{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nOne-dimensional dense array with elements of type `T`, often used to represent a mathematical vector.\nAlias for `Array{T,1}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Vector-Tuple{UndefInitializer,Any}
+				"Base.Vector (Method, undefined)":{
+					"prefix": "Vector (Method, undefined)",
+					"body": "Base.Vector{ ${1:T} }( Core.undef, ${2:n} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an uninitialized `Vector{T}` of length `n`. See `undef`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Vector-Tuple{Nothing,Any}
+				"Base.Vector (Method, nothing)":{
+					"prefix": "Vector (Method, nothing)",
+					"body": "Base.Vector{ ${1:T} }( Core.nothing, ${2:n} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct a `Vector{T}` of length `n`, initialized with `nothing` entries.\nElement type `T` must be able to hold these values, i.e. Nothing <: `T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Vector-Tuple{Missing,Any}
+				"Base.Vector (Method, missing)":{
+					"prefix": "Vector (Method, missing)",
+					"body": "Base.Vector{ ${1:T} }( Base.missing, ${2:n} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct a `Vector{T}` of length `n`, initialized with `missing` entries.\nElement type `T` must be able to hold these values, i.e. Missing <: `T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Matrix
+				"Base.Matrix (Type)":{
+					"prefix": "Matrix (Type)",
+					"body": "Base.Matrix{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nTwo-dimensional dense array with elements of type `T`, often used to represent a mathematical matrix.\nAlias for `Array{T,2}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Matrix-Tuple{UndefInitializer,Any,Any}
+				"Base.Matrix (Method, undefined)":{
+					"prefix": "Matrix (Method, undefined)",
+					"body": "Base.Matrix{ ${1:T} }( Core.undef, ${2:m}, ${3:n} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an uninitialized `Matrix{T}` of size `m`*`n`.\nSee `undef`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Matrix-Tuple{Nothing,Any,Any}
+				"Base.Matrix (Method, nothing)":{
+					"prefix": "Matrix (Method, nothing)",
+					"body": "Base.Matrix{ ${1:T} }( Core.nothing, ${2:m}, ${3:n} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct a `Matrix{T}` of size `m`*`n`, initialized with `nothing` entries.\nElement type `T` must be able to hold these values,\ni.e. Nothing <: T.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Matrix-Tuple{Missing,Any,Any}
+				"Base.Matrix (Method, missing)":{
+					"prefix": "Matrix (Method, missing)",
+					"body": "Base.Matrix{ ${1:T} }( Base.missing, ${2:m}, ${3:n} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct a `Matrix{T}` of size `m`*`n`, initialized with `missing` entries.\nElement type `T` must be able to hold these values,\ni.e. Missing <: T.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.VecOrMat
+				"Base.VecOrMat":{
+					"prefix": "VecOrMat",
+					"body": "Base.VecOrMat{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nConstant\n\nUnion type of `Vector{T}` and `Matrix{T}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.DenseArray
+				"Core.DenseArray":{
+					"prefix": "DenseArray",
+					"body": "Core.DenseArray{ ${1:T}, ${2:N} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\n`N`-dimensional dense array with elements of type `T`.\nThe elements of a dense array are stored contiguously in memory.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.DenseVector
+				"Core.DenseVector":{
+					"prefix": "DenseVector",
+					"body": "Core.DenseVector{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nOne-dimensional `DenseArray` with elements of type `T`.\nAlias for` DenseArray{T,1}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Core.DenseMatrix
+				"Core.DenseMatrix":{
+					"prefix": "DenseMatrix",
+					"body": "Core.DenseMatrix{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nTwo-dimensional `DenseArray` with elements of type `T`.\nAlias for` DenseArray{T,2}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.DenseVecOrMat
+				"Base.DenseVecOrMat":{
+					"prefix": "DenseVecOrMat",
+					"body": "Base.DenseVecOrMat{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nUnion type of `DenseVector{T}` and `DenseMatrix{T}`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.StridedArray
+				"Base.StridedArray":{
+					"prefix": "StridedArray",
+					"body": "Base.StridedArray{ ${1:T}, ${2:N} }",
+					"description": "Base\nArrays\nConstructors and Types\nConstant\n\nAn `N` dimensional strided array with elements of type `T`.\nThese arrays follow the strided array interface.\nIf `A` is a StridedArray, then its elements are stored in memory with offsets, which may vary between dimensions but are constant within a dimension.\nFor example, `A` could have stride 2 in dimension 1, and stride 3 in dimension 2.\nIncrementing `A` along dimension d jumps in memory by [strides(A, d)] slots.\nStrided arrays are particularly important and useful because they can sometimes be passed directly as pointers to foreign language libraries like BLAS.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.StridedVector
+				"Base.StridedVector":{
+					"prefix": "StridedVector",
+					"body": "Base.StridedVector{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nConstant\n\nOne dimensional `StridedArray` with elements of type `T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.StridedMatrix
+				"Base.StridedMatrix":{
+					"prefix": "StridedMatrix",
+					"body": "Base.StridedMatrix{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nConstant\n\nTwo dimensional `StridedArray` with elements of type `T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.StridedVecOrMat
+				"Base.StridedVecOrMat":{
+					"prefix": "StridedVecOrMat",
+					"body": "Base.StridedVecOrMat{ ${1:T} }",
+					"description": "Base\nArrays\nConstructors and Types\nConstant\n\nUnion type of `StridedVector` and `StridedMatrix` with elements of type `T`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.getindex-Tuple{Type,Vararg{Any,N}%20where%20N}
+				"Base.getindex Tuple{Type,Vararg{Any,N} where N}":{
+					"prefix": "getindex Tuple{Type,Vararg{Any,N} where N}",
+					"body": "Base.getindex( ${1:Type}[ ${2:elemtns} ] )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct a 1-dimensional array of the specified type.\nThis is usually called with the syntax `Type[]`.\nElement values can be specified using `Type[a,b,c,...]`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.zeros
+				"Base.zeros":{
+					"prefix": "zeros",
+					"body": "Base.zeros( ${1:Type}, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nCreate an Array, with element type `T`, of all zeros with size specified by `dims`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.ones
+				"Base.ones":{
+					"prefix": "ones",
+					"body": "Base.ones( ${1:Type}, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nCreate an Array, with element type `T`, of all ones with size specified by `dims`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.BitArray
+				"Base.BitArray (Type)":{
+					"prefix": "BitArray (Type)",
+					"body": "Base.BitArray{ ${1:N} }",
+					"description": "Base\nArrays\nConstructors and Types\nType\n\nSpace-efficient `N`-dimensional boolean array, which stores one bit per boolean value.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.BitArray-Tuple{UndefInitializer,Vararg{Integer,N}%20where%20N}
+				"Base.BitArray (Method, Integer...)":{
+					"prefix": "BitArray (Method, Integer...)",
+					"body": "Base.BitArray( Core.undef, ${1:dims::Integer...} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an undef `BitArray` with the given dimensions.\nBehaves identically to the Array constructor.\nSee undef.\n"
+				},
+	
+				"Base.BitArray (Method, NTuple)":{
+					"prefix": "BitArray (Method, NTuple)",
+					"body": "Base.BitArray( Core.undef, ${1:dims::NTuple{N,Int}} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct an undef `BitArray` with the given dimensions.\nBehaves identically to the Array constructor.\nSee undef.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.BitArray-Tuple{Any}
+				"Base.BitArray (Method, iterable object)":{
+					"prefix": "BitArray (Method, iterable object)",
+					"body": "Base.BitArray( ${1:itr} )",
+					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct a `BitArray`  generated by the given iterable object.\nThe shape is inferred from the `itr` object.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.trues
+				"Base.trues using dimensions":{
+					"prefix": "trues",
+					"body": "Base.trues( ${1:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nCreate a `BitArray` with all values set to `true`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.falses
+				"Base.falses using dimensions":{
+					"prefix": "falses",
+					"body": "Base.falses( ${1:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nCreate a `BitArray` with all values set to `false`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.fill
+				"Base.fill using dimensions":{
+					"prefix": "fill",
+					"body": "Base.fill( ${1:x}, ${2:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nCreate an array filled with the value `x`.\nIf `x` is an object reference, all elements will refer to the same object.\n`fill(Foo(), dims)` will return an array filled with the result of evaluating `Foo()` once.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.fill!
+				"Base.fill! using dimensions":{
+					"prefix": "fill!",
+					"body": "Base.fill!( ${1:A}, ${2:x} )",
+					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nFill array `A` with the value `x`.\nIf `x` is an object reference, all elements will refer to the same object.\n`fill!(A, Foo())` will return `A` filled with the result of evaluating `Foo()` once.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.similar
+				"Base.similar":{
+					"prefix": "similar",
+					"body": "Base.similar( ${1:array}, ${2:element_type=eltype(array)}, ${3:dims} )",
+					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nCreate an uninitialized mutable array with the given element type and size, based upon the given source array.\nThe second and third arguments are both optional, defaulting to the given array's `eltype` and `size`.\nThe dimensions may be specified either as a single tuple argument or as a series of integer arguments.\n\nCustom `AbstractArray` subtypes may choose which specific array type is best-suited to return for the given element type and dimensionality. If they do not specialize this method, the default is an `Array{element_type}(undef, dims...)`."
+				},
+	
+			// Basic functions
+			// https://docs.julialang.org/en/v1/base/arrays/#Basic-functions-1
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.ndims
+				"Base.ndims":{
+					"prefix": "ndims",
+					"body": "Base.ndims( ${1:A::AbstractArray} )",
+					"description": "Base\nArrays\nBasic functions\nFunction\n\nReturn the number of dimensions of `A`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.size
+				"Base.size":{
+					"prefix": "size",
+					"body": "Base.size( ${1:A::AbstractArray} )",
+					"description": "Base\nArrays\nBasic functions\nFunction\n\nReturn the number of dimensions of `A`.\n\nNote that `size` may not be defined for arrays with non-standard indices, in which case `axes` may be useful.\n"
+				},
+	
+				"Base.size (with target dimension)":{
+					"prefix": "size (with target dimension)",
+					"body": "Base.size( ${1:A::AbstractArray}, ${2:dim} )",
+					"description": "Base\nArrays\nBasic functions\nFunction\n\nReturn the number of dimensions of `A`.\nOptionally you can specify a dimension to just get the length of that dimension.\n\nNote that `size` may not be defined for arrays with non-standard indices, in which case `axes` may be useful.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.axes-Tuple{Any}
+				"Base.axes":{
+					"prefix": "axes",
+					"body": "Base.axes( ${1:A::AbstractArray} )",
+					"description": "Base\nArrays\nBasic functions\nMethod\n\nReturn the tuple of valid indices for array `A`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.axes-Tuple{AbstractArray,Any}
+				"Base.axes (with target dimension)":{
+					"prefix": "axes (with target dimension)",
+					"body": "Base.axes( ${1:A::AbstractArray}, ${2:dim} )",
+					"description": "Base\nArrays\nBasic functions\nMethod\n\nReturn the valid range of indices for array `A` along dimension `d`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.length-Tuple{AbstractArray}
+				"Base.length (for Array)":{
+					"prefix": "length (for Array)",
+					"body": "Base.length( ${1:A::AbstractArray} )",
+					"description": "Base\nArrays\nBasic functions\nMethod\n\nReturn the number of elements in the array, defaults to `prod(size(A))`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.eachindex
+				"Base.eachindex":{
+					"prefix": "eachindex",
+					"body": "Base.eachindex( ${1:A...} )",
+					"description": "Base\nArrays\nBasic functions\nFunction\n\nCreate an iterable object for visiting each index of an `AbstractArray` `A` in an efficient manner.\nFor array types that have opted into fast linear indexing (like `Array`), this is simply the range `1:length(A)`.\nFor other array types, return a specialized Cartesian range to efficiently index into the array with indices specified for every dimension.\nFor other iterables, including strings and dictionaries, return an iterator object supporting arbitrary index types (e.g. unevenly spaced or non-integer indices).\n\nIf you supply more than one `AbstractArray` argument, `eachindex` will create an iterable object that is fast for all arguments (a `UnitRange` if all inputs have fast linear indexing, a `CartesianIndices` otherwise).\nIf the arrays have different sizes and/or dimensionalities, `eachindex` will return an iterable that spans the largest range along each dimension.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.IndexStyle
+				"Base.IndexStyle (For Array)":{
+					"prefix": "IndexStyle (For Array)",
+					"body": [
+						"# https://docs.julialang.org/en/v1/base/arrays/#Base.IndexStyle`",
+						"Base.IndexStyle( ${1:A} )",
+					],
+					"description": "Base\nArrays\nBasic functions\nType\n"
+				},
+	
+				"Base.IndexStyle (For Type of array)":{
+					"prefix": "IndexStyle (For Type of array)",
+					"body": [
+						"# https://docs.julialang.org/en/v1/base/arrays/#Base.IndexStyle`",
+						"Base.IndexStyle( Core.typeof( ${1:A} ) )",
+					],
+					"description": "Base\nArrays\nBasic functions\nType\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.IndexLinear
+				"Base.IndexLinear":{
+					"prefix": "IndexLinear",
+					"body": [
+						"# https://docs.julialang.org/en/v1/base/arrays/#Base.IndexLinear",
+						"Base.IndexLinear()",
+					],
+					"description": "Base\nArrays\nBasic functions\nType\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.IndexCartesian
+				"Base.IndexCartesian":{
+					"prefix": "IndexCartesian",
+					"body": [
+						"# https://docs.julialang.org/en/v1/base/arrays/#Base.IndexCartesian",
+						"Base.IndexCartesian()",
+					],
+					"description": "Base\nArrays\nBasic functions\nType\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.conj!
+				"Base.conj!":{
+					"prefix": "conj!",
+					"body": "Base.conj!( ${1:A} )",
+					"description": "Base\nArrays\nBasic functions\nFunction\n\nTransform an array to its complex conjugate in-place.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.stride
+				"Base.stride":{
+					"prefix": "stride",
+					"body": "Base.stride( ${1:A}, ${2:k::Integer} )",
+					"description": "Base\nArrays\nBasic functions\nFunction\n\nReturn the distance in memory (in number of elements) between adjacent elements in dimension `k`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.strides
+				"Base.strides":{
+					"prefix": "strides",
+					"body": "Base.strides( ${1:A} )",
+					"description": "Base\nArrays\nBasic functions\nFunction\n\nReturn a tuple of the memory strides in each dimension.\n"
+				},
+	
+			// Broadcast and vectorization
+			// https://docs.julialang.org/en/v1/base/arrays/#Broadcast-and-vectorization-1
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.broadcast
+				"Base.Broadcast.broadcast":{
+					"prefix": "broadcast",
+					"body": "Base.Broadcast.broadcast( ${1:f::Function}, ${2:As} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nFunction\n\nBroadcast the function `f` over the arrays, tuples, collections, `Ref`s and/or scalars `As`.\n\nBroadcasting applies the function `f` over the elements of the container arguments and the scalars themselves in `As`.\nSingleton and missing dimensions are expanded to match the extents of the other arguments by virtually repeating the value.\nBy default, only a limited number of types are considered scalars, including `Numbers`, `Strings`, `Symbols`, `Types`, `Function`s and some common singletons like `missing` and `nothing`.\nAll other arguments are iterated over or indexed into elementwise.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.broadcast!
+				"Base.Broadcast.broadcast!":{
+					"prefix": "broadcast!",
+					"body": "Base.Broadcast.broadcast!( ${1:f::Function}, ${2:dest}, ${3:As...} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nFunction\n\nLike `broadcast`, but store the result of `broadcast(f, As...)` in the `dest` array.\nNote that `dest` is only used to store the result, and does not supply arguments to f unless it is also listed in the `As`, as in `broadcast!(f, A, A, B)` to perform `A[:] = broadcast(f, A, B)`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.@__dot__
+				"Base.Broadcast.@__dot__":{
+					"prefix": "@__dot__",
+					"body": "Base.Broadcast.@. ${1:expr}",
+					"description": "Base\nArrays\nBroadcast and vectorization\nMacro\n\nConvert every function call or operator in expr into a \"dot call\" (e.g. convert `f(x)` to `f.(x)`), and convert every assignment in expr to a \"dot assignment\" (e.g. convert `+=` to `.+=`).\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.BroadcastStyle
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.broadcast_axes
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.AbstractArrayStyle
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.ArrayStyle
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.DefaultArrayStyle
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Broadcast.broadcastable
+	
+			// Indexing and assignment
+			// https://docs.julialang.org/en/v1/base/arrays/#Indexing-and-assignment-1
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.getindex-Tuple{AbstractArray,Vararg{Any,N}%20where%20N}
+				"Base.getindex Tuple{AbstractArray,Vararg{Any,N} where N}":{
+					"prefix": "getindex Tuple{AbstractArray,Vararg{Any,N} where N}",
+					"body": "Base.getindex( ${1:A}, ${2:inds...} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nMethod\n\nReturn a subset of array `A` as specified by `inds`, where each ind may be an `Int`, an `AbstractRange`, or a `Vector`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.setindex!-Tuple{AbstractArray,Any,Vararg{Any,N}%20where%20N}
+				"Base.setindex! Tuple{AbstractArray,Any,Vararg{Any,N} where N}":{
+					"prefix": "setindex! Tuple{AbstractArray,Any,Vararg{Any,N} where N}",
+					"body": "Base.setindex!( ${1:A}, ${2:X}, ${3:inds...} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nMethod\n\nStore values from array `X` within some subset of `A` as specified by `inds`.\nThe syntax `A[inds...] = X` is equivalent to `setindex!(A, X, inds...)`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.copyto!-Tuple{AbstractArray,CartesianIndices,AbstractArray,CartesianIndices}
+				"Base.copyto! Tuple{AbstractArray,Any,Vararg{Any,N} where N}":{
+					"prefix": "copyto! Tuple{AbstractArray,Any,Vararg{Any,N} where N}",
+					"body": "Base.copyto!( ${1:dest}, ${2:Rdest::CartesianIndices}, ${3:src}, ${4:Rsrc::CartesianIndices} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nMethod\n\nCopy the block of `src` in the range of `Rsrc` to the block of dest in the range of `Rdest`.\nThe sizes of the two regions must match.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.isassigned
+				"Base.isassigned":{
+					"prefix": "isassigned",
+					"body": "Base.isassigned( ${1:array}, ${2:i} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nFunction\n\nTest whether the given array has a value associated with index `i`.\nReturn `false` if the index is out of bounds, or has an undefined reference.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Colon
+				"Base.Colon":{
+					"prefix": "Colon",
+					"body": ":",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nColons (:) are used to signify indexing entire objects or dimensions at once.\n\nVery few operations are defined on Colons directly; instead they are converted by `to_indices` to an internal vector type (`Base.Slice`) to represent the collection of indices they span before being used.\n\nThe singleton instance of `Colon` is also a function used to construct ranges.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.IteratorsMD.CartesianIndex
+				"Base.IteratorsMD.CartesianIndex by indexes":{
+					"prefix": "CartesianIndex by indexes",
+					"body": "Base.IteratorsMD.CartesianIndex( ${1:i, j, k...} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nCreate a multidimensional index `I`, which can be used for indexing a multidimensional array `A`.\nIn particular, `A[I]` is equivalent to `A[i,j,k...]`.\nOne can freely mix integer and CartesianIndex indices; for example, `A[Ipre, i, Ipost]` (where `Ipre` and `Ipost` are `CartesianIndex` indices and `i` is an `Int`) can be a useful expression when writing algorithms that work along a single dimension of an array of arbitrary dimensionality.\n\nA `CartesianIndex` is sometimes produced by `eachindex`, and always when iterating with an explicit `CartesianIndices`.\n"
+				},
+	
+				"Base.IteratorsMD.CartesianIndex by dimension":{
+					"prefix": "CartesianIndex by dimension",
+					"body": "Base.IteratorsMD.CartesianIndex( ${1:(i, j, k...)} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nCreate a multidimensional index `I`, which can be used for indexing a multidimensional array `A`.\nIn particular, `A[I]` is equivalent to `A[i,j,k...]`.\nOne can freely mix integer and CartesianIndex indices; for example, `A[Ipre, i, Ipost]` (where `Ipre` and `Ipost` are `CartesianIndex` indices and `i` is an `Int`) can be a useful expression when writing algorithms that work along a single dimension of an array of arbitrary dimensionality.\n\nA `CartesianIndex` is sometimes produced by `eachindex`, and always when iterating with an explicit `CartesianIndices`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.IteratorsMD.CartesianIndices
+				"Base.IteratorsMD.CartesianIndices about dims":{
+					"prefix": "CartesianIndices about dims",
+					"body": "Base.IteratorsMD.CartesianIndices( ${1:sz::Dims} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nDefine a region `R` spanning a multidimensional rectangular range of integer indices.\nThese are most commonly encountered in the context of iteration, where `for I in R ... end` will return `CartesianIndex` indices `I` equivalent to the nested loops.\nConsequently these can be useful for writing algorithms that work in arbitrary dimensions.\n"
+				},
+	
+				"Base.IteratorsMD.CartesianIndices about start and stop":{
+					"prefix": "CartesianIndices about start and stop",
+					"body": "Base.IteratorsMD.CartesianIndices( ( ${1:istart::istop}, ${2:jstart::jstop}, ${0:...} ) )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nDefine a region `R` spanning a multidimensional rectangular range of integer indices.\nThese are most commonly encountered in the context of iteration, where `for I in R ... end` will return `CartesianIndex` indices `I` equivalent to the nested loops.\nConsequently these can be useful for writing algorithms that work in arbitrary dimensions.\n"
+				},
+	
+				"Base.IteratorsMD.CartesianIndices about AbstractArray":{
+					"prefix": "CartesianIndices about AbstractArray",
+					"body": "Base.IteratorsMD.CartesianIndices( ${1:A::AbstractArray} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nDefine a region `R` spanning a multidimensional rectangular range of integer indices.\nThese are most commonly encountered in the context of iteration, where `for I in R ... end` will return `CartesianIndex` indices `I` equivalent to the nested loops.\nConsequently these can be useful for writing algorithms that work in arbitrary dimensions.\nAs a convenience, constructing a `CartesianIndices` from an array makes a range of its indices.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.Dims
+				"Base.Dims":{
+					"prefix": "Dims",
+					"body": "Base.Dims{ ${1:N} }",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nAn `NTuple` of `N` `Int`s used to represent the dimensions of an `AbstractArray`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.LinearIndices
+				"Base.LinearIndices for AbstractArray":{
+					"prefix": "LinearIndices for AbstractArray",
+					"body": "Base.LinearIndices( ${1:A::AbstractArray} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nReturn a `LinearIndices` array with the same shape and `axes` as `A`, holding the linear index of each entry in `A`.\nIndexing this array with cartesian indices allows mapping them to linear indices.\n\nFor arrays with conventional indexing (indices start at 1), or any multidimensional array, linear indices range from 1 to `length(A)`.\nHowever, for `AbstractVectors` linear indices are `axes(A, 1)`, and therefore do not start at 1 for vectors with unconventional indexing.\n\nCalling this function is the \"safe\" way to write algorithms that exploit linear indexing.\n"
+				},
+	
+				"Base.LinearIndices for CartesianIndices":{
+					"prefix": "LinearIndices for CartesianIndices",
+					"body": "Base.LinearIndices( ${1:inds::CartesianIndices} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nReturn a `LinearIndices` array with the same shape and `axes` as `A`, holding the linear index of each entry in `A`.\nIndexing this array with cartesian indices allows mapping them to linear indices.\n\nFor arrays with conventional indexing (indices start at 1), or any multidimensional array, linear indices range from 1 to `length(A)`.\nHowever, for `AbstractVectors` linear indices are `axes(A, 1)`, and therefore do not start at 1 for vectors with unconventional indexing.\n\nCalling this function is the \"safe\" way to write algorithms that exploit linear indexing.\n"
+				},
+	
+				"Base.LinearIndices for Dims":{
+					"prefix": "LinearIndices for Dims",
+					"body": "Base.LinearIndices( ${1:sz::Dims} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nReturn a `LinearIndices` array with the same shape and `axes` as `A`, holding the linear index of each entry in `A`.\nIndexing this array with cartesian indices allows mapping them to linear indices.\n\nFor arrays with conventional indexing (indices start at 1), or any multidimensional array, linear indices range from 1 to `length(A)`.\nHowever, for `AbstractVectors` linear indices are `axes(A, 1)`, and therefore do not start at 1 for vectors with unconventional indexing.\n\nCalling this function is the \"safe\" way to write algorithms that exploit linear indexing.\n"
+				},
+	
+				"Base.LinearIndices about start and stop":{
+					"prefix": "LinearIndices about start and stop",
+					"body": "Base.LinearIndices( ( ${1:istart::istop}, ${2:jstart::jstop}, ${0:...} ) )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nType\n\nReturn a `LinearIndices` array with the same shape and `axes` as `A`, holding the linear index of each entry in `A`.\nIndexing this array with cartesian indices allows mapping them to linear indices.\n\nFor arrays with conventional indexing (indices start at 1), or any multidimensional array, linear indices range from 1 to `length(A)`.\nHowever, for `AbstractVectors` linear indices are `axes(A, 1)`, and therefore do not start at 1 for vectors with unconventional indexing.\n\nCalling this function is the \"safe\" way to write algorithms that exploit linear indexing.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.to_indices
+				"Base.to_indices":{
+					"prefix": "to_indices",
+					"body": "Base.to_indices( ${1:A}, ${2:I::Tuple} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nFunction\n\nConvert the tuple `I` to a tuple of indices for use in indexing into array `A`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.checkbounds
+				"Base.checkbounds not returns error":{
+					"prefix": "checkbounds not returns error",
+					"body": "Base.checkbounds( Bool, ${1:A}, ${2:I} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nFunction\n\nReturn `true` if the specified indices `I` are in bounds for the given array `A`.\nSubtypes of `AbstractArray` should specialize this method if they need to provide custom bounds checking behaviors; however, in many cases one can rely on `A`'s indices and `checkindex`.\n"
+				},
+	
+				"Base.checkbounds returns error":{
+					"prefix": "checkbounds returns error",
+					"body": "Base.checkbounds( ${1:A}, ${2:I} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nFunction\n\nThrow an error if the specified indices `I` are not in bounds for the given array `A`.\n"
+				},
+	
+				// https://docs.julialang.org/en/v1/base/arrays/#Base.checkindex
+				"Base.checkindex":{
+					"prefix": "checkindex",
+					"body": "Base.checkindex( Bool, ${1:inds::AbstractUnitRange}, ${2:index} )",
+					"description": "Base\nArrays\nBroadcast and vectorization\nFunction\n\nReturn `true` if the given index is within the bounds of `inds`.\nCustom types that would like to behave as indices for all arrays can extend this method in order to provide a specialized bounds checking implementation.\n"
+				},
+	
+			// Views [SubArrays and other view types]
+			// https://docs.julialang.org/en/v1/base/arrays/#Views-(SubArrays-and-other-view-types)-1
+	
+			// Concatenation and permutation
+			// https://docs.julialang.org/en/v1/base/arrays/#Concatenation-and-permutation-1
+	
+			// Array functions
+			// https://docs.julialang.org/en/v1/base/arrays/#Array-functions-1
+	
+			// Combinatorics
+			// https://docs.julialang.org/en/v1/base/arrays/#Combinatorics-1
+	
+	
+		// Constants
+		// https://docs.julialang.org/en/v1/base/constants/
+	
+			"Core.nothing":{// https://docs.julialang.org/en/v1/base/constants/#Core.nothing
+				"prefix": "nothing",
+				"body": "Core.nothing",
+				"description": "Base\nConstants\nConstant\n\nThe singleton instance of type Nothing, used by convention when there is no value to return (as in a C void function) or when a variable or field holds no value.\n"
+			},
+	
+		// Filesystem
+		// https://docs.julialang.org/en/v1/base/file/
+
+			// https://docs.julialang.org/en/v1/base/file/#Base.Filesystem.joinpath
+				"Base.Filesystem.joinpath":{
+					"prefix": "joinpath",
+					"body": "Base.Filesystem.joinpath( ${1:parts...} )",
+					"description": "Base\nFilesystem\nFunction\n\nJoin path components into a full path.\nIf some argument is an absolute path or (on Windows) has a drive specification that doesn't match the drive computed for the join of the preceding paths, then prior components are dropped.\n"
+				},
+	
+		// I/O and Network
+		// https://docs.julialang.org/en/v1/base/io-network/
+	
+			// General I/O
+			// https://docs.julialang.org/en/v1/base/io-network/
+	
+			// Text I/O
+			// https://docs.julialang.org/en/v1/base/io-network/#Text-I/O-1
+
+	// AbstractFFTs.jl //
+
+		// API //
+	
+			// https://juliamath.github.io/AbstractFFTs.jl/stable/api.html#AbstractFFTs.fft
+			"AbstractFFTs.fft (without target dim)":{
+				"prefix": "fft (without target dim)",
+				"body": "AbstractFFTs.fft( ${1:A} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nPerforms a multidimensional FFT of the array `A`.\nThe optional dims argument specifies an iterable subset of dimensions (e.g. an integer, range, tuple, or array) to transform along.\nMost efficient if the size of `A` along the transformed dimensions is a product of small primes; see Base.nextprod.\nSee also plan_fft() for even greater efficiency.\n"
+			},
+	
+			"AbstractFFTs.fft (with target dim)":{
+				"prefix": "fft (with target dim)",
+				"body": "AbstractFFTs.fft( ${1:A}, ${2:dim} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nPerforms a multidimensional FFT of the array `A`.\nThe optional dims argument specifies an iterable subset of dimensions (e.g. an integer, range, tuple, or array) to transform along.\nMost efficient if the size of `A` along the transformed dimensions is a product of small primes; see Base.nextprod.\nSee also plan_fft() for even greater efficiency.\n"
+			},
+
+			// https://juliamath.github.io/AbstractFFTs.jl/stable/api.html#AbstractFFTs.fft!
+			"AbstractFFTs.fft! (without target dim)":{
+				"prefix": "fft! (without target dim)",
+				"body": "AbstractFFTs.fft!( ${1:A} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSame as `AbstractFFTs.fft`, but operates in-place on `A`, which must be an array of complex floating-point numbers.\n"
+			},
+	
+			"AbstractFFTs.fft! (with target dim)":{
+				"prefix": "fft! (with target dim)",
+				"body": "AbstractFFTs.fft!( ${1:A}, ${2:dim} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSame as `AbstractFFTs.fft`, but operates in-place on `A`, which must be an array of complex floating-point numbers.\n"
+			},
+
+			// https://juliamath.github.io/AbstractFFTs.jl/stable/api.html#AbstractFFTs.ifft
+			"AbstractFFTs.ifft (without target dim)":{
+				"prefix": "ifft (without target dim)",
+				"body": "AbstractFFTs.ifft( ${1:A} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nMultidimensional inverse FFT.\nA multidimensional inverse FFT simply performs this operation along each transformed dimension of `A`.\n"
+			},
+	
+			"AbstractFFTs.ifft (with target dim)":{
+				"prefix": "ifft (with target dim)",
+				"body": "AbstractFFTs.ifft( ${1:A}, ${2:dim} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nMultidimensional inverse FFT.\nA multidimensional inverse FFT simply performs this operation along each transformed dimension of `A`.\n"
+			},
+
+			// https://juliamath.github.io/AbstractFFTs.jl/stable/api.html#AbstractFFTs.ifft!
+			"AbstractFFTs.ifft! (without target dim)":{
+				"prefix": "ifft! (without target dim)",
+				"body": "AbstractFFTs.ifft!( ${1:A} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSame as `AbstractFFTs.ifft`, but operates in-place on `A`.\n"
+			},
+	
+			"AbstractFFTs.ifft! (with target dim)":{
+				"prefix": "ifft! (with target dim)",
+				"body": "AbstractFFTs.ifft!( ${1:A}, ${2:dim} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSame as `AbstractFFTs.ifft`, but operates in-place on `A`.\n"
+			},
+
+			// https://juliamath.github.io/AbstractFFTs.jl/stable/api.html#AbstractFFTs.bfft
+			"AbstractFFTs.bfft (without target dim)":{
+				"prefix": "bfft (without target dim)",
+				"body": "AbstractFFTs.bfft( ${1:A} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSimilar to `AbstractFFTs.ifft`, but computes an unnormalized inverse (backward) transform, which must be divided by the product of the sizes of the transformed dimensions in order to obtain the inverse.\n(This is slightly more efficient than ifft because it omits a scaling step, which in some applications can be combined with other computational steps elsewhere.)\n"
+			},
+	
+			"AbstractFFTs.bfft (with target dim)":{
+				"prefix": "bfft (with target dim)",
+				"body": "AbstractFFTs.bfft( ${1:A}, ${2:dim} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSimilar to `AbstractFFTs.ifft`, but computes an unnormalized inverse (backward) transform, which must be divided by the product of the sizes of the transformed dimensions in order to obtain the inverse.\n(This is slightly more efficient than ifft because it omits a scaling step, which in some applications can be combined with other computational steps elsewhere.)\n"
+			},
+
+			// https://juliamath.github.io/AbstractFFTs.jl/stable/api.html#AbstractFFTs.bfft!
+			"AbstractFFTs.bfft! (without target dim)":{
+				"prefix": "bfft! (without target dim)",
+				"body": "AbstractFFTs.bfft!( ${1:A} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSame as bfft, but operates in-place on `A`.\n"
+			},
+	
+			"AbstractFFTs.bfft! (with target dim)":{
+				"prefix": "bfft! (with target dim)",
+				"body": "AbstractFFTs.bfft!( ${1:A}, ${2:dim} )",
+				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSame as bfft, but operates in-place on `A`.\n"
+			},
+
+}

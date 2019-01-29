@@ -12,6 +12,24 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"module: IEEE_ARITHMETIC":{
+		"prefix": "module ieee_arithmetic",
+		"body": "use, intrinsic :: ieee_arithmetic",
+		"description": "module which provides support for exceptions and IEEE arithmetic\nFortran 2003 and later\n"
+	},
+
+	"module: IEEE_EXCEPTIONS":{
+		"prefix": "module ieee_exceptions",
+		"body": "use, intrinsic :: ieee_exceptions",
+		"description": "module which provides support for exceptions and IEEE arithmetic\nFortran 2003 and later\n"
+	},
+
+	"module: IEEE_FEATURES":{
+		"prefix": "module ieee_features",
+		"body": "use, intrinsic :: ieee_features",
+		"description": "module which provides support for exceptions and IEEE arithmetic\nFortran 2003 and later\n"
+	},
+
 	"module: ISO_FORTRAN_ENV":{
 		"prefix": "module iso_fortran_env",
 		"body": "use, intrinsic :: iso_fortran_env",
@@ -111,85 +129,97 @@
 	// private comment //
 	"private comments: arguments for this <function>":{
 		"prefix": "comment arguments",
-		"body": "! arguments for this <function>",
+		"body": "$LINE_COMMENT arguments for this <function>",
 		"description": "private comments\n"
 	},
 
 	"private comments: arguments for this <subroutine>":{
 		"prefix": "comment arguments",
-		"body": "! arguments for this <subroutine>",
+		"body": "$LINE_COMMENT arguments for this <subroutine>",
 		"description": "private comments\n"
 	},
 
 	"private comments: constants for this <function>":{
 		"prefix": "comment constants",
-		"body": "! constants for this <function>",
+		"body": "$LINE_COMMENT constants for this <function>",
 		"description": "private comments\n"
 	},
 
 	"private comments: constants for this <module>":{
 		"prefix": "comment constants",
-		"body": "! constants for this <module>",
+		"body": "$LINE_COMMENT constants for this <module>",
 		"description": "private comments\n"
 	},
 
 	"private comments: constants for this <program>":{
 		"prefix": "comment constants",
-		"body": "! constants for this <program>",
+		"body": "$LINE_COMMENT constants for this <program>",
 		"description": "private comments\n"
 	},
 
 	"private comments: constants for this <subroutine>":{
 		"prefix": "comment constants",
-		"body": "! constants for this <subroutine>",
+		"body": "$LINE_COMMENT constants for this <subroutine>",
 		"description": "private comments\n"
 	},
 
 	"private comments: contains":{
 		"prefix": "comment contains",
-		"body": "! contained <subroutine>s and <function>s are below\ncontains",
+		"body": "$LINE_COMMENT contained <subroutine>s and <function>s are below\ncontains",
 		"description": "private comments\nbefore `contains`\n"
 	},
 
 	"private comments: implicit none":{
 		"prefix": "comment implicit none",
-		"body": "! require all variables to be explicitly declared\nimplicit none",
+		"body": "$LINE_COMMENT require all variables to be explicitly declared\nimplicit none",
 		"description": "private comments\nbefore `implicit none`\n"
+	},
+
+	"private comments: <interface>s for this <program>":{
+		"prefix": "comment interface",
+		"body": "$LINE_COMMENT <interface>s for this <program>",
+		"description": "private comments\n"
+	},
+
+	"private comments: <interface>s for this <module>":{
+		"prefix": "comment interface",
+		"body": "$LINE_COMMENT <interface>s for this <module>",
+		"description": "private comments\n"
 	},
 
 	"private comments: <module>s to import":{
 		"prefix": "comment module",
-		"body": "! <module>s to import",
+		"body": "$LINE_COMMENT <module>s to import",
 		"description": "private comments\nbefore `USE ...`\n"
 	},
 
 	"private comments: variables for this <function>":{
 		"prefix": "comment variables",
-		"body": "! variables for this <function>",
+		"body": "$LINE_COMMENT variables for this <function>",
 		"description": "private comments\n"
 	},
 
 	"private comments: return value of this <function>":{
 		"prefix": "comment return value",
-		"body": "! return value of this <function>",
+		"body": "$LINE_COMMENT return value of this <function>",
 		"description": "private comments\n"
 	},
 
 	"private comments: <type>s for this <program>":{
 		"prefix": "comment type",
-		"body": "! <type>s for this <program>",
+		"body": "$LINE_COMMENT <type>s for this <program>",
 		"description": "private comments\n"
 	},
 
 	"private comments: variables for this <program>":{
 		"prefix": "comment variables",
-		"body": "! variables for this <program>",
+		"body": "$LINE_COMMENT variables for this <program>",
 		"description": "private comments\n"
 	},
 
 	"private comments: variables for this <subroutine>":{
 		"prefix": "comment variables",
-		"body": "! variables for this <subroutine>",
+		"body": "$LINE_COMMENT variables for this <subroutine>",
 		"description": "private comments\n"
 	},
 

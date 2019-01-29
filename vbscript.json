@@ -25,6 +25,14 @@
 			"description": "Function\n指定された式をバリアント型 (内部処理形式が倍精度浮動小数点数型 (Double) の Variant) に変換して返します。\n"
 		},
 
+		// CInt Function
+		// https://msdn.microsoft.com/ja-jp/library/cc410210.aspx
+		"Function CInt ":{
+			"prefix": "CInt",
+			"body": "CInt( ${0:expression} )",
+			"description": "Function\n指定された式をバリアント型 (内部処理形式が整数型 (Integer) の Variant) に変換して返します。\n"
+		},
+
 		// CreateObject Function
 		// https://msdn.microsoft.com/ja-jp/library/cc410215.aspx
 		"CreateObject Function Simple":{
