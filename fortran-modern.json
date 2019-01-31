@@ -126,6 +126,87 @@
 			"body": "real( kind= REAL128 )${1:, attributes} :: $0",
 		},
 
+	/* OpenMP */
+	"OpenMP: use omp_lib":{
+		"prefix": "module omp_lib",
+		"body": "$LINE_COMMENT$ use omp_lib$LINE_COMMENT use OpenMP",
+		"description": "[OpenMP]\n"
+	},
+
+	"OpenMP: omp_num_threads":{
+		"prefix": "omp_num_threads",
+		"body": "omp_num_threads()",
+		"description": "[OpenMP]\n"
+	},
+
+	"OpenMP: do":{
+		"prefix": "do",
+		"body": [
+			"$LINE_COMMENT$ omp do",
+			"\t$0",
+			"$LINE_COMMENT$ omp end do",
+		],
+		"description": "[OpenMP]\n"
+	},
+
+	"OpenMP: parallel":{
+		"prefix": "parallel",
+		"body": [
+			"$LINE_COMMENT$ omp parallel $1",
+			"\t$0",
+			"$LINE_COMMENT$ omp end parallel",
+		],
+		"description": "[OpenMP]\n"
+	},
+
+	"OpenMP: shared":{
+		"prefix": "shared",
+		"body": "shared( ${1:list} )",
+		"description": "[OpenMP]\nlist で示される変数が共有される事を示します。\nすべての thread で同じデータが共有されます。\n"
+	},
+
+	"OpenMP: private":{
+		"prefix": "private",
+		"body": "private( ${1:list} )",
+		"description": "[OpenMP]\nlist で示される変数が thread 毎に用意されることを示します。\nこの thread 毎に用意される変数は、構文開始時に（もともとの変数値に関わらず）全く新たに未定義の状態で作成されます。\n"
+	},
+
+	"OpenMP: firstprivate":{
+		"prefix": "firstprivate",
+		"body": "firstprivate( ${1:list} )",
+		"description": "[OpenMP]\nlist で示される変数が thread 毎に用意されることを示します。\nこの thread 毎に用意される変数は、 private の場合と異なり、構文開始時にもともとの変数値で初期化されます。\n"
+	},
+
+	"OpenMP: default":{
+		"prefix": "default",
+		"body": "default( ${1:private|firstprivate|shared|none} )",
+		"description": "[OpenMP]\nlist で示される変数が thread 毎に用意されることを示します。\n"
+	},
+
+	"OpenMP: default: private":{
+		"prefix": "default",
+		"body": "default( private )",
+		"description": "[OpenMP]\nデータ共有属性の指定を行わなかった変数の default の属性を指定します。\nprivate を指定した場合、この thread 毎に用意される変数は、構文開始時に（もともとの変数値に関わらず）全く新たに未定義の状態で作成されます。\n"
+	},
+
+	"OpenMP: default: firstprivate":{
+		"prefix": "default",
+		"body": "default( firstprivate )",
+		"description": "[OpenMP]\nデータ共有属性の指定を行わなかった変数の default の属性を指定します。\nfirstprivate を指定した場合、この thread 毎に用意される変数は、 private の場合と異なり、構文開始時にもともとの変数値で初期化されます。\n"
+	},
+
+	"OpenMP: default: shared":{
+		"prefix": "default",
+		"body": "default( shared )",
+		"description": "[OpenMP]\nデータ共有属性の指定を行わなかった変数の default の属性を指定します。\nshared を指定した場合、すべての thread で同じデータが共有されます。\n"
+	},
+
+	"OpenMP: default: none":{
+		"prefix": "default",
+		"body": "default( none )",
+		"description": "[OpenMP]\nデータ共有属性の指定を行わなかった変数の default の属性を指定します。\nnone を指定した場合、構文内で使われるすべての変数のデータ共有属性を明示的に指定する必要があります。\n"
+	},
+
 	// private comment //
 	"private comments: arguments for this <function>":{
 		"prefix": "comment arguments",
@@ -223,4 +304,10 @@
 		"description": "private comments\n"
 	},
 
+	// others //
+	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{
+		"prefix": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE",
+		"body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
+		"description": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE"
+	},
 }

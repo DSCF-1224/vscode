@@ -15,15 +15,22 @@
 	}
 */
 
+/* command : pwd */
+
+	"command: pwd":{
+		"prefix": "pwd",
+		"body": "pwd",
+	},
+
 /* set border */
 
 	"set border: all":{
 		"prefix": "border",
 		"body": [
-			"set border # {<integer>}",
-			"set border # {front | back | behind}",
-			"set border # {linewidth | lw <line_width>}",
-			"set border # {{linestyle | ls <line_style>} | {linetype | lt <line_type>}}",
+			"set border $LINE_COMMENT {<integer>}",
+			"set border $LINE_COMMENT {front | back | behind}",
+			"set border $LINE_COMMENT {linewidth | lw <line_width>}",
+			"set border $LINE_COMMENT {{linestyle | ls <line_style>} | {linetype | lt <line_type>}}",
 		],
 		"description": "set border\nall options\nVersion 5.0 patchlevel 6\n"
 	},
@@ -69,7 +76,7 @@
 
 	"set format":{
 		"prefix": "format",
-		"body": "set format ${1:<axes>} ${2:\"<format-string>\"} ${3:{numeric|timedate|geographic}} # <axes> \"<format-string>\" {numeric|timedate|geographic}",
+		"body": "set format ${1:<axes>} ${2:\"<format-string>\"} ${3:{numeric|timedate|geographic}} $LINE_COMMENT <axes> \"<format-string>\" {numeric|timedate|geographic}",
 		"description": "軸の刻み書式 (format)\nVersion 5.0 patchlevel 6\n"
 	},
 
@@ -84,40 +91,93 @@
 	"set key: all":{
 		"prefix": "key",
 		"body": [
-			"set key # {on|off} {default}",
-			"set key # { {inside|outside} | {lmargin|rmargin|tmargin|bmargin} | {at <position>} }",
-			"set key # {left|right|center} {top|bottom|center}",
-			"set key # {vertical|horizontal} {Left|Right}",
-			"set key # {noopaque|opaque}",
-			"set key # {noreverse|reverse} {noinvert|invert}",
-			"set key # {samplen <sample_length>} {spacing <vertical_spacing>}",
-			"set key # {width <width_increment>} {height <height_increment>}",
-			"set key # {noautotitle|autotitle {columnheader}}",
-			"set key # {title \"<text>\"} {noenhanced|enhanced}",
-			"set key # {font \"<face>,<size>\"} {textcolor <colorspec>}",
-			"set key # {nobox|box {linestyle <style>|linetype <type>|linewidth <width>} }",
-			"set key # {maxcols {<max no. of columns> | auto}}",
-			"set key # {maxrows {<max no. of rows> | auto}}",
+			"set key $LINE_COMMENT {on|off} {default}",
+			"set key $LINE_COMMENT { {inside|outside} | {lmargin|rmargin|tmargin|bmargin} | {at <position>} }",
+			"set key $LINE_COMMENT {left|right|center} {top|bottom|center}",
+			"set key $LINE_COMMENT {vertical|horizontal} {Left|Right}",
+			"set key $LINE_COMMENT {noopaque|opaque}",
+			"set key $LINE_COMMENT {noreverse|reverse} {noinvert|invert}",
+			"set key $LINE_COMMENT {samplen <sample_length>} {spacing <vertical_spacing>}",
+			"set key $LINE_COMMENT {width <width_increment>} {height <height_increment>}",
+			"set key $LINE_COMMENT {noautotitle|autotitle {columnheader}}",
+			"set key $LINE_COMMENT {title \"<text>\"} {noenhanced|enhanced}",
+			"set key $LINE_COMMENT {font \"<face>,<size>\"} {textcolor <colorspec>}",
+			"set key $LINE_COMMENT {nobox|box {linestyle <style>|linetype <type>|linewidth <width>} }",
+			"set key $LINE_COMMENT {maxcols {<max no. of columns> | auto}}",
+			"set key $LINE_COMMENT {maxrows {<max no. of rows> | auto}}",
 		],
 		"description": "凡例 (key)\nVersion 5.0 patchlevel 6\n"
 	},
 
 /* set terminal */
 
+	/* set terminal cairolatex */
+
+		"set term: cairolatex":{
+			"prefix": "term cairolatex",
+			"body": [
+				"set terminal cairolatex $LINE_COMMENT {eps|pdf}",
+				"set terminal cairolatex $LINE_COMMENT {standalone|input}",
+				"set terminal cairolatex $LINE_COMMENT {blacktext|colortext|colourtext}",
+				"set terminal cairolatex $LINE_COMMENT {header <header>|noheader}",
+				"set terminal cairolatex $LINE_COMMENT {mono|color}",
+				"set terminal cairolatex $LINE_COMMENT {notransparent|transparent} {nocrop|crop} {background <rgbcolor>}",
+				"set terminal cairolatex $LINE_COMMENT {font <font>} {fontscale <scale>}",
+				"set terminal cairolatex $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set terminal cairolatex $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+			],
+			"description": "terminal cairolatex\nVersion 5.0 patchlevel 6\n"
+		},
+
 	/* set terminal emf */
 
 		"set term: emf":{
 			"prefix": "term emf",
 			"body": [
-				"set terminal emf # {color | monochrome}",
-				"set terminal emf # {enhanced {noproportional}}",
-				"set terminal emf # {rounded | butt}",
-				"set terminal emf # {linewidth <LW>} {dashlength <DL>}",
-				"set terminal emf # {size XX,YY} {background <rgb_color>}",
-				"set terminal emf # {font \"<fontname>{,<fontsize>}\"}",
-				"set terminal emf # {fontscale <scale>}",
+				"set terminal emf $LINE_COMMENT {color|monochrome}",
+				"set terminal emf $LINE_COMMENT {enhanced {noproportional}}",
+				"set terminal emf $LINE_COMMENT {rounded|butt}",
+				"set terminal emf $LINE_COMMENT {linewidth <LW>} {dashlength <DL>}",
+				"set terminal emf $LINE_COMMENT {size XX,YY} {background <rgb_color>}",
+				"set terminal emf $LINE_COMMENT {font \"<fontname>{,<fontsize>}\"}",
+				"set terminal emf $LINE_COMMENT {fontscale <scale>}",
 			],
 			"description": "terminal emf\nVersion 5.0 patchlevel 6\n"
+		},
+
+	/* set terminal lua tikz */
+
+		"set term: lua tikz":{
+			"prefix": "term lua tikz",
+			"body": [
+				"set terminal lua tikz $LINE_COMMENT {latex|tex|context}",
+				"set terminal lua tikz $LINE_COMMENT {color|monochrome}",
+				"set terminal lua tikz $LINE_COMMENT {nooriginreset|originreset}",
+				"set terminal lua tikz $LINE_COMMENT {nogparrows|gparrows}",
+				"set terminal lua tikz $LINE_COMMENT {nogppoints|gppoints}",
+				"set terminal lua tikz $LINE_COMMENT {picenvironment|nopicenvironment}",
+				"set terminal lua tikz $LINE_COMMENT {noclip|clip}",
+				"set terminal lua tikz $LINE_COMMENT {notightboundingbox|tightboundingbox}",
+				"set terminal lua tikz $LINE_COMMENT {background \"<colorpec>\"}",
+				"set terminal lua tikz $LINE_COMMENT {size <x>{unit},<y>{unit}}",
+				"set terminal lua tikz $LINE_COMMENT {scale <x>,<y>}",
+				"set terminal lua tikz $LINE_COMMENT {plotsize <x>{unit},<y>{unit}}",
+				"set terminal lua tikz $LINE_COMMENT {charsize <x>{unit},<y>{unit}}",
+				"set terminal lua tikz $LINE_COMMENT {font \"<fontdesc>\"}",
+				"set terminal lua tikz $LINE_COMMENT {{fontscale|textscale} <scale>}",
+				"set terminal lua tikz $LINE_COMMENT {dashlength|dl <DL>}",
+				"set terminal lua tikz $LINE_COMMENT {linewidth|lw <LW>}",
+				"set terminal lua tikz $LINE_COMMENT {nofulldoc|nostandalone|fulldoc|standalone}",
+				"set terminal lua tikz $LINE_COMMENT {{preamble|header} \"<preamble_string>\"}",
+				"set terminal lua tikz $LINE_COMMENT {tikzplot <ltn>,...}",
+				"set terminal lua tikz $LINE_COMMENT {notikzarrows|tikzarrows}",
+				"set terminal lua tikz $LINE_COMMENT {rgbimages|cmykimages}",
+				"set terminal lua tikz $LINE_COMMENT {noexternalimages|externalimages}",
+				"set terminal lua tikz $LINE_COMMENT {bitmap|nobitmap}",
+				"set terminal lua tikz $LINE_COMMENT {providevars <var name>,...}",
+
+			],
+			"description": "terminal lua tikz\nVersion 5.0 patchlevel 6\n"
 		},
 
 	/* set terminal pdfcairo */
@@ -125,12 +185,13 @@
 		"set term: pdfcairo":{
 			"prefix": "term pdfcairo",
 			"body": [
-				"set terminal pdfcairo # {{no}enhanced} {mono|color}",
-				"set terminal pdfcairo # {font <font>}",
-				"set terminal pdfcairo # {fontscale <scale>}",
-				"set terminal pdfcairo # {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set terminal pdfcairo # {background <rgbcolor>}",
-				"set terminal pdfcairo # {size <XX>{unit},<YY>{unit}}",
+				"set terminal pdfcairo $LINE_COMMENT {noenhanced|enhanced}",
+				"set terminal pdfcairo $LINE_COMMENT {mono|color}",
+				"set terminal pdfcairo $LINE_COMMENT {font <font>}",
+				"set terminal pdfcairo $LINE_COMMENT {fontscale <scale>}",
+				"set terminal pdfcairo $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set terminal pdfcairo $LINE_COMMENT {background <rgbcolor>}",
+				"set terminal pdfcairo $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 			],
 			"description": "terminal pdfcairo\nVersion 5.0 patchlevel 6\n"
 		},
@@ -140,18 +201,18 @@
 		"set term: pngcairo":{
 			"prefix": "term pngcairo",
 			"body": [
-				"set terminal pngcairo # {noenhanced|enhanced} {mono|color}",
-				"set terminal pngcairo # {notransparent|transparent} {nocrop|crop} {background <rgbcolor>",
-				"set terminal pngcairo # {font <font>} {fontscale <scale>}",
-				"set terminal pngcairo # {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set terminal pngcairo # {size <XX>{unit},<YY>{unit}}",
+				"set terminal pngcairo $LINE_COMMENT {noenhanced|enhanced} {mono|color}",
+				"set terminal pngcairo $LINE_COMMENT {notransparent|transparent} {nocrop|crop} {background <rgbcolor>",
+				"set terminal pngcairo $LINE_COMMENT {font <font>} {fontscale <scale>}",
+				"set terminal pngcairo $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set terminal pngcairo $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 			],
 			"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
 		},
 
 		"set term: pngcairo: crop/nocrop":{
 			"prefix": "term pngcairo crop",
-			"body": "set term pngcairo nocrop|crop # {nocrop|crop}",
+			"body": "set term pngcairo nocrop|crop $LINE_COMMENT {nocrop|crop}",
 			"description": "terminal pngcairo\ncrop は完成した描画グラフの端の空白領域を取り除いて、結果として画像 サイズを小さくします。デフォルトは nocrop です。\nVersion 5.0 patchlevel 6\n"
 		},
 
@@ -160,18 +221,18 @@
 		"set term: wxt":{
 			"prefix": "term wxt",
 			"body": [
-				"set terminal wxt # {<n>}",
-				"set terminal wxt # {size <width>,<height>} {position <x>,<y>}",
-				"set terminal wxt # {background <rgb_color>}",
-				"set terminal wxt # {noenhanced|enhanced}",
-				"set terminal wxt # {font <font>} {fontscale <scale>}",
-				"set terminal wxt # {title \"title\"}",
-				"set terminal wxt # {linewidth <lw>}",
-				"set terminal wxt # {dashlength <dl>}",
-				"set terminal wxt # {{no}persist}",
-				"set terminal wxt # {{no}raise}",
-				"set terminal wxt # {{no}ctrl}",
-				"set terminal wxt # {close}",
+				"set terminal wxt $LINE_COMMENT {<n>}",
+				"set terminal wxt $LINE_COMMENT {size <width>,<height>} {position <x>,<y>}",
+				"set terminal wxt $LINE_COMMENT {background <rgb_color>}",
+				"set terminal wxt $LINE_COMMENT {noenhanced|enhanced}",
+				"set terminal wxt $LINE_COMMENT {font <font>} {fontscale <scale>}",
+				"set terminal wxt $LINE_COMMENT {title \"title\"}",
+				"set terminal wxt $LINE_COMMENT {linewidth <lw>}",
+				"set terminal wxt $LINE_COMMENT {dashlength <dl>}",
+				"set terminal wxt $LINE_COMMENT {{no}persist}",
+				"set terminal wxt $LINE_COMMENT {{no}raise}",
+				"set terminal wxt $LINE_COMMENT {{no}ctrl}",
+				"set terminal wxt $LINE_COMMENT {close}",
 			],
 			"description": "terminal wxt\nVersion 5.0 patchlevel 6\n"
 		},
