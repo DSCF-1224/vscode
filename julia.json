@@ -28,6 +28,12 @@
 
 
 	// Function
+	"Function: Base.Filesystem.joinpath":{
+		"prefix": "Base.Filesystem.joinpath",
+		"body": "Base.Filesystem.joinpath( ${1:parts...} )",
+		"description": "Function\nBase\nBase.Filesystem.joinpath( parts... )\n"
+	},
+
 	"Function: Base.isequal":{
 		"prefix": "Base.isequal",
 		"body": "Base.isequal( ${1:x}, ${2:y} )",
@@ -52,6 +58,37 @@
 		"description": "Function\nBase.one( T::Type )\n"
 	},
 
+	"Function: Base.open: keywords":{
+		"prefix": "Base.open",
+		"body": [
+			"Base.open( ${1:filename::AbstractString}; ${2:keywords...} ) $LINE_COMMENT -> IOStream",
+			"$LINE_COMMENT | Keyword  | Description            | Default                            |",
+			"$LINE_COMMENT |----------|------------------------|------------------------------------|",
+			"$LINE_COMMENT | read     | open for reading       | !write`                            |",
+			"$LINE_COMMENT | write    | open for writing       | truncate | append`                 |",
+			"$LINE_COMMENT | create   | create if non-existent | !read & write | truncate | append` |",
+			"$LINE_COMMENT | truncate | truncate to zero size  | !read & write`                     |",
+			"$LINE_COMMENT | append   | seek to end            | false`                             |",
+		],
+		"description": "Function\nBase.open( filename::AbstractString; keywords... )\n"
+	},
+
+	"Function: Base.open: mode":{
+		"prefix": "Base.open",
+		"body": [
+			"Base.open( ${1:filename::AbstractString}; ${2:mode::AbstractString} ) $LINE_COMMENT -> IOStream",
+			"$LINE_COMMENT | Mode | Description                   | Keywords                            |",
+			"$LINE_COMMENT |------|-------------------------------|-------------------------------------|",
+			"$LINE_COMMENT | `r`  | read                          | none                                |",
+			"$LINE_COMMENT | `w`  | write, create, truncate       | `write = true`                      |",
+			"$LINE_COMMENT | `a`  | write, create, append         | `append = true`                     |",
+			"$LINE_COMMENT | `r+` | read, write                   | `read = true, write = true`         |",
+			"$LINE_COMMENT | `w+` | read, write, create, truncate | `truncate = true, read = true`      |",
+			"$LINE_COMMENT | `a+` | read, write, create, append   | `append = true, read = true`        |",
+		],
+		"description": "Function\nBase.open( filename::AbstractString; keywords... )\n"
+	},
+
 	"Function: Base.println: all":{
 		"prefix": "Base.println",
 		"body": "Base.println( ${1:io::IO, }${0:xs...} )",
@@ -62,6 +99,12 @@
 		"prefix": "Base.println",
 		"body": "Base.println( Base.stdout, ${0:xs...} )",
 		"description": "Function\nBase.println( Base.stdout, xs... )\n"
+	},
+
+	"Function: Base.range: all":{
+		"prefix": "Base.range",
+		"body": "Base.range( ${1:start} ${2:[,stop]}; ${3:length}, ${4:stop}, ${5:step=1} )",
+		"description": "Function\nBase.range(start[, stop]; length, stop, step=1)\n"
 	},
 
 	"Function: Base.rem":{
@@ -82,6 +125,8 @@
 		"description": "Function\nBase.zeros\n"
 	},
 
+	// Keyword
+
 	// Macro
 
 	"Macro: Base.@timed":{
@@ -90,7 +135,18 @@
 		"description": "Macro\nBase.@timed"
 	},
 
+	"Macro: Printf.@printf: all":{
+		"prefix": "Printf.@printf",
+		"body": "Printf.@printf( ${1:[io::IOStream]}, ${2:\"%Fmt\"}, ${3:args...} )",
+		"description": "Macro\nPrintf.@printf([io::IOStream], \"%Fmt\", args...)"
+	},
+
 	// Method
+	"Keyword: const":{
+		"prefix": "const",
+		"body": "const $0",
+		"description": "Keyword\nconst\n"
+	},
 
 	"Method: Base.Vector: undef"   :{ "prefix": "Base.Vector undef",   "body": "Base.Vector{ ${1:T::type} }( Core.undef, <length> )",   "description": "Method\nBase.Vector{<type>}(Core.undef,<length>)\n"   },
 	"Method: Base.Vector: missing" :{ "prefix": "Base.Vector missing", "body": "Base.Vector{ ${1:T::type} }( Base.missing, <length> )", "description": "Method\nBase.Vector{<type>}(Base.missing,<length>)\n" },
@@ -98,20 +154,28 @@
 
 	// Type
 
-	"Type: Core.Integer":{
-		"prefix": "Core.Integer",
-		"body": "Core.Integer",
-		"description": "Type\nCore.Integer\nAbstract supertype for all integers\n"
-	},
+	"Type: Core.Integer"  :{ "prefix": "Core.Integer", "body": "Core.Integer", "description": "Type\nCore.Integer\nAbstract supertype for all integers\n" },
+	"Type: Core.Int16"    :{ "prefix": "Core.Int16",   "body": "Core.Int16",   "description": "Type\nCore.Int16\n16-bit signed integer type\n"            },
+	"Type: Core.Int32"    :{ "prefix": "Core.Int32",   "body": "Core.Int32",   "description": "Type\nCore.Int32\n32-bit signed integer type\n"            },
+	"Type: Core.Int64"    :{ "prefix": "Core.Int64",   "body": "Core.Int64",   "description": "Type\nCore.Int64\n64-bit signed integer type\n"            },
+	"Type: Core.Int128"   :{ "prefix": "Core.Int128",  "body": "Core.Int128",  "description": "Type\nCore.Int128\n128-bit signed integer type\n"          },
+	"Type: Core.UInt16"   :{ "prefix": "Core.UInt16",  "body": "Core.Int16",   "description": "Type\nCore.UInt16\n16-bit unsigned integer type\n"         },
+	"Type: Core.UInt32"   :{ "prefix": "Core.UInt32",  "body": "Core.Int32",   "description": "Type\nCore.UInt32\n32-bit unsigned integer type\n"         },
+	"Type: Core.UInt64"   :{ "prefix": "Core.UInt64",  "body": "Core.Int64",   "description": "Type\nCore.UInt64\n64-bit unsigned integer type\n"         },
+	"Type: Core.UInt128"  :{ "prefix": "Core.UInt128", "body": "Core.Int128",  "description": "Type\nCore.UInt128\n128-bit unsigned integer type\n"       },
 
 	// reference
-	"Reference: Constant: Base.stdout"  :{ "prefix": "Base.stdout",  "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.stdout",  "description": "Constant\nI/O and Network\nBase.stdout\n"     },
-	"Reference: Function: Base.isequal" :{ "prefix": "Base.isequal", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isequal",       "description": "Function\nBase\nBase.isequal( x, y )\n"       },
-	"Reference: Function: Base.isless"  :{ "prefix": "Base.isless",  "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isless",        "description": "Function\nBase\nBase.isless( x, y )\n"        },
-	"Reference: Function: Base.one"     :{ "prefix": "Base.one",     "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/numbers/#Base.one",        "description": "Function\nBase.one( x )\nBase.one( T::type )" },
-	"Reference: Function: Base.println" :{ "prefix": "Base.println", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.println", "description": "Function\nBase.println\n" },
-	"Reference: Function: Base.zero"    :{ "prefix": "Base.zero",    "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zero",        "description": "Function\nBase.zero"      },
-	"Reference: Function: Base.zeros"   :{ "prefix": "Base.zeros",   "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zeros",       "description": "Function\nBase.zeros"     },
+	"Reference: Constant: Base.stdout"              :{ "prefix": "Base.stdout",              "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.stdout",        "description": "Constant\nBase.stdout\n"                                     },
+	"Reference: Function: Base.Filesystem.joinpath" :{ "prefix": "Base.Filesystem.joinpath", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/file/#Base.Filesystem.joinpath", "description": "Function\nBase.Filesystem.joinpath( parts... )\n"            },
+	"Reference: Function: Base.isequal"             :{ "prefix": "Base.isequal",             "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isequal",             "description": "Function\nBase.isequal( x, y )\n"                            },
+	"Reference: Function: Base.isless"              :{ "prefix": "Base.isless",              "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isless",              "description": "Function\nBase.isless( x, y )\n"                             },
+	"Reference: Function: Base.one"                 :{ "prefix": "Base.one",                 "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/numbers/#Base.one",              "description": "Function\nBase.one( x )\nBase.one( T::type )\n"              },
+	"Reference: Function: Base.open"                :{ "prefix": "Base.open",                "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.open",          "description": "Function\nBase.open( ... )\n"                                },
+	"Reference: Function: Base.println"             :{ "prefix": "Base.println",             "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.println",       "description": "Function\nBase.println\n"                                    },
+	"Reference: Function: Base.zero"                :{ "prefix": "Base.zero",                "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zero",              "description": "Function\nBase.zero"                                         },
+	"Reference: Function: Base.zeros"               :{ "prefix": "Base.zeros",               "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zeros",             "description": "Function\nBase.zeros"                                        },
+	"Reference: Keyword: const"                     :{ "prefix": "const",                    "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#const",                    "description": "Keyword\nconst"                                              },
+	"Reference: Macro: Printf.@printf"              :{ "prefix": "Printf.@printf",           "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Printf.@printf",         "description": "Macro\nPrintf.@printf( io::IOStream, \"%Fmt\", args... )"    },
 
 	// others
 	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{ "prefix": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE", "body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE", "description": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE" },
@@ -771,16 +835,6 @@
 				"body": "Core.nothing",
 				"description": "Base\nConstants\nConstant\n\nThe singleton instance of type Nothing, used by convention when there is no value to return (as in a C void function) or when a variable or field holds no value.\n"
 			},
-	
-		// Filesystem
-		// https://docs.julialang.org/en/v1/base/file/
-
-			// https://docs.julialang.org/en/v1/base/file/#Base.Filesystem.joinpath
-				"Base.Filesystem.joinpath":{
-					"prefix": "joinpath",
-					"body": "Base.Filesystem.joinpath( ${1:parts...} )",
-					"description": "Base\nFilesystem\nFunction\n\nJoin path components into a full path.\nIf some argument is an absolute path or (on Windows) has a drive specification that doesn't match the drive computed for the join of the preceding paths, then prior components are dropped.\n"
-				},
 	
 		// I/O and Network
 		// https://docs.julialang.org/en/v1/base/io-network/
