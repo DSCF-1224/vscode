@@ -13,35 +13,108 @@
 	// 	"description": "Log output to console"
 	// }
 
-	// last update ###### Mon Oct 29 10:32:41 JST 2018
+	// last update : 2019.02.02
 
 	// Constant
 	"Constant: Base.stdout":{
 		"prefix": "Base.stdout",
 		"body": "Base.stdout",
-		"description": "Constant\nstdout\n",
+		"description": "Constant\nI/O and Network\nBase.stdout\n",
 	},
+
+	"Constant: Base.missing" :{ "prefix": "Base.missing", "body": "Base.missing", "description": "Constant\nBase.missing\n" },
+	"Constant: Core.undef"   :{ "prefix": "Core.undef",   "body": "Core.undef",   "description": "Constant\nCore.undef\n"   },
+	"Constant: Core.nothing" :{ "prefix": "Core.nothing", "body": "Core.nothing", "description": "Constant\nCore.nothing\n" },
 
 
 	// Function
+	"Function: Base.isequal":{
+		"prefix": "Base.isequal",
+		"body": "Base.isequal( ${1:x}, ${2:y} )",
+		"description": "Function\nBase\nBase.isequal( x, y )\n"
+	},
+
+	"Function: Base.isless":{
+		"prefix": "Base.isless",
+		"body": "Base.isless( ${1:x}, ${2:y} )",
+		"description": "Function\nBase.isless( x, y )\n"
+	},
+
+	"Function: Base.one: Variable":{
+		"prefix": "Base.one",
+		"body": "Base.one( ${1:x} )",
+		"description": "Function\nBase.one( x )\n"
+	},
+
+	"Function: Base.one: Type":{
+		"prefix": "Base.one",
+		"body": "Base.one( ${1:T::Type} )",
+		"description": "Function\nBase.one( T::Type )\n"
+	},
+
 	"Function: Base.println: all":{
 		"prefix": "Base.println",
 		"body": "Base.println( ${1:io::IO, }${0:xs...} )",
-		"description": "Function\nBase.println\n"
+		"description": "Function\nBase.println( io::IO, xs... )\n"
 	},
 
 	"Function: Base.println: stdout":{
 		"prefix": "Base.println",
 		"body": "Base.println( Base.stdout, ${0:xs...} )",
-		"description": "Function\nBase.println\n"
+		"description": "Function\nBase.println( Base.stdout, xs... )\n"
+	},
+
+	"Function: Base.rem":{
+		"prefix": "Base.rem",
+		"body": "Base.rem( ${1:x}, ${2:y} )",
+		"description": "Function\nBase.rem( x, y )\n"
+	},
+
+	"Function: Base.zero":{
+		"prefix": "Base.zero",
+		"body": "Base.zero( ${1:x} )",
+		"description": "Function\nBase.zero\n"
+	},
+
+	"Function: Base.zeros":{
+		"prefix": "Base.zeros",
+		"body": "Base.zeros( ${1:x} )",
+		"description": "Function\nBase.zeros\n"
+	},
+
+	// Macro
+
+	"Macro: Base.@timed":{
+		"prefix": "Base.@timed",
+		"body": "${1:val, t, bytes, gctime, memallocs} = Base.@timed {2:function}",
+		"description": "Macro\nBase.@timed"
+	},
+
+	// Method
+
+	"Method: Base.Vector: undef"   :{ "prefix": "Base.Vector undef",   "body": "Base.Vector{ ${1:T::type} }( Core.undef, <length> )",   "description": "Method\nBase.Vector{<type>}(Core.undef,<length>)\n"   },
+	"Method: Base.Vector: missing" :{ "prefix": "Base.Vector missing", "body": "Base.Vector{ ${1:T::type} }( Base.missing, <length> )", "description": "Method\nBase.Vector{<type>}(Base.missing,<length>)\n" },
+	"Method: Base.Vector: nothing" :{ "prefix": "Base.Vector nothing", "body": "Base.Vector{ ${1:T::type} }( Core.nothing, <length> )", "description": "Method\nBase.Vector{<type>}(Core.nothing,<length>)\n" },
+
+	// Type
+
+	"Type: Core.Integer":{
+		"prefix": "Core.Integer",
+		"body": "Core.Integer",
+		"description": "Type\nCore.Integer\nAbstract supertype for all integers\n"
 	},
 
 	// reference
-	"Reference: Function: Base.println":{ "prefix": "Base.println", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.stdout",  "description": "Constant\nBase.stdout\n"  },
-	"Reference: Constant: Base.stdout" :{ "prefix": "Base.stdout",  "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.println", "description": "Function\nBase.println\n" },
+	"Reference: Constant: Base.stdout"  :{ "prefix": "Base.stdout",  "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.stdout",  "description": "Constant\nI/O and Network\nBase.stdout\n"     },
+	"Reference: Function: Base.isequal" :{ "prefix": "Base.isequal", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isequal",       "description": "Function\nBase\nBase.isequal( x, y )\n"       },
+	"Reference: Function: Base.isless"  :{ "prefix": "Base.isless",  "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isless",        "description": "Function\nBase\nBase.isless( x, y )\n"        },
+	"Reference: Function: Base.one"     :{ "prefix": "Base.one",     "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/numbers/#Base.one",        "description": "Function\nBase.one( x )\nBase.one( T::type )" },
+	"Reference: Function: Base.println" :{ "prefix": "Base.println", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.println", "description": "Function\nBase.println\n" },
+	"Reference: Function: Base.zero"    :{ "prefix": "Base.zero",    "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zero",        "description": "Function\nBase.zero"      },
+	"Reference: Function: Base.zeros"   :{ "prefix": "Base.zeros",   "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zeros",       "description": "Function\nBase.zeros"     },
 
 	// others
-	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{ "prefix": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE", "body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE", "description": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE" }
+	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{ "prefix": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE", "body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE", "description": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE" },
 	
 	// Base
 	
@@ -335,13 +408,6 @@
 					"prefix": "getindex Tuple{Type,Vararg{Any,N} where N}",
 					"body": "Base.getindex( ${1:Type}[ ${2:elemtns} ] )",
 					"description": "Base\nArrays\nConstructors and Types\nMethod\n\nConstruct a 1-dimensional array of the specified type.\nThis is usually called with the syntax `Type[]`.\nElement values can be specified using `Type[a,b,c,...]`.\n"
-				},
-	
-				// https://docs.julialang.org/en/v1/base/arrays/#Base.zeros
-				"Base.zeros":{
-					"prefix": "zeros",
-					"body": "Base.zeros( ${1:Type}, ${2:dims} )",
-					"description": "Base\nArrays\nConstructors and Types\nFunction\n\nCreate an Array, with element type `T`, of all zeros with size specified by `dims`.\n"
 				},
 	
 				// https://docs.julialang.org/en/v1/base/arrays/#Base.ones
