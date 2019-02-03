@@ -13,7 +13,7 @@
 	// 	"description": "Log output to console"
 	// }
 
-	// last update : 2019.02.02
+	// last update : 2019.02.03
 
 	// Constant
 	"Constant: Base.stdout":{
@@ -28,10 +28,10 @@
 
 
 	// Function
-	"Function: Base.Filesystem.joinpath":{
-		"prefix": "Base.Filesystem.joinpath",
-		"body": "Base.Filesystem.joinpath( ${1:parts...} )",
-		"description": "Function\nBase\nBase.Filesystem.joinpath( parts... )\n"
+	"Function: Base.convert":{
+		"prefix": "Base.convert",
+		"body": "Base.convert( ${1:T::type}, ${2:x} )",
+		"description": "Function\nBase\nBase.convert(T, x)\n"
 	},
 
 	"Function: Base.isequal":{
@@ -125,10 +125,32 @@
 		"description": "Function\nBase.zeros\n"
 	},
 
+	"Function: Base.Checked.checked_abs":{ "prefix": "Base.Checked.checked_abs", "body": "Base.Checked.checked_abs( ${1:x} )",         "description": "Function\nBase.Checked.checked_abs\n" },
+	"Function: Base.Checked.checked_add":{ "prefix": "Base.Checked.checked_add", "body": "Base.Checked.checked_add( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_add(x, y)\ncalculates x+y\n" },
+	"Function: Base.Checked.checked_cld":{ "prefix": "Base.Checked.checked_cld", "body": "Base.Checked.checked_cld( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_cld(x, y)\ncalculates cld(x,y)\n" },
+	"Function: Base.Checked.checked_div":{ "prefix": "Base.Checked.checked_div", "body": "Base.Checked.checked_div( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_div(x, y)\ncalculates div(x,y)\n" },
+	"Function: Base.Checked.checked_fld":{ "prefix": "Base.Checked.checked_fld", "body": "Base.Checked.checked_fld( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_fld(x, y)\ncalculates fld(x,y)\n" },
+	"Function: Base.Checked.checked_mod":{ "prefix": "Base.Checked.checked_mod", "body": "Base.Checked.checked_mod( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_mod(x, y)\ncalculates mod(x,y)\n" },
+	"Function: Base.Checked.checked_mul":{ "prefix": "Base.Checked.checked_mul", "body": "Base.Checked.checked_mul( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_mul(x, y)\ncalculates x*y\n" },
+	"Function: Base.Checked.checked_neg":{ "prefix": "Base.Checked.checked_neg", "body": "Base.Checked.checked_neg( ${1:x} )",         "description": "Function\nBase.Checked.checked_neg(x)\ncalculates -x\n" },
+	"Function: Base.Checked.checked_rem":{ "prefix": "Base.Checked.checked_rem", "body": "Base.Checked.checked_rem( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_rem(x, y)\ncalculates rem(x,y)=x%y\n" },
+	"Function: Base.Checked.checked_sub":{ "prefix": "Base.Checked.checked_sub", "body": "Base.Checked.checked_sub( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.checked_sub(x, y)\ncalculates x-y\n" },
+
+	"Function: Base.Checked.add_with_overflow":{ "prefix": "Base.Checked.add_with_overflow", "body": "Base.Checked.add_with_overflow( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.add_with_overflow(x, y)\ncalculates x+y with flag\n" },
+	"Function: Base.Checked.mul_with_overflow":{ "prefix": "Base.Checked.mul_with_overflow", "body": "Base.Checked.mul_with_overflow( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.mul_with_overflow(x, y)\ncalculates x*y with flag\n" },
+	"Function: Base.Checked.sub_with_overflow":{ "prefix": "Base.Checked.sub_with_overflow", "body": "Base.Checked.sub_with_overflow( ${1:x}, ${2:y} )", "description": "Function\nBase.Checked.sub_with_overflow(x, y)\ncalculates x-y with flag\n" },
+
+	"Function: Base.Filesystem.joinpath":{
+		"prefix": "Base.Filesystem.joinpath",
+		"body": "Base.Filesystem.joinpath( ${1:parts...} )",
+		"description": "Function\nBase\nBase.Filesystem.joinpath( parts... )\n"
+	},
+
 	// Keyword
+	"Keyword: const" :{ "prefix": "const",  "body": "const $0",  "description": "Keyword\nconst\n"  },
+	"Keyword: return":{ "prefix": "return", "body": "return $0", "description": "Keyword\nreturn\n" },
 
 	// Macro
-
 	"Macro: Base.@timed":{
 		"prefix": "Base.@timed",
 		"body": "${1:val, t, bytes, gctime, memallocs} = Base.@timed {2:function}",
@@ -142,11 +164,6 @@
 	},
 
 	// Method
-	"Keyword: const":{
-		"prefix": "const",
-		"body": "const $0",
-		"description": "Keyword\nconst\n"
-	},
 
 	"Method: Base.Vector: undef"   :{ "prefix": "Base.Vector undef",   "body": "Base.Vector{ ${1:T::type} }( Core.undef, <length> )",   "description": "Method\nBase.Vector{<type>}(Core.undef,<length>)\n"   },
 	"Method: Base.Vector: missing" :{ "prefix": "Base.Vector missing", "body": "Base.Vector{ ${1:T::type} }( Base.missing, <length> )", "description": "Method\nBase.Vector{<type>}(Base.missing,<length>)\n" },
@@ -154,15 +171,16 @@
 
 	// Type
 
-	"Type: Core.Integer"  :{ "prefix": "Core.Integer", "body": "Core.Integer", "description": "Type\nCore.Integer\nAbstract supertype for all integers\n" },
-	"Type: Core.Int16"    :{ "prefix": "Core.Int16",   "body": "Core.Int16",   "description": "Type\nCore.Int16\n16-bit signed integer type\n"            },
-	"Type: Core.Int32"    :{ "prefix": "Core.Int32",   "body": "Core.Int32",   "description": "Type\nCore.Int32\n32-bit signed integer type\n"            },
-	"Type: Core.Int64"    :{ "prefix": "Core.Int64",   "body": "Core.Int64",   "description": "Type\nCore.Int64\n64-bit signed integer type\n"            },
-	"Type: Core.Int128"   :{ "prefix": "Core.Int128",  "body": "Core.Int128",  "description": "Type\nCore.Int128\n128-bit signed integer type\n"          },
-	"Type: Core.UInt16"   :{ "prefix": "Core.UInt16",  "body": "Core.Int16",   "description": "Type\nCore.UInt16\n16-bit unsigned integer type\n"         },
-	"Type: Core.UInt32"   :{ "prefix": "Core.UInt32",  "body": "Core.Int32",   "description": "Type\nCore.UInt32\n32-bit unsigned integer type\n"         },
-	"Type: Core.UInt64"   :{ "prefix": "Core.UInt64",  "body": "Core.Int64",   "description": "Type\nCore.UInt64\n64-bit unsigned integer type\n"         },
-	"Type: Core.UInt128"  :{ "prefix": "Core.UInt128", "body": "Core.Int128",  "description": "Type\nCore.UInt128\n128-bit unsigned integer type\n"       },
+	"Type: Core.Integer"    :{ "prefix": "Core.Integer",    "body": "Core.Integer",    "description": "Type\nCore.Integer\nAbstract supertype for all integers\n" },
+	"Type: Core.Int16"      :{ "prefix": "Core.Int16",      "body": "Core.Int16",      "description": "Type\nCore.Int16\n16-bit signed integer type\n"            },
+	"Type: Core.Int32"      :{ "prefix": "Core.Int32",      "body": "Core.Int32",      "description": "Type\nCore.Int32\n32-bit signed integer type\n"            },
+	"Type: Core.Int64"      :{ "prefix": "Core.Int64",      "body": "Core.Int64",      "description": "Type\nCore.Int64\n64-bit signed integer type\n"            },
+	"Type: Core.Int128"     :{ "prefix": "Core.Int128",     "body": "Core.Int128",     "description": "Type\nCore.Int128\n128-bit signed integer type\n"          },
+	"Type: Core.UInt16"     :{ "prefix": "Core.UInt16",     "body": "Core.UInt16",     "description": "Type\nCore.UInt16\n16-bit unsigned integer type\n"         },
+	"Type: Core.UInt32"     :{ "prefix": "Core.UInt32",     "body": "Core.UInt32",     "description": "Type\nCore.UInt32\n32-bit unsigned integer type\n"         },
+	"Type: Core.UInt64"     :{ "prefix": "Core.UInt64",     "body": "Core.UInt64",     "description": "Type\nCore.UInt64\n64-bit unsigned integer type\n"         },
+	"Type: Core.UInt128"    :{ "prefix": "Core.UInt128",    "body": "Core.UInt128",    "description": "Type\nCore.UInt128\n128-bit unsigned integer type\n"       },
+	"Type: Base.GMP.BigInt" :{ "prefix": "Base.GMP.BigInt", "body": "Base.GMP.BigInt", "description": "Type\nBase.GMP.BigInt\nArbitrary precision integer type\n" },
 
 	// reference
 	"Reference: Constant: Base.stdout"              :{ "prefix": "Base.stdout",              "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.stdout",        "description": "Constant\nBase.stdout\n"                                     },
