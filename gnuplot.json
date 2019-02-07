@@ -15,6 +15,14 @@
 	}
 */
 
+/* command : pause */
+
+	"command: pause":{
+		"prefix": "pause",
+		"body": "pause $LINE_COMMENT ${1:<time>} ${2:{\"<string>\"}}",
+		"description": "gnuplot\npause Command\n"
+	},
+
 /* command : pwd */
 
 	"command: pwd":{
@@ -109,6 +117,23 @@
 		"description": "凡例 (key)\nVersion 5.0 patchlevel 6\n"
 	},
 
+/* set margin */
+
+	"set margin: all":{
+		"prefix": "set margin",
+		"body": [
+			"set lmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
+			"set rmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
+			"set tmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
+			"set bmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}"
+		]
+	},
+
+	"set margin: left"  :{ "prefix": "set margin", "body": "set lmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+	"set margin: right" :{ "prefix": "set margin", "body": "set rmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+	"set margin: top"   :{ "prefix": "set margin", "body": "set tmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+	"set margin: bottom":{ "prefix": "set margin", "body": "set bmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+
 /* set terminal */
 
 	/* set terminal cairolatex */
@@ -116,15 +141,15 @@
 		"set term: cairolatex":{
 			"prefix": "term cairolatex",
 			"body": [
-				"set terminal cairolatex $LINE_COMMENT {eps|pdf}",
-				"set terminal cairolatex $LINE_COMMENT {standalone|input}",
-				"set terminal cairolatex $LINE_COMMENT {blacktext|colortext|colourtext}",
-				"set terminal cairolatex $LINE_COMMENT {header <header>|noheader}",
-				"set terminal cairolatex $LINE_COMMENT {mono|color}",
-				"set terminal cairolatex $LINE_COMMENT {notransparent|transparent} {nocrop|crop} {background <rgbcolor>}",
-				"set terminal cairolatex $LINE_COMMENT {font <font>} {fontscale <scale>}",
-				"set terminal cairolatex $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set terminal cairolatex $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+				"set terminal cairolatex pdf                 $LINE_COMMENT {eps|pdf}",
+				"set terminal cairolatex input               $LINE_COMMENT {standalone|input}",
+				"set terminal cairolatex noheader            $LINE_COMMENT {header <header>|noheader}",
+				"set terminal cairolatex blacktext           $LINE_COMMENT {blacktext|colortext|colourtext}",
+				"set terminal cairolatex                     $LINE_COMMENT {mono|color}",
+				"set terminal cairolatex nobackground        $LINE_COMMENT {notransparent|transparent} {nocrop|crop} {background <rgbcolor>|nobackground}",
+				"set terminal cairolatex                     $LINE_COMMENT {font <font>} {fontscale <scale>}",
+				"set terminal cairolatex                     $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set terminal cairolatex size 3.00in, 2.50in $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 			],
 			"description": "terminal cairolatex\nVersion 5.0 patchlevel 6\n"
 		},
@@ -147,7 +172,7 @@
 
 	/* set terminal lua tikz */
 
-		"set term: lua tikz":{
+		"set term: lua tikz: all":{
 			"prefix": "term lua tikz",
 			"body": [
 				"set terminal lua tikz $LINE_COMMENT {latex|tex|context}",
@@ -180,6 +205,12 @@
 			"description": "terminal lua tikz\nVersion 5.0 patchlevel 6\n"
 		},
 
+		"set term: lua tikz: createstyle":{
+			"prefix": "term lua tikz",
+			"body": "set terminal lua tikz createstyle",
+			"description": "terminal lua tikz\nVersion 5.0 patchlevel 6\n"
+		},
+
 	/* set terminal pdfcairo */
 
 		"set term: pdfcairo":{
@@ -201,11 +232,14 @@
 		"set term: pngcairo":{
 			"prefix": "term pngcairo",
 			"body": [
-				"set terminal pngcairo $LINE_COMMENT {noenhanced|enhanced} {mono|color}",
-				"set terminal pngcairo $LINE_COMMENT {notransparent|transparent} {nocrop|crop} {background <rgbcolor>",
-				"set terminal pngcairo $LINE_COMMENT {font <font>} {fontscale <scale>}",
-				"set terminal pngcairo $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set terminal pngcairo $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+				"set terminal pngcairo enhanced             $LINE_COMMENT {noenhanced|enhanced}",
+				"set terminal pngcairo                      $LINE_COMMENT {mono|color}",
+				"set terminal pngcairo background \"#ffffff\" $LINE_COMMENT {notransparent|transparent} {background <rgbcolor>}",
+				"set terminal pngcairo                      $LINE_COMMENT {nocrop|crop}",
+				"set terminal pngcairo                      $LINE_COMMENT {font <font>}",
+				"set terminal pngcairo fontscale 1.0        $LINE_COMMENT {fontscale <scale>}",
+				"set terminal pngcairo                      $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+				"set terminal pngcairo size 640, 480        $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 			],
 			"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
 		},
@@ -379,4 +413,11 @@
 	"Unicode: INFINITY"             :{ "prefix": "INFINITY",             "body": "\\342\\210\\236", "description": "Unicode : U+221E\nUTF-8 (hex) : e2 88 9e\navailable : Times New Roman\nName : INFINITY\n" },
 	"Unicode: RIGHT ANGLE"          :{ "prefix": "RIGHT ANGLE",          "body": "\\342\\210\\237", "description": "Unicode : U+221F\nUTF-8 (hex) : e2 88 9f\navailable : Times New Roman\nName : RIGHT ANGLE\n" },
 	"Unicode: INTERSECTION"         :{ "prefix": "INTERSECTION",         "body": "\\342\\210\\251", "description": "Unicode : U+2229\nUTF-8 (hex) : e2 88 a9\navailable : Times New Roman\nName : INTERSECTION\n" },
+
+	// private comments //
+	"private comments: comment as a header":{
+		"prefix": "comment header",
+		"body": "# --- ${0:contents} --- #",
+		"description": "private comment\ncomments as a header\n"
+	},
 }
