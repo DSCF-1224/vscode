@@ -12,10 +12,6 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
-	// last update : 2019.02.03
-
-	// Constant
 	"Constant: Base.stdout":{
 		"prefix": "Base.stdout",
 		"body": "Base.stdout",
@@ -34,17 +30,10 @@
 		"description": "Function\nBase\nBase.convert(T, x)\n"
 	},
 
-	"Function: Base.isequal":{
-		"prefix": "Base.isequal",
-		"body": "Base.isequal( ${1:x}, ${2:y} )",
-		"description": "Function\nBase\nBase.isequal( x, y )\n"
-	},
-
-	"Function: Base.isless":{
-		"prefix": "Base.isless",
-		"body": "Base.isless( ${1:x}, ${2:y} )",
-		"description": "Function\nBase.isless( x, y )\n"
-	},
+	"Function: Base.isequal":{ "prefix": "Base.isequal", "body": "Base.isequal( ${1:x}, ${2:y} )", "description": "Function\nBase\nBase.isequal( x, y )\n" },
+	"Function: Base.iseven" :{ "prefix": "Base.iseven", "body" : "Base.iseven( ${1:x::Integer} )", "description": "Function\nBase.iseven( x::Integer )\n"  },
+	"Function: Base.isless" :{ "prefix": "Base.isless", "body" : "Base.isless( ${1:x}, ${2:y} )",  "description": "Function\nBase.isless( x, y )\n"        },
+	"Function: Base.isodd"  :{ "prefix": "Base.isodd", "body"  : "Base.isodd( ${1:x::Integer} )",  "description": "Function\nBase.isodd( x::Integer )\n"   },
 
 	"Function: Base.one: Variable":{
 		"prefix": "Base.one",
@@ -146,6 +135,12 @@
 		"description": "Function\nBase\nBase.Filesystem.joinpath( parts... )\n"
 	},
 
+	"Function: Core.typeof":{
+		"prefix": "Core.typeof",
+		"body": "Core.typeof( ${1:x} )",
+		"description": "Function\nCore\nCore.typeof(x)\n"
+	},
+
 	// Keyword
 	"Keyword: const" :{ "prefix": "const",  "body": "const $0",  "description": "Keyword\nconst\n"  },
 	"Keyword: return":{ "prefix": "return", "body": "return $0", "description": "Keyword\nreturn\n" },
@@ -187,9 +182,12 @@
 	"Reference: Function: Base.Filesystem.joinpath" :{ "prefix": "Base.Filesystem.joinpath", "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/file/#Base.Filesystem.joinpath", "description": "Function\nBase.Filesystem.joinpath( parts... )\n"            },
 	"Reference: Function: Base.isequal"             :{ "prefix": "Base.isequal",             "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isequal",             "description": "Function\nBase.isequal( x, y )\n"                            },
 	"Reference: Function: Base.isless"              :{ "prefix": "Base.isless",              "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#Base.isless",              "description": "Function\nBase.isless( x, y )\n"                             },
+	"Reference: Function: Base.iseven"              :{ "prefix": "Base.iseven",              "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/numbers/#Base.iseven",           "description": "Function\nBase.iseven( x )\n"                                },
+	"Reference: Function: Base.isodd"               :{ "prefix": "Base.isodd",               "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/numbers/#Base.isodd",            "description": "Function\nBase.isodd( x )\n"                                 },
 	"Reference: Function: Base.one"                 :{ "prefix": "Base.one",                 "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/numbers/#Base.one",              "description": "Function\nBase.one( x )\nBase.one( T::type )\n"              },
 	"Reference: Function: Base.open"                :{ "prefix": "Base.open",                "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.open",          "description": "Function\nBase.open( ... )\n"                                },
 	"Reference: Function: Base.println"             :{ "prefix": "Base.println",             "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/io-network/#Base.println",       "description": "Function\nBase.println\n"                                    },
+	"Reference: Function: Base.rem"                 :{ "prefix": "Base.rem",                 "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/math/index.html#Base.rem",       "description": "Function\nBase.rem(x, y)\n"                                  },
 	"Reference: Function: Base.zero"                :{ "prefix": "Base.zero",                "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zero",              "description": "Function\nBase.zero"                                         },
 	"Reference: Function: Base.zeros"               :{ "prefix": "Base.zeros",               "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/arrays/#Base.zeros",             "description": "Function\nBase.zeros"                                        },
 	"Reference: Keyword: const"                     :{ "prefix": "const",                    "body": "$LINE_COMMENT https://docs.julialang.org/en/v1/base/base/#const",                    "description": "Keyword\nconst"                                              },
@@ -944,5 +942,4 @@
 				"body": "AbstractFFTs.bfft!( ${1:A}, ${2:dim} )",
 				"description": "AbstractFFTs.jl\nAPI\nFunction\n\nSame as bfft, but operates in-place on `A`.\n"
 			},
-
 }
