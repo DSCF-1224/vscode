@@ -12,6 +12,9 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+
+	// last update : 2019.02.10
+
 	"Constant: Base.stdout":{
 		"prefix": "Base.stdout",
 		"body": "Base.stdout",
@@ -35,17 +38,8 @@
 	"Function: Base.isless" :{ "prefix": "Base.isless", "body" : "Base.isless( ${1:x}, ${2:y} )",  "description": "Function\nBase.isless( x, y )\n"        },
 	"Function: Base.isodd"  :{ "prefix": "Base.isodd", "body"  : "Base.isodd( ${1:x::Integer} )",  "description": "Function\nBase.isodd( x::Integer )\n"   },
 
-	"Function: Base.one: Variable":{
-		"prefix": "Base.one",
-		"body": "Base.one( ${1:x} )",
-		"description": "Function\nBase.one( x )\n"
-	},
-
-	"Function: Base.one: Type":{
-		"prefix": "Base.one",
-		"body": "Base.one( ${1:T::Type} )",
-		"description": "Function\nBase.one( T::Type )\n"
-	},
+	"Function: Base.one: Variable":{ "prefix": "Base.one", "body": "Base.one( ${1:x} )",       "description": "Function\nBase.one( x )\n"       },
+	"Function: Base.one: Type"    :{ "prefix": "Base.one", "body": "Base.one( ${1:T::Type} )", "description": "Function\nBase.one( T::Type )\n" },
 
 	"Function: Base.open: keywords":{
 		"prefix": "Base.open",
@@ -149,13 +143,13 @@
 	"Macro: Base.@timed":{
 		"prefix": "Base.@timed",
 		"body": "${1:val, t, bytes, gctime, memallocs} = Base.@timed {2:function}",
-		"description": "Macro\nBase.@timed"
+		"description": "Macro\nBase.@timed\n"
 	},
 
 	"Macro: Printf.@printf: all":{
 		"prefix": "Printf.@printf",
 		"body": "Printf.@printf( ${1:[io::IOStream]}, ${2:\"%Fmt\"}, ${3:args...} )",
-		"description": "Macro\nPrintf.@printf([io::IOStream], \"%Fmt\", args...)"
+		"description": "Macro\nPrintf.@printf([io::IOStream], \"%Fmt\", args...)\n"
 	},
 
 	// Method

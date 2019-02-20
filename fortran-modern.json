@@ -142,9 +142,9 @@
 	"OpenMP: do":{
 		"prefix": "do",
 		"body": [
-			"$LINE_COMMENT$ omp do",
+			"$LINE_COMMENT$$omp do",
 			"\t$0",
-			"$LINE_COMMENT$ omp end do",
+			"$LINE_COMMENT$$omp end do",
 		],
 		"description": "[OpenMP]\n"
 	},
@@ -152,11 +152,30 @@
 	"OpenMP: parallel":{
 		"prefix": "parallel",
 		"body": [
-			"$LINE_COMMENT$ omp parallel $1",
+			"$LINE_COMMENT$$omp parallel $1",
 			"\t$0",
-			"$LINE_COMMENT$ omp end parallel",
+			"$LINE_COMMENT$$omp end parallel",
 		],
 		"description": "[OpenMP]\n"
+	},
+
+	"OpenMP: sections":{
+		"prefix": "sections",
+		"body": [
+			"$LINE_COMMENT$$omp sections $1",
+			"\t$0",
+			"$LINE_COMMENT$$omp end sections",
+		],
+		"description": "[OpenMP]\nsections"
+	},
+
+	"OpenMP: section":{
+		"prefix": "section",
+		"body": [
+			"$LINE_COMMENT$$omp section",
+			"\t${1:}",
+		],
+		"description": "[OpenMP]\nsections"
 	},
 
 	"OpenMP: shared":{

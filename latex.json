@@ -13,6 +13,24 @@
 	// 	"description": "Log output to console"
 	// }
 
+	// private comment 
+	"private comment\nheader":{
+		"prefix": "comment",
+		"body": "$LINE_COMMENT --- $1 --- $LINE_COMMENT\n$0"
+	},
+
+	// memo
+	"Reynolds"             :{"prefix": "Reynolds", "body": "Reynolds"},
+	"Reynolds number"      :{"prefix": "Reynolds", "body": "Reynolds数"},
+		"High Reynolds number" :{"prefix": "Reynolds", "body": "高Reynolds数"},
+		"Low Reynolds number"  :{"prefix": "Reynolds", "body": "低Reynolds数"},
+
+	// determined by the document style //
+	"\\bigskip"  :{ "prefix": "\\bigskip",   "body": "\\bigskip$LINE_COMMENT",   "description": "This command is equivalent to \\vspace{bigskipamount}\nwhere `bigskipamount` is determined by the document style.\n" },
+	"\\medskip"  :{ "prefix": "\\medskip",   "body": "\\medskip$LINE_COMMENT",   "description": "This command is equivalent to \\vspace{medskipamount}\nwhere `medskipamount` is determined by the document style.\n" },
+	"\\smallskip":{ "prefix": "\\smallskip", "body": "\\smallskip$LINE_COMMENT", "description": "This command is equivalent to \\vspace{smallskipamount}\nwhere `smallskipamount` is determined by the document style.\n" },
+
+
 	// [beamer] class
 		
 		// Section 8 // Creating Frames
@@ -22,11 +40,15 @@
 				"\\frame Environment":{
 					"prefix": "\\frame",
 					"body": [
-						"\\begin{frame}<${1:<overlay specification>}>[${2:<default overlay specification>}][${3:<options>}]{${4:<title>}}{${5:subtitle}}",
+						"\\begin{frame}<${1:overlay specification}>[${2:default overlay specification}][${3:options}]{${4:title}}{${5:subtitle}}",
 						"\t${0:environment contents}",
 						"\\end{frame}",
 					],
-					"description": "<beamer> Class\nInserts the current page number into a template.\nbeameruserguide.pdf p.064"
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the current page number into a template.",
+						"beameruserguide.pdf p.064"
+					]
 				},
 
 			// Section 8.2 // Components of a Frame
@@ -36,93 +58,135 @@
 				"\\insertpagenumber":{
 					"prefix": "beamer \\insertpagenumber",
 					"body": "\\insertpagenumber",
-					"description": "<beamer> Class\nInserts the current page number into a template.\nbeameruserguide.pdf p.064"
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the current page number into a template.",
+						"beameruserguide.pdf p.064"
+					]
 				},
 
 				"\\insertsection":{
 					"prefix": "beamer \\insertsection",
 					"body": "\\insertsection",
-					"description": "<beamer> Class\nInserts the current section into a template.\nbeameruserguide.pdf p.064"
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the current section into a template.",
+						"beameruserguide.pdf p.064"
+					]
 				},
 
 				"\\insertshortauthor":{
 					"prefix": "beamer \\insertshortauthor",
-					"body": "\\insertshortauthor[${1:<options>}]",
-					"description": "<beamer> Class\nInserts the short version of the author into a template.\nbeameruserguide.pdf p.064"
+					"body": "\\insertshortauthor[${1:options}]",
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the short version of the author into a template.",
+						"beameruserguide.pdf p.064"
+					]
 				},
 
 				"\\insertshortdate":{
 					"prefix": "beamer \\insertshortdate",
-					"body": "\\insertshortdate[${1:<options>}]",
-					"description": "<beamer> Class\nInserts the short version of the date into a template.\nbeameruserguide.pdf p.064"
+					"body": "\\insertshortdate[${1:options}]",
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the short version of the date into a template.",
+						"beameruserguide.pdf p.064"
+					]
 				},
 
 				"\\insertshortinstitute":{
 					"prefix": "beamer \\insertshortinstitute",
-					"body": "\\insertshortinstitute[${1:<options>}]",
-					"description": "<beamer> Class\nInserts the short version of the date into a template.\nbeameruserguide.pdf p.065"
+					"body": "\\insertshortinstitute[${1:options}]",
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the short version of the date into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				"\\insertshortpart":{
 					"prefix": "beamer \\insertshortpart",
-					"body": "\\insertshortpart[${1:<options>}]",
-					"description": "<beamer> Class\nInserts the short version of the part name into a template.\nbeameruserguide.pdf p.065"
-				},
-
-				"\\insertshortpart":{
-					"prefix": "beamer \\insertshortpart",
-					"body": "\\insertshortpart[${1:<options>}]",
-					"description": "<beamer> Class\nInserts the short version of the part name into a template.\nbeameruserguide.pdf p.065"
+					"body": "\\insertshortpart[${1:options}]",
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the short version of the part name into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				"\\insertshorttitle":{
 					"prefix": "beamer \\insertshorttitle",
-					"body": "\\insertshorttitle[${1:<options>}]",
-					"description": "<beamer> Class\nInserts the short version of the document title into a template.\nbeameruserguide.pdf p.065"
+					"body": "\\insertshorttitle[${1:options}]",
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the short version of the document title into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				"\\insertshortsubtitle":{
 					"prefix": "beamer \\insertshortsubtitle",
-					"body": "\\insertshortsubtitle[${1:<options>}]",
-					"description": "<beamer> Class\nInserts the short version of the document subtitle into a template.\nbeameruserguide.pdf p.065"
+					"body": "\\insertshortsubtitle[${1:options}]",
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the short version of the document subtitle into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				"\\insertsubsection":{
 					"prefix": "beamer \\insertsubsection",
 					"body": "\\insertsubsection",
-					"description": "<beamer> Class\nInserts the current subsection into a template.\nbeameruserguide.pdf p.065"
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the current subsection into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				"\\insertsubsubsection":{
 					"prefix": "beamer \\insertsubsubsection",
 					"body": "\\insertsubsubsection",
-					"description": "<beamer> Class\nInserts the current subsubsection into a template.\nbeameruserguide.pdf p.065"
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the current subsubsection into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				"\\insertframenumber":{
 					"prefix": "beamer \\insertframenumber",
 					"body": "\\insertframenumber",
-					"description": "<beamer> Class\nInserts the number of the current frame (not slide) into a template.\nbeameruserguide.pdf p.065"
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the number of the current frame (not slide) into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				"\\insertslidenumber":{
 					"prefix": "beamer \\insertslidenumber",
 					"body": "\\insertslidenumber",
-					"description": "<beamer> Class\nInserts the number of the current slide in frame into a template.\nbeameruserguide.pdf p.065"
+					"description": [
+						"⟨beamer⟩ Class",
+						"Inserts the number of the current slide in frame into a template.",
+						"beameruserguide.pdf p.065"
+					]
 				},
 
 				// Section 8.2.6 // The Frame Title
 
 				"\\frametitle":{
 					"prefix": "beamer \\frametitle",
-					"body": "\\frametitle<${1:<overlay specification>}>[${2:<short frame title>}]{${3:<frame title text>}}",
-					"description": "<beamer> Class\nbeameruserguide.pdf p.073"
+					"body": "\\frametitle<${1:overlay specification}>[${2:<short frame title>}]{${3:<frame title text>}}",
+					"description": "⟨beamer⟩ Class\nbeameruserguide.pdf p.073"
 				},
 
 				"\\framesubtitle":{
 					"prefix": "beamer \\framesubtitle",
-					"body": "\\framesubtitle<${1:<overlay specification>}>{${2:<frame title text>}}",
-					"description": "<beamer> Class\nbeameruserguide.pdf p.074"
+					"body": "\\framesubtitle<${1:overlay specification}>{${2:<frame title text>}}",
+					"description": "⟨beamer⟩ Class\nbeameruserguide.pdf p.074"
 				},
 
 		// Section 9 // Creating Overlays
@@ -131,98 +195,128 @@
 
 				"\\onslide":{
 					"prefix": "beamer \\onslide",
-					"body": "\\onslide${1:<modifiler>}<${2:<overlay specification>}>{${3:text}}",
-					"description": "<beamer> Class\nbeameruserguide.pdf p.080"
+					"body": "\\onslide${1:<modifiler>}<${2:overlay specification}>{${3:text}}",
+					"description": "⟨beamer⟩ Class\nbeameruserguide.pdf p.080"
 				},
 
 				"\\only":{
 					"prefix": "beamer \\only",
-					"body": "\\only<${1:<overlay specification>}>{${2:text}}<${3:<overlay specification>}>",
-					"description": "<beamer> Class\nbeameruserguide.pdf p.080"
+					"body": "\\only<${1:overlay specification}>{${2:text}}<${3:overlay specification}>",
+					"description": "⟨beamer⟩ Class\nbeameruserguide.pdf p.080"
 				},
 
 				"\\uncover":{
 					"prefix": "beamer \\uncover",
-					"body": "\\uncover<${1:<overlay specification>}>{${2:text}}",
-					"description": "<beamer> Class\nbeameruserguide.pdf p.081"
+					"body": "\\uncover<${1:overlay specification}>{${2:text}}",
+					"description": "⟨beamer⟩ Class\nbeameruserguide.pdf p.081"
 				},
 
 				"\\visible":{
 					"prefix": "beamer \\visible",
-					"body": "\\visible<${1:<overlay specification>}>{${2:text}}",
-					"description": "<beamer> Class\nbeameruserguide.pdf p.081"
+					"body": "\\visible<${1:overlay specification}>{${2:text}}",
+					"description": "⟨beamer⟩ Class\nbeameruserguide.pdf p.081"
 				},
 
 		// Section 12 // structuring a presentation: The Local structure
+
+				// Section.12.5 // Framed and Boxed Text
+				"beamer :⟨beamercolorbox⟩ environment":{
+					"prefix": "beamer \\beamercolorbox",
+					"body": [
+						"\\begin{beamercolorbox}[${1:options}]{${2:beamer color}}",
+						"\t${3:⟨environment contents⟩}",
+						"\\end{beamercolorbox}",
+					],
+					"description": [
+						":⟨beamer⟩ Class",
+						"beameruserguide.pdf p.123"
+					]
+				},
+
+					"beamer :⟨beamercolorbox⟩ environment: option: wd":{
+						"prefix": "beamer \\beamercolorbox wd",
+						"body": "wd=${1:⟨width⟩}",
+						"description": [
+							":⟨beamer⟩ Class",
+							"1st default: \\hsize",
+							"2nd default: the width of the box typeseted",
+							"beameruserguide.pdf p.124"
+						]
+					},
 
 				// Section.12.7 // splitting a frame into multiple columns
 				"beamer <columns> environment option: onlytextwidth":{
 					"prefix": "beamer columns: onlytextwidth",
 					"body": "onlytextwidth, $0",
-					"description": "<beamer> Class\nbeameruserguide.pdf p.127"
+					"description": "⟨beamer⟩ Class\nbeameruserguide.pdf p.127"
 				},
 
 
-	// [siunitx] environment
+	// [siunitx] package
 		"siunitx Units with value":{
 			"prefix": "siunitx si",
-			"body": "\\SI{$1}{$2}"
+			"body": "\\SI{${1:options}}{${2:⟨unit⟩}}"
 		},
 		
-		"siunitx [ampere] SI base units":{
-			"prefix": "siunitx ampere",
-			"body": "\\ampere"
-		},
+		"siunitx package\nSI base units [ampere]\n"  :{ "prefix": "siunitx ampere",   "body": "\\ampere"   },
+		"siunitx package\nSI base units [candela]\n" :{ "prefix": "siunitx candela",  "body": "\\candela"  },
+		"siunitx package\nSI base units [kelvin]\n"  :{ "prefix": "siunitx kelvin",   "body": "\\kelvin"   },
+		"siunitx package\nSI base units [kilogram]\n":{ "prefix": "siunitx kilogram", "body": "\\kilogram" },
+		"siunitx package\nSI base units [metre]\n"   :{ "prefix": "siunitx metre",    "body": "\\metre"    },
+		"siunitx package\nSI base units [mole]\n"    :{ "prefix": "siunitx mole",     "body": "\\mole"     },
+		"siunitx package\nSI base units [second]\n"  :{ "prefix": "siunitx second",   "body": "\\second"   },
+
+		"siunitx package\n\\per":{ "prefix": "siunitx per", "body": "\\per" },
 		
-		"siunitx [candela] SI base units":{
-			"prefix": "siunitx candela",
-			"body": "\\candela"
+		"siunitx package\nCoherent derived units [degree Celsius]\n":{ "prefix": "siunitx Celsius", "body": "\\degreeCelsius", "description": "⟨siunitx⟩ package\nCoherent derived units in the SI with special names and symbols\n"},
+		"siunitx package\nCoherent derived units [newton]\n"        :{ "prefix": "siunitx newton",  "body": "\\newton",        "description": "⟨siunitx⟩ package\nCoherent derived units in the SI with special names and symbols\n"},
+		"siunitx package\nCoherent derived units [pascal]\n"        :{ "prefix": "siunitx pascal",  "body": "\\pascal",        "description": "⟨siunitx⟩ package\nCoherent derived units in the SI with special names and symbols\n"},
+		"siunitx package\nCoherent derived units [radian]\n"        :{ "prefix": "siunitx radian",  "body": "\\radian",        "description": "⟨siunitx⟩ package\nCoherent derived units in the SI with special names and symbols\n"},
+
+		"siunitx package\nNon-SI units [hour]\n"  :{ "prefix": "siunitx hour",   "body": "\\hour",   "description": "⟨siunitx⟩ package\nNon-SI units accepted for use with the International System of Units" },
+		"siunitx package\nNon-SI units [minute]\n":{ "prefix": "siunitx minute", "body": "\\minute", "description": "⟨siunitx⟩ package\nNon-SI units accepted for use with the International System of Units" },
+
+		"siunitx package\nSI prefixes: yocto 1e-24":{ "prefix": "siunitx yocto", "body": "\\yocto", "description": "⟨siunitx⟩ package\nSI prefixes\n1e-24" },
+		"siunitx package\nSI prefixes: zepto 1e-21":{ "prefix": "siunitx zepto", "body": "\\zepto", "description": "⟨siunitx⟩ package\nSI prefixes\n1e-21" },
+		"siunitx package\nSI prefixes: atto 1e-18" :{ "prefix": "siunitx atto",  "body": "\\atto",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e-18" },
+		"siunitx package\nSI prefixes: femto 1e-15":{ "prefix": "siunitx femto", "body": "\\femto", "description": "⟨siunitx⟩ package\nSI prefixes\n1e-15" },
+		"siunitx package\nSI prefixes: pico 1e-12" :{ "prefix": "siunitx pico",  "body": "\\pico",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e-12" },
+		"siunitx package\nSI prefixes: nano 1e-09" :{ "prefix": "siunitx nano",  "body": "\\nano",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e-09" },
+		"siunitx package\nSI prefixes: micro 1e-06":{ "prefix": "siunitx micro", "body": "\\micro", "description": "⟨siunitx⟩ package\nSI prefixes\n1e-06" },
+		"siunitx package\nSI prefixes: milli 1e-03":{ "prefix": "siunitx milli", "body": "\\milli", "description": "⟨siunitx⟩ package\nSI prefixes\n1e-03" },
+		"siunitx package\nSI prefixes: centi 1e-02":{ "prefix": "siunitx centi", "body": "\\centi", "description": "⟨siunitx⟩ package\nSI prefixes\n1e-02" },
+		"siunitx package\nSI prefixes: deci 1e-01" :{ "prefix": "siunitx deci",  "body": "\\deci",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e-01" },
+		"siunitx package\nSI prefixes: deca 1e+01" :{ "prefix": "siunitx deca",  "body": "\\deca",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e+01" },
+		"siunitx package\nSI prefixes: hecto 1e+02":{ "prefix": "siunitx hecto", "body": "\\hecto", "description": "⟨siunitx⟩ package\nSI prefixes\n1e+02" },
+		"siunitx package\nSI prefixes: kilo 1e+03" :{ "prefix": "siunitx kilo",  "body": "\\kilo",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e+03" },
+		"siunitx package\nSI prefixes: mega 1e+06" :{ "prefix": "siunitx mega",  "body": "\\mega",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e+06" },
+		"siunitx package\nSI prefixes: giga 1e+09" :{ "prefix": "siunitx giga",  "body": "\\giga",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e+09" },
+		"siunitx package\nSI prefixes: tera 1e+12" :{ "prefix": "siunitx tera",  "body": "\\tera",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e+12" },
+		"siunitx package\nSI prefixes: peta 1e+15" :{ "prefix": "siunitx peta",  "body": "\\peta",  "description": "⟨siunitx⟩ package\nSI prefixes\n1e+15" },
+		"siunitx package\nSI prefixes: exa 1e+18"  :{ "prefix": "siunitx exa",   "body": "\\exa",   "description": "⟨siunitx⟩ package\nSI prefixes\n1e+18" },
+		"siunitx package\nSI prefixes: zetta 1e+21":{ "prefix": "siunitx zetta", "body": "\\zetta", "description": "⟨siunitx⟩ package\nSI prefixes\n1e+21" },
+		"siunitx package\nSI prefixes: yotta 1e+24":{ "prefix": "siunitx yotta", "body": "\\yotta", "description": "⟨siunitx⟩ package\nSI prefixes\n1e+24" },
+
+		"siunitx package\n\\numlist: base":{
+			"prefix": "siunitx numlist",
+			"body": "\\numlist[${1:⟨options⟩}]{${2:⟨numbers⟩}",
+			"description": "⟨siunitx⟩ package\n\\numlist[options]{numbers}\nsiunitx.pdf p.06\n"
 		},
-		
-		"siunitx [kelvin] SI base units":{
-			"prefix": "siunitx kelvin",
-			"body": "\\kelvin"
-		},
-		
-		"siunitx [kilogram] SI base units":{
-			"prefix": "siunitx kilogram",
-			"body": "\\kilogram"
-		},
-		
-		"siunitx [metre] SI base units":{
-			"prefix": "siunitx metre",
-			"body": "\\metre"
-		},
-		
-		"siunitx [mole] SI base units":{
-			"prefix": "siunitx mole",
-			"body": "\\mole"
-		},
-		
-		"siunitx [second] SI base units":{
-			"prefix": "siunitx second",
-			"body": "\\second"
-		},
-		
-		"siunitx [degree Celsius] Coherent derived units in the SI with special names and symbols":{
-			"prefix": "siunitx Celsius",
-			"body": "\\degreeCelsius"
-		},
-		
-		"siunitx [newton] Coherent derived units in the SI with special names and symbols":{
-			"prefix": "siunitx newton",
-			"body": "\\newton"
-		},
-		
-		"siunitx [radian] Coherent derived units in the SI with special names and symbols":{
-			"prefix": "siunitx radian",
-			"body": "\\radian"
-		},
-		
-		"siunitx [hour] Non-SI units accepted for use with the International System of Units":{
-			"prefix": "siunitx hour",
-			"body": "\\hour"
-		},
+
+			"siunitx package\n\\numlist: options: list-final-separator":{
+				"prefix": "siunitx numlist list-final-separator",
+				"body": "list-final-separator={${1: and }}"
+			},
+
+			"siunitx package\n\\numlist: options: list-pair-separator":{
+				"prefix": "siunitx numlist list-pair-separator",
+				"body": "list-pair-separator={${1: and }}"
+			},
+
+			"siunitx package\n\\numlist: options: list-separator":{
+				"prefix": "siunitx numlist list-separator",
+				"body": "list-separator={${1:, }}"
+			},
 
 	// [tikzpicture] environment
 
@@ -261,11 +355,25 @@
 					
 					// Section.13.2.3 Node Coordinate System //
 
-						"tikzpicture anchor":{
+						"tikzpicture: anchor":{
 							"prefix": "/tikz/anchor",
-							"body": "anchor=${1:<anchor>}, $0",
+							"body": "anchor=${1:⟨anchor⟩}, $0",
 							"description": "no default\nSpecifies an anchor of the node.\nManual for Version 3.0.1a p.134\n"
 						},
+
+			// Section.14 //
+
+				"tikzpicture: path: single line":{
+					"prefix": "/tikz/path",
+					"body": "\\path [${1:options}] ${2:⟨specification⟩};",
+					"description": "Manual for Version 3.0.1a p.146\n"
+				},
+
+				"tikzpicture: path: multi line":{
+					"prefix": "/tikz/path",
+					"body": "\\path [${1:options}]$LINE_COMMENT\n\t${2:⟨specification⟩}\n;",
+					"description": "Manual for Version 3.0.1a p.146\n"
+				},
 
 			// Section.15 Actions on Paths //
 
@@ -273,7 +381,7 @@
 
 					"/tikz/color":{
 						"prefix": "/tikz/color",
-						"body": "color=${1:<color name>}, $0",
+						"body": "color=${1:⟨color name⟩}, $0",
 						"description": "no default\nManual for Version 3.0.1a p.165\n"
 					},
 
@@ -283,7 +391,7 @@
 
 						"/tikz/draw":{
 							"prefix": "/tikz/draw",
-							"body": "draw=${1:<color>}, $0",
+							"body": "draw=${1:⟨color⟩}, $0",
 							"description": "default is scope’s color setting\nManual for Version 3.0.1a p.165\n"
 						},
 
@@ -295,7 +403,7 @@
 
 						"/tikz/line width":{
 							"prefix": "/tikz/line width",
-							"body": "line width=${1:<dimension>}, $0",
+							"body": "line width=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially 0.4pt\nManual for Version 3.0.1a p.166\n"
 						},
 
@@ -379,7 +487,7 @@
 
 						"/tikz/miter limit":{
 							"prefix": "/tikz/miter limit",
-							"body": "miter limit=${1:<factor>}, $0",
+							"body": "miter limit=${1:⟨factor⟩}, $0",
 							"description": "no default\ninitially 10\nManual for Version 3.0.1a p.167\n"
 						},
 
@@ -387,13 +495,13 @@
 
 						"/tikz/dash pattern":{
 							"prefix": "/tikz/dash pattern",
-							"body": "dash pattern=${1:<dash pattern>}, $0",
+							"body": "dash pattern=${1:⟨dash pattern⟩}, $0",
 							"description": "no default\n[sample] : dash pattern=on 2pt off 3pt on 4pt off 4pt\nManual for Version 3.0.1a p.167\n"
 						},
 
 						"/tikz/dash phase":{
 							"prefix": "/tikz/dash phase",
-							"body": "dash phase=${1:<dash phase>}, $0",
+							"body": "dash phase=${1:⟨dash phase⟩}, $0",
 							"description": "no default\n[sample] : dash phase=on 20pt off 10pt\nManual for Version 3.0.1a p.167\n"
 						},
 
@@ -479,19 +587,19 @@
 
 						"/tikz/double":{
 							"prefix": "/tikz/double",
-							"body": "double=${1:<core color>}, $0",
+							"body": "double=${1:⟨core color⟩}, $0",
 							"description": "This option causes “two” lines to be drawn instead of a single one.\ndefault: white\nManual for Version 3.0.1a p.169\n"
 						},
 
 						"/tikz/double distance":{
 							"prefix": "/tikz/double distance",
-							"body": "double distance=${1:<dimension>}, $0",
+							"body": "double distance=${1:⟨dimension⟩}, $0",
 							"description": "Sets the distance the “two” lines are spaced apart.\nno default\ninitially 0.6pt\nManual for Version 3.0.1a p.169\n"
 						},
 
 						"/tikz/double distance between line centers":{
 							"prefix": "/tikz/double distance between line centers",
-							"body": "double distance between line centers=${1:<dimension>}, $0",
+							"body": "double distance between line centers=${1:⟨dimension⟩}, $0",
 							"description": "This option works like double distance, only the distance is not the distance between (inner) borders of the two main lines, but between their centers.\nno default\nManual for Version 3.0.1a p.169\n"
 						},
 
@@ -505,7 +613,7 @@
 
 					"/tikz/fill":{
 						"prefix": "/tikz/fill",
-						"body": "fill=${1:<color>}, $0",
+						"body": "fill=${1:⟨color⟩}, $0",
 						"description": "default is scope’s color setting\nManual for Version 3.0.1a p.170\n"
 					},
 
@@ -519,7 +627,7 @@
 
 						"/tikz/pattern color":{
 							"prefix": "/tikz/pattern color",
-							"body": " pattern color=${1:<color>}",
+							"body": " pattern color=${1:⟨color⟩}",
 							"description": "This option is used to set the color to be used for form-only patterns.\nno default\nManual for Version 3.0.1a p.171\n"
 						},
 
@@ -535,7 +643,7 @@
 
 					"tikzpicture syntax of the node command:node contents":{
 						"prefix": "/tikz/node contents",
-						"body": " node contents=${1:<node contents>}",
+						"body": " node contents=${1:⟨node contents⟩}",
 					},
 
 					"tikzpicture syntax of the node command:every node":{
@@ -544,9 +652,9 @@
 						"description": "style, initially empty"
 					},
 
-					"tikzpicture syntax of the node command:every <shape> node":{
+					"tikzpicture syntax of the node command:every ⟨shape⟩ node":{
 						"prefix": "/tikz/every node",
-						"body": " every ${1:<shape>} node/.style={${2:options}}",
+						"body": " every ${1:⟨shape⟩} node/.style={${2:options}}",
 						"description": "style, initially empty"
 					},
 
@@ -564,7 +672,7 @@
 
 					"tikzpicture syntax of the node command:shape":{
 						"prefix": "/tikz/node shape",
-						"body": " shape=${1:<shape>}, $0",
+						"body": " shape=${1:⟨shape⟩}, $0",
 						"description": "no default, initially 'rectangle'"
 					},
 
@@ -573,67 +681,67 @@
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:inner sep":{
 							"prefix": "/tikz/inner sep",
-							"body": "inner sep=${1:<dimension>}, $0",
+							"body": "inner sep=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially .3333em\nManual for Version 3.0.1a p.218\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:inner xsep":{
 							"prefix": "/tikz/inner xsep",
-							"body": "inner xsep=${1:<dimension>}, $0",
+							"body": "inner xsep=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially .3333em\nManual for Version 3.0.1a p.219\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:inner ysep":{
 							"prefix": "/tikz/inner ysep",
-							"body": "inner ysep=${1:<dimension>}, $0",
+							"body": "inner ysep=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially .3333em\nManual for Version 3.0.1a p.219\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:outer sep":{
 							"prefix": "/tikz/outer sep",
-							"body": "outer sep=${1:<dimension>}, $0",
+							"body": "outer sep=${1:⟨dimension⟩}, $0",
 							"description": "no default\nManual for Version 3.0.1a p.219\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:outer xsep":{
 							"prefix": "/tikz/outer xsep",
-							"body": "outer xsep=${1:<dimension>}, $0",
+							"body": "outer xsep=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially .5\\pgflinewidth\nManual for Version 3.0.1a p.219\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:outer ysep":{
 							"prefix": "/tikz/outer ysep",
-							"body": "outer ysep=${1:<dimension>}, $0",
+							"body": "outer ysep=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially .5\\pgflinewidth\nManual for Version 3.0.1a p.219\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:minimum height":{
 							"prefix": "/tikz/minimum height",
-							"body": "minimum height=${1:<dimension>}, $0",
+							"body": "minimum height=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.219\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:minimum width":{
 							"prefix": "/tikz/minimum width",
-							"body": "minimum width=${1:<dimension>}, $0",
+							"body": "minimum width=${1:⟨dimension⟩}, $0",
 							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.220\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:minimum size":{
 							"prefix": "/tikz/minimum size",
-							"body": "minimum size=${1:<dimension>}, $0",
+							"body": "minimum size=${1:⟨dimension⟩}, $0",
 							"description": "no default\nManual for Version 3.0.1a p.220\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:shape aspect":{
 							"prefix": "/tikz/shape aspect",
-							"body": "shape aspect=${1:<dimension>}, $0",
+							"body": "shape aspect=${1:⟨dimension⟩}, $0",
 							"description": "no default\nManual for Version 3.0.1a p.220\n"
 						},
 
 						"tikzpicture Common Options: Separations, Margins, Padding and Border Rotation:shape border rotate":{
 							"prefix": "/tikz/shape border rotate",
-							"body": "shape border rotate=${1:<angle>}, $0",
+							"body": "shape border rotate=${1:⟨angle⟩}, $0",
 							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.221\n"
 						},
 
@@ -643,7 +751,7 @@
 
 						"tikzpicture Text Parameters: Font:text":{
 							"prefix": "/tikz/text",
-							"body": "text=${1:<color>},",
+							"body": "text=${1:⟨color⟩},",
 							"description": "no default\ninitially 0pt\nManual for Version 3.0.1a p.221\n"
 						},
 
@@ -653,19 +761,19 @@
 
 						"/tikz/out":{
 							"prefix": "/tikz/out",
-							"body": "out=${1:<angle>}",
+							"body": "out=${1:⟨angle⟩}",
 							"description": "Section.70.3 Curves\nno default\nManual for Version 3.0.1a p.745\n"
 						},
 
 						"/tikz/in":{
 							"prefix": "/tikz/in",
-							"body": "in=${1:<angle>}",
+							"body": "in=${1:⟨angle⟩}",
 							"description": "Section.70.3 Curves\nno default\nManual for Version 3.0.1a p.745\n"
 						},
 
 						"/tikz/out, in":{
 							"prefix": "/tikz/out, in",
-							"body": "out=${1:<angle>}, in=${2:<angle>}",
+							"body": "out=${1:⟨angle⟩}, in=${2:⟨angle⟩}",
 							"description": "Section.70.3 Curves\nno default\nManual for Version 3.0.1a p.745\n"
 						},
 
@@ -677,13 +785,13 @@
 
 						"/tikz/bend left":{
 							"prefix": "/tikz/bend left",
-							"body": "bend left=${1:<angle>}",
+							"body": "bend left=${1:⟨angle⟩}",
 							"description": "Section.70.3 Curves\ndefault: last value\nManual for Version 3.0.1a p.746\n"
 						},
 
 						"/tikz/bend right":{
 							"prefix": "/tikz/bend right",
-							"body": "bend right=${1:<angle>}",
+							"body": "bend right=${1:⟨angle⟩}",
 							"description": "Section.70.3 Curves\ndefault: last value\nManual for Version 3.0.1a p.747\n"
 						},
 

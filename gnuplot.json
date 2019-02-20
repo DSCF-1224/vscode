@@ -1,423 +1,423 @@
 {
-/*
-	// Place your snippets for Gnuplot here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-	// Example:
-	"Print to console": {
-		"prefix": "log",
-		"body": [
-			"console.log('$1');",
-			"$2"
-		],
-		"description": "Log output to console"
-	}
-*/
-
-/* command : pause */
-
-	"command: pause":{
-		"prefix": "pause",
-		"body": "pause $LINE_COMMENT ${1:<time>} ${2:{\"<string>\"}}",
-		"description": "gnuplot\npause Command\n"
-	},
-
-/* command : pwd */
-
-	"command: pwd":{
-		"prefix": "pwd",
-		"body": "pwd",
-	},
-
-/* set border */
-
-	"set border: all":{
-		"prefix": "border",
-		"body": [
-			"set border $LINE_COMMENT {<integer>}",
-			"set border $LINE_COMMENT {front | back | behind}",
-			"set border $LINE_COMMENT {linewidth | lw <line_width>}",
-			"set border $LINE_COMMENT {{linestyle | ls <line_style>} | {linetype | lt <line_type>}}",
-		],
-		"description": "set border\nall options\nVersion 5.0 patchlevel 6\n"
-	},
-
-	"set border: unset":{
-		"prefix": "border",
-		"body": "unset border",
-		"description": "set border\ndo not show border\nVersion 5.0 patchlevel 6\n"
-	},
-
-/* set datafile separator */
-	"set datafile separator":{
-		"prefix": "datafile separator",
-		"body": "datafile separator '${0:chars}'",
-		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．"
-	},
-
-	"set datafile separator: whitespace":{
-		"prefix": "datafile separator",
-		"body": "datafile separator whitespace",
-		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\n同コマンドのデフォルト値"
-	},
-
-	"set datafile separator: tab":{
-		"prefix": "datafile separator",
-		"body": "datafile separator tab",
-		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nタブ区切り"
-	},
-
-	"set datafile separator: comma":{
-		"prefix": "datafile separator",
-		"body": "datafile separator comma",
-		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nコンマ区切り"
-	},
-
-	"set datafile separator: several type":{
-		"prefix": "datafile separator",
-		"body": "datafile separator ${1:type1}|${2:type2}",
-		"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nコンマ区切り"
-	},
-
-/* set format */
-
-	"set format":{
-		"prefix": "format",
-		"body": "set format ${1:<axes>} ${2:\"<format-string>\"} ${3:{numeric|timedate|geographic}} $LINE_COMMENT <axes> \"<format-string>\" {numeric|timedate|geographic}",
-		"description": "軸の刻み書式 (format)\nVersion 5.0 patchlevel 6\n"
-	},
-
-	"set format: reset to default":{
-		"prefix": "format (reset to default)",
-		"body": "set format",
-		"description": "軸の刻み書式 (format)\nVersion 5.0 patchlevel 6\n"
-	},
-
-/* set key */
-
-	"set key: all":{
-		"prefix": "key",
-		"body": [
-			"set key $LINE_COMMENT {on|off} {default}",
-			"set key $LINE_COMMENT { {inside|outside} | {lmargin|rmargin|tmargin|bmargin} | {at <position>} }",
-			"set key $LINE_COMMENT {left|right|center} {top|bottom|center}",
-			"set key $LINE_COMMENT {vertical|horizontal} {Left|Right}",
-			"set key $LINE_COMMENT {noopaque|opaque}",
-			"set key $LINE_COMMENT {noreverse|reverse} {noinvert|invert}",
-			"set key $LINE_COMMENT {samplen <sample_length>} {spacing <vertical_spacing>}",
-			"set key $LINE_COMMENT {width <width_increment>} {height <height_increment>}",
-			"set key $LINE_COMMENT {noautotitle|autotitle {columnheader}}",
-			"set key $LINE_COMMENT {title \"<text>\"} {noenhanced|enhanced}",
-			"set key $LINE_COMMENT {font \"<face>,<size>\"} {textcolor <colorspec>}",
-			"set key $LINE_COMMENT {nobox|box {linestyle <style>|linetype <type>|linewidth <width>} }",
-			"set key $LINE_COMMENT {maxcols {<max no. of columns> | auto}}",
-			"set key $LINE_COMMENT {maxrows {<max no. of rows> | auto}}",
-		],
-		"description": "凡例 (key)\nVersion 5.0 patchlevel 6\n"
-	},
-
-/* set margin */
-
-	"set margin: all":{
-		"prefix": "set margin",
-		"body": [
-			"set lmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
-			"set rmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
-			"set tmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
-			"set bmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}"
-		]
-	},
-
-	"set margin: left"  :{ "prefix": "set margin", "body": "set lmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
-	"set margin: right" :{ "prefix": "set margin", "body": "set rmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
-	"set margin: top"   :{ "prefix": "set margin", "body": "set tmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
-	"set margin: bottom":{ "prefix": "set margin", "body": "set bmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
-
-/* set terminal */
-
-	/* set terminal cairolatex */
-
-		"set term: cairolatex":{
-			"prefix": "term cairolatex",
+	/*
+		// Place your snippets for Gnuplot here. Each snippet is defined under a snippet name and has a prefix, body and 
+		// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+		// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+		// same ids are connected.
+		// Example:
+		"Print to console": {
+			"prefix": "log",
 			"body": [
-				"set terminal cairolatex pdf                 $LINE_COMMENT {eps|pdf}",
-				"set terminal cairolatex input               $LINE_COMMENT {standalone|input}",
-				"set terminal cairolatex noheader            $LINE_COMMENT {header <header>|noheader}",
-				"set terminal cairolatex blacktext           $LINE_COMMENT {blacktext|colortext|colourtext}",
-				"set terminal cairolatex                     $LINE_COMMENT {mono|color}",
-				"set terminal cairolatex nobackground        $LINE_COMMENT {notransparent|transparent} {nocrop|crop} {background <rgbcolor>|nobackground}",
-				"set terminal cairolatex                     $LINE_COMMENT {font <font>} {fontscale <scale>}",
-				"set terminal cairolatex                     $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set terminal cairolatex size 3.00in, 2.50in $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+				"console.log('$1');",
+				"$2"
 			],
-			"description": "terminal cairolatex\nVersion 5.0 patchlevel 6\n"
+			"description": "Log output to console"
+		}
+	*/
+	
+	/* command : pause */
+	
+		"command: pause":{
+			"prefix": "pause",
+			"body": "pause $LINE_COMMENT ${1:<time>} ${2:{\"<string>\"}}",
+			"description": "gnuplot\npause Command\n"
 		},
-
-	/* set terminal emf */
-
-		"set term: emf":{
-			"prefix": "term emf",
+	
+	/* command : pwd */
+	
+		"command: pwd":{
+			"prefix": "pwd",
+			"body": "pwd",
+		},
+	
+	/* set border */
+	
+		"set border: all":{
+			"prefix": "border",
 			"body": [
-				"set terminal emf $LINE_COMMENT {color|monochrome}",
-				"set terminal emf $LINE_COMMENT {enhanced {noproportional}}",
-				"set terminal emf $LINE_COMMENT {rounded|butt}",
-				"set terminal emf $LINE_COMMENT {linewidth <LW>} {dashlength <DL>}",
-				"set terminal emf $LINE_COMMENT {size XX,YY} {background <rgb_color>}",
-				"set terminal emf $LINE_COMMENT {font \"<fontname>{,<fontsize>}\"}",
-				"set terminal emf $LINE_COMMENT {fontscale <scale>}",
+				"set border $LINE_COMMENT {<integer>}",
+				"set border $LINE_COMMENT {front | back | behind}",
+				"set border $LINE_COMMENT {linewidth | lw <line_width>}",
+				"set border $LINE_COMMENT {{linestyle | ls <line_style>} | {linetype | lt <line_type>}}",
 			],
-			"description": "terminal emf\nVersion 5.0 patchlevel 6\n"
+			"description": "set border\nall options\nVersion 5.0 patchlevel 6\n"
 		},
-
-	/* set terminal lua tikz */
-
-		"set term: lua tikz: all":{
-			"prefix": "term lua tikz",
+	
+		"set border: unset":{
+			"prefix": "border",
+			"body": "unset border",
+			"description": "set border\ndo not show border\nVersion 5.0 patchlevel 6\n"
+		},
+	
+	/* set datafile separator */
+		"set datafile separator":{
+			"prefix": "datafile separator",
+			"body": "datafile separator '${0:chars}'",
+			"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．"
+		},
+	
+		"set datafile separator: whitespace":{
+			"prefix": "datafile separator",
+			"body": "datafile separator whitespace",
+			"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\n同コマンドのデフォルト値"
+		},
+	
+		"set datafile separator: tab":{
+			"prefix": "datafile separator",
+			"body": "datafile separator tab",
+			"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nタブ区切り"
+		},
+	
+		"set datafile separator: comma":{
+			"prefix": "datafile separator",
+			"body": "datafile separator comma",
+			"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nコンマ区切り"
+		},
+	
+		"set datafile separator: several type":{
+			"prefix": "datafile separator",
+			"body": "datafile separator ${1:type1}|${2:type2}",
+			"description": "この後の入力ファイルのデータ列の分離文字が空白(whitespace)ではなくて，ここで指定する文字であるとgnuplotに支持します．\nコンマ区切り"
+		},
+	
+	/* set format */
+	
+		"set format":{
+			"prefix": "format",
+			"body": "set format ${1:<axes>} ${2:\"<format-string>\"} ${3:{numeric|timedate|geographic}} $LINE_COMMENT <axes> \"<format-string>\" {numeric|timedate|geographic}",
+			"description": "軸の刻み書式 (format)\nVersion 5.0 patchlevel 6\n"
+		},
+	
+		"set format: reset to default":{
+			"prefix": "format (reset to default)",
+			"body": "set format",
+			"description": "軸の刻み書式 (format)\nVersion 5.0 patchlevel 6\n"
+		},
+	
+	/* set key */
+	
+		"set key: all":{
+			"prefix": "key",
 			"body": [
-				"set terminal lua tikz $LINE_COMMENT {latex|tex|context}",
-				"set terminal lua tikz $LINE_COMMENT {color|monochrome}",
-				"set terminal lua tikz $LINE_COMMENT {nooriginreset|originreset}",
-				"set terminal lua tikz $LINE_COMMENT {nogparrows|gparrows}",
-				"set terminal lua tikz $LINE_COMMENT {nogppoints|gppoints}",
-				"set terminal lua tikz $LINE_COMMENT {picenvironment|nopicenvironment}",
-				"set terminal lua tikz $LINE_COMMENT {noclip|clip}",
-				"set terminal lua tikz $LINE_COMMENT {notightboundingbox|tightboundingbox}",
-				"set terminal lua tikz $LINE_COMMENT {background \"<colorpec>\"}",
-				"set terminal lua tikz $LINE_COMMENT {size <x>{unit},<y>{unit}}",
-				"set terminal lua tikz $LINE_COMMENT {scale <x>,<y>}",
-				"set terminal lua tikz $LINE_COMMENT {plotsize <x>{unit},<y>{unit}}",
-				"set terminal lua tikz $LINE_COMMENT {charsize <x>{unit},<y>{unit}}",
-				"set terminal lua tikz $LINE_COMMENT {font \"<fontdesc>\"}",
-				"set terminal lua tikz $LINE_COMMENT {{fontscale|textscale} <scale>}",
-				"set terminal lua tikz $LINE_COMMENT {dashlength|dl <DL>}",
-				"set terminal lua tikz $LINE_COMMENT {linewidth|lw <LW>}",
-				"set terminal lua tikz $LINE_COMMENT {nofulldoc|nostandalone|fulldoc|standalone}",
-				"set terminal lua tikz $LINE_COMMENT {{preamble|header} \"<preamble_string>\"}",
-				"set terminal lua tikz $LINE_COMMENT {tikzplot <ltn>,...}",
-				"set terminal lua tikz $LINE_COMMENT {notikzarrows|tikzarrows}",
-				"set terminal lua tikz $LINE_COMMENT {rgbimages|cmykimages}",
-				"set terminal lua tikz $LINE_COMMENT {noexternalimages|externalimages}",
-				"set terminal lua tikz $LINE_COMMENT {bitmap|nobitmap}",
-				"set terminal lua tikz $LINE_COMMENT {providevars <var name>,...}",
-
+				"set key $LINE_COMMENT {on|off} {default}",
+				"set key $LINE_COMMENT { {inside|outside} | {lmargin|rmargin|tmargin|bmargin} | {at <position>} }",
+				"set key $LINE_COMMENT {left|right|center} {top|bottom|center}",
+				"set key $LINE_COMMENT {vertical|horizontal} {Left|Right}",
+				"set key $LINE_COMMENT {noopaque|opaque}",
+				"set key $LINE_COMMENT {noreverse|reverse} {noinvert|invert}",
+				"set key $LINE_COMMENT {samplen <sample_length>} {spacing <vertical_spacing>}",
+				"set key $LINE_COMMENT {width <width_increment>} {height <height_increment>}",
+				"set key $LINE_COMMENT {noautotitle|autotitle {columnheader}}",
+				"set key $LINE_COMMENT {title \"<text>\"} {noenhanced|enhanced}",
+				"set key $LINE_COMMENT {font \"<face>,<size>\"} {textcolor <colorspec>}",
+				"set key $LINE_COMMENT {nobox|box {linestyle <style>|linetype <type>|linewidth <width>} }",
+				"set key $LINE_COMMENT {maxcols {<max no. of columns> | auto}}",
+				"set key $LINE_COMMENT {maxrows {<max no. of rows> | auto}}",
 			],
-			"description": "terminal lua tikz\nVersion 5.0 patchlevel 6\n"
+			"description": "凡例 (key)\nVersion 5.0 patchlevel 6\n"
 		},
-
-		"set term: lua tikz: createstyle":{
-			"prefix": "term lua tikz",
-			"body": "set terminal lua tikz createstyle",
-			"description": "terminal lua tikz\nVersion 5.0 patchlevel 6\n"
-		},
-
-	/* set terminal pdfcairo */
-
-		"set term: pdfcairo":{
-			"prefix": "term pdfcairo",
+	
+	/* set margin */
+	
+		"set margin: all":{
+			"prefix": "set margin",
 			"body": [
-				"set terminal pdfcairo $LINE_COMMENT {noenhanced|enhanced}",
-				"set terminal pdfcairo $LINE_COMMENT {mono|color}",
-				"set terminal pdfcairo $LINE_COMMENT {font <font>}",
-				"set terminal pdfcairo $LINE_COMMENT {fontscale <scale>}",
-				"set terminal pdfcairo $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set terminal pdfcairo $LINE_COMMENT {background <rgbcolor>}",
-				"set terminal pdfcairo $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
-			],
-			"description": "terminal pdfcairo\nVersion 5.0 patchlevel 6\n"
+				"set lmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
+				"set rmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
+				"set tmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}",
+				"set bmargin $LINE_COMMENT ${1:at screen} ${2:<margin>}"
+			]
 		},
-
-	/* set terminal pngcairo */
-
-		"set term: pngcairo":{
-			"prefix": "term pngcairo",
-			"body": [
-				"set terminal pngcairo enhanced             $LINE_COMMENT {noenhanced|enhanced}",
-				"set terminal pngcairo                      $LINE_COMMENT {mono|color}",
-				"set terminal pngcairo background \"#ffffff\" $LINE_COMMENT {notransparent|transparent} {background <rgbcolor>}",
-				"set terminal pngcairo                      $LINE_COMMENT {nocrop|crop}",
-				"set terminal pngcairo                      $LINE_COMMENT {font <font>}",
-				"set terminal pngcairo fontscale 1.0        $LINE_COMMENT {fontscale <scale>}",
-				"set terminal pngcairo                      $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-				"set terminal pngcairo size 640, 480        $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
-			],
-			"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
+	
+		"set margin: left"  :{ "prefix": "set margin", "body": "set lmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+		"set margin: right" :{ "prefix": "set margin", "body": "set rmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+		"set margin: top"   :{ "prefix": "set margin", "body": "set tmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+		"set margin: bottom":{ "prefix": "set margin", "body": "set bmargin ${1:at screen} ${2:<margin>}", "description": "周囲の余白 (margin)\nVersion 5.0 patchlevel 6\n" },
+	
+	/* set terminal */
+	
+		/* set terminal cairolatex */
+	
+			"set term: cairolatex":{
+				"prefix": "term cairolatex",
+				"body": [
+					"set terminal cairolatex pdf                 $LINE_COMMENT {eps|pdf}",
+					"set terminal cairolatex input               $LINE_COMMENT {standalone|input}",
+					"set terminal cairolatex noheader            $LINE_COMMENT {header <header>|noheader}",
+					"set terminal cairolatex blacktext           $LINE_COMMENT {blacktext|colortext|colourtext}",
+					"set terminal cairolatex                     $LINE_COMMENT {mono|color}",
+					"set terminal cairolatex nobackground        $LINE_COMMENT {notransparent|transparent} {nocrop|crop} {background <rgbcolor>|nobackground}",
+					"set terminal cairolatex                     $LINE_COMMENT {font <font>} {fontscale <scale>}",
+					"set terminal cairolatex                     $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+					"set terminal cairolatex size 3.00in, 2.50in $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+				],
+				"description": "terminal cairolatex\nVersion 5.0 patchlevel 6\n"
+			},
+	
+		/* set terminal emf */
+	
+			"set term: emf":{
+				"prefix": "term emf",
+				"body": [
+					"set terminal emf $LINE_COMMENT {color|monochrome}",
+					"set terminal emf $LINE_COMMENT {enhanced {noproportional}}",
+					"set terminal emf $LINE_COMMENT {rounded|butt}",
+					"set terminal emf $LINE_COMMENT {linewidth <LW>} {dashlength <DL>}",
+					"set terminal emf $LINE_COMMENT {size XX,YY} {background <rgb_color>}",
+					"set terminal emf $LINE_COMMENT {font \"<fontname>{,<fontsize>}\"}",
+					"set terminal emf $LINE_COMMENT {fontscale <scale>}",
+				],
+				"description": "terminal emf\nVersion 5.0 patchlevel 6\n"
+			},
+	
+		/* set terminal lua tikz */
+	
+			"set term: lua tikz: all":{
+				"prefix": "term lua tikz",
+				"body": [
+					"set terminal lua tikz latex              $LINE_COMMENT {latex|tex|context}",
+					"set terminal lua tikz color              $LINE_COMMENT {color|monochrome}",
+					"set terminal lua tikz nooriginreset      $LINE_COMMENT {nooriginreset|originreset}",
+					"set terminal lua tikz nogparrows         $LINE_COMMENT {nogparrows|gparrows}",
+					"set terminal lua tikz nogppoints         $LINE_COMMENT {nogppoints|gppoints}",
+					"set terminal lua tikz picenvironment     $LINE_COMMENT {picenvironment|nopicenvironment}",
+					"set terminal lua tikz noclip             $LINE_COMMENT {noclip|clip}",
+					"set terminal lua tikz notightboundingbox $LINE_COMMENT {notightboundingbox|tightboundingbox}",
+					"set terminal lua tikz                    $LINE_COMMENT {background \"<colorpec>\"}",
+					"set terminal lua tikz                    $LINE_COMMENT {size <x>{unit},<y>{unit}}",
+					"set terminal lua tikz                    $LINE_COMMENT {scale <x>,<y>}",
+					"set terminal lua tikz                    $LINE_COMMENT {plotsize <x>{unit},<y>{unit}}",
+					"set terminal lua tikz                    $LINE_COMMENT {charsize <x>{unit},<y>{unit}}",
+					"set terminal lua tikz                    $LINE_COMMENT {font \"<fontdesc>\"}",
+					"set terminal lua tikz                    $LINE_COMMENT {{fontscale|textscale} <scale>}",
+					"set terminal lua tikz                    $LINE_COMMENT {dashlength|dl <DL>}",
+					"set terminal lua tikz                    $LINE_COMMENT {linewidth|lw <LW>}",
+					"set terminal lua tikz nostandalone       $LINE_COMMENT {nofulldoc|nostandalone|fulldoc|standalone}",
+					"set terminal lua tikz nopreamble         $LINE_COMMENT {{preamble|header} \"<preamble_string>\"}",
+					"set terminal lua tikz                    $LINE_COMMENT {tikzplot <ltn>,...}",
+					"set terminal lua tikz notikzarrows       $LINE_COMMENT {notikzarrows|tikzarrows}",
+					"set terminal lua tikz rgbimages          $LINE_COMMENT {rgbimages|cmykimages}",
+					"set terminal lua tikz noexternalimages   $LINE_COMMENT {noexternalimages|externalimages}",
+					"set terminal lua tikz bitmap             $LINE_COMMENT {bitmap|nobitmap}",
+					"set terminal lua tikz                    $LINE_COMMENT {providevars <var name>,...}",
+	
+				],
+				"description": "terminal lua tikz\nVersion 5.0 patchlevel 6\n"
+			},
+	
+			"set term: lua tikz: createstyle":{
+				"prefix": "term lua tikz",
+				"body": "set terminal lua tikz createstyle",
+				"description": "terminal lua tikz\nVersion 5.0 patchlevel 6\n"
+			},
+	
+		/* set terminal pdfcairo */
+	
+			"set term: pdfcairo":{
+				"prefix": "term pdfcairo",
+				"body": [
+					"set terminal pdfcairo $LINE_COMMENT {noenhanced|enhanced}",
+					"set terminal pdfcairo $LINE_COMMENT {mono|color}",
+					"set terminal pdfcairo $LINE_COMMENT {font <font>}",
+					"set terminal pdfcairo $LINE_COMMENT {fontscale <scale>}",
+					"set terminal pdfcairo $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+					"set terminal pdfcairo $LINE_COMMENT {background <rgbcolor>}",
+					"set terminal pdfcairo $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+				],
+				"description": "terminal pdfcairo\nVersion 5.0 patchlevel 6\n"
+			},
+	
+		/* set terminal pngcairo */
+	
+			"set term: pngcairo":{
+				"prefix": "term pngcairo",
+				"body": [
+					"set terminal pngcairo enhanced             $LINE_COMMENT {noenhanced|enhanced}",
+					"set terminal pngcairo                      $LINE_COMMENT {mono|color}",
+					"set terminal pngcairo background \"#ffffff\" $LINE_COMMENT {notransparent|transparent} {background <rgbcolor>}",
+					"set terminal pngcairo                      $LINE_COMMENT {nocrop|crop}",
+					"set terminal pngcairo                      $LINE_COMMENT {font <font>}",
+					"set terminal pngcairo fontscale 1.0        $LINE_COMMENT {fontscale <scale>}",
+					"set terminal pngcairo                      $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+					"set terminal pngcairo size 640, 480        $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+				],
+				"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
+			},
+	
+			"set term: pngcairo: crop/nocrop":{
+				"prefix": "term pngcairo crop",
+				"body": "set term pngcairo nocrop|crop $LINE_COMMENT {nocrop|crop}",
+				"description": "terminal pngcairo\ncrop は完成した描画グラフの端の空白領域を取り除いて、結果として画像 サイズを小さくします。デフォルトは nocrop です。\nVersion 5.0 patchlevel 6\n"
+			},
+	
+		/* set terminal wxt */
+	
+			"set term: wxt":{
+				"prefix": "term wxt",
+				"body": [
+					"set terminal wxt $LINE_COMMENT {<n>}",
+					"set terminal wxt $LINE_COMMENT {size <width>,<height>} {position <x>,<y>}",
+					"set terminal wxt $LINE_COMMENT {background <rgb_color>}",
+					"set terminal wxt $LINE_COMMENT {noenhanced|enhanced}",
+					"set terminal wxt $LINE_COMMENT {font <font>} {fontscale <scale>}",
+					"set terminal wxt $LINE_COMMENT {title \"title\"}",
+					"set terminal wxt $LINE_COMMENT {linewidth <lw>}",
+					"set terminal wxt $LINE_COMMENT {dashlength <dl>}",
+					"set terminal wxt $LINE_COMMENT {{no}persist}",
+					"set terminal wxt $LINE_COMMENT {{no}raise}",
+					"set terminal wxt $LINE_COMMENT {{no}ctrl}",
+					"set terminal wxt $LINE_COMMENT {close}",
+				],
+				"description": "terminal wxt\nVersion 5.0 patchlevel 6\n"
+			},
+	
+	/* reset */
+		"reset":{
+			"prefix": "reset",
+			"body": "reset",
+			"description": "setコマンドで定義できる，グラフに関する全てのオプションをデフォルトの値に戻します．"
 		},
-
-		"set term: pngcairo: crop/nocrop":{
-			"prefix": "term pngcairo crop",
-			"body": "set term pngcairo nocrop|crop $LINE_COMMENT {nocrop|crop}",
-			"description": "terminal pngcairo\ncrop は完成した描画グラフの端の空白領域を取り除いて、結果として画像 サイズを小さくします。デフォルトは nocrop です。\nVersion 5.0 patchlevel 6\n"
+	
+		"reset session":{
+			"prefix": "reset session",
+			"body": "reset session",
+			"description": "ユーザ定義変数、ユーザ定義関数すべてを削除し、デフォルトの設定を復帰し、システム全体の初期設定ファイル gnuplotrc と個人用の初期設定ファイル $HOME/.gnuplot を再実行します。"
 		},
-
-	/* set terminal wxt */
-
-		"set term: wxt":{
-			"prefix": "term wxt",
-			"body": [
-				"set terminal wxt $LINE_COMMENT {<n>}",
-				"set terminal wxt $LINE_COMMENT {size <width>,<height>} {position <x>,<y>}",
-				"set terminal wxt $LINE_COMMENT {background <rgb_color>}",
-				"set terminal wxt $LINE_COMMENT {noenhanced|enhanced}",
-				"set terminal wxt $LINE_COMMENT {font <font>} {fontscale <scale>}",
-				"set terminal wxt $LINE_COMMENT {title \"title\"}",
-				"set terminal wxt $LINE_COMMENT {linewidth <lw>}",
-				"set terminal wxt $LINE_COMMENT {dashlength <dl>}",
-				"set terminal wxt $LINE_COMMENT {{no}persist}",
-				"set terminal wxt $LINE_COMMENT {{no}raise}",
-				"set terminal wxt $LINE_COMMENT {{no}ctrl}",
-				"set terminal wxt $LINE_COMMENT {close}",
-			],
-			"description": "terminal wxt\nVersion 5.0 patchlevel 6\n"
+	
+	"every":{
+		"prefix": "every",
+		"body": "every $1:$2:$3:$4:$5:$6",
+		"description": "描画するデータをデータ集合から周期的にサンプリングする"
+	},
+	
+	"every pass toplines":{
+		"prefix": "every",
+		"body": "every ::${1:Lines}",
+		"description": "描画するデータをデータ集合から周期的にサンプリングする"
+	},
+	
+	/* Greek characters */
+	
+		/* capital characters */
+		"greek: Alpha: capital"   :{ "prefix": "Alpha",   "body": "\\316\\221", "description": "capital greek letter\nUnicode : U+CE91\navailable : Times New Roman\nAlpha\n"   },
+		"greek: Beta: capital"    :{ "prefix": "Beta",    "body": "\\316\\222", "description": "capital greek letter\nUnicode : U+CE92\navailable : Times New Roman\nBeta\n"    },
+		"greek: Gamma: capital"   :{ "prefix": "Gamma",   "body": "\\316\\223", "description": "capital greek letter\nUnicode : U+CE93\navailable : Times New Roman\nGamma\n"   },
+		"greek: Delta: capital"   :{ "prefix": "Delta",   "body": "\\316\\224", "description": "capital greek letter\nUnicode : U+CE94\navailable : Times New Roman\nDelta\n"   },
+		"greek: Epsilon: capital" :{ "prefix": "Epsilon", "body": "\\316\\225", "description": "capital greek letter\nUnicode : U+CE95\navailable : Times New Roman\nEpsilon\n" },
+		"greek: Zeta: capital"    :{ "prefix": "Zeta",    "body": "\\316\\226", "description": "capital greek letter\nUnicode : U+CE96\navailable : Times New Roman\nZeta\n"    },
+		"greek: Eta: capital"     :{ "prefix": "Eta",     "body": "\\316\\227", "description": "capital greek letter\nUnicode : U+CE97\navailable : Times New Roman\nEta\n"     },
+		"greek: Theta: capital"   :{ "prefix": "Theta",   "body": "\\316\\230", "description": "capital greek letter\nUnicode : U+CE98\navailable : Times New Roman\nTheta\n"   },
+		"greek: Iota: capital"    :{ "prefix": "Iota",    "body": "\\316\\231", "description": "capital greek letter\nUnicode : U+CE99\navailable : Times New Roman\nIota\n"    },
+		"greek: Kappa: capital"   :{ "prefix": "Kappa",   "body": "\\316\\232", "description": "capital greek letter\nUnicode : U+CE9A\navailable : Times New Roman\nKappa\n"   },
+		"greek: Lambda: capital"  :{ "prefix": "Lambda",  "body": "\\316\\233", "description": "capital greek letter\nUnicode : U+CE9B\navailable : Times New Roman\nLambda\n"  },
+		"greek: Mu: capital"      :{ "prefix": "Mu",      "body": "\\316\\234", "description": "capital greek letter\nUnicode : U+CE9C\navailable : Times New Roman\nMu\n"      },
+		"greek: Nu: capital"      :{ "prefix": "Nu",      "body": "\\316\\235", "description": "capital greek letter\nUnicode : U+CE9D\navailable : Times New Roman\nNu\n"      },
+		"greek: Xi: capital"      :{ "prefix": "Xi",      "body": "\\316\\236", "description": "capital greek letter\nUnicode : U+CE9E\navailable : Times New Roman\nXi\n"      },
+		"greek: Omicron: capital" :{ "prefix": "Omicron", "body": "\\316\\237", "description": "capital greek letter\nUnicode : U+CE9F\navailable : Times New Roman\nOmicron\n" },
+		"greek: Pi: capital"      :{ "prefix": "Pi",      "body": "\\316\\240", "description": "capital greek letter\nUnicode : U+CEA0\navailable : Times New Roman\nPi\n"      },
+		"greek: Rho: capital"     :{ "prefix": "Rho",     "body": "\\316\\241", "description": "capital greek letter\nUnicode : U+CEA1\navailable : Times New Roman\nRho\n"     },
+		"greek: Sigma: capital"   :{ "prefix": "Sigma",   "body": "\\316\\243", "description": "capital greek letter\nUnicode : U+CEA3\navailable : Times New Roman\nSigma\n"   },
+		"greek: Tau: capital"     :{ "prefix": "Tau",     "body": "\\316\\244", "description": "capital greek letter\nUnicode : U+CEA4\navailable : Times New Roman\nTau\n"     },
+		"greek: Upsilon: capital" :{ "prefix": "Upsilon", "body": "\\316\\245", "description": "capital greek letter\nUnicode : U+CEA5\navailable : Times New Roman\nUpsilon\n" },
+		"greek: Phi: capital"     :{ "prefix": "Phi",     "body": "\\316\\246", "description": "capital greek letter\nUnicode : U+CEA6\navailable : Times New Roman\nPhi\n"     },
+		"greek: Chi: capital"     :{ "prefix": "Chi",     "body": "\\316\\247", "description": "capital greek letter\nUnicode : U+CEA7\navailable : Times New Roman\nChi\n"     },
+		"greek: Psi: capital"     :{ "prefix": "Psi",     "body": "\\316\\250", "description": "capital greek letter\nUnicode : U+CEA8\navailable : Times New Roman\nPsi\n"     },
+		"greek: Omega: capital"   :{ "prefix": "Omega",   "body": "\\316\\251", "description": "capital greek letter\nUnicode : U+CEA9\navailable : Times New Roman\nOmega\n"   },
+	
+		/* small characters */
+		"greek: alpha: small"   :{ "prefix": "alpha",   "body": "\\316\\261", "description": "small greek letter\nUnicode : U+CEB1\navailable : Times New Roman\nalpha\n" },
+		"greek: beta: small"    :{ "prefix": "beta",    "body": "\\316\\262", "description": "small greek letter\nUnicode : U+CEB2\navailable : Times New Roman\nbeta\n" },
+		"greek: gamma: small"   :{ "prefix": "gamma",   "body": "\\316\\263", "description": "small greek letter\nUnicode : U+CEB3\navailable : Times New Roman\ngamma\n" },
+		"greek: delta: small"   :{ "prefix": "delta",   "body": "\\316\\264", "description": "small greek letter\nUnicode : U+CEB4\navailable : Times New Roman\ndelta\n" },
+		"greek: epsilon: small" :{ "prefix": "epsilon", "body": "\\316\\265", "description": "small greek letter\nUnicode : U+CEB5\navailable : Times New Roman\nepsilon\n" },
+		"greek: zeta: small"    :{ "prefix": "zeta",    "body": "\\316\\266", "description": "small greek letter\nUnicode : U+CEB6\navailable : Times New Roman\nzeta\n" },
+		"greek: eta: small"     :{ "prefix": "eta",     "body": "\\316\\267", "description": "small greek letter\nUnicode : U+CEB7\navailable : Times New Roman\neta\n" },
+		"greek: theta: small"   :{ "prefix": "theta",   "body": "\\316\\270", "description": "small greek letter\nUnicode : U+CEB8\navailable : Times New Roman\ntheta\n" },
+		"greek: iota: small"    :{ "prefix": "iota",    "body": "\\316\\271", "description": "small greek letter\nUnicode : U+CEB9\navailable : Times New Roman\niota\n" },
+		"greek: kappa: small"   :{ "prefix": "kappa",   "body": "\\316\\272", "description": "small greek letter\nUnicode : U+CEBA\navailable : Times New Roman\nkappa\n" },
+		"greek: lambda: small"  :{ "prefix": "lambda",  "body": "\\316\\273", "description": "small greek letter\nUnicode : U+CEBB\navailable : Times New Roman\nlambda\n" },
+		"greek: mu: small"      :{ "prefix": "mu",      "body": "\\316\\274", "description": "small greek letter\nUnicode : U+CEBC\navailable : Times New Roman\nmu\n" },
+		"greek: nu: small"      :{ "prefix": "nu",      "body": "\\316\\275", "description": "small greek letter\nUnicode : U+CEBD\navailable : Times New Roman\nnu\n" },
+		"greek: xi: small"      :{ "prefix": "xi",      "body": "\\316\\276", "description": "small greek letter\nUnicode : U+CEBE\navailable : Times New Roman\nxi\n" },
+		"greek: omicron: small" :{ "prefix": "omicron", "body": "\\316\\277", "description": "small greek letter\nUnicode : U+CEBF\navailable : Times New Roman\nomicron\n" },
+		"greek: pi: small"      :{ "prefix": "pi",      "body": "\\317\\200", "description": "small greek letter\nUnicode : U+CF80\navailable : Times New Roman\npi\n" },
+		"greek: rho: small"     :{ "prefix": "rho",     "body": "\\317\\201", "description": "small greek letter\nUnicode : U+CF81\navailable : Times New Roman\nrho\n" },
+		"greek: sigma: small"   :{ "prefix": "sigma",   "body": "\\317\\203", "description": "small greek letter\nUnicode : U+CF83\navailable : Times New Roman\nsigma\n" },
+		"greek: tau: small"     :{ "prefix": "tau",     "body": "\\317\\204", "description": "small greek letter\nUnicode : U+CF84\navailable : Times New Roman\ntau\n" },
+		"greek: upsilon: small" :{ "prefix": "upsilon", "body": "\\317\\205", "description": "small greek letter\nUnicode : U+CF85\navailable : Times New Roman\nupsilon\n" },
+		"greek: phi: small"     :{ "prefix": "phi",     "body": "\\317\\206", "description": "small greek letter\nUnicode : U+CF86\navailable : Times New Roman\nphi\n" },
+		"greek: chi: small"     :{ "prefix": "chi",     "body": "\\317\\207", "description": "small greek letter\nUnicode : U+CF87\navailable : Times New Roman\nchi\n" },
+		"greek: psi: small"     :{ "prefix": "psi",     "body": "\\317\\210", "description": "small greek letter\nUnicode : U+CF88\navailable : Times New Roman\npsi\n" },
+		"greek: omega: small"   :{ "prefix": "omega",   "body": "\\317\\211", "description": "small greek letter\nUnicode : U+CF89\navailable : Times New Roman\nomega\n" },
+	/* avaiable font */
+	
+		"font: Times New Roman: default":{
+			"prefix": "Times New Roman",
+			"body": "\"Times-New-Roman\"",
+			"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
 		},
-
-/* reset */
-	"reset":{
-		"prefix": "reset",
-		"body": "reset",
-		"description": "setコマンドで定義できる，グラフに関する全てのオプションをデフォルトの値に戻します．"
-	},
-
-	"reset session":{
-		"prefix": "reset session",
-		"body": "reset session",
-		"description": "ユーザ定義変数、ユーザ定義関数すべてを削除し、デフォルトの設定を復帰し、システム全体の初期設定ファイル gnuplotrc と個人用の初期設定ファイル $HOME/.gnuplot を再実行します。"
-	},
-
-"every":{
-	"prefix": "every",
-	"body": "every $1:$2:$3:$4:$5:$6",
-	"description": "描画するデータをデータ集合から周期的にサンプリングする"
-},
-
-"every pass toplines":{
-	"prefix": "every",
-	"body": "every ::${1:Lines}",
-	"description": "描画するデータをデータ集合から周期的にサンプリングする"
-},
-
-/* Greek characters */
-
-	/* capital characters */
-	"greek: Alpha: capital"   :{ "prefix": "Alpha",   "body": "\\316\\221", "description": "capital greek letter\nUnicode : U+CE91\navailable : Times New Roman\nAlpha\n"   },
-	"greek: Beta: capital"    :{ "prefix": "Beta",    "body": "\\316\\222", "description": "capital greek letter\nUnicode : U+CE92\navailable : Times New Roman\nBeta\n"    },
-	"greek: Gamma: capital"   :{ "prefix": "Gamma",   "body": "\\316\\223", "description": "capital greek letter\nUnicode : U+CE93\navailable : Times New Roman\nGamma\n"   },
-	"greek: Delta: capital"   :{ "prefix": "Delta",   "body": "\\316\\224", "description": "capital greek letter\nUnicode : U+CE94\navailable : Times New Roman\nDelta\n"   },
-	"greek: Epsilon: capital" :{ "prefix": "Epsilon", "body": "\\316\\225", "description": "capital greek letter\nUnicode : U+CE95\navailable : Times New Roman\nEpsilon\n" },
-	"greek: Zeta: capital"    :{ "prefix": "Zeta",    "body": "\\316\\226", "description": "capital greek letter\nUnicode : U+CE96\navailable : Times New Roman\nZeta\n"    },
-	"greek: Eta: capital"     :{ "prefix": "Eta",     "body": "\\316\\227", "description": "capital greek letter\nUnicode : U+CE97\navailable : Times New Roman\nEta\n"     },
-	"greek: Theta: capital"   :{ "prefix": "Theta",   "body": "\\316\\230", "description": "capital greek letter\nUnicode : U+CE98\navailable : Times New Roman\nTheta\n"   },
-	"greek: Iota: capital"    :{ "prefix": "Iota",    "body": "\\316\\231", "description": "capital greek letter\nUnicode : U+CE99\navailable : Times New Roman\nIota\n"    },
-	"greek: Kappa: capital"   :{ "prefix": "Kappa",   "body": "\\316\\232", "description": "capital greek letter\nUnicode : U+CE9A\navailable : Times New Roman\nKappa\n"   },
-	"greek: Lambda: capital"  :{ "prefix": "Lambda",  "body": "\\316\\233", "description": "capital greek letter\nUnicode : U+CE9B\navailable : Times New Roman\nLambda\n"  },
-	"greek: Mu: capital"      :{ "prefix": "Mu",      "body": "\\316\\234", "description": "capital greek letter\nUnicode : U+CE9C\navailable : Times New Roman\nMu\n"      },
-	"greek: Nu: capital"      :{ "prefix": "Nu",      "body": "\\316\\235", "description": "capital greek letter\nUnicode : U+CE9D\navailable : Times New Roman\nNu\n"      },
-	"greek: Xi: capital"      :{ "prefix": "Xi",      "body": "\\316\\236", "description": "capital greek letter\nUnicode : U+CE9E\navailable : Times New Roman\nXi\n"      },
-	"greek: Omicron: capital" :{ "prefix": "Omicron", "body": "\\316\\237", "description": "capital greek letter\nUnicode : U+CE9F\navailable : Times New Roman\nOmicron\n" },
-	"greek: Pi: capital"      :{ "prefix": "Pi",      "body": "\\316\\240", "description": "capital greek letter\nUnicode : U+CEA0\navailable : Times New Roman\nPi\n"      },
-	"greek: Rho: capital"     :{ "prefix": "Rho",     "body": "\\316\\241", "description": "capital greek letter\nUnicode : U+CEA1\navailable : Times New Roman\nRho\n"     },
-	"greek: Sigma: capital"   :{ "prefix": "Sigma",   "body": "\\316\\243", "description": "capital greek letter\nUnicode : U+CEA3\navailable : Times New Roman\nSigma\n"   },
-	"greek: Tau: capital"     :{ "prefix": "Tau",     "body": "\\316\\244", "description": "capital greek letter\nUnicode : U+CEA4\navailable : Times New Roman\nTau\n"     },
-	"greek: Upsilon: capital" :{ "prefix": "Upsilon", "body": "\\316\\245", "description": "capital greek letter\nUnicode : U+CEA5\navailable : Times New Roman\nUpsilon\n" },
-	"greek: Phi: capital"     :{ "prefix": "Phi",     "body": "\\316\\246", "description": "capital greek letter\nUnicode : U+CEA6\navailable : Times New Roman\nPhi\n"     },
-	"greek: Chi: capital"     :{ "prefix": "Chi",     "body": "\\316\\247", "description": "capital greek letter\nUnicode : U+CEA7\navailable : Times New Roman\nChi\n"     },
-	"greek: Psi: capital"     :{ "prefix": "Psi",     "body": "\\316\\250", "description": "capital greek letter\nUnicode : U+CEA8\navailable : Times New Roman\nPsi\n"     },
-	"greek: Omega: capital"   :{ "prefix": "Omega",   "body": "\\316\\251", "description": "capital greek letter\nUnicode : U+CEA9\navailable : Times New Roman\nOmega\n"   },
-
-	/* small characters */
-	"greek: alpha: small"   :{ "prefix": "alpha",   "body": "\\316\\261", "description": "small greek letter\nUnicode : U+CEB1\navailable : Times New Roman\nalpha\n" },
-	"greek: beta: small"    :{ "prefix": "beta",    "body": "\\316\\262", "description": "small greek letter\nUnicode : U+CEB2\navailable : Times New Roman\nbeta\n" },
-	"greek: gamma: small"   :{ "prefix": "gamma",   "body": "\\316\\263", "description": "small greek letter\nUnicode : U+CEB3\navailable : Times New Roman\ngamma\n" },
-	"greek: delta: small"   :{ "prefix": "delta",   "body": "\\316\\264", "description": "small greek letter\nUnicode : U+CEB4\navailable : Times New Roman\ndelta\n" },
-	"greek: epsilon: small" :{ "prefix": "epsilon", "body": "\\316\\265", "description": "small greek letter\nUnicode : U+CEB5\navailable : Times New Roman\nepsilon\n" },
-	"greek: zeta: small"    :{ "prefix": "zeta",    "body": "\\316\\266", "description": "small greek letter\nUnicode : U+CEB6\navailable : Times New Roman\nzeta\n" },
-	"greek: eta: small"     :{ "prefix": "eta",     "body": "\\316\\267", "description": "small greek letter\nUnicode : U+CEB7\navailable : Times New Roman\neta\n" },
-	"greek: theta: small"   :{ "prefix": "theta",   "body": "\\316\\270", "description": "small greek letter\nUnicode : U+CEB8\navailable : Times New Roman\ntheta\n" },
-	"greek: iota: small"    :{ "prefix": "iota",    "body": "\\316\\271", "description": "small greek letter\nUnicode : U+CEB9\navailable : Times New Roman\niota\n" },
-	"greek: kappa: small"   :{ "prefix": "kappa",   "body": "\\316\\272", "description": "small greek letter\nUnicode : U+CEBA\navailable : Times New Roman\nkappa\n" },
-	"greek: lambda: small"  :{ "prefix": "lambda",  "body": "\\316\\273", "description": "small greek letter\nUnicode : U+CEBB\navailable : Times New Roman\nlambda\n" },
-	"greek: mu: small"      :{ "prefix": "mu",      "body": "\\316\\274", "description": "small greek letter\nUnicode : U+CEBC\navailable : Times New Roman\nmu\n" },
-	"greek: nu: small"      :{ "prefix": "nu",      "body": "\\316\\275", "description": "small greek letter\nUnicode : U+CEBD\navailable : Times New Roman\nnu\n" },
-	"greek: xi: small"      :{ "prefix": "xi",      "body": "\\316\\276", "description": "small greek letter\nUnicode : U+CEBE\navailable : Times New Roman\nxi\n" },
-	"greek: omicron: small" :{ "prefix": "omicron", "body": "\\316\\277", "description": "small greek letter\nUnicode : U+CEBF\navailable : Times New Roman\nomicron\n" },
-	"greek: pi: small"      :{ "prefix": "pi",      "body": "\\317\\200", "description": "small greek letter\nUnicode : U+CF80\navailable : Times New Roman\npi\n" },
-	"greek: rho: small"     :{ "prefix": "rho",     "body": "\\317\\201", "description": "small greek letter\nUnicode : U+CF81\navailable : Times New Roman\nrho\n" },
-	"greek: sigma: small"   :{ "prefix": "sigma",   "body": "\\317\\203", "description": "small greek letter\nUnicode : U+CF83\navailable : Times New Roman\nsigma\n" },
-	"greek: tau: small"     :{ "prefix": "tau",     "body": "\\317\\204", "description": "small greek letter\nUnicode : U+CF84\navailable : Times New Roman\ntau\n" },
-	"greek: upsilon: small" :{ "prefix": "upsilon", "body": "\\317\\205", "description": "small greek letter\nUnicode : U+CF85\navailable : Times New Roman\nupsilon\n" },
-	"greek: phi: small"     :{ "prefix": "phi",     "body": "\\317\\206", "description": "small greek letter\nUnicode : U+CF86\navailable : Times New Roman\nphi\n" },
-	"greek: chi: small"     :{ "prefix": "chi",     "body": "\\317\\207", "description": "small greek letter\nUnicode : U+CF87\navailable : Times New Roman\nchi\n" },
-	"greek: psi: small"     :{ "prefix": "psi",     "body": "\\317\\210", "description": "small greek letter\nUnicode : U+CF88\navailable : Times New Roman\npsi\n" },
-	"greek: omega: small"   :{ "prefix": "omega",   "body": "\\317\\211", "description": "small greek letter\nUnicode : U+CF89\navailable : Times New Roman\nomega\n" },
-/* avaiable font */
-
-	"font: Times New Roman: default":{
-		"prefix": "Times New Roman",
-		"body": "\"Times-New-Roman\"",
-		"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
-	},
-
-	"font: Times New Roman: Normal":{
-		"prefix": "Times New Roman",
-		"body": "\"Times-New-Roman:Normal\"",
-		"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
-	},
-
-	"font: Times New Roman: Italic":{
-		"prefix": "Times New Roman",
-		"body": "\"Times-New-Roman:Italic\"",
-		"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
-	},
-
-	/* Symbol */
-
-	"Symbol: MULTIPLICATION SIGN":{
-		"prefix": "MULTIPLICATION SIGN",
-			"body": "\\264",
-		"description": "Symbol\nMULTIPLICATION SIGN"
+	
+		"font: Times New Roman: Normal":{
+			"prefix": "Times New Roman",
+			"body": "\"Times-New-Roman:Normal\"",
+			"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
 		},
-
-	/* Unicode */
-
-	"Unicode: EXCLAMATION MARK"   :{ "prefix": "EXCLAMATION MARK",    "body": "\\041", "description": "Unicode : U+0021\nUTF-8 (hex) : 041\navailable : Times New Roman\nName : EXCLAMATION MARK\n" },
-	"Unicode: QUOTATION MARK"     :{ "prefix": "QUOTATION MARK",      "body": "\\042", "description": "Unicode : U+0022\nUTF-8 (hex) : 042\navailable : Times New Roman\nName : QUOTATION MARK\n" },
-	"Unicode: NUMBER SIGN"        :{ "prefix": "NUMBER SIGN",         "body": "\\043", "description": "Unicode : U+0023\nUTF-8 (hex) : 043\navailable : Times New Roman\nName : NUMBER SIGN\n" },
-	"Unicode: DOLLAR SIGN"        :{ "prefix": "DOLLAR SIGN",         "body": "\\044", "description": "Unicode : U+0024\nUTF-8 (hex) : 044\navailable : Times New Roman\nName : DOLLAR SIGN\n" },
-	"Unicode: PERCENT SIGN"       :{ "prefix": "PERCENT SIGN",        "body": "\\045", "description": "Unicode : U+0025\nUTF-8 (hex) : 045\navailable : Times New Roman\nName : PERCENT SIGN\n" },
-	"Unicode: AMPERSAND"          :{ "prefix": "AMPERSAND",           "body": "\\046", "description": "Unicode : U+0026\nUTF-8 (hex) : 046\navailable : Times New Roman\nName : AMPERSAND\n" },
-	"Unicode: APOSTROPHE"         :{ "prefix": "APOSTROPHE",          "body": "\\047", "description": "Unicode : U+0027\nUTF-8 (hex) : 047\navailable : Times New Roman\nName : APOSTROPHE\n" },
-	"Unicode: LEFT PARENTHESIS"   :{ "prefix": "LEFT PARENTHESIS",    "body": "\\050", "description": "Unicode : U+0028\nUTF-8 (hex) : 050\navailable : Times New Roman\nName : LEFT PARENTHESIS\n" },
-	"Unicode: RIGHT PARENTHESIS"  :{ "prefix": "RIGHT PARENTHESIS",   "body": "\\051", "description": "Unicode : U+0029\nUTF-8 (hex) : 051\navailable : Times New Roman\nName : RIGHT PARENTHESIS\n" },
-	"Unicode: ASTERISK"           :{ "prefix": "ASTERISK",            "body": "\\052", "description": "Unicode : U+002A\nUTF-8 (hex) : 052\navailable : Times New Roman\nName : ASTERISK\n" },
-	"Unicode: PLUS SIGN"          :{ "prefix": "PLUS SIGN",           "body": "\\053", "description": "Unicode : U+002B\nUTF-8 (hex) : 053\navailable : Times New Roman\nName : PLUS SIGN\n" },
-	"Unicode: COMMA"              :{ "prefix": "COMMA",               "body": "\\054", "description": "Unicode : U+002C\nUTF-8 (hex) : 054\navailable : Times New Roman\nName : COMMA\n" },
-	"Unicode: HYPHEN-MINUS"       :{ "prefix": "HYPHEN-MINUS",        "body": "\\055", "description": "Unicode : U+002D\nUTF-8 (hex) : 055\navailable : Times New Roman\nName : HYPHEN-MINUS\n" },
-	"Unicode: FULL STOP"          :{ "prefix": "FULL STOP",           "body": "\\056", "description": "Unicode : U+002E\nUTF-8 (hex) : 056\navailable : Times New Roman\nName : FULL STOP\n" },
-	"Unicode: SOLIDUS"            :{ "prefix": "SOLIDUS",             "body": "\\057", "description": "Unicode : U+002F\nUTF-8 (hex) : 057\navailable : Times New Roman\nName : SOLIDUS\n" },
-
-	"Unicode: LEFT SQUARE BRACKET" :{ "prefix": "LEFT SQUARE BRACKET",  "body": "\\133", "description": "Unicode : U+005B\nUTF-8 (hex) : 0113\navailable : Times New Roman\nName : LEFT SQUARE BRACKET\n"  },
-	"Unicode: RIGHT SQUARE BRACKET":{ "prefix": "RIGHT SQUARE BRACKET", "body": "\\135", "description": "Unicode : U+005D\nUTF-8 (hex) : 0135\navailable : Times New Roman\nName : RIGHT SQUARE BRACKET\n" },
-
-	"Unicode: MULTIPLICATION SIGN":{ "prefix": "MULTIPLICATION SIGN", "body": "\\303\\227", "description": "Unicode : U+00D7\nUTF-8 (hex) : 0303 0227\navailable : Times New Roman\nName : MULTIPLICATION SIGN\n" },
-
-
-	"Unicode: ANGSTROM SIGN"        :{ "prefix": "ANGSTROM SIGN",        "body": "\\342\\204\\253", "description": "Unicode : U+212B\nUTF-8 (hex) : e2 84 ab\navailable : Times New Roman\nName : ANGSTROM SIGN\n" },
-	"Unicode: PARTIAL DIFFERENTIAL" :{ "prefix": "PARTIAL DIFFERENTIAL", "body": "\\342\\210\\202", "description": "Unicode : U+2202\nUTF-8 (hex) : e2 88 82\navailable : Times New Roman\nName : PARTIAL DIFFERENTIAL\n" },
-	"Unicode: INCREMENT"            :{ "prefix": "INCREMENT",            "body": "\\342\\210\\206", "description": "Unicode : U+2206\nUTF-8 (hex) : e2 88 86\navailable : Times New Roman\nName : INCREMENT\n" },
-	"Unicode: N-ARY PRODUCT"        :{ "prefix": "N-ARY PRODUCT",        "body": "\\342\\210\\217", "description": "Unicode : U+220F\nUTF-8 (hex) : e2 88 8f\navailable : Times New Roman\nName : N-ARY PRODUCT\n" },
-	"Unicode: N-ARY SUMMATION"      :{ "prefix": "N-ARY SUMMATION",      "body": "\\342\\210\\221", "description": "Unicode : U+2210\nUTF-8 (hex) : e2 88 90\navailable : Times New Roman\nName : N-ARY SUMMATION\n" },
-	"Unicode: MINUS SIGN"           :{ "prefix": "MINUS SIGN",           "body": "\\342\\210\\222", "description": "Unicode : U+2211\nUTF-8 (hex) : e2 88 92\navailable : Times New Roman\nName : MINUS SIGN\n" },
-	"Unicode: DIVISION SLASH"       :{ "prefix": "DIVISION SLASH",       "body": "\\342\\210\\225", "description": "Unicode : U+2215\nUTF-8 (hex) : e2 88 95\navailable : Times New Roman\nName : DIVISION SLASH\n" },
-	"Unicode: BULLET OPERATOR"      :{ "prefix": "BULLET OPERATOR",      "body": "\\342\\210\\231", "description": "Unicode : U+2219\nUTF-8 (hex) : e2 88 99\navailable : Times New Roman\nName : BULLET OPERATOR\n" },
-	"Unicode: SQUARE ROOT"          :{ "prefix": "SQUARE ROOT",          "body": "\\342\\210\\232", "description": "Unicode : U+221A\nUTF-8 (hex) : e2 88 9a\navailable : Times New Roman\nName : SQUARE ROOT\n" },
-	"Unicode: INFINITY"             :{ "prefix": "INFINITY",             "body": "\\342\\210\\236", "description": "Unicode : U+221E\nUTF-8 (hex) : e2 88 9e\navailable : Times New Roman\nName : INFINITY\n" },
-	"Unicode: RIGHT ANGLE"          :{ "prefix": "RIGHT ANGLE",          "body": "\\342\\210\\237", "description": "Unicode : U+221F\nUTF-8 (hex) : e2 88 9f\navailable : Times New Roman\nName : RIGHT ANGLE\n" },
-	"Unicode: INTERSECTION"         :{ "prefix": "INTERSECTION",         "body": "\\342\\210\\251", "description": "Unicode : U+2229\nUTF-8 (hex) : e2 88 a9\navailable : Times New Roman\nName : INTERSECTION\n" },
-
-	// private comments //
-	"private comments: comment as a header":{
-		"prefix": "comment header",
-		"body": "# --- ${0:contents} --- #",
-		"description": "private comment\ncomments as a header\n"
-	},
+	
+		"font: Times New Roman: Italic":{
+			"prefix": "Times New Roman",
+			"body": "\"Times-New-Roman:Italic\"",
+			"description": "avaiable font\nterm: wxt\nVersion 5.0 patchlevel 6\n"
+		},
+	
+		/* Symbol */
+	
+		"Symbol: MULTIPLICATION SIGN":{
+			"prefix": "MULTIPLICATION SIGN",
+				"body": "\\264",
+			"description": "Symbol\nMULTIPLICATION SIGN"
+			},
+	
+		/* Unicode */
+	
+		"Unicode: EXCLAMATION MARK"   :{ "prefix": "EXCLAMATION MARK",    "body": "\\041", "description": "Unicode : U+0021\nUTF-8 (hex) : 041\navailable : Times New Roman\nName : EXCLAMATION MARK\n" },
+		"Unicode: QUOTATION MARK"     :{ "prefix": "QUOTATION MARK",      "body": "\\042", "description": "Unicode : U+0022\nUTF-8 (hex) : 042\navailable : Times New Roman\nName : QUOTATION MARK\n" },
+		"Unicode: NUMBER SIGN"        :{ "prefix": "NUMBER SIGN",         "body": "\\043", "description": "Unicode : U+0023\nUTF-8 (hex) : 043\navailable : Times New Roman\nName : NUMBER SIGN\n" },
+		"Unicode: DOLLAR SIGN"        :{ "prefix": "DOLLAR SIGN",         "body": "\\044", "description": "Unicode : U+0024\nUTF-8 (hex) : 044\navailable : Times New Roman\nName : DOLLAR SIGN\n" },
+		"Unicode: PERCENT SIGN"       :{ "prefix": "PERCENT SIGN",        "body": "\\045", "description": "Unicode : U+0025\nUTF-8 (hex) : 045\navailable : Times New Roman\nName : PERCENT SIGN\n" },
+		"Unicode: AMPERSAND"          :{ "prefix": "AMPERSAND",           "body": "\\046", "description": "Unicode : U+0026\nUTF-8 (hex) : 046\navailable : Times New Roman\nName : AMPERSAND\n" },
+		"Unicode: APOSTROPHE"         :{ "prefix": "APOSTROPHE",          "body": "\\047", "description": "Unicode : U+0027\nUTF-8 (hex) : 047\navailable : Times New Roman\nName : APOSTROPHE\n" },
+		"Unicode: LEFT PARENTHESIS"   :{ "prefix": "LEFT PARENTHESIS",    "body": "\\050", "description": "Unicode : U+0028\nUTF-8 (hex) : 050\navailable : Times New Roman\nName : LEFT PARENTHESIS\n" },
+		"Unicode: RIGHT PARENTHESIS"  :{ "prefix": "RIGHT PARENTHESIS",   "body": "\\051", "description": "Unicode : U+0029\nUTF-8 (hex) : 051\navailable : Times New Roman\nName : RIGHT PARENTHESIS\n" },
+		"Unicode: ASTERISK"           :{ "prefix": "ASTERISK",            "body": "\\052", "description": "Unicode : U+002A\nUTF-8 (hex) : 052\navailable : Times New Roman\nName : ASTERISK\n" },
+		"Unicode: PLUS SIGN"          :{ "prefix": "PLUS SIGN",           "body": "\\053", "description": "Unicode : U+002B\nUTF-8 (hex) : 053\navailable : Times New Roman\nName : PLUS SIGN\n" },
+		"Unicode: COMMA"              :{ "prefix": "COMMA",               "body": "\\054", "description": "Unicode : U+002C\nUTF-8 (hex) : 054\navailable : Times New Roman\nName : COMMA\n" },
+		"Unicode: HYPHEN-MINUS"       :{ "prefix": "HYPHEN-MINUS",        "body": "\\055", "description": "Unicode : U+002D\nUTF-8 (hex) : 055\navailable : Times New Roman\nName : HYPHEN-MINUS\n" },
+		"Unicode: FULL STOP"          :{ "prefix": "FULL STOP",           "body": "\\056", "description": "Unicode : U+002E\nUTF-8 (hex) : 056\navailable : Times New Roman\nName : FULL STOP\n" },
+		"Unicode: SOLIDUS"            :{ "prefix": "SOLIDUS",             "body": "\\057", "description": "Unicode : U+002F\nUTF-8 (hex) : 057\navailable : Times New Roman\nName : SOLIDUS\n" },
+	
+		"Unicode: LEFT SQUARE BRACKET" :{ "prefix": "LEFT SQUARE BRACKET",  "body": "\\133", "description": "Unicode : U+005B\nUTF-8 (hex) : 0113\navailable : Times New Roman\nName : LEFT SQUARE BRACKET\n"  },
+		"Unicode: RIGHT SQUARE BRACKET":{ "prefix": "RIGHT SQUARE BRACKET", "body": "\\135", "description": "Unicode : U+005D\nUTF-8 (hex) : 0135\navailable : Times New Roman\nName : RIGHT SQUARE BRACKET\n" },
+	
+		"Unicode: MULTIPLICATION SIGN":{ "prefix": "MULTIPLICATION SIGN", "body": "\\303\\227", "description": "Unicode : U+00D7\nUTF-8 (hex) : 0303 0227\navailable : Times New Roman\nName : MULTIPLICATION SIGN\n" },
+	
+	
+		"Unicode: ANGSTROM SIGN"        :{ "prefix": "ANGSTROM SIGN",        "body": "\\342\\204\\253", "description": "Unicode : U+212B\nUTF-8 (hex) : e2 84 ab\navailable : Times New Roman\nName : ANGSTROM SIGN\n" },
+		"Unicode: PARTIAL DIFFERENTIAL" :{ "prefix": "PARTIAL DIFFERENTIAL", "body": "\\342\\210\\202", "description": "Unicode : U+2202\nUTF-8 (hex) : e2 88 82\navailable : Times New Roman\nName : PARTIAL DIFFERENTIAL\n" },
+		"Unicode: INCREMENT"            :{ "prefix": "INCREMENT",            "body": "\\342\\210\\206", "description": "Unicode : U+2206\nUTF-8 (hex) : e2 88 86\navailable : Times New Roman\nName : INCREMENT\n" },
+		"Unicode: N-ARY PRODUCT"        :{ "prefix": "N-ARY PRODUCT",        "body": "\\342\\210\\217", "description": "Unicode : U+220F\nUTF-8 (hex) : e2 88 8f\navailable : Times New Roman\nName : N-ARY PRODUCT\n" },
+		"Unicode: N-ARY SUMMATION"      :{ "prefix": "N-ARY SUMMATION",      "body": "\\342\\210\\221", "description": "Unicode : U+2210\nUTF-8 (hex) : e2 88 90\navailable : Times New Roman\nName : N-ARY SUMMATION\n" },
+		"Unicode: MINUS SIGN"           :{ "prefix": "MINUS SIGN",           "body": "\\342\\210\\222", "description": "Unicode : U+2211\nUTF-8 (hex) : e2 88 92\navailable : Times New Roman\nName : MINUS SIGN\n" },
+		"Unicode: DIVISION SLASH"       :{ "prefix": "DIVISION SLASH",       "body": "\\342\\210\\225", "description": "Unicode : U+2215\nUTF-8 (hex) : e2 88 95\navailable : Times New Roman\nName : DIVISION SLASH\n" },
+		"Unicode: BULLET OPERATOR"      :{ "prefix": "BULLET OPERATOR",      "body": "\\342\\210\\231", "description": "Unicode : U+2219\nUTF-8 (hex) : e2 88 99\navailable : Times New Roman\nName : BULLET OPERATOR\n" },
+		"Unicode: SQUARE ROOT"          :{ "prefix": "SQUARE ROOT",          "body": "\\342\\210\\232", "description": "Unicode : U+221A\nUTF-8 (hex) : e2 88 9a\navailable : Times New Roman\nName : SQUARE ROOT\n" },
+		"Unicode: INFINITY"             :{ "prefix": "INFINITY",             "body": "\\342\\210\\236", "description": "Unicode : U+221E\nUTF-8 (hex) : e2 88 9e\navailable : Times New Roman\nName : INFINITY\n" },
+		"Unicode: RIGHT ANGLE"          :{ "prefix": "RIGHT ANGLE",          "body": "\\342\\210\\237", "description": "Unicode : U+221F\nUTF-8 (hex) : e2 88 9f\navailable : Times New Roman\nName : RIGHT ANGLE\n" },
+		"Unicode: INTERSECTION"         :{ "prefix": "INTERSECTION",         "body": "\\342\\210\\251", "description": "Unicode : U+2229\nUTF-8 (hex) : e2 88 a9\navailable : Times New Roman\nName : INTERSECTION\n" },
+	
+		// private comments //
+		"private comments: comment as a header":{
+			"prefix": "comment header",
+			"body": "# --- ${0:contents} --- #",
+			"description": "private comment\ncomments as a header\n"
+		},
 }
