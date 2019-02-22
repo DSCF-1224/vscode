@@ -30,10 +30,34 @@
 		"description": "Function\nBase\nBase.convert(T, x)\n"
 	},
 
+	"Function: Base.div":{
+		"prefix": "Base.div",
+		"body": "Base.div( ${1:x}, ${2:y} )",
+		"description": "Function\nBase\nBase.div(x, y)\n"
+	},
+
+	"Function: Base.gcd":{
+		"prefix": "Base.gcd",
+		"body": "Base.gcd( ${1:x}, ${2:y} )",
+		"description": "Function\nBase\nBase.gcd(x, y)\n"
+	},
+
+	"Function: Base.lcm":{
+		"prefix": "Base.lcm",
+		"body": "Base.lcm( ${1:x}, ${2:y} )",
+		"description": "Function\nBase\nBase.lcm(x, y)\n"
+	},
+
 	"Function: Base.isequal":{ "prefix": "Base.isequal", "body": "Base.isequal( ${1:x}, ${2:y} )", "description": "Function\nBase\nBase.isequal( x, y )\n" },
 	"Function: Base.iseven" :{ "prefix": "Base.iseven", "body" : "Base.iseven( ${1:x::Integer} )", "description": "Function\nBase.iseven( x::Integer )\n"  },
 	"Function: Base.isless" :{ "prefix": "Base.isless", "body" : "Base.isless( ${1:x}, ${2:y} )",  "description": "Function\nBase.isless( x, y )\n"        },
 	"Function: Base.isodd"  :{ "prefix": "Base.isodd", "body"  : "Base.isodd( ${1:x::Integer} )",  "description": "Function\nBase.isodd( x::Integer )\n"   },
+
+	"Function: Base.ndigits":{
+		"prefix": "Base.ndigits",
+		"body": "Base.ndigits( ${1:n::Core.Integer}, base=${2:Core.Integer=10}, pad=${3:pad::Core.Integer=1} )",
+		"description": "Function\nBase.ndigits( n::Core.Integer, base::Core.Integer=10, pad::Core.Integer=1 )\n"
+	},
 
 	"Function: Base.one: Variable":{
 		"prefix": "Base.one",
@@ -153,6 +177,12 @@
 		"description": "Function\nBase\nBase.Filesystem.joinpath( parts... )\n"
 	},
 
+	"Function: Core.ifelse":{
+		"prefix": "Core.ifelse",
+		"body": "Core.ifelse( ${1:condition::Bool}, x, y )",
+		"description": "Function\nCore.ifelse( condition::Bool, x, y )\n"
+	},
+	
 	"Function: Core.typeof":{
 		"prefix": "Core.typeof",
 		"body": "Core.typeof( ${1:x} )",
