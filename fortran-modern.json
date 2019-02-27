@@ -60,56 +60,19 @@
 			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in WRITE statement.\n"
 		},
 
-		"ISO_FORTRAN_ENV: parameter: INT16":{
-			"prefix": "parameter INT16",
-			"body": "INT16",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\n"
-		},
+		"ISO_FORTRAN_ENV: parameter: INT8" :{ "prefix": "parameter INT8",  "body": "INT8",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
+		"ISO_FORTRAN_ENV: parameter: INT16":{ "prefix": "parameter INT16", "body": "INT16", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
+		"ISO_FORTRAN_ENV: parameter: INT32":{ "prefix": "parameter INT32", "body": "INT32", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
+		"ISO_FORTRAN_ENV: parameter: INT64":{ "prefix": "parameter INT64", "body": "INT64", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
 
-		"ISO_FORTRAN_ENV: parameter: INT32":{
-			"prefix": "parameter INT32",
-			"body": "INT32",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\n"
-		},
+		"ISO_FORTRAN_ENV: parameter: INT8:  for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT8 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
+		"ISO_FORTRAN_ENV: parameter: INT16: for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT16 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
+		"ISO_FORTRAN_ENV: parameter: INT32: for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT32 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
+		"ISO_FORTRAN_ENV: parameter: INT64: for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT64 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
 
-		"ISO_FORTRAN_ENV: parameter: INT64":{
-			"prefix": "parameter INT64",
-			"body": "INT64",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\n"
-		},
-
-		"ISO_FORTRAN_ENV: parameter: INT16: for <INTEGER> statement":{
-			"prefix": "integer",
-			"body": "integer( kind= INT16 )${1:, attributes} :: $0",
-		},
-
-		"ISO_FORTRAN_ENV: parameter: INT32: for <INTEGER> statement":{
-			"prefix": "integer",
-			"body": "integer( kind= INT32 )${1:, attributes} :: $0",
-		},
-
-		"ISO_FORTRAN_ENV: parameter: INT64: for <INTEGER> statement":{
-			"prefix": "integer",
-			"body": "integer( kind= INT64 )${1:, attributes} :: $0",
-		},
-
-		"ISO_FORTRAN_ENV: parameter: REAL32":{
-			"prefix": "parameter REAL32",
-			"body": "REAL32",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n"
-		},
-
-		"ISO_FORTRAN_ENV: parameter: REAL64":{
-			"prefix": "parameter REAL64",
-			"body": "REAL64",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n"
-		},
-
-		"ISO_FORTRAN_ENV: parameter: REAL128":{
-			"prefix": "parameter REAL128",
-			"body": "REAL128",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n"
-		},
+		"ISO_FORTRAN_ENV: parameter: REAL32":{  "prefix": "parameter REAL32",  "body": "REAL32",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+		"ISO_FORTRAN_ENV: parameter: REAL64":{  "prefix": "parameter REAL64",  "body": "REAL64",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+		"ISO_FORTRAN_ENV: parameter: REAL128":{ "prefix": "parameter REAL128", "body": "REAL128", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
 		"ISO_FORTRAN_ENV: parameter: REAL32: for <REAL> statement":{
 			"prefix": "REAL",
