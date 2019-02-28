@@ -36,58 +36,47 @@
 		"description": "module which provides the scalar default-integer named constants\nFortran 2003 and later\n"
 	},
 
-		"ISO_FORTRAN_ENV: IS_IOSTAT_END":{
-			"prefix": "is_iostat_end",
-			"body": "IS_IOSTAT_END( ${1:return value of `IOSTAT`} )",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\ntests whether an variable has the value of the I/O status `end of file`.\n"
-		},
+	"ISO_FORTRAN_ENV: IS_IOSTAT_END":{
+		"prefix": "is_iostat_end",
+		"body": "IS_IOSTAT_END( ${1:return value of `IOSTAT`} )",
+		"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\ntests whether an variable has the value of the I/O status `end of file`.\n"
+	},
 
-		"ISO_FORTRAN_ENV: IS_IOSTAT_EOR":{
-			"prefix": "is_iostat_eor",
-			"body": "IS_IOSTAT_END( ${1:return value of `IOSTAT`} )",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\ntests whether an variable has the value of the I/O status `end of record`.\n"
-		},
+	"ISO_FORTRAN_ENV: IS_IOSTAT_EOR":{
+		"prefix": "is_iostat_eor",
+		"body": "IS_IOSTAT_END( ${1:return value of `IOSTAT`} )",
+		"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\ntests whether an variable has the value of the I/O status `end of record`.\n"
+	},
 
-		"ISO_FORTRAN_ENV: parameter: INPUT_UNIT":{
-			"prefix": "parameter INPUT_UNIT",
-			"body": "INPUT_UNIT",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in READ statement.\n"
-		},
+	"ISO_FORTRAN_ENV: parameter: INPUT_UNIT":{
+		"prefix": "parameter INPUT_UNIT",
+		"body": "INPUT_UNIT",
+		"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in READ statement.\n"
+	},
 
-		"ISO_FORTRAN_ENV: parameter: OUTPUT_UNIT":{
-			"prefix": "parameter OUTPUT_UNIT",
-			"body": "OUTPUT_UNIT",
-			"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in WRITE statement.\n"
-		},
+	"ISO_FORTRAN_ENV: parameter: OUTPUT_UNIT":{
+		"prefix": "parameter OUTPUT_UNIT",
+		"body": "OUTPUT_UNIT",
+		"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in WRITE statement.\n"
+	},
 
-		"ISO_FORTRAN_ENV: parameter: INT8" :{ "prefix": "parameter INT8",  "body": "INT8",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
-		"ISO_FORTRAN_ENV: parameter: INT16":{ "prefix": "parameter INT16", "body": "INT16", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
-		"ISO_FORTRAN_ENV: parameter: INT32":{ "prefix": "parameter INT32", "body": "INT32", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
-		"ISO_FORTRAN_ENV: parameter: INT64":{ "prefix": "parameter INT64", "body": "INT64", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
+	"ISO_FORTRAN_ENV: parameter: INT8" :{ "prefix": "parameter INT8",  "body": "INT8",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
+	"ISO_FORTRAN_ENV: parameter: INT16":{ "prefix": "parameter INT16", "body": "INT16", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
+	"ISO_FORTRAN_ENV: parameter: INT32":{ "prefix": "parameter INT32", "body": "INT32", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
+	"ISO_FORTRAN_ENV: parameter: INT64":{ "prefix": "parameter INT64", "body": "INT64", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
 
-		"ISO_FORTRAN_ENV: parameter: INT8:  for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT8 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
-		"ISO_FORTRAN_ENV: parameter: INT16: for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT16 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
-		"ISO_FORTRAN_ENV: parameter: INT32: for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT32 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
-		"ISO_FORTRAN_ENV: parameter: INT64: for <INTEGER> statement":{ "prefix": "integer", "body": "integer( kind=INT64 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
+	"ISO_FORTRAN_ENV: parameter: INT8:  for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT8 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
+	"ISO_FORTRAN_ENV: parameter: INT16: for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT16 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
+	"ISO_FORTRAN_ENV: parameter: INT32: for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT32 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
+	"ISO_FORTRAN_ENV: parameter: INT64: for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT64 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
 
-		"ISO_FORTRAN_ENV: parameter: REAL32":{  "prefix": "parameter REAL32",  "body": "REAL32",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
-		"ISO_FORTRAN_ENV: parameter: REAL64":{  "prefix": "parameter REAL64",  "body": "REAL64",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
-		"ISO_FORTRAN_ENV: parameter: REAL128":{ "prefix": "parameter REAL128", "body": "REAL128", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
+	"ISO_FORTRAN_ENV: parameter: REAL32":{  "prefix": "parameter REAL32",  "body": "REAL32",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+	"ISO_FORTRAN_ENV: parameter: REAL64":{  "prefix": "parameter REAL64",  "body": "REAL64",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+	"ISO_FORTRAN_ENV: parameter: REAL128":{ "prefix": "parameter REAL128", "body": "REAL128", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
-		"ISO_FORTRAN_ENV: parameter: REAL32: for <REAL> statement":{
-			"prefix": "REAL",
-			"body": "real( kind= REAL32 )${1:, attributes} :: $0",
-		},
-
-		"ISO_FORTRAN_ENV: parameter: REAL64: for <REAL> statement":{
-			"prefix": "REAL",
-			"body": "real( kind= REAL64 )${1:, attributes} :: $0",
-		},
-
-		"ISO_FORTRAN_ENV: parameter: REAL128: for <REAL> statement":{
-			"prefix": "REAL",
-			"body": "real( kind= REAL128 )${1:, attributes} :: $0",
-		},
+	"ISO_FORTRAN_ENV: parameter: REAL32: for ⟨REAL⟩ statement" :{ "prefix": "REAL", "body": "real( kind=REAL32 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+	"ISO_FORTRAN_ENV: parameter: REAL64: for ⟨REAL⟩ statement" :{ "prefix": "REAL", "body": "real( kind=REAL64 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+	"ISO_FORTRAN_ENV: parameter: REAL128: for ⟨REAL⟩ statement":{ "prefix": "REAL", "body": "real( kind=REAL128 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
 	/* OpenMP */
 	"OpenMP: use omp_lib":{
@@ -190,45 +179,45 @@
 	},
 
 	// private comment //
-	"private comments: arguments for this <function>":{
+	"private comments: arguments for this ⟨function⟩":{
 		"prefix": "comment arguments",
-		"body": "$LINE_COMMENT arguments for this <function>",
+		"body": "$LINE_COMMENT arguments for this ⟨function⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: arguments for this <subroutine>":{
+	"private comments: arguments for this ⟨subroutine⟩":{
 		"prefix": "comment arguments",
-		"body": "$LINE_COMMENT arguments for this <subroutine>",
+		"body": "$LINE_COMMENT arguments for this ⟨subroutine⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: constants for this <function>":{
+	"private comments: constants for this ⟨function⟩":{
 		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this <function>",
+		"body": "$LINE_COMMENT constants for this ⟨function⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: constants for this <module>":{
+	"private comments: constants for this ⟨module⟩":{
 		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this <module>",
+		"body": "$LINE_COMMENT constants for this ⟨module⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: constants for this <program>":{
+	"private comments: constants for this ⟨program⟩":{
 		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this <program>",
+		"body": "$LINE_COMMENT constants for this ⟨program⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: constants for this <subroutine>":{
+	"private comments: constants for this ⟨subroutine⟩":{
 		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this <subroutine>",
+		"body": "$LINE_COMMENT constants for this ⟨subroutine⟩",
 		"description": "private comments\n"
 	},
 
 	"private comments: contains":{
 		"prefix": "comment contains",
-		"body": "$LINE_COMMENT contained <subroutine>s and <function>s are below\ncontains",
+		"body": "$LINE_COMMENT contained ⟨subroutine⟩s and ⟨function⟩s are below\ncontains",
 		"description": "private comments\nbefore `contains`\n"
 	},
 
@@ -238,53 +227,57 @@
 		"description": "private comments\nbefore `implicit none`\n"
 	},
 
-	"private comments: <interface>s for this <program>":{
+	"private comments: ⟨interface⟩s for this ⟨program⟩":{
 		"prefix": "comment interface",
-		"body": "$LINE_COMMENT <interface>s for this <program>",
+		"body": "$LINE_COMMENT ⟨interface⟩s for this ⟨program⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: <interface>s for this <module>":{
+	"private comments: ⟨interface⟩s for this ⟨module⟩":{
 		"prefix": "comment interface",
-		"body": "$LINE_COMMENT <interface>s for this <module>",
+		"body": "$LINE_COMMENT ⟨interface⟩s for this ⟨module⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: <module>s to import":{
+	"private comments: ⟨module⟩s to import":{
 		"prefix": "comment module",
-		"body": "$LINE_COMMENT <module>s to import",
+		"body": "$LINE_COMMENT ⟨module⟩s to import",
 		"description": "private comments\nbefore `USE ...`\n"
 	},
 
-	"private comments: variables for this <function>":{
+	"private comments: variables for this ⟨function⟩":{
 		"prefix": "comment variables",
-		"body": "$LINE_COMMENT variables for this <function>",
+		"body": "$LINE_COMMENT variables for this ⟨function⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: return value of this <function>":{
+	"private comments: return value of this ⟨function⟩":{
 		"prefix": "comment return value",
-		"body": "$LINE_COMMENT return value of this <function>",
+		"body": "$LINE_COMMENT return value of this ⟨function⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: <type>s for this <program>":{
+	"private comments: ⟨type⟩s for this ⟨program⟩":{
 		"prefix": "comment type",
-		"body": "$LINE_COMMENT <type>s for this <program>",
+		"body": "$LINE_COMMENT ⟨type⟩s for this ⟨program⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: variables for this <program>":{
+	"private comments: variables for this ⟨program⟩":{
 		"prefix": "comment variables",
-		"body": "$LINE_COMMENT variables for this <program>",
+		"body": "$LINE_COMMENT variables for this ⟨program⟩",
 		"description": "private comments\n"
 	},
 
-	"private comments: variables for this <subroutine>":{
+	"private comments: variables for this ⟨subroutine⟩":{
 		"prefix": "comment variables",
-		"body": "$LINE_COMMENT variables for this <subroutine>",
+		"body": "$LINE_COMMENT variables for this ⟨subroutine⟩",
 		"description": "private comments\n"
 	},
+
+	// ⟨WRITE⟩ statement
+	"Specifier of ⟨WRITE⟩ statement: advance: yes":{ "prefix": "write advance", "body": "advance='yes', $0", "description": "when the statement to `WRITE` uses advancing input\nThe default value is 'yes'\n" },
+	"Specifier of ⟨WRITE⟩ statement: advance: no" :{ "prefix": "write advance", "body": "advance='no', $0" , "description": "when the statement to `WRITE` uses synchronous input\nThe default value is 'yes'\n" },
 
 	// others //
 	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{
