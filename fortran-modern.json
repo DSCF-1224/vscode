@@ -1,5 +1,5 @@
 {
-	// Place your snippets for fortran-modern here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// Place your snippets for FortranFreeForm here. Each snippet is defined under a snippet name and has a prefix, body and 
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
@@ -65,18 +65,18 @@
 	"ISO_FORTRAN_ENV: parameter: INT32":{ "prefix": "parameter INT32", "body": "INT32", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
 	"ISO_FORTRAN_ENV: parameter: INT64":{ "prefix": "parameter INT64", "body": "INT64", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
 
-	"ISO_FORTRAN_ENV: parameter: INT8:  for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT8 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
-	"ISO_FORTRAN_ENV: parameter: INT16: for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT16 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
-	"ISO_FORTRAN_ENV: parameter: INT32: for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT32 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
-	"ISO_FORTRAN_ENV: parameter: INT64: for ⟨INTEGER⟩ statement":{ "prefix": "integer", "body": "integer( kind=INT64 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
-
-	"ISO_FORTRAN_ENV: parameter: REAL32":{  "prefix": "parameter REAL32",  "body": "REAL32",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
-	"ISO_FORTRAN_ENV: parameter: REAL64":{  "prefix": "parameter REAL64",  "body": "REAL64",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+	"ISO_FORTRAN_ENV: parameter: REAL32" :{ "prefix": "parameter REAL32",  "body": "REAL32",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+	"ISO_FORTRAN_ENV: parameter: REAL64" :{ "prefix": "parameter REAL64",  "body": "REAL64",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
 	"ISO_FORTRAN_ENV: parameter: REAL128":{ "prefix": "parameter REAL128", "body": "REAL128", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
-	"ISO_FORTRAN_ENV: parameter: REAL32: for ⟨REAL⟩ statement" :{ "prefix": "REAL", "body": "real( kind=REAL32 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
-	"ISO_FORTRAN_ENV: parameter: REAL64: for ⟨REAL⟩ statement" :{ "prefix": "REAL", "body": "real( kind=REAL64 )${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
-	"ISO_FORTRAN_ENV: parameter: REAL128: for ⟨REAL⟩ statement":{ "prefix": "REAL", "body": "real( kind=REAL128 )${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : INT8"  :{ "prefix": "integer", "body": "integer(INT8)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : INT16" :{ "prefix": "integer", "body": "integer(INT16)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : INT32" :{ "prefix": "integer", "body": "integer(INT32)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : INT64" :{ "prefix": "integer", "body": "integer(INT64)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
+
+	"ISO_FORTRAN_ENV: Intrinsic types : REAL32"  :{ "prefix": "REAL", "body": "real(REAL32)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : REAL64"  :{ "prefix": "REAL", "body": "real(REAL64)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : REAL128" :{ "prefix": "REAL", "body": "real(REAL128)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
 	/* OpenMP */
 	"OpenMP: use omp_lib":{
@@ -179,45 +179,15 @@
 	},
 
 	// private comment //
-	"private comments: arguments for this ⟨function⟩":{
-		"prefix": "comment arguments",
-		"body": "$LINE_COMMENT arguments for this ⟨function⟩",
-		"description": "private comments\n"
-	},
+	"private comments: arguments for this <function>"   :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <function>",   "description": "private comments\n" },
+	"private comments: arguments for this <subroutine>" :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <subroutine>", "description": "private comments\n" },
+	"private comments: constants for this <function>"   :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <function>",   "description": "private comments\n" },
 
-	"private comments: arguments for this ⟨subroutine⟩":{
-		"prefix": "comment arguments",
-		"body": "$LINE_COMMENT arguments for this ⟨subroutine⟩",
-		"description": "private comments\n"
-	},
+	"private comments: constants for this <module>"  :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <module>",  "description": "private comments\n" },
+	"private comments: constants for this <program>" :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <program>", "description": "private comments\n" },
 
-	"private comments: constants for this ⟨function⟩":{
-		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this ⟨function⟩",
-		"description": "private comments\n"
-	},
-
-	"private comments: constants for this ⟨module⟩":{
-		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this ⟨module⟩",
-		"description": "private comments\n"
-	},
-
-	"private comments: constants for this ⟨program⟩":{
-		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this ⟨program⟩",
-		"description": "private comments\n"
-	},
-
-	"private comments: constants for this ⟨subroutine⟩":{
-		"prefix": "comment constants",
-		"body": "$LINE_COMMENT constants for this ⟨subroutine⟩",
-		"description": "private comments\n"
-	},
-
-	"private comments: contains":{
-		"prefix": "comment contains",
-		"body": "$LINE_COMMENT contained ⟨subroutine⟩s and ⟨function⟩s are below\ncontains",
+	"private comments: contains":{"prefix": "comment contains",
+		"body": "$LINE_COMMENT contained <subroutine>s and <function>s are below\ncontains",
 		"description": "private comments\nbefore `contains`\n"
 	},
 
@@ -227,57 +197,78 @@
 		"description": "private comments\nbefore `implicit none`\n"
 	},
 
-	"private comments: ⟨interface⟩s for this ⟨program⟩":{
-		"prefix": "comment interface",
-		"body": "$LINE_COMMENT ⟨interface⟩s for this ⟨program⟩",
-		"description": "private comments\n"
-	},
+	"private comments: <interface>s for this <program>" :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <program>", "description": "private comments\n" },
+	"private comments: <interface>s for this <module>"  :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <module>",  "description": "private comments\n" },
 
-	"private comments: ⟨interface⟩s for this ⟨module⟩":{
-		"prefix": "comment interface",
-		"body": "$LINE_COMMENT ⟨interface⟩s for this ⟨module⟩",
-		"description": "private comments\n"
-	},
-
-	"private comments: ⟨module⟩s to import":{
+	"private comments: <module>s to import":{
 		"prefix": "comment module",
-		"body": "$LINE_COMMENT ⟨module⟩s to import",
+		"body": "$LINE_COMMENT <module>s to import",
 		"description": "private comments\nbefore `USE ...`\n"
 	},
 
-	"private comments: variables for this ⟨function⟩":{
-		"prefix": "comment variables",
-		"body": "$LINE_COMMENT variables for this ⟨function⟩",
-		"description": "private comments\n"
-	},
+	"private comments: variables for this <function>"   :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <function>",   "description": "private comments\n" },
+	"private comments: variables for this <module>"     :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <module>",     "description": "private comments\n" },
+	"private comments: variables for this <program>"    :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <program>",    "description": "private comments\n" },
+	"private comments: variables for this <subroutine>" :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <subroutine>", "description": "private comments\n" },
 
-	"private comments: return value of this ⟨function⟩":{
-		"prefix": "comment return value",
-		"body": "$LINE_COMMENT return value of this ⟨function⟩",
-		"description": "private comments\n"
-	},
-
-	"private comments: ⟨type⟩s for this ⟨program⟩":{
+	"private comments: <type>s for this <program>":{
 		"prefix": "comment type",
-		"body": "$LINE_COMMENT ⟨type⟩s for this ⟨program⟩",
+		"body": "$LINE_COMMENT <type>s for this <program>",
 		"description": "private comments\n"
 	},
 
-	"private comments: variables for this ⟨program⟩":{
-		"prefix": "comment variables",
-		"body": "$LINE_COMMENT variables for this ⟨program⟩",
+	"private comments: STEP.0?":{
+		"prefix": "STEP",
+		"body": "$LINE_COMMENT STEP.0${1:?}\n$LINE_COMMENT ${0:what to do}",
 		"description": "private comments\n"
 	},
 
-	"private comments: variables for this ⟨subroutine⟩":{
-		"prefix": "comment variables",
-		"body": "$LINE_COMMENT variables for this ⟨subroutine⟩",
+	"private comments: return value of this <function>":{
+		"prefix": "comment return value",
+		"body": "$LINE_COMMENT return value of this <function>",
 		"description": "private comments\n"
 	},
 
-	// ⟨WRITE⟩ statement
-	"Specifier of ⟨WRITE⟩ statement: advance: yes":{ "prefix": "write advance", "body": "advance='yes', $0", "description": "when the statement to `WRITE` uses advancing input\nThe default value is 'yes'\n" },
-	"Specifier of ⟨WRITE⟩ statement: advance: no" :{ "prefix": "write advance", "body": "advance='no', $0" , "description": "when the statement to `WRITE` uses synchronous input\nThe default value is 'yes'\n" },
+	// <CLOSE> statement
+	"<CLOSE> statement: status: delete" :{ "prefix": "close status", "body": "status='delete', $0", "description": "<CLOSE> statement\n" },
+	"<CLOSE> statement: status: keep"   :{ "prefix": "close status", "body": "status='keep', $0",   "description": "<CLOSE> statement\n" },
+
+	// <INTENT> statement
+	"<INTENT> statement: in"    : { "prefix": "intent", "body": "intent(in)",    "description": "<INTENT> statement\n" },
+	"<INTENT> statement: inout" : { "prefix": "intent", "body": "intent(inout)", "description": "<INTENT> statement\n" },
+	"<INTENT> statement: out"   : { "prefix": "intent", "body": "intent(out)",   "description": "<INTENT> statement\n" },
+
+	// <OPEN> statement
+	"Specifier of <OPEN> statement: action: read"      :{ "prefix": "open action",  "body": "action='read', $0",                              "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: action: write"     :{ "prefix": "open action",  "body": "action='write', $0",                             "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: action: readwrite" :{ "prefix": "open action",  "body": "action='readwrite', $0",                         "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: old"       :{ "prefix": "open status",  "body": "status='old', $0",                               "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: new"       :{ "prefix": "open status",  "body": "status='new', $0",                               "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: scratch"   :{ "prefix": "open status",  "body": "status='scratch', $0",                           "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: replace"   :{ "prefix": "open status",  "body": "status='replace', $0",                           "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: unknown"   :{ "prefix": "open status",  "body": "status='unknown', $0",                           "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: unit: implicit"    :{ "prefix": "open unit",    "body": "unit=${1:unit number}, $0",                      "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: file: implicit"    :{ "prefix": "open file",    "body": "file=${1:string which shows the file path}, $0", "description": "<OPEN> statement\n" },
+
+	// <READ> statement
+	"Specifier of <READ> statement: fmt: arbitrary"  :{ "prefix": "read fmt",  "body": "fmt=*, $0",           "description": "when read out something as an arbitrary format\n" },
+	"Specifier of <READ> statement: fmt: standard"   :{ "prefix": "read fmt",  "body": "fmt='($1)', $0",      "description": "when read out something as a default format\n" },
+	"Specifier of <READ> statement: unit: INPUT_UNIT":{ "prefix": "read unit", "body": "unit=INPUT_UNIT, $0", "description": "when read out something from default input\nISO_FORTRAN_ENV module is required !\n" },
+	
+	// <WRITE> statement
+	"Specifier of <WRITE> statement: advance: yes"   :{ "prefix": "write advance", "body": "advance='yes', $0", "description": "when the statement `WRITE` uses advancing input\nThe default value is 'yes'\n" },
+	"Specifier of <WRITE> statement: advance: no"    :{ "prefix": "write advance", "body": "advance='no', $0" , "description": "when the statement `WRITE` uses synchronous input\nThe default value is 'yes'\n" },
+	"Specifier of <WRITE> statement: fmt: arbitrary" :{ "prefix": "write fmt",     "body": "fmt=*, $0" ,        "description": "when the statement `WRITE` uses an arbitrary format\nThe default value is 'yes'\n" },
+	"Specifier of <WRITE> statement: fmt: default"   :{ "prefix": "write fmt",     "body": "fmt='($1)', $0" ,   "description": "when the statement `WRITE` uses a default format\nThe default value is 'yes'\n" },
+	"Specifier of <WRITE> statement: unit: default"  :{ "prefix": "write unit",    "body": "unit=*, $0" ,       "description": "when the statement `WRITE` uses a default unit\nThe default value is 'yes'\n" },
+
+	// Keywords
+	"Keywords of Fortran 77: intrinsic":     { "prefix": "intrinsic",     "body": "intrinsic",     "description": "Keywords of Fortran\nFrom FORTRAN 77\n" },
+	"Keywords of Fortran 77: non_intrinsic": { "prefix": "non_intrinsic", "body": "non_intrinsic", "description": "Keywords of Fortran\nFrom FORTRAN 77\n" },
+	"Keywords of Fortran 77: parameter":     { "prefix": "parameter",     "body": "parameter",     "description": "Keywords of Fortran\nFrom FORTRAN 77\n" },
+	"Keywords of Fortran 90: allocatable":   { "prefix": "allocatable",   "body": "allocatable",   "description": "Keywords of Fortran\nFrom FORTRAN 90\n" },
+	"Keywords of Fortran 90: public":        { "prefix": "public",        "body": "public :: $0",  "description": "Keywords of Fortran\nFrom FORTRAN 90\n" },
+	"Keywords of Fortran 90: private":       { "prefix": "private",       "body": "private :: $0", "description": "Keywords of Fortran\nFrom FORTRAN 90\n" },
 
 	// others //
 	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{
