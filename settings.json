@@ -1,0 +1,44 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.minimap.renderCharacters": false,
+    "editor.renderControlCharacters": true,
+    "editor.fontLigatures": true,
+    "editor.renderWhitespace": "all",
+    "fortran.linterEnabled": false,
+    "git.ignoreMissingGitWarning": true,
+    "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Qiita",
+    "[cpp]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 2,
+        "editor.wordWrap": "off"
+    },
+    "[FortranFreeForm]": {
+        "editor.insertSpaces": true,
+        "editor.renderWhitespace": "all",
+        "editor.rulers": [132],
+        "editor.tabSize": 2,
+    },
+    "[haskell]": {
+        "editor.insertSpaces": true,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 8,
+    },
+    "[html]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 2,
+        "editor.wordWrap": "off"
+    },
+    "[markdown]": {
+        "editor.insertSpaces": false,
+        "editor.renderWhitespace": "all",
+        "editor.wordWrap": "off"
+    },
+    "[python]": {
+        "editor.insertSpaces": false,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 2,
+    },
+}
