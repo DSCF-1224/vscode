@@ -20,7 +20,7 @@
 		"body": [
 			"\\begin{align}",
 			"\t$0",
-			"\\end{align}",
+			"\\end{align}"
 		],
 		"description": "MathJax\n<align> environment\n"
 	},
@@ -30,9 +30,29 @@
 		"body": [
 			"\\begin{align*}",
 			"\t$0",
-			"\\end{align*}",
+			"\\end{align*}"
 		],
 		"description": "MathJax\n<align*> environment\n"
+	},
+
+	"MathJax\n<alignat> environment": {
+		"prefix": "alignat",
+		"body": [
+			"\\begin{alignat}{}",
+			"\t$0",
+			"\\end{alignat}"
+		],
+		"description": "MathJax\n<alignat> environment\n"
+	},
+
+	"MathJax\n<alignedat> environment": {
+		"prefix": "alignedat",
+		"body": [
+			"\\begin{alignedat}{}",
+			"\t$0",
+			"\\end{alignedat}"
+		],
+		"description": "MathJax\n<alignedat> environment\n"
 	},
 
 	"MathJax\n<equation> environment": {
@@ -40,7 +60,7 @@
 		"body": [
 			"\\begin{equation}",
 			"\t$0",
-			"\\end{equation}",
+			"\\end{equation}"
 		],
 		"description": "MathJax\n<equation> environment\n"
 	},
@@ -50,16 +70,86 @@
 		"body": [
 			"\\begin{equation*}",
 			"\t$0",
-			"\\end{equation*}",
+			"\\end{equation*}"
 		],
 		"description": "MathJax\n<equation*> environment\n"
 	},
 
+	"MathJax\n\\approx": {
+		"prefix": "approx",
+		"body": "\\approx $0",
+		"description": "MathJax\n≈\n"
+	},
+
 	"MathJax\n\\frac{}{}": {
 		"prefix": "frac",
-		"body": [
-			"\\frac{$1}{$2}",
-		],
+		"body": "\\frac{$1}{$2}",
 		"description": "MathJax\nfraction\n"
 	},
+
+	"MathJax\n\\overbrace{}": {
+		"prefix": "overbrace",
+		"body": "\\overbrace{$1}",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\n\\overbrace{} with overscript": {
+		"prefix": "overbrace",
+		"body": "\\overbrace{$1}^{$2}",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\n\\overbrace{} with subscript": {
+		"prefix": "overbrace",
+		"body": "\\overbrace{$1}_{$2}",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\n\\overbrace{} with over/subscript": {
+		"prefix": "overbrace",
+		"body": "\\overbrace{$1}^{$2}_{$3}",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\n\\mathrm{}": {
+		"prefix": "mathrm",
+		"body": "\\mathrm{$1}",
+		"description": "MathJax\nRoman font style for math mode"
+	},
+
+	"MathJax\n\\mathtt{}": {
+		"prefix": "mathtt",
+		"body": "\\mathtt{$1}",
+		"description": "MathJax\ntypewriter font style for math mode"
+	},
+
+	"MathJax\n\\text{}": {
+		"prefix": "text",
+		"body": "\\text{$1}",
+		"description": "MathJax\nuse text mode in the math mode\n"
+	},
+
+	"MathJax\n\\underbrace{}": {
+		"prefix": "underbrace",
+		"body": "\\underbrace{$1}",,
+		"description": "MathJax\n"
+	},
+
+	"MathJax\n\\underbrace{} with overscript": {
+		"prefix": "underbrace",
+		"body": "\\underbrace{$1}^{$2}",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\n\\underbrace{} with subscript": {
+		"prefix": "underbrace",
+		"body": "\\underbrace{$1}_{$2}",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\n\\underbrace{} with over/subscript": {
+		"prefix": "underbrace",
+		"body": "\\underbrace{$1}^{$2}_{$3}",
+		"description": "MathJax\n"
+	}
 }
