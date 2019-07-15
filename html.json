@@ -81,10 +81,34 @@
 		"description": "MathJax\n≈\n"
 	},
 
+	"MathJax\n\\binom": {
+		"prefix": "binom",
+		"body": "\\binom{ $1 }{ $2 }",
+		"description": "MathJax\nbinomial coefficient\n"
+	},
+
+	"MathJax\n\\displaystyle": {
+		"prefix": "displaystyle",
+		"body": "\\displaystyle",
+		"description": "MathJax\nchange to the display style\n"
+	},
+
 	"MathJax\n\\frac{}{}": {
 		"prefix": "frac",
 		"body": "\\frac{$1}{$2}",
 		"description": "MathJax\nfraction\n"
+	},
+
+	"MathJax\n\\lbrack": {
+		"prefix": "lbrack",
+		"body": "\\lbrack",
+		"description": "MathJax\nleft square bracket\n"
+	},
+
+	"MathJax\n\\lbrace": {
+		"prefix": "lbrace",
+		"body": "\\lbrace",
+		"description": "MathJax\nleft curly bracket\n"
 	},
 
 	"MathJax\n\\overbrace{}": {
@@ -111,6 +135,18 @@
 		"description": "MathJax\n"
 	},
 
+	"MathJax\n\\prime (double)": {
+		"prefix": "prime",
+		"body": "\\dprime",
+		"description": "MathJax\n′\ndouble prime\n"
+	},
+
+	"MathJax\n\\prime (triple)": {
+		"prefix": "prime",
+		"body": "\\tprime",
+		"description": "MathJax\n′\ntriple prime\n"
+	},
+
 	"MathJax\n\\mathrm{}": {
 		"prefix": "mathrm",
 		"body": "\\mathrm{$1}",
@@ -121,6 +157,36 @@
 		"prefix": "mathtt",
 		"body": "\\mathtt{$1}",
 		"description": "MathJax\ntypewriter font style for math mode"
+	},
+
+	"MathJax\n\\prime": {
+		"prefix": "prime",
+		"body": "\\prime",
+		"description": "MathJax\n′\nprime\n"
+	},
+
+	"MathJax\n\\quad": {
+		"prefix": "quad",
+		"body": "\\quad",
+		"description": "MathJax\nequal to 1em space\n"
+	},
+
+	"MathJax\n\\qquad": {
+		"prefix": "qquad",
+		"body": "\\qquad",
+		"description": "MathJax\nequal to 2em space\n"
+	},
+
+	"MathJax\n\\rbrack": {
+		"prefix": "rbrack",
+		"body": "\\rbrack",
+		"description": "MathJax\nright square bracket\n"
+	},
+
+	"MathJax\n\\rbrace": {
+		"prefix": "rbrace",
+		"body": "\\rbrace",
+		"description": "MathJax\nright curly bracket\n"
 	},
 
 	"MathJax\n\\text{}": {
@@ -151,5 +217,29 @@
 		"prefix": "underbrace",
 		"body": "\\underbrace{$1}^{$2}_{$3}",
 		"description": "MathJax\n"
+	},
+
+	"MathJax\nparentheses": {
+		"prefix": "parentheses",
+		"body": "\\lparen $0 \\rparen",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\nalpha": {
+		"prefix": "@a",
+		"body": "\\alpha",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\nbeta": {
+		"prefix": "@b",
+		"body": "\\beta",
+		"description": "MathJax\n"
+	},
+
+	"MathJax\noverscript": {
+		"prefix": "@overscript",
+		"body": "{ $1 }^{ $2 }",
+		"description": "MathJax\noverscript\n"
 	}
 }
