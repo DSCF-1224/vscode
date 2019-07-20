@@ -45,6 +45,16 @@
 		"description": "MathJax\n<alignat> environment\n"
 	},
 
+	"MathJax\n<alignat*> environment": {
+		"prefix": "alignat*",
+		"body": [
+			"\\begin{alignat*}{}",
+			"\t$0",
+			"\\end{alignat*}"
+		],
+		"description": "MathJax\n<alignat*> environment\n"
+	},
+
 	"MathJax\n<alignedat> environment": {
 		"prefix": "alignedat",
 		"body": [
@@ -53,6 +63,16 @@
 			"\\end{alignedat}"
 		],
 		"description": "MathJax\n<alignedat> environment\n"
+	},
+
+	"MathJax\n<array> environment": {
+		"prefix": "array",
+		"body": [
+			"\\begin{array}{$1}",
+			"\t$0",
+			"\\end{array}"
+		],
+		"description": "MathJax\n<array> environment\n"
 	},
 
 	"MathJax\n<equation> environment": {
@@ -197,7 +217,7 @@
 
 	"MathJax\n\\underbrace{}": {
 		"prefix": "underbrace",
-		"body": "\\underbrace{$1}",,
+		"body": "\\underbrace{$1}",
 		"description": "MathJax\n"
 	},
 
@@ -225,17 +245,30 @@
 		"description": "MathJax\n"
 	},
 
-	"MathJax\nalpha": {
-		"prefix": "@a",
-		"body": "\\alpha",
-		"description": "MathJax\n"
-	},
-
-	"MathJax\nbeta": {
-		"prefix": "@b",
-		"body": "\\beta",
-		"description": "MathJax\n"
-	},
+	"MathJax\nalpha"   : { "prefix": "@a", "body": "\\alpha",   "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nbeta"    : { "prefix": "@b", "body": "\\beta",    "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\ngamma"   : { "prefix": "@g", "body": "\\gamma",   "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\ndelta"   : { "prefix": "@d", "body": "\\delta",   "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nepsilon" : { "prefix": "@z", "body": "\\epsilon", "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nzeta"    : { "prefix": "@z", "body": "\\zeta",    "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\neta"     : { "prefix": "@e", "body": "\\eta",     "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\ntheta"   : { "prefix": "@e", "body": "\\theta",   "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\niota"    : { "prefix": "@e", "body": "\\iota",    "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nkappa"   : { "prefix": "@e", "body": "\\kappa",   "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nlambda"  : { "prefix": "@l", "body": "\\lambda",  "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nmu"      : { "prefix": "@e", "body": "\\mu",      "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nnu"      : { "prefix": "@e", "body": "\\nu",      "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nxi"      : { "prefix": "@e", "body": "\\xi",      "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nomicron" : { "prefix": "@z", "body": "\\omicron", "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\npi"      : { "prefix": "@e", "body": "\\pi",      "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nrho"     : { "prefix": "@e", "body": "\\rho",     "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nsigma"   : { "prefix": "@e", "body": "\\sigma",   "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\ntau"     : { "prefix": "@e", "body": "\\tau",     "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nupsilon" : { "prefix": "@z", "body": "\\upsilon", "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nphi"     : { "prefix": "@e", "body": "\\phi",     "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nchi"     : { "prefix": "@e", "body": "\\chi",     "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\npsi"     : { "prefix": "@e", "body": "\\psi",     "description": "MathJax\nGreek letters\nsmall" },
+	"MathJax\nomega"   : { "prefix": "@e", "body": "\\omega",   "description": "MathJax\nGreek letters\nsmall" },
 
 	"MathJax\noverscript": {
 		"prefix": "@overscript",
