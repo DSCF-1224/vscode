@@ -1,0 +1,54 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	// File: istream
+	"File: istream std::cin":{
+		"prefix": "std::cin",
+		"body": "std::cin >> $0",
+		"description": "File: istream\nstd::istream std::cin\n"
+	},
+
+	// File: ostream
+	"File: ostream std::cout":{
+		"prefix": "std::cout",
+		"body": "std::cout << $0",
+		"description": "File: ostream\nstd::ostream std::cout\n"
+	},
+
+	"File: ostream std::endl":{
+		"prefix": "std::endl",
+		"body": "<< std::endl${0:;}",
+		"description": "File: ostream\nstd::ostream std::cout\nmanipulator\n"
+	},
+
+	"File: ostream std::flush":{
+		"prefix": "std::flush",
+		"body": "<< std::flush${0:;}",
+		"description": "File: ostream\nstd::ostream &__cdecl std::flush<char, std::char_traits<char>>(std::ostream &_Ostr)\n"
+	},
+
+	// Priate Comments
+	"private comments: STEP.0?":{
+		"prefix": "STEP",
+		"body": "$LINE_COMMENT STEP.0${1:?}\n$LINE_COMMENT ${0:what to do}",
+		"description": "private comments\n"
+	},
+
+	"private comments: return value of this function":{
+		"prefix": "return value of this function",
+		"body": "$LINE_COMMENT return value of this function\n$0",
+		"description": "private comments\n"
+	},
+}
