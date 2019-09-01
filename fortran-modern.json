@@ -278,6 +278,9 @@
 	"Specifier of <READ> statement: fmt: arbitrary"  :{ "prefix": "read fmt",  "body": "fmt=*, $0",           "description": "when read out something as an arbitrary format\n" },
 	"Specifier of <READ> statement: fmt: standard"   :{ "prefix": "read fmt",  "body": "fmt='($1)', $0",      "description": "when read out something as a default format\n" },
 	"Specifier of <READ> statement: unit: INPUT_UNIT":{ "prefix": "read unit", "body": "unit=INPUT_UNIT, $0", "description": "when read out something from default input\nISO_FORTRAN_ENV module is required !\n" },
+
+	"<READ> statement: unit=INPUT_UNIT, fmt=*"     :{ "prefix": "read", "body": "read(unit=INPUT_UNIT, fmt=*) ${1:variables}",     "description": "<READ> statement\n" },
+	"<READ> statement: unit=INPUT_UNIT, fmt='(A)'" :{ "prefix": "read", "body": "read(unit=INPUT_UNIT, fmt='(A)') ${1:variables}", "description": "<READ> statement\n" },
 	
 	// <WRITE> statement
 	"Specifier of <WRITE> statement: advance: yes"   :{ "prefix": "write advance", "body": "advance='yes', $0", "description": "when the statement `WRITE` uses advancing input\nThe default value is 'yes'\n" },
@@ -285,6 +288,14 @@
 	"Specifier of <WRITE> statement: fmt: arbitrary" :{ "prefix": "write fmt",     "body": "fmt=*, $0" ,        "description": "when the statement `WRITE` uses an arbitrary format\nThe default value is 'yes'\n" },
 	"Specifier of <WRITE> statement: fmt: default"   :{ "prefix": "write fmt",     "body": "fmt='($1)', $0" ,   "description": "when the statement `WRITE` uses a default format\nThe default value is 'yes'\n" },
 	"Specifier of <WRITE> statement: unit: default"  :{ "prefix": "write unit",    "body": "unit=*, $0" ,       "description": "when the statement `WRITE` uses a default unit\nThe default value is 'yes'\n" },
+
+	"<WRITE> statement OUTPUT_UNIT, *, 'yes'"      : { "prefix": "write", "body": "write(unit=OUTPUT_UNIT, fmt=*, advance='yes')",      "description": "<WRITE> statement\nunit=OUTPUT_UNIT\nfmt=*\nadvance='yes'\n" },
+	"<WRITE> statement OUTPUT_UNIT, '(A)', 'yes'"  : { "prefix": "write", "body": "write(unit=OUTPUT_UNIT, fmt='(A)', advance='yes')",  "description": "<WRITE> statement\nunit=OUTPUT_UNIT\nfmt='(A)'\nadvance='yes'\n" },
+	"<WRITE> statement OUTPUT_UNIT, '(I0)', 'yes'" : { "prefix": "write", "body": "write(unit=OUTPUT_UNIT, fmt='(I0)', advance='yes')", "description": "<WRITE> statement\nunit=OUTPUT_UNIT\nfmt='(I0)'\nadvance='yes'\n" },
+
+	"<WRITE> statement OUTPUT_UNIT, *, 'no'"      : { "prefix": "write", "body": "write(unit=OUTPUT_UNIT, fmt=*, advance='no')",      "description": "<WRITE> statement\nunit=OUTPUT_UNIT\nfmt=*\nadvance='no'\n" },
+	"<WRITE> statement OUTPUT_UNIT, '(A)', 'no'"  : { "prefix": "write", "body": "write(unit=OUTPUT_UNIT, fmt='(A)', advance='no')",  "description": "<WRITE> statement\nunit=OUTPUT_UNIT\nfmt='(A)'\nadvance='no'\n" },
+	"<WRITE> statement OUTPUT_UNIT, '(I0)', 'no'" : { "prefix": "write", "body": "write(unit=OUTPUT_UNIT, fmt='(I0)', advance='no')", "description": "<WRITE> statement\nunit=OUTPUT_UNIT\nfmt='(I0)'\nadvance='no'\n" },
 
 	// Keywords
 	"Keywords of Fortran 77: intrinsic":     { "prefix": "intrinsic",     "body": "intrinsic",     "description": "Keywords of Fortran\nFrom FORTRAN 77\n" },

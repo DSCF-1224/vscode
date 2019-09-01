@@ -16,9 +16,45 @@
 	// System
 
 	// System.Console
+	"System.Console.Read()": {
+		"prefix"      : "System.Console.Read",
+		"body"        : "System.Console.Read();",
+		"description" : "namespace System\nclass System.Console\n"
+	},
+	"System.Console.Read() casted": {
+		"prefix"      : "System.Console.Read",
+		"body"        : "(char) System.Console.Read();",
+		"description" : "namespace System\nclass System.Console\n"
+	},
+
+	"System.Console.Write(string value)": {
+		"prefix"      : "System.Console.Write",
+		"body"        : "System.Console.Write(${1:value});",
+		"description" : "namespace System\nclass System.Console\n"
+	},
+
 	"System.Console.WriteLine(string value)": {
 		"prefix"      : "System.Console.WriteLine",
 		"body"        : "System.Console.WriteLine(${1:value});",
 		"description" : "namespace System\nclass System.Console\n"
+	},
+
+	// System.Math
+	"System.Math.Exp(double d)": {
+		"prefix"      : "System.Math.Exp",
+		"body"        : "System.Math.Exp(${1:double d});",
+		"description" : "namespace System\nclass System.Math\n"
+	},
+
+	"System.Math.Sqrt(double d)": {
+		"prefix"      : "System.Math.Sqrt",
+		"body"        : "System.Math.Sqrt(${1:double d});",
+		"description" : "namespace System\nclass System.Math\n"
+	},
+
+	"System.Math.Pow(double x, double y)": {
+		"prefix"      : "System.Math.Pow",
+		"body"        : "System.Math.Pow(${1:double x}, ${2:double y});",
+		"description" : "namespace System\nclass System.Math\n"
 	},
 }
