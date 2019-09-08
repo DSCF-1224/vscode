@@ -57,4 +57,35 @@
 		"body"        : "System.Math.Pow(${1:double x}, ${2:double y});",
 		"description" : "namespace System\nclass System.Math\n"
 	},
+
+	// private comments
+	"Private Comment: constructor of this class": {
+		"prefix"      : "constructor of this class",
+		"body"        : "$LINE_COMMENT constructor of this class",
+		"description" : "Private Comment\n"
+	},
+
+	"Private Comment: destructor of this class": {
+		"prefix"      : "destructor of this class",
+		"body"        : "$LINE_COMMENT destructor of this class",
+		"description" : "Private Comment\n"
+	},
+
+	"Private Comment: instance variables for this class": {
+		"prefix"      : "instance variables for this class",
+		"body"        : "$LINE_COMMENT instance variables for this class",
+		"description" : "Private Comment\n"
+	},
+
+	"Private Comment: instance variables for this method": {
+		"prefix"      : "instance variables for this method",
+		"body"        : "$LINE_COMMENT instance variables for this method",
+		"description" : "Private Comment\n"
+	},
+
+	"Private Comment: methods for this class": {
+		"prefix"      : "methods for this class",
+		"body"        : "$LINE_COMMENT methods for this class",
+		"description" : "Private Comment\n"
+	},
 }
