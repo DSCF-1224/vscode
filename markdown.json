@@ -13,19 +13,27 @@
 	// 	"description": "Log output to console"
 	// }
 
+	// heading
+	"heading Lv1\n": { "prefix": "heading 1", "body": "# ${1:contents} #\n\n$0",           "description": "Insert heading Lv.1\r" },
+	"heading Lv2\n": { "prefix": "heading 2", "body": "## ${1:contents} ##\n\n$0",         "description": "Insert heading Lv.2\r" },
+	"heading Lv3\n": { "prefix": "heading 3", "body": "### ${1:contents} ###\n\n$0",       "description": "Insert heading Lv.3\r" },
+	"heading Lv4\n": { "prefix": "heading 4", "body": "#### ${1:contents} ####\n\n$0",     "description": "Insert heading Lv.4\r" },
+	"heading Lv5\n": { "prefix": "heading 5", "body": "##### ${1:contents} #####\n\n$0",   "description": "Insert heading Lv.5\r" },
+	"heading Lv6\n": { "prefix": "heading 6", "body": "###### ${1:contents} ######\n\n$0", "description": "Insert heading Lv.6\r" },
+
 	// time stamp
-	"time stamp: [yyyy/MM/dd]":{
+	"time stamp: [yyyy/MM/dd]\n":{
 		"prefix": "time stamp",
-		"body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+		"body": "yyyy/MM/dd\n",
 	},
 
-	"time stamp: [hh:mm:ss]":{
+	"time stamp: [hh:mm:ss]\n":{
 		"prefix": "time stamp",
-		"body": "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+		"body": "hh:mm:ss\n",
 	},
 
-	"time stamp: [yyyy/MM/dd hh:mm:ss]":{
+	"time stamp: [yyyy/MM/dd hh:mm:ss]\n":{
 		"prefix": "time stamp",
-		"body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+		"body": "yyyy/MM/dd hh:mm:ss\n",
 	},
 }
