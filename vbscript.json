@@ -290,7 +290,7 @@
 		"Option Explicit Statement":{
 			"prefix": "Option Explicit",
 			"body": [
-				"REM Forces explicit declaration of all variables in a script.",
+				"$LINE_COMMENT Forces explicit declaration of all variables in a script.",
 				"Option Explicit",
 			],
 			"description": "Statement\nスクリプト内のすべての変数に対して、明示的な宣言を強制します。"
@@ -308,11 +308,11 @@
 
 		// def
 		"declare the file system object":{
-			"prefix": "fso",
+			"prefix": "file system object",
 			"body": [
-				"REM # File System Object",
-				"DIM obj_FSO",
-				"SET obj_FSO = WScript.CreateObject(\"Scripting.FileSystemObject\")",
+				"$LINE_COMMENT # File System Object",
+				"DIM objFSO",
+				"SET objFSO = WScript.CreateObject(\"Scripting.FileSystemObject\")",
 			],
 		},
 
@@ -351,6 +351,25 @@
 			"description": "WScript オブジェクト\nダイアログ ボックスまたはコンソールに出力を送ります。\n"
 		},
 
+		// Properties
+		"WScript.ScriptFullName":{
+			"prefix": "WScript ScriptFullName",
+			"body": "WScript.ScriptFullName",
+			"description": "WScript オブジェクト\rScriptFullName プロパティ\r実行中のスクリプトへの絶対パスを提供します。\r"
+		},
+
+		"WScript.ScriptName":{
+			"prefix": "WScript ScriptName",
+			"body": "WScript.ScriptName",
+			"description": "WScript オブジェクト\rScriptName プロパティ\r実行中のスクリプトのファイル名を提供します。\r"
+		},
+
+		"WScript.Version":{
+			"prefix": "WScript Version",
+			"body": "WScript.Version",
+			"description": "WScript オブジェクト\rVersion プロパティ\rWindows Script Host のバージョンを返します。\r"
+		},
+
 		// WshShell Object
 
 			// WshShell Object
@@ -360,4 +379,10 @@
 				"description": "WScript オブジェクト\nWshShell オブジェクト\n新しいプロセス内でプログラムを実行します。\n"
 			},
 
+	// private comment
+
+		"Private Comment; STEP.0?":{
+			"prefix": "STEP",
+			"body": "$LINE_COMMENT STEP.0${1:?}\n$LINE_COMMENT ${2:what to do here ?}"
+		},
 }
