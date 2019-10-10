@@ -84,10 +84,14 @@
 	"ISO_FORTRAN_ENV: Intrinsic types : REAL64"  :{ "prefix": "REAL", "body": "real(REAL64)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : REAL128" :{ "prefix": "REAL", "body": "real(REAL128)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
-	"ISO_FORTRAN_ENV: Intrinsic types : INT8  : for literal" :{ "prefix": "literal integer INT8", "body": "${1:value}_INT8$0",   "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : INT8 : for literal"  :{ "prefix": "literal integer INT8", "body": "${1:value}_INT8$0",   "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : INT16 : for literal" :{ "prefix": "literal integer INT16", "body": "${1:value}_INT16$0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : INT32 : for literal" :{ "prefix": "literal integer INT32", "body": "${1:value}_INT32$0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : INT64 : for literal" :{ "prefix": "literal integer INT64", "body": "${1:value}_INT64$0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
+
+	"ISO_FORTRAN_ENV: Intrinsic types : REAL32 : for literal"  :{ "prefix": "literal integer REAL32",  "body": "${1:value}_REAL32$0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : REAL64 : for literal"  :{ "prefix": "literal integer REAL64",  "body": "${1:value}_REAL64$0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : REAL128 : for literal" :{ "prefix": "literal integer REAL128", "body": "${1:value}_REAL128$0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
 	/* OpenMP */
 	"OpenMP: use omp_lib":{

@@ -13,6 +13,30 @@
 	// 	"description": "Log output to console"
 	// }
 
+	// function
+	"function: main":{
+		"prefix": "main",
+		"body": [
+			"int main ()",
+			"{",
+			"\t$1",
+			"",
+			"\treturn EXIT_SUCCESS;",
+			"}",
+		],
+	},
+
+	// return
+	"return EXIT_SUCCESS":{ "prefix": "return", "body": "return EXIT_SUCCESS;" },
+	"return EXIT_FAILURE":{ "prefix": "return", "body": "return EXIT_FAILURE;" },
+
+	// Header file
+	"File: vcruntime std::size_t":{
+		"prefix": "size_t",
+		"body": "std::size_t",
+		"description": "File: vcruntime\n"
+	},
+
 	// File: istream
 	"File: istream std::cin":{
 		"prefix": "std::cin",
@@ -40,6 +64,12 @@
 	},
 
 	// Priate Comments
+	"private comments: constants for this function":{
+		"prefix": "constants",
+		"body": "$LINE_COMMENT constants for this function\n$0",
+		"description": "private comments\n"
+	},
+
 	"private comments: STEP.0?":{
 		"prefix": "STEP",
 		"body": "$LINE_COMMENT STEP.0${1:?}\n$LINE_COMMENT ${0:what to do}",
@@ -49,6 +79,12 @@
 	"private comments: return value of this function":{
 		"prefix": "return value of this function",
 		"body": "$LINE_COMMENT return value of this function\n$0",
+		"description": "private comments\n"
+	},
+
+	"private comments: variables for this function":{
+		"prefix": "variables",
+		"body": "$LINE_COMMENT variables for this function\n$0",
 		"description": "private comments\n"
 	},
 }
