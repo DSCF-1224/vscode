@@ -13,6 +13,21 @@
 	// 	"description": "Log output to console"
 	// }
 
+	// unicode-math
+	"unimath-symbol: \\lparen":    { "prefix": "lparen",    "body": "\\lparen $0",    "description": "unimath-symbol\nUSV : U+00028\nopening symbol\n"     },
+	"unimath-symbol: \\rparen":    { "prefix": "rparen",    "body": "\\rparen $0",    "description": "unimath-symbol\nUSV : U+00029\nclosing symbol\n"     },
+	"unimath-symbol: \\mathcomma": { "prefix": "mathcomma", "body": "\\mathcomma $0", "description": "unimath-symbol\nUSV : U+0002C\npunctuation symbol\n" },
+	"unimath-symbol: \\mathplus":  { "prefix": "mathplus",  "body": "\\mathplus $0",  "description": "unimath-symbol\nUSV : U+0002B\nbinary symbol\n"      },
+	"unimath-symbol: \\less":      { "prefix": "less",      "body": "\\less $0",      "description": "unimath-symbol\nUSV : U+0003C\nrelation symbol\n"    },
+	"unimath-symbol: \\equal":     { "prefix": "equal",     "body": "\\equal $0",     "description": "unimath-symbol\nUSV : U+0003D\nrelation symbol\n"    },
+	"unimath-symbol: \\greater":   { "prefix": "greater",   "body": "\\greater $0",   "description": "unimath-symbol\nUSV : U+0003E\nrelation symbol\n"    },
+	"unimath-symbol: \\lbrace":    { "prefix": "lbrace",    "body": "\\lbrace $0",    "description": "unimath-symbol\nUSV : U+0007B\nopening symbol\n"     },
+	"unimath-symbol: \\rbrace":    { "prefix": "rbrace",    "body": "\\rbrace $0",    "description": "unimath-symbol\nUSV : U+0007D\nclosing symbol\n"     },
+	"unimath-symbol: \\minus":     { "prefix": "minus",     "body": "\\minus $0",     "description": "unimath-symbol\nUSV : U+02212\nbinary symbol\n"      },
+	"unimath-symbol: \\therefore": { "prefix": "therefore", "body": "\\therefore $0", "description": "unimath-symbol\nUSV : U+02234\nordinary symbol\n"    },
+	"unimath-symbol: \\coloneq":   { "prefix": "coloneq",   "body": "\\coloneq $0",   "description": "unimath-symbol\nUSV : U+02254\nrelation symbol\n"    },
+	"unimath-symbol: \\cdot":      { "prefix": "cdot",      "body": "\\cdot $0",      "description": "unimath-symbol\nUSV : U+022C5\nbinary symbol\n"      },
+
 	// private comment 
 	"private comment\nheader":{
 		"prefix": "comment",
