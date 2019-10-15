@@ -27,50 +27,60 @@
 	},
 
 	// operator
-	"operator==":{ "prefix": "eq", "body": "== $0" },
-	"operator!=":{ "prefix": "ne", "body": "!= $0" },
-	"operator<" :{ "prefix": "lt", "body": "< $0"  },
-	"operator<=":{ "prefix": "le", "body": "<= $0" },
-	"operator>" :{ "prefix": "gt", "body": "> $0"  },
-	"operator>=":{ "prefix": "ge", "body": ">= $0" },
-	"operator++":{ "prefix": "increment", "body": "++$0" },
-	"operator--":{ "prefix": "decrement", "body": "--$0" },
+	"operator!" :{ "prefix": "not",       "body": "!$0"   },
+	"operator==":{ "prefix": "eq",        "body": "== $0" },
+	"operator!=":{ "prefix": "ne",        "body": "!= $0" },
+	"operator<" :{ "prefix": "lt",        "body": "< $0"  },
+	"operator<=":{ "prefix": "le",        "body": "<= $0" },
+	"operator>" :{ "prefix": "gt",        "body": "> $0"  },
+	"operator>=":{ "prefix": "ge",        "body": ">= $0" },
+	"operator++":{ "prefix": "increment", "body": "++$0"  },
+	"operator--":{ "prefix": "decrement", "body": "--$0"  },
+	"operator+=":{ "prefix": "increment", "body": "+= $0" },
+	"operator-=":{ "prefix": "decrement", "body": "-= $0" },
 
 	// return
 	"return EXIT_SUCCESS":{ "prefix": "return", "body": "return EXIT_SUCCESS;" },
 	"return EXIT_FAILURE":{ "prefix": "return", "body": "return EXIT_FAILURE;" },
 
 	// Header file
-	"File: vcruntime std::size_t":{
+	"Header File: vcruntime std::size_t":{
 		"prefix": "size_t",
 		"body": "std::size_t",
-		"description": "File: vcruntime\n"
+		"description": "Header File: vcruntime\n"
 	},
 
 	// File: istream
-	"File: istream std::cin":{
+	"Header File: istream std::cin":{
 		"prefix": "std::cin",
 		"body": "std::cin >> $0",
-		"description": "File: istream\nstd::istream std::cin\n"
+		"description": "Header File: istream\nstd::istream std::cin\n"
 	},
 
 	// File: ostream
-	"File: ostream std::cout":{
+	"Header File: ostream std::cout":{
 		"prefix": "std::cout",
 		"body": "std::cout << $0",
-		"description": "File: ostream\nstd::ostream std::cout\n"
+		"description": "Header File: ostream\nstd::ostream std::cout\n"
 	},
 
-	"File: ostream std::endl":{
+	"Header File: ostream std::endl":{
 		"prefix": "std::endl",
 		"body": "${1:<<} std::endl;$0",
-		"description": "File: ostream\nstd::ostream std::cout\nmanipulator\n"
+		"description": "Header File: ostream\nstd::ostream std::cout\nmanipulator\n"
 	},
 
-	"File: ostream std::flush":{
+	"Header File: ostream std::flush":{
 		"prefix": "std::flush",
 		"body": "${1:<<} std::flush;$0",
-		"description": "File: ostream\nstd::ostream &__cdecl std::flush<char, std::char_traits<char>>(std::ostream &_Ostr)\n"
+		"description": "Header File: ostream\nstd::ostream &__cdecl std::flush<char, std::char_traits<char>>(std::ostream &_Ostr)\n"
+	},
+
+	// File: string
+	"Header File: std::string std::literals::string_literals::operator \"\"s":{
+		"prefix": "operator \"\"s",
+		"body": "\"$1\"$s",
+		"description": "Header File: string\nstd::literals::string_literals\n"
 	},
 
 	// time stamp
@@ -129,9 +139,25 @@
 		"description": "private comments\n"
 	},
 
+	"private comments: lambda expression for this function":{
+		"prefix": "lambda",
+		"body": "$LINE_COMMENT lambda expression for this function\n$0",
+		"description": "private comments\n"
+	},
+
 	"private comments: variables for this function":{
 		"prefix": "variables",
 		"body": "$LINE_COMMENT variables for this function\n$0",
+		"description": "private comments\n"
+	},
+
+	"private comments: result":{
+		"prefix": "result",
+		"body": [
+			"$BLOCK_COMMENT_START result (begin) $BLOCK_COMMENT_END\n",
+			"$LINE_COMMENT ${1:contents}\n",
+			"$BLOCK_COMMENT_START result (end) $BLOCK_COMMENT_END",
+		],
 		"description": "private comments\n"
 	},
 }
