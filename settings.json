@@ -1,16 +1,30 @@
 {
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "'Iosevka Medium', 'Yu Gothic UI'",
     "editor.minimap.renderCharacters": false,
     "editor.renderControlCharacters": true,
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "all",
-    "fortran.linterEnabled": false,
+    "julia.enableTelemetry": true,
+    "julia.environmentPath": "C:\\Program Files\\WinOLS_64\\Science\\Julia-1.1.1\\bin",
+    "julia.executablePath": "C:\\Program Files\\WinOLS_64\\Science\\Julia-1.1.1\\bin\\julia.exe",
     "git.ignoreMissingGitWarning": true,
-    "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
-    "latex-workshop.latex.autoBuild.run": "never",
     "window.zoomLevel": -1,
-    "workbench.colorTheme": "Qiita",
+    "[c]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 8,
+        "editor.wordWrap": "off"
+    },
+    "[csharp]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 2,
+        "editor.wordWrap": "off"
+    },
     "[cpp]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 8,
+        "editor.wordWrap": "off"
+    },
+    "[css]": {
         "editor.insertSpaces": false,
         "editor.tabSize": 2,
         "editor.wordWrap": "off"
@@ -20,6 +34,11 @@
         "editor.renderWhitespace": "all",
         "editor.rulers": [132],
         "editor.tabSize": 2,
+    },
+    "[javascript]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 2,
+        "editor.wordWrap": "off"
     },
     "[haskell]": {
         "editor.insertSpaces": true,
@@ -33,6 +52,7 @@
     },
     "[markdown]": {
         "editor.insertSpaces": false,
+        "editor.quickSuggestions": true,
         "editor.renderWhitespace": "all",
         "editor.wordWrap": "off"
     },
@@ -41,4 +61,42 @@
         "editor.renderWhitespace": "all",
         "editor.tabSize": 2,
     },
+    "omnisharp.autoStart": false,
+    "omnisharp.useGlobalMono": "never",
+    "[vb]": {
+        "editor.insertSpaces": false,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 2,
+    },
+    "fortran.gfortranExecutable": "C:\\Program Files\\WinOLS_64\\Develop\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\gfortran.exe",
+    "files.associations": {
+        "*.ltx": "latex"
+    },
+    "[latex]": {
+        "editor.insertSpaces": false,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 8,
+    },
+    "[rust]": {
+        "editor.insertSpaces": false,
+        "editor.renderWhitespace": "all",
+        "editor.tabSize": 8,
+    },
+    "editor.tokenColorCustomizations": {
+        "[Default Dark+]": {
+            "comments": "#03af7a",
+            "numbers": "#d8f255",
+            "textMateRules": [
+                { "scope": "constant.numeric",           "settings": { "foreground": "#d8f255", "fontStyle": "" } },
+                { "scope": "entity.name.function",       "settings": { "foreground": "#fff200", "fontStyle": "" } },
+                { "scope": "keyword.control",            "settings": { "foreground": "#c9ace6", "fontStyle": "" } },
+                { "scope": "meta",                       "settings": { "foreground": "#c8c8cb", "fontStyle": "" } },
+                { "scope": "string.quoted",              "settings": { "foreground": "#f6aa00", "fontStyle": "" } },
+                { "scope": "punctuation.separator",      "settings": { "foreground": "#84919e", "fontStyle": "" } },
+                { "scope": "support.type.property-name", "settings": { "foreground": "#bfe4ff", "fontStyle": "" } },
+                { "scope": "variable.other",             "settings": { "foreground": "#bfe4ff", "fontStyle": "" } },
+            ]
+        },
+    },
+    "editor.insertSpaces": false
 }
