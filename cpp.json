@@ -13,6 +13,21 @@
 	// 	"description": "Log output to console"
 	// }
 
+	// literal
+	"literal: binary": { "prefix": "literal binary", "body": "0b$1" },
+	"literal: octal" : { "prefix": "literal octal",  "body": "0$1"  },
+	"literal: hex"   : { "prefix": "literal hex",    "body": "0x$1" },
+
+	"literal: long int":      { "prefix": "literal long int",      "body": "$1l"  },
+	"literal: long long int": { "prefix": "literal long long int", "body": "$1ll" },
+
+	"literal: unsigned int":           { "prefix": "literal unsigned int",           "body": "$1u"   },
+	"literal: unsigned long int":      { "prefix": "literal unsigned long int",      "body": "$1ul"  },
+	"literal: unsigned long long int": { "prefix": "literal unsigned long long int", "body": "$1ull" },
+
+	"literal: float":       { "prefix": "literal float",       "body": "$1f" },
+	"literal: long double": { "prefix": "literal long double", "body": "$1l" },
+
 	// function
 	"function: main":{
 		"prefix": "main",
