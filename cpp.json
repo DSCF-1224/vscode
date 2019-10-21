@@ -98,6 +98,25 @@
 		"description": "Header File: string\nstd::literals::string_literals\n"
 	},
 
+	// File: vector
+	"Header File: std::vector std::begin()":{
+		"prefix": "begin",
+		"body": "std::begin(${1:vector object})",
+		"description": "Header File: vector\nconstexpr auto std::begin<std::vector<T>>(std::vector<T> &_Cont)->std::vector<T>::iterator\n"
+	},
+
+	"Header File: std::vector std::end()":{
+		"prefix": "end",
+		"body": "std::end(${1:vector object})",
+		"description": "Header File: vector\nconstexpr auto std::end<std::vector<T>>(std::vector<T> &_Cont)->std::vector<T>::iterator\n"
+	},
+
+	"Header File: std::vector std::size()":{
+		"prefix": "size",
+		"body": "std::size(${1:vector object})",
+		"description": "Header File: vector\nconstexpr auto std::size<std::vector<T>>(const std::vector<T> &_Cont)->size_t\n"
+	},
+
 	// time stamp
 	"private comments: time stamp: [yyyy/MM/dd]\n":{
 		"prefix": "time stamp",
