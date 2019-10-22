@@ -1,0 +1,72 @@
+{
+	// Place your snippets for julia here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	// Module: Core
+	"Core.Any":{ "prefix": "Any", "body": "Core.Any", "description": "Module: Core\nType: Any\n" },
+	"Core.Int8":{ "prefix": "Int8", "body": "Core.Int8", "description": "Module: Core\nType: Int8\n" },
+	"Core.Int16":{ "prefix": "Int16", "body": "Core.Int16", "description": "Module: Core\nType: Int16\n" },
+	"Core.Int32":{ "prefix": "Int32", "body": "Core.Int32", "description": "Module: Core\nType: Int32\n" },
+	"Core.Int64":{ "prefix": "Int64", "body": "Core.Int64", "description": "Module: Core\nType: Int64\n" },
+	"Core.Int128":{ "prefix": "Int128", "body": "Core.Int128", "description": "Module: Core\nType: Int128\n" },
+	"Core.Nothing":{ "prefix": "Nothing", "body": "Core.Nothing", "description": "Module: Core\nType: Nothing\n" },
+	"Core.nothing":{ "prefix": "nothing", "body": "Core.nothing", "description": "Module: Core\nConstant: nothing\n" },
+	"Core.Symbol":{ "prefix": "Symbol", "body": "Core.Symbol( $1 )", "description": "Module: Core\nMethod: Symbol\n" },
+	"Core.typeof":{ "prefix": "typeof", "body": "Core.typeof( $1 )", "description": "Module: Core\nFunction: typeof\n" },
+	"Core.tuple":{ "prefix": "tuple", "body": "Core.tuple( $1 )", "description": "Module: Core\nFunction: tuple\n" },
+	"Core.UInt8":{ "prefix": "UInt8", "body": "Core.UInt8", "description": "Module: Core\nType: UInt8\n" },
+	"Core.UInt16":{ "prefix": "UInt16", "body": "Core.UInt16", "description": "Module: Core\nType: UInt16\n" },
+	"Core.UInt32":{ "prefix": "UInt32", "body": "Core.UInt32", "description": "Module: Core\nType: UInt32\n" },
+	"Core.UInt64":{ "prefix": "UInt64", "body": "Core.UInt64", "description": "Module: Core\nType: UInt64\n" },
+	"Core.UInt128":{ "prefix": "UInt128", "body": "Core.UInt128", "description": "Module: Core\nType: UInt128\n" },
+	"Core.undef":{ "prefix": "undef", "body": "Core.undef", "description": "Module: Core\nConstant: undef\n" },
+
+	// Module: Base
+	"Base.collect":{ "prefix": "collect", "body": "Base.collect( $1 )", "description": "Module: Base\nMethod: collect\n" },
+	"Base.Dict":{ "prefix": "Dict", "body": "Base.Dict( $1 )", "description": "Module: Base\nType: Dict\n" },
+	"Base.iterate":{ "prefix": "iterate", "body": "Base.iterate( $1 )", "description": "Module: Base\nFunction: iterate\n" },
+	"Base.length":{ "prefix": "length", "body": "Base.length( $1 )", "description": "Module: Base\nFunction: length\n" },
+	"Base.MathConstants.pi":{ "prefix": "pi", "body": "Base.MathConstants.pi", "description": "Module: Base\nConstant: pi\n" },
+	"Base.Missing":{ "prefix": "Missing", "body": "Base.Missing", "description": "Module: Base\nType: Missing\n" },
+	"Base.missing":{ "prefix": "missing", "body": "Base.missing", "description": "Module: Base\nConstant: missing\n" },
+	"Base.nameof":{ "prefix": "nameof", "body": "Base.nameof( $1 )", "description": "Module: Base\nMethod: nameof\n" },
+	"Base.ntuple":{ "prefix": "ntuple", "body": "Base.ntuple( $1 )", "description": "Module: Base\nFunction: ntuple\n" },
+	"Base.println":{ "prefix": "println", "body": "Base.println( $1 )", "description": "Module: Base\nFunction: println\n" },
+	"Base.stderr":{ "prefix": "stderr", "body": "Base.stderr", "description": "Module: Base\nConstant: stderr\n" },
+	"Base.stdin":{ "prefix": "stdin", "body": "Base.stdin", "description": "Module: Base\nConstant: stdin\n" },
+	"Base.stdout":{ "prefix": "stdout", "body": "Base.stdout", "description": "Module: Base\nConstant: stdout\n" },
+	"Base.Vector (Type)":{ "prefix": "Vector", "body": "Base.Vector{ $1 }", "description": "Module: Base\nType: Vector\n" },
+	"Base.Vector (Method)":{ "prefix": "Vector", "body": "Base.Vector{ $1 }(Core.undef, $2)", "description": "Module: Base\nType: Method\n" },
+
+	// Module Printf
+	"Printf.@printf": { "prefix": "printf", "body": "Printf.@printf( $1 )", "description": "Module: Printf\nMacro: @printf\n" },
+	"Printf.@sprintf": { "prefix": "sprintf", "body": "Printf.@sprintf( $1 )", "description": "Module: Printf\nMacro: @sprintf\n" },
+
+	/* private comment */
+	"private comment: result":{
+		"prefix": "result",
+		"body": [
+			"$BLOCK_COMMENT_START result (begin) $BLOCK_COMMENT_END\n",
+			"$LINE_COMMENT $1",
+			"\n$BLOCK_COMMENT_START result (end) $BLOCK_COMMENT_END\n",
+		],
+		"description": "Private Comment\n"
+	},
+
+	"private comment: end of file":{
+		"prefix": "end of file",
+		"body": "$BLOCK_COMMENT_START EOF $BLOCK_COMMENT_END\n",
+		"description": "Private Comment\n"
+	},
+}
