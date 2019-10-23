@@ -12,24 +12,49 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
 	// literal
-	"literal: binary": { "prefix": "literal binary", "body": "0b$1" },
-	"literal: octal" : { "prefix": "literal octal",  "body": "0$1"  },
-	"literal: hex"   : { "prefix": "literal hex",    "body": "0x$1" },
-
-	"literal: long int":      { "prefix": "literal long int",      "body": "$1l"  },
-	"literal: long long int": { "prefix": "literal long long int", "body": "$1ll" },
-
-	"literal: unsigned int":           { "prefix": "literal unsigned int",           "body": "$1u"   },
-	"literal: unsigned long int":      { "prefix": "literal unsigned long int",      "body": "$1ul"  },
-	"literal: unsigned long long int": { "prefix": "literal unsigned long long int", "body": "$1ull" },
-
-	"literal: float":       { "prefix": "literal float",       "body": "$1f" },
-	"literal: long double": { "prefix": "literal long double", "body": "$1l" },
-
+	"literal: binary": {
+		"prefix": "literal binary",
+		"body": "0b$1"
+	},
+	"literal: octal": {
+		"prefix": "literal octal",
+		"body": "0$1"
+	},
+	"literal: hex": {
+		"prefix": "literal hex",
+		"body": "0x$1"
+	},
+	"literal: long int": {
+		"prefix": "literal long int",
+		"body": "$1l"
+	},
+	"literal: long long int": {
+		"prefix": "literal long long int",
+		"body": "$1ll"
+	},
+	"literal: unsigned int": {
+		"prefix": "literal unsigned int",
+		"body": "$1u"
+	},
+	"literal: unsigned long int": {
+		"prefix": "literal unsigned long int",
+		"body": "$1ul"
+	},
+	"literal: unsigned long long int": {
+		"prefix": "literal unsigned long long int",
+		"body": "$1ull"
+	},
+	"literal: float": {
+		"prefix": "literal float",
+		"body": "$1f"
+	},
+	"literal: long double": {
+		"prefix": "literal long double",
+		"body": "$1l"
+	},
 	// function
-	"function: main":{
+	"function: main": {
 		"prefix": "main",
 		"body": [
 			"int main ()",
@@ -40,152 +65,168 @@
 			"}",
 		],
 	},
-
 	// operator
-	"operator!" :{ "prefix": "not",       "body": "!$0"   },
-	"operator==":{ "prefix": "eq",        "body": "== $0" },
-	"operator!=":{ "prefix": "ne",        "body": "!= $0" },
-	"operator<" :{ "prefix": "lt",        "body": "< $0"  },
-	"operator<=":{ "prefix": "le",        "body": "<= $0" },
-	"operator>" :{ "prefix": "gt",        "body": "> $0"  },
-	"operator>=":{ "prefix": "ge",        "body": ">= $0" },
-	"operator++":{ "prefix": "increment", "body": "++$0"  },
-	"operator--":{ "prefix": "decrement", "body": "--$0"  },
-	"operator+=":{ "prefix": "increment", "body": "+= $0" },
-	"operator-=":{ "prefix": "decrement", "body": "-= $0" },
-
+	"operator!": {
+		"prefix": "not",
+		"body": "!$0"
+	},
+	"operator==": {
+		"prefix": "eq",
+		"body": "== $0"
+	},
+	"operator!=": {
+		"prefix": "ne",
+		"body": "!= $0"
+	},
+	"operator<": {
+		"prefix": "lt",
+		"body": "< $0"
+	},
+	"operator<=": {
+		"prefix": "le",
+		"body": "<= $0"
+	},
+	"operator>": {
+		"prefix": "gt",
+		"body": "> $0"
+	},
+	"operator>=": {
+		"prefix": "ge",
+		"body": ">= $0"
+	},
+	"operator++": {
+		"prefix": "increment",
+		"body": "++$0"
+	},
+	"operator--": {
+		"prefix": "decrement",
+		"body": "--$0"
+	},
+	"operator+=": {
+		"prefix": "increment",
+		"body": "+= $0"
+	},
+	"operator-=": {
+		"prefix": "decrement",
+		"body": "-= $0"
+	},
 	// return
-	"return EXIT_SUCCESS":{ "prefix": "return", "body": "return EXIT_SUCCESS;" },
-	"return EXIT_FAILURE":{ "prefix": "return", "body": "return EXIT_FAILURE;" },
-
+	"return EXIT_SUCCESS": {
+		"prefix": "return",
+		"body": "return EXIT_SUCCESS;"
+	},
+	"return EXIT_FAILURE": {
+		"prefix": "return",
+		"body": "return EXIT_FAILURE;"
+	},
 	// Header file
-	"Header File: vcruntime std::size_t":{
+	"Header File: vcruntime std::size_t": {
 		"prefix": "size_t",
 		"body": "std::size_t",
 		"description": "Header File: vcruntime\n"
 	},
-
 	// File: istream
-	"Header File: istream std::cin":{
+	"Header File: istream std::cin": {
 		"prefix": "std::cin",
 		"body": "std::cin >> $0",
 		"description": "Header File: istream\nstd::istream std::cin\n"
 	},
-
 	// File: ostream
-	"Header File: ostream std::cout":{
+	"Header File: ostream std::cout": {
 		"prefix": "std::cout",
 		"body": "std::cout << $0",
 		"description": "Header File: ostream\nstd::ostream std::cout\n"
 	},
-
-	"Header File: ostream std::endl":{
+	"Header File: ostream std::endl": {
 		"prefix": "std::endl",
 		"body": "${1:<<} std::endl;$0",
 		"description": "Header File: ostream\nstd::ostream std::cout\nmanipulator\n"
 	},
-
-	"Header File: ostream std::flush":{
+	"Header File: ostream std::flush": {
 		"prefix": "std::flush",
 		"body": "${1:<<} std::flush;$0",
 		"description": "Header File: ostream\nstd::ostream &__cdecl std::flush<char, std::char_traits<char>>(std::ostream &_Ostr)\n"
 	},
-
 	// File: string
-	"Header File: std::string std::literals::string_literals::operator \"\"s":{
+	"Header File: std::string": {
+		"prefix": "string",
+		"body": "std::string",
+		"description": "Header File: string\nalias\nusing std::string = std::basic_string<char, std::char_traits<char>, std::allocator<char>>\n"
+	},
+	"Header File: std::string std::literals::string_literals::operator \"\"s": {
 		"prefix": "operator \"\"s",
-		"body": "\"$1\"$s",
+		"body": "\"$1\"s$0",
 		"description": "Header File: string\nstd::literals::string_literals\n"
 	},
-
+	"Header File: std::string std::literals::string_literals::operator \"\\n\"s": {
+		"prefix": "operator \"\"s",
+		"body": "\"\\n\"s$0",
+		"description": "Header File: string\nstd::literals::string_literals\n\"\\n\"s\n"
+	},
 	// File: vector
-	"Header File: std::vector std::begin()":{
-		"prefix": "begin",
-		"body": "std::begin(${1:vector object})",
-		"description": "Header File: vector\nconstexpr auto std::begin<std::vector<T>>(std::vector<T> &_Cont)->std::vector<T>::iterator\n"
+	"Header File: vector: class template": {
+		"prefix": "vector",
+		"body": "std::vector<$1> $2",
+		"description": "Header File: vector\nclass template\n"
 	},
-
-	"Header File: std::vector std::end()":{
-		"prefix": "end",
-		"body": "std::end(${1:vector object})",
-		"description": "Header File: vector\nconstexpr auto std::end<std::vector<T>>(std::vector<T> &_Cont)->std::vector<T>::iterator\n"
-	},
-
-	"Header File: std::vector std::size()":{
-		"prefix": "size",
-		"body": "std::size(${1:vector object})",
-		"description": "Header File: vector\nconstexpr auto std::size<std::vector<T>>(const std::vector<T> &_Cont)->size_t\n"
-	},
-
 	// time stamp
-	"private comments: time stamp: [yyyy/MM/dd]\n":{
+	"private comments: time stamp: [yyyy/MM/dd]\n": {
 		"prefix": "time stamp",
 		"body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
 		"description": "yyyy/MM/dd\nprivate comments\n",
 	},
-
-	"private comments: time stamp: [hh:mm:ss]\n":{
+	"private comments: time stamp: [hh:mm:ss]\n": {
 		"prefix": "time stamp",
 		"body": "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
 		"description": "hh:mm:ss\nprivate comments\n",
 	},
-
-	"private comments: time stamp: [yyyy/MM/dd hh:mm:ss]\n":{
+	"private comments: time stamp: [yyyy/MM/dd hh:mm:ss]\n": {
 		"prefix": "time stamp",
 		"body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
 		"description": "yyyy/MM/dd hh:mm:ss\nprivate comments\n",
 	},
-
 	// Priate Comments
-	"private comments: constants for this function":{
+	"private comments: constants for this function": {
 		"prefix": "constants",
 		"body": "$LINE_COMMENT constants for this function\n$0",
 		"description": "private comments\n"
 	},
-
-	"private comments: STEP.0?":{
+	"private comments: STEP.0?": {
 		"prefix": "STEP",
 		"body": "$LINE_COMMENT STEP.0${1:?}\n$LINE_COMMENT ${0:what to do}",
 		"description": "private comments\n"
 	},
-
-	"private comments: return value of this function":{
+	"private comments: return value of this function": {
 		"prefix": "return value of this function",
-		"body": "$LINE_COMMENT return value of this function\n$0",
+		"body": "$BLOCK_COMMENT_START return value of this function\n$0 $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
-
-	"private comments: member functions for this class":{
+	"private comments: member functions for this class": {
 		"prefix": "functions",
-		"body": "$LINE_COMMENT member functions for this class\n$0",
+		"body": "$BLOCK_COMMENT_START member functions for this class\n$0 $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
-
-	"private comments: global variables in this source code":{
+	"private comments: global variables in this source code": {
 		"prefix": "variables",
-		"body": "$LINE_COMMENT global variables in this source code\n$0",
+		"body": "$BLOCK_COMMENT_START global variables in this source code\n$0 $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
-
-	"private comments: member variables for this class":{
+	"private comments: member variables for this class": {
 		"prefix": "variables",
-		"body": "$LINE_COMMENT member variables for this class\n$0",
+		"body": "$BLOCK_COMMENT_START member variables for this class\n$0 $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
-
-	"private comments: lambda expression for this function":{
+	"private comments: lambda expression for this function": {
 		"prefix": "lambda",
-		"body": "$LINE_COMMENT lambda expression for this function\n$0",
+		"body": "$BLOCK_COMMENT_START lambda expression for this function\n$0 $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
-
-	"private comments: variables for this function":{
+	"private comments: variables for this function": {
 		"prefix": "variables",
-		"body": "$LINE_COMMENT variables for this function\n$0",
+		"body": "$BLOCK_COMMENT_START variables for this function\n$0 $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
-
-	"private comments: result":{
+	"private comments: result": {
 		"prefix": "result",
 		"body": [
 			"$BLOCK_COMMENT_START result (begin) $BLOCK_COMMENT_END\n",
