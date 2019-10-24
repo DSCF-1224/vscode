@@ -125,22 +125,37 @@
 		"body": "std::size_t",
 		"description": "Header File: vcruntime\n"
 	},
-	// File: istream
-	"Header File: istream std::cin": {
+	// File: iostream
+	"Header File: iostream std::cin": {
 		"prefix": "std::cin",
 		"body": "std::cin >> $0",
-		"description": "Header File: istream\nstd::istream std::cin\n"
+		"description": "Header File: iostream\nstd::iostream std::cin\n"
 	},
-	// File: ostream
-	"Header File: ostream std::cout": {
+	"Memo: Header File: iostream std::cin": {
+		"prefix": "std::cin",
+		"body": "$LINE_COMMENT for variable, std::cin",
+		"description": "Header File: iostream\nstd::iostream std::cin\n"
+	},
+	"Header File: iostream std::cout": {
 		"prefix": "std::cout",
 		"body": "std::cout << $0",
-		"description": "Header File: ostream\nstd::ostream std::cout\n"
+		"description": "Header File: iostream\nstd::iostream std::cout\n"
 	},
+	"Memo: Header File: iostream std::cout": {
+		"prefix": "std::cout",
+		"body": "$LINE_COMMENT for variable, std::cout",
+		"description": "Header File: iostream\nstd::iostream std::cout\n"
+	},
+	// File: ostream
 	"Header File: ostream std::endl": {
 		"prefix": "std::endl",
 		"body": "${1:<<} std::endl;$0",
-		"description": "Header File: ostream\nstd::ostream std::cout\nmanipulator\n"
+		"description": "Header File: ostream\nstd::ostream std::endl\nfunction template\n"
+	},
+	"Memo: Header File: ostream std::endl": {
+		"prefix": "std::endl",
+		"body": "$LINE_COMMENT for function template, std::endl",
+		"description": "Header File: ostream\nstd::ostream std::endl\nfunction template\n"
 	},
 	"Header File: ostream std::flush": {
 		"prefix": "std::flush",
@@ -196,34 +211,39 @@
 		"body": "$LINE_COMMENT STEP.0${1:?}\n$LINE_COMMENT ${0:what to do}",
 		"description": "private comments\n"
 	},
+	"private comments: End of the file": {
+		"prefix": "EOF",
+		"body": "$BLOCK_COMMENT_START EOF $BLOCK_COMMENT_END\n",
+		"description": "private comments\n"
+	},
 	"private comments: return value of this function": {
 		"prefix": "return value of this function",
-		"body": "$BLOCK_COMMENT_START return value of this function\n$0 $BLOCK_COMMENT_END",
+		"body": "$BLOCK_COMMENT_START return value of this function $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
 	"private comments: member functions for this class": {
 		"prefix": "functions",
-		"body": "$BLOCK_COMMENT_START member functions for this class\n$0 $BLOCK_COMMENT_END",
+		"body": "$BLOCK_COMMENT_START member functions for this class $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
 	"private comments: global variables in this source code": {
 		"prefix": "variables",
-		"body": "$BLOCK_COMMENT_START global variables in this source code\n$0 $BLOCK_COMMENT_END",
+		"body": "$BLOCK_COMMENT_START global variables in this source code $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
 	"private comments: member variables for this class": {
 		"prefix": "variables",
-		"body": "$BLOCK_COMMENT_START member variables for this class\n$0 $BLOCK_COMMENT_END",
+		"body": "$BLOCK_COMMENT_START member variables for this class $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
 	"private comments: lambda expression for this function": {
 		"prefix": "lambda",
-		"body": "$BLOCK_COMMENT_START lambda expression for this function\n$0 $BLOCK_COMMENT_END",
+		"body": "$BLOCK_COMMENT_START lambda expression for this function $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
 	"private comments: variables for this function": {
 		"prefix": "variables",
-		"body": "$BLOCK_COMMENT_START variables for this function\n$0 $BLOCK_COMMENT_END",
+		"body": "$BLOCK_COMMENT_START variables for this function $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
 	"private comments: result": {
