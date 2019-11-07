@@ -267,6 +267,7 @@
 	"<INTENT> statement: out"   : { "prefix": "intent", "body": "intent(out)",   "description": "<INTENT> statement\n" },
 
 	// <OPEN> statement
+	"Specifier of <OPEN> statement: access: stream"    :{ "prefix": "open access",  "body": "access='stream', $0",                            "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: action: read"      :{ "prefix": "open action",  "body": "action='read', $0",                              "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: action: write"     :{ "prefix": "open action",  "body": "action='write', $0",                             "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: action: readwrite" :{ "prefix": "open action",  "body": "action='readwrite', $0",                         "description": "<OPEN> statement\n" },
@@ -277,6 +278,8 @@
 	"Specifier of <OPEN> statement: status: unknown"   :{ "prefix": "open status",  "body": "status='unknown', $0",                           "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: unit: implicit"    :{ "prefix": "open unit",    "body": "unit=${1:unit number}, $0",                      "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: file: implicit"    :{ "prefix": "open file",    "body": "file=${1:string which shows the file path}, $0", "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: form: formatted"   :{ "prefix": "open form",    "body": "form='formatted', $0",                           "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: form: unformatted" :{ "prefix": "open form",    "body": "form='unformatted', $0",                         "description": "<OPEN> statement\n" },
 
 	// <READ> statement
 	"Specifier of <READ> statement: fmt: arbitrary"  :{ "prefix": "read fmt",  "body": "fmt=*, $0",           "description": "when read out something as an arbitrary format\n" },
