@@ -102,7 +102,8 @@
 				"set key $LINE_COMMENT {on|off} {default}",
 				"set key $LINE_COMMENT { {inside|outside} | {lmargin|rmargin|tmargin|bmargin} | {at <position>} }",
 				"set key $LINE_COMMENT {left|right|center} {top|bottom|center}",
-				"set key $LINE_COMMENT {vertical|horizontal} {Left|Right}",
+				"set key $LINE_COMMENT {vertical|horizontal}",
+				"set key $LINE_COMMENT {Left|Right}",
 				"set key $LINE_COMMENT {noopaque|opaque}",
 				"set key $LINE_COMMENT {noreverse|reverse} {noinvert|invert}",
 				"set key $LINE_COMMENT {samplen <sample_length>} {spacing <vertical_spacing>}",
@@ -115,6 +116,23 @@
 				"set key $LINE_COMMENT {maxrows {<max no. of rows> | auto}}",
 			],
 			"description": "凡例 (key)\nVersion 5.0 patchlevel 6\n"
+		},
+
+	/* set logscale */
+
+		"set logscale":{
+			"prefix": "logscale",
+			"body": "set logscale ${1:<axes>} ${2:<base>} $LINE_COMMENT <axes> {<base>}",
+		},
+
+		"set logscale: 02":{
+			"prefix": "logscale",
+			"body": "set logscale ${1:<axes>} 2 $LINE_COMMENT <axes> {<base>}",
+		},
+
+		"set logscale: 10":{
+			"prefix": "logscale",
+			"body": "set logscale ${1:<axes>} 10 $LINE_COMMENT <axes> {<base>}",
 		},
 	
 	/* set margin */
@@ -216,13 +234,13 @@
 			"set term: pdfcairo":{
 				"prefix": "term pdfcairo",
 				"body": [
-					"set terminal pdfcairo $LINE_COMMENT {noenhanced|enhanced}",
-					"set terminal pdfcairo $LINE_COMMENT {mono|color}",
-					"set terminal pdfcairo $LINE_COMMENT {font <font>}",
-					"set terminal pdfcairo $LINE_COMMENT {fontscale <scale>}",
-					"set terminal pdfcairo $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-					"set terminal pdfcairo $LINE_COMMENT {background <rgbcolor>}",
-					"set terminal pdfcairo $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+					"set terminal pdfcairo enhanced       $LINE_COMMENT {noenhanced|enhanced}",
+					"set terminal pdfcairo                $LINE_COMMENT {mono|color}",
+					"set terminal pdfcairo                $LINE_COMMENT {font <font>}",
+					"set terminal pdfcairo fontscale 0.5  $LINE_COMMENT {fontscale <scale>}",
+					"set terminal pdfcairo                $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+					"set terminal pdfcairo                $LINE_COMMENT {background <rgbcolor>}",
+					"set terminal pdfcairo 5.00in, 3.00in $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 				],
 				"description": "terminal pdfcairo\nVersion 5.0 patchlevel 6\n"
 			},
@@ -232,22 +250,38 @@
 			"set term: pngcairo":{
 				"prefix": "term pngcairo",
 				"body": [
-					"set terminal pngcairo enhanced             $LINE_COMMENT {noenhanced|enhanced}",
-					"set terminal pngcairo                      $LINE_COMMENT {mono|color}",
+					"set terminal pngcairo enhanced               $LINE_COMMENT {noenhanced|enhanced}",
+					"set terminal pngcairo                        $LINE_COMMENT {mono|color}",
 					"set terminal pngcairo background \"#ffffff\" $LINE_COMMENT {notransparent|transparent} {background <rgbcolor>}",
-					"set terminal pngcairo                      $LINE_COMMENT {nocrop|crop}",
-					"set terminal pngcairo                      $LINE_COMMENT {font <font>}",
-					"set terminal pngcairo fontscale 1.0        $LINE_COMMENT {fontscale <scale>}",
-					"set terminal pngcairo                      $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-					"set terminal pngcairo size 640, 480        $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+					"set terminal pngcairo                        $LINE_COMMENT {nocrop|crop}",
+					"set terminal pngcairo                        $LINE_COMMENT {font <font>}",
+					"set terminal pngcairo fontscale 1.0          $LINE_COMMENT {fontscale <scale>}",
+					"set terminal pngcairo                        $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+					"set terminal pngcairo size 640, 480          $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 				],
-				"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
+				"description": "terminal pngcairo\nVersion 5.2 patchlevel 7\n"
 			},
 	
 			"set term: pngcairo: crop/nocrop":{
 				"prefix": "term pngcairo crop",
 				"body": "set term pngcairo nocrop|crop $LINE_COMMENT {nocrop|crop}",
 				"description": "terminal pngcairo\ncrop は完成した描画グラフの端の空白領域を取り除いて、結果として画像 サイズを小さくします。デフォルトは nocrop です。\nVersion 5.0 patchlevel 6\n"
+			},
+
+		/* set terminal svg */
+
+			"set terminal svg":{
+				"prefix": "term svg",
+				"body": [
+					"set terminal svg size 600, 480 fixed $LINE_COMMENT {size <x>,<y> {|fixed|dynamic}}",
+					"set terminal svg {mouse} {standalone | jsdir <dirname>}",
+					"set terminal svg {name <plotname>}",
+					"set terminal svg {font \"<fontname>{,<fontsize>}\"} {{no}enhanced}",
+					"set terminal svg {fontscale <multiplier>}",
+					"set terminal svg {rounded|butt|square} {solid|dashed} {linewidth <lw>}",
+					"set terminal svg {background <rgb_color>}",
+				],
+				"description": "terminal svg\nVersion 5.2 patchlevel 7\n"
 			},
 	
 		/* set terminal wxt */
