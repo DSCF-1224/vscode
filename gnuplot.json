@@ -29,7 +29,19 @@
 			"prefix": "pwd",
 			"body": "pwd",
 		},
-	
+
+	/* set angles */
+
+		"set angles: degrees":{
+			"prefix": "angles",
+			"body": "set angles degrees $LINE_COMMENT {degrees | radians}"
+		},
+
+		"set angles: radians":{
+			"prefix": "angles",
+			"body": "set angles radians $LINE_COMMENT {degrees | radians}"
+		},
+
 	/* set border */
 	
 		"set border: all":{
