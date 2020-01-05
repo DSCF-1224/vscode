@@ -12,6 +12,13 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+
+	// struct, class
+	"this->???":{
+		"prefix": "this",
+		"body": "this->$0",
+	},
+
 	// literal
 	"literal: binary": {
 		"prefix": "literal binary",
@@ -53,6 +60,7 @@
 		"prefix": "literal long double",
 		"body": "$1l"
 	},
+
 	// function
 	"function: main": {
 		"prefix": "main",
@@ -110,6 +118,7 @@
 		"prefix": "decrement",
 		"body": "-= $0"
 	},
+
 	// return
 	"return EXIT_SUCCESS": {
 		"prefix": "return",
@@ -119,11 +128,35 @@
 		"prefix": "return",
 		"body": "return EXIT_FAILURE;"
 	},
+
+	// Function Templates
+	"std::begin(...)": {
+		"prefix": "begin",
+		"body": "std::begin( $0 )",
+	},
+
+	"std::end(...)": {
+		"prefix": "end",
+		"body": "std::end( $0 )",
+	},
+
 	// Header file
 	"Header File: vcruntime std::size_t": {
 		"prefix": "size_t",
 		"body": "std::size_t",
 		"description": "Header File: vcruntime\n"
+	},
+
+	// Header file
+	"Header File: limits: std::numeric_limits::quiet_NaN": {
+		"prefix": "numeric_limits",
+		"body": "std::numeric_limits<${1:T}>::quiet_NaN()",
+		"description": "Header File: limits\nfunction\n"
+	},
+	"Memo: Header File: limits: std::numeric_limits::quiet_NaN": {
+		"prefix": "numeric_limits",
+		"body": "$LINE_COMMENT for function, std::numeric_limits::quiet_NaN()",
+		"description": "Header File: limits\nfunction\n"
 	},
 	// File: iostream
 	"Header File: iostream std::cin": {
@@ -234,6 +267,11 @@
 	"private comments: member variables for this class": {
 		"prefix": "variables",
 		"body": "$BLOCK_COMMENT_START member variables for this class $BLOCK_COMMENT_END",
+		"description": "private comments\n"
+	},
+	"private comments: nothing to do in this block scope": {
+		"prefix": "nothing to do in this block scope",
+		"body": "$BLOCK_COMMENT_START nothing to do in this block scope $BLOCK_COMMENT_END",
 		"description": "private comments\n"
 	},
 	"private comments: lambda expression for this function": {
