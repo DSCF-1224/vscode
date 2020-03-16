@@ -66,6 +66,12 @@
 		"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in WRITE statement.\n"
 	},
 
+	"ISO_FORTRAN_ENV: parameter: ERROR_UNIT":{
+		"prefix": "parameter ERROR_UNIT",
+		"body": "ERROR_UNIT",
+		"description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nIdentifies the preconnected unit identified by the asterisk (*) in WRITE statement.\n"
+	},
+
 	"ISO_FORTRAN_ENV: parameter: INT8" :{ "prefix": "parameter INT8",  "body": "INT8",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
 	"ISO_FORTRAN_ENV: parameter: INT16":{ "prefix": "parameter INT16", "body": "INT16", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
 	"ISO_FORTRAN_ENV: parameter: INT32":{ "prefix": "parameter INT32", "body": "INT32", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
@@ -75,14 +81,18 @@
 	"ISO_FORTRAN_ENV: parameter: REAL64" :{ "prefix": "parameter REAL64",  "body": "REAL64",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
 	"ISO_FORTRAN_ENV: parameter: REAL128":{ "prefix": "parameter REAL128", "body": "REAL128", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
-	"ISO_FORTRAN_ENV: Intrinsic types : INT8"  :{ "prefix": "integer", "body": "integer(INT8)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
-	"ISO_FORTRAN_ENV: Intrinsic types : INT16" :{ "prefix": "integer", "body": "integer(INT16)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
-	"ISO_FORTRAN_ENV: Intrinsic types : INT32" :{ "prefix": "integer", "body": "integer(INT32)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
-	"ISO_FORTRAN_ENV: Intrinsic types : INT64" :{ "prefix": "integer", "body": "integer(INT64)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : integer(INT8)"  :{ "prefix": "INT8",  "body": "integer(INT8)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : integer(INT16)" :{ "prefix": "INT16", "body": "integer(INT16)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : integer(INT32)" :{ "prefix": "INT32", "body": "integer(INT32)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 32 bits.\nmin : -2,147,483,648\nmax : +2,147,483,647\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : integer(INT64)" :{ "prefix": "INT64", "body": "integer(INT64)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 64 bits.\nmin : -9,223,372,036,854,775,808\nmax : +9,223,372,036,854,775,807\n" },
 
-	"ISO_FORTRAN_ENV: Intrinsic types : REAL32"  :{ "prefix": "REAL", "body": "real(REAL32)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
-	"ISO_FORTRAN_ENV: Intrinsic types : REAL64"  :{ "prefix": "REAL", "body": "real(REAL64)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
-	"ISO_FORTRAN_ENV: Intrinsic types : REAL128" :{ "prefix": "REAL", "body": "real(REAL128)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : real(REAL32)"  :{ "prefix": "REAL32" , "body": "real(REAL32)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : real(REAL64)"  :{ "prefix": "REAL64" , "body": "real(REAL64)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : real(REAL128)" :{ "prefix": "REAL128", "body": "real(REAL128)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
+
+	"ISO_FORTRAN_ENV: Intrinsic types : complex(REAL32)"  :{ "prefix": "complex(REAL32)" , "body": "complex(REAL32)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : complex(REAL64)"  :{ "prefix": "complex(REAL64)" , "body": "complex(REAL64)${1:, attributes} :: $0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
+	"ISO_FORTRAN_ENV: Intrinsic types : complex(REAL128)" :{ "prefix": "complex(REAL128)", "body": "complex(REAL128)${1:, attributes} :: $0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
 	"ISO_FORTRAN_ENV: Intrinsic types : INT8 : for literal"  :{ "prefix": "literal integer INT8", "body": "${1:value}_INT8$0",   "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 8 bits.\nmin : -128\nmax : +127\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : INT16 : for literal" :{ "prefix": "literal integer INT16", "body": "${1:value}_INT16$0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an INTEGER type with a storage size of 16 bits.\nmin : -32,768\nmax : +32,767\n" },
@@ -228,16 +238,14 @@
 		"description": "private comments\nbefore `USE ...`\n"
 	},
 
-	"private comments: variables for this <function>"   :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <function>",   "description": "private comments\n" },
-	"private comments: variables for this <module>"     :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <module>",     "description": "private comments\n" },
-	"private comments: variables for this <program>"    :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <program>",    "description": "private comments\n" },
-	"private comments: variables for this <subroutine>" :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <subroutine>", "description": "private comments\n" },
+	"private comments: variables for this <block>"      :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <block>\n$0",      "description": "private comments\n" },
+	"private comments: variables for this <function>"   :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <function>\n$0",   "description": "private comments\n" },
+	"private comments: variables for this <module>"     :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <module>\n$0",     "description": "private comments\n" },
+	"private comments: variables for this <program>"    :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <program>\n$0",    "description": "private comments\n" },
+	"private comments: variables for this <subroutine>" :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <subroutine>\n$0", "description": "private comments\n" },
 
-	"private comments: <type>s for this <program>":{
-		"prefix": "comment type",
-		"body": "$LINE_COMMENT <type>s for this <program>",
-		"description": "private comments\n"
-	},
+	"private comments: <type>s for this <program>":{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <program>", "description": "private comments\n" },
+	"private comments: <type>s for this <module>" :{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <module>",  "description": "private comments\n" },
 
 	"private comments: STEP.0?":{
 		"prefix": "STEP",
@@ -257,6 +265,16 @@
 		"description": "private comments\n"
 	},
 
+	// <BLOCK> statement
+	"<BLOCK> statement" :{
+		"prefix": "block",
+		"body": [
+			"block",
+			"\t$1",
+			"end block",
+		]
+	},
+
 	// <CLOSE> statement
 	"<CLOSE> statement: status: delete" :{ "prefix": "close status", "body": "status='delete', $0", "description": "<CLOSE> statement\n" },
 	"<CLOSE> statement: status: keep"   :{ "prefix": "close status", "body": "status='keep', $0",   "description": "<CLOSE> statement\n" },
@@ -271,6 +289,7 @@
 	"Specifier of <OPEN> statement: action: read"      :{ "prefix": "open action",  "body": "action='read', $0",                              "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: action: write"     :{ "prefix": "open action",  "body": "action='write', $0",                             "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: action: readwrite" :{ "prefix": "open action",  "body": "action='readwrite', $0",                         "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: newunit"           :{ "prefix": "open newunit", "body": "newunit='${1:unit}', $0",                        "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: status: old"       :{ "prefix": "open status",  "body": "status='old', $0",                               "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: status: new"       :{ "prefix": "open status",  "body": "status='new', $0",                               "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: status: scratch"   :{ "prefix": "open status",  "body": "status='scratch', $0",                           "description": "<OPEN> statement\n" },
@@ -313,9 +332,9 @@
 	"Keywords of Fortran 90: private":       { "prefix": "private",       "body": "private :: $0", "description": "Keywords of Fortran\nFrom FORTRAN 90\n" },
 
 	// others //
-	"CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE: ":{
-		"prefix": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE",
+	"YYYY.MM.DD: ":{
+		"prefix": "time",
 		"body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
-		"description": "CURRENT_YEAR.CURRENT_MONTH.CURRENT_DATE"
+		"description": "YYYY.MM.DD"
 	},
 }
