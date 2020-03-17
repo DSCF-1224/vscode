@@ -331,6 +331,19 @@
 	"Keywords of Fortran 90: public":        { "prefix": "public",        "body": "public :: $0",  "description": "Keywords of Fortran\nFrom FORTRAN 90\n" },
 	"Keywords of Fortran 90: private":       { "prefix": "private",       "body": "private :: $0", "description": "Keywords of Fortran\nFrom FORTRAN 90\n" },
 
+	// operator
+	"Operator: .and."  : { "prefix": "and", "body": ".and. $0",   "description": "logical and\r" },
+	"Operator: .eq."   : { "prefix": "eq",  "body": ".eq. $0",    "description": "equal to\r" },
+	"Operator: .eqv."  : { "prefix": "eqv", "body": ".eqv. $0",   "description": "logical equivalent\r" },
+	"Operator: .neqv." : { "prefix": "neqv", "body": ".neqv. $0", "description": "logical not equivalent\r" },
+	"Operator: .ge."   : { "prefix": "ge",  "body": ".ge. $0",    "description": "greater than or equal to\r" },
+	"Operator: .gt."   : { "prefix": "gt",  "body": ".gt. $0",    "description": "greater than\r" },
+	"Operator: .le."   : { "prefix": "le",  "body": ".le. $0",    "description": "less than or equal to\r" },
+	"Operator: .lt."   : { "prefix": "lt",  "body": ".lt. $0",    "description": "less than\r" },
+	"Operator: .ne."   : { "prefix": "ne",  "body": ".ne. $0",    "description": "logical ne\r" },
+	"Operator: .not."  : { "prefix": "not", "body": ".not. $0",   "description": "logical not\r" },
+	"Operator: .or."   : { "prefix": "or",  "body": ".or. $0",    "description": "logical or\r" },
+
 	// others //
 	"YYYY.MM.DD: ":{
 		"prefix": "time",
