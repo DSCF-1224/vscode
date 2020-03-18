@@ -42,6 +42,15 @@
 		"description": "module which provides the scalar default-integer named constants\nFortran 2003 and later\n"
 	},
 
+	"module: ISO_FORTRAN_ENV and others":{
+		"prefix": "module iso_fortran_env",
+		"body": [
+			"use,     intrinsic :: iso_fortran_env",
+			"use, non_intrinsic :: $0"
+		],
+		"description": "module which provides the scalar default-integer named constants\nFortran 2003 and later\n"
+	},
+
 	"ISO_FORTRAN_ENV: IS_IOSTAT_END":{
 		"prefix": "is_iostat_end",
 		"body": "IS_IOSTAT_END( ${1:return value of `IOSTAT`} )",
@@ -204,28 +213,38 @@
 	},
 
 	// private comment //
-	"private comments: arguments for this <function>"   :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <function>",   "description": "private comments\n" },
-	"private comments: arguments for this <subroutine>" :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <subroutine>", "description": "private comments\n" },
-	"private comments: constants for this <function>"   :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <function>",   "description": "private comments\n" },
+	"private comments: arguments for this <function>"   :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <function>\n$0",   "description": "private comments\n" },
+	"private comments: arguments for this <subroutine>" :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <subroutine>\n$0", "description": "private comments\n" },
+	"private comments: constants for this <function>"   :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <function>\n$0",   "description": "private comments\n" },
 
-	"private comments: constants for this <module>"  :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <module>",  "description": "private comments\n" },
-	"private comments: constants for this <program>" :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <program>", "description": "private comments\n" },
+	"private comments: constants for this <module>"  :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <module>\n$0",  "description": "private comments\n" },
+	"private comments: constants for this <program>" :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <program>\n$0", "description": "private comments\n" },
 
 	"private comments: accessibility":{
 		"prefix": "comment accessibility",
-		"body": "$LINE_COMMENT accessibility of the <subroutine>s and <function>s in this <module>\npublic  :: \nprivate ::",
+		"body": [
+			"$LINE_COMMENT accessibility of the <subroutine>s and <function>s in this <module>",
+			"public  :: ",
+			"private :: "
+		],
 		"description": "private comments\n"
 	},
 
 	"private comments: contains":{
 		"prefix": "comment contains",
-		"body": "$LINE_COMMENT contained <subroutine>s and <function>s are below\ncontains",
+		"body": [
+			"$LINE_COMMENT contained <subroutine>s and <function>s are below",
+			"contains"
+		],
 		"description": "private comments\nbefore `contains`\n"
 	},
 
 	"private comments: implicit none":{
 		"prefix": "comment implicit none",
-		"body": "$LINE_COMMENT require all variables to be explicitly declared\nimplicit none",
+		"body": [
+			"$LINE_COMMENT require all variables to be explicitly declared",
+			"implicit none",
+		],
 		"description": "private comments\nbefore `implicit none`\n"
 	},
 
@@ -244,8 +263,8 @@
 	"private comments: variables for this <program>"    :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <program>\n$0",    "description": "private comments\n" },
 	"private comments: variables for this <subroutine>" :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <subroutine>\n$0", "description": "private comments\n" },
 
-	"private comments: <type>s for this <program>":{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <program>", "description": "private comments\n" },
-	"private comments: <type>s for this <module>" :{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <module>",  "description": "private comments\n" },
+	"private comments: <type>s for this <program>":{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <program>\n$0", "description": "private comments\n" },
+	"private comments: <type>s for this <module>" :{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <module>\n$0",  "description": "private comments\n" },
 
 	"private comments: STEP.0?":{
 		"prefix": "STEP",
@@ -261,7 +280,7 @@
 
 	"private comments: return value of this <function>":{
 		"prefix": "comment return value",
-		"body": "$LINE_COMMENT return value of this <function>",
+		"body": "$LINE_COMMENT return value of this <function>$0",
 		"description": "private comments\n"
 	},
 
@@ -269,9 +288,9 @@
 	"<BLOCK> statement" :{
 		"prefix": "block",
 		"body": [
-			"block",
+			"block\n",
 			"\t$1",
-			"end block",
+			"\nend block",
 		]
 	},
 
