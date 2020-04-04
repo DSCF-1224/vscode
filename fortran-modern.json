@@ -12,6 +12,9 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+
+
+	/* Module */
 	"module: IEEE_ARITHMETIC":{
 		"prefix": "module ieee_arithmetic",
 		"body": "use, intrinsic :: ieee_arithmetic",
@@ -111,6 +114,30 @@
 	"ISO_FORTRAN_ENV: Intrinsic types : REAL32 : for literal"  :{ "prefix": "literal integer REAL32",  "body": "${1:value}_REAL32$0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 32 bits.\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : REAL64 : for literal"  :{ "prefix": "literal integer REAL64",  "body": "${1:value}_REAL64$0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : REAL128 : for literal" :{ "prefix": "literal integer REAL128", "body": "${1:value}_REAL128$0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
+
+
+
+	/* Intrinsic procedures */
+
+	"Intrinsic procedures: lbound" :{
+		"prefix"      : "lbound",
+		"body"        : "lbound(array= $1, dim= $2)",
+		"description" : "Returns the lower bounds of an array, or a single lower bound along the dim dimension.\n[array]\nShall be an array of any type.\n[dim]\n(Optional) Shall be a scalar `integer`.\n"
+	},
+
+	"Intrinsic procedures: ubound" :{
+		"prefix"      : "ubound",
+		"body"        : "ubound(array= $1, dim= $2)",
+		"description" : "Returns the upper bounds of an array, or a single upper bound along the dim dimension.\n[array]\nShall be an array of any type.\n[dim]\n(Optional) Shall be a scalar `integer`.\n"
+	},
+
+	"Intrinsic procedures: size" :{
+		"prefix"      : "size",
+		"body"        : "size(array= $1, dim= $2)",
+		"description" : "[array]\nShall be an array of any type.\nIf argument `array` is a pointer it must be associated and allocatable arrays must be allocated.\n[dim]\n(Optional) shall be a scalar of type `integer` and its value shall be in the range from 1 to n, where n equals the rank of the argument `array`.\n"
+	},
+
+
 
 	/* OpenMP */
 	"OpenMP: use omp_lib":{
@@ -243,7 +270,7 @@
 		"prefix": "comment implicit none",
 		"body": [
 			"$LINE_COMMENT require all variables to be explicitly declared",
-			"implicit none",
+			"implicit none\n",
 		],
 		"description": "private comments\nbefore `implicit none`\n"
 	},
@@ -253,7 +280,7 @@
 
 	"private comments: <module>s to import":{
 		"prefix": "comment module",
-		"body": "$LINE_COMMENT <module>s to import",
+		"body": "$LINE_COMMENT <module>s to import\n$0",
 		"description": "private comments\nbefore `USE ...`\n"
 	},
 
@@ -280,7 +307,7 @@
 
 	"private comments: return value of this <function>":{
 		"prefix": "comment return value",
-		"body": "$LINE_COMMENT return value of this <function>$0",
+		"body": "$LINE_COMMENT return value of this <function>\n$0",
 		"description": "private comments\n"
 	},
 
@@ -294,14 +321,35 @@
 		]
 	},
 
+	// <INTERFACE> statement
+	"interface" :{
+		"prefix": "interface",
+		"body": [
+			"interface ${1:interface_name}",
+			"\tmodule procedure :: ",
+			"end interface ${1:interface_name}"
+		]
+	},
+
+	// <TYPE> statement
+	"type" :{
+		"prefix": "type",
+		"body": [
+			"type ${1:type_name}",
+			"\t$0",
+			"end type ${1:type_name}"
+		]
+	},
+
+
 	// <CLOSE> statement
 	"<CLOSE> statement: status: delete" :{ "prefix": "close status", "body": "status='delete', $0", "description": "<CLOSE> statement\n" },
 	"<CLOSE> statement: status: keep"   :{ "prefix": "close status", "body": "status='keep', $0",   "description": "<CLOSE> statement\n" },
 
 	// <INTENT> statement
-	"<INTENT> statement: in"    : { "prefix": "intent", "body": "intent(in)",    "description": "<INTENT> statement\n" },
-	"<INTENT> statement: inout" : { "prefix": "intent", "body": "intent(inout)", "description": "<INTENT> statement\n" },
-	"<INTENT> statement: out"   : { "prefix": "intent", "body": "intent(out)",   "description": "<INTENT> statement\n" },
+	"<INTENT> statement: in"    : { "prefix": "intent", "body": "intent(in)",    "description": "<INTENT> statement\nin only" },
+	"<INTENT> statement: inout" : { "prefix": "intent", "body": "intent(inout)", "description": "<INTENT> statement\nin & out" },
+	"<INTENT> statement: out"   : { "prefix": "intent", "body": "intent(out)",   "description": "<INTENT> statement\nout only" },
 
 	// <OPEN> statement
 	"Specifier of <OPEN> statement: access: stream"    :{ "prefix": "open access",  "body": "access='stream', $0",                            "description": "<OPEN> statement\n" },
@@ -326,6 +374,12 @@
 
 	"<READ> statement: unit=INPUT_UNIT, fmt=*"     :{ "prefix": "read", "body": "read(unit=INPUT_UNIT, fmt=*) ${1:variables}",     "description": "<READ> statement\n" },
 	"<READ> statement: unit=INPUT_UNIT, fmt='(A)'" :{ "prefix": "read", "body": "read(unit=INPUT_UNIT, fmt='(A)') ${1:variables}", "description": "<READ> statement\n" },
+
+	// <RESULT> statement
+	"<RESULT>": {
+		"prefix": "result",
+		"body": "result($1)"
+	},
 	
 	// <WRITE> statement
 	"Specifier of <WRITE> statement: advance: yes"   :{ "prefix": "write advance", "body": "advance='yes', $0", "description": "when the statement `WRITE` uses advancing input\nThe default value is 'yes'\n" },
