@@ -275,8 +275,8 @@
 		"description": "private comments\nbefore `implicit none`\n"
 	},
 
-	"private comments: <interface>s for this <program>" :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <program>", "description": "private comments\n" },
-	"private comments: <interface>s for this <module>"  :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <module>",  "description": "private comments\n" },
+	"private comments: <interface>s for this <program>" :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <program>\n", "description": "private comments\n" },
+	"private comments: <interface>s for this <module>"  :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <module>\n",  "description": "private comments\n" },
 
 	"private comments: <module>s to import":{
 		"prefix": "comment module",
@@ -326,8 +326,17 @@
 		"prefix": "interface",
 		"body": [
 			"interface ${1:interface_name}",
-			"\tmodule procedure :: ",
+			"\tmodule procedure :: $0",
 			"end interface ${1:interface_name}"
+		]
+	},
+
+	"interface: operator" :{
+		"prefix": "interface operator",
+		"body": [
+			"interface operator(${1:operator})",
+			"\tmodule procedure :: $0",
+			"end interface operator(${1:operator})"
 		]
 	},
 
