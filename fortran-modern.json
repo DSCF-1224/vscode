@@ -251,8 +251,18 @@
 		"prefix": "comment accessibility",
 		"body": [
 			"$LINE_COMMENT accessibility of the <subroutine>s and <function>s in this <module>",
+			"\n$LINE_COMMENT kind: type",
 			"public  :: ",
-			"private :: "
+			"private :: ",
+			"\n$LINE_COMMENT kind: function",
+			"public  :: ",
+			"private :: ",
+			"\n$LINE_COMMENT kind: subroutine",
+			"public  :: ",
+			"private :: ",
+			"\n$LINE_COMMENT kind: interface",
+			"public  :: ",
+			"private :: ",
 		],
 		"description": "private comments\n"
 	},
