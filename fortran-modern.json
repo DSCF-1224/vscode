@@ -436,6 +436,16 @@
 	"Operator: .not."  : { "prefix": "not", "body": ".not. $0",   "description": "logical not\r" },
 	"Operator: .or."   : { "prefix": "or",  "body": ".or. $0",    "description": "logical or\r" },
 
+	// Format
+	"fmt: binary"                    : { "prefix": "fmt", "body": "B${1:w}",        "description": "Format\nTransfers binary values.\n`w` is the field width." },
+	"fmt: binary (zero filled)"      : { "prefix": "fmt", "body": "B${1:w}.${2:m}", "description": "Format\nTransfers binary values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+	"fmt: decimal"                   : { "prefix": "fmt", "body": "I${1:w}",        "description": "Format\nTransfers decimal values.\n`w` is the field width." },
+	"fmt: decimal (zero filled)"     : { "prefix": "fmt", "body": "I${1:w}.${2:m}", "description": "Format\nTransfers decimal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+	"fmt: octal"                     : { "prefix": "fmt", "body": "O${1:w}",        "description": "Format\nTransfers octal values.\n`w` is the field width." },
+	"fmt: octal (zero filled)"       : { "prefix": "fmt", "body": "O${1:w}.${2:m}", "description": "Format\nTransfers octal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+	"fmt: hexadecimal"               : { "prefix": "fmt", "body": "O${1:w}",        "description": "Format\nTransfers hexadecimal values.\n`w` is the field width." },
+	"fmt: hexadecimal (zero filled)" : { "prefix": "fmt", "body": "O${1:w}.${2:m}", "description": "Format\nTransfers hexadecimal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+
 	// others //
 	"YYYY.MM.DD: ":{
 		"prefix": "time",
