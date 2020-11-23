@@ -117,27 +117,6 @@
 
 
 
-	/* Intrinsic procedures */
-
-	"Intrinsic procedures: lbound" :{
-		"prefix"      : "lbound",
-		"body"        : "lbound(array= $1, dim= $2)",
-		"description" : "Returns the lower bounds of an array, or a single lower bound along the dim dimension.\n[array]\nShall be an array of any type.\n[dim]\n(Optional) Shall be a scalar `integer`.\n"
-	},
-
-	"Intrinsic procedures: ubound" :{
-		"prefix"      : "ubound",
-		"body"        : "ubound(array= $1, dim= $2)",
-		"description" : "Returns the upper bounds of an array, or a single upper bound along the dim dimension.\n[array]\nShall be an array of any type.\n[dim]\n(Optional) Shall be a scalar `integer`.\n"
-	},
-
-	"Intrinsic procedures: size" :{
-		"prefix"      : "size",
-		"body"        : "size(array= $1, dim= $2)",
-		"description" : "[array]\nShall be an array of any type.\nIf argument `array` is a pointer it must be associated and allocatable arrays must be allocated.\n[dim]\n(Optional) shall be a scalar of type `integer` and its value shall be in the range from 1 to n, where n equals the rank of the argument `array`.\n"
-	},
-
-
 
 	/* OpenMP */
 	"OpenMP: use omp_lib":{
@@ -285,6 +264,12 @@
 		"description": "private comments\nbefore `implicit none`\n"
 	},
 
+	"private comments: initialization: block"       :{ "prefix": "init", "body": "$LINE_COMMENT initialize the variable(s) for this <block>\n"      },
+	"private comments: initialization: function"    :{ "prefix": "init", "body": "$LINE_COMMENT initialize the variable(s) for this <function>\n"   },
+	"private comments: initialization: module"      :{ "prefix": "init", "body": "$LINE_COMMENT initialize the variable(s) for this <module>\n"     },
+	"private comments: initialization: program"     :{ "prefix": "init", "body": "$LINE_COMMENT initialize the variable(s) for this <program>\n"    },
+	"private comments: initialization: subroutine"  :{ "prefix": "init", "body": "$LINE_COMMENT initialize the variable(s) for this <subroutine>\n" },
+
 	"private comments: <interface>s for this <program>" :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <program>\n", "description": "private comments\n" },
 	"private comments: <interface>s for this <module>"  :{ "prefix": "comment interface", "body": "$LINE_COMMENT <interface>s for this <module>\n",  "description": "private comments\n" },
 
@@ -321,6 +306,13 @@
 		"description": "private comments\n"
 	},
 
+
+	// <ALLOCATE> statement
+	"Specifier of <ALLOCATE> statement: errmsg" :{ "prefix": "allocate errmsg", "body": "errmsg=${1:errmsg_variable }, $0", "description": "<ALLOCATE> statement\nFrom Fortran 2003\nA scalar character variable.\n" },
+	"Specifier of <ALLOCATE> statement: stat"   :{ "prefix": "allocate stat",   "body": "stat=${1:stat_variable}, $0",      "description": "<ALLOCATE> statement\nA scalar integer variable.\n" },
+	"Specifier of <ALLOCATE> statement: mold"   :{ "prefix": "allocate mold",   "body": "mold=${1:source_expr}, $0",        "description": "<ALLOCATE> statement\nFrom Fortran 2003\nAn expression which is scalar or has the same rank as allocate object.\n" },
+	"Specifier of <ALLOCATE> statement: source" :{ "prefix": "allocate source", "body": "source=${1:source_expr}, $0",      "description": "<ALLOCATE> statement\nFrom Fortran 2003\nAn expression which is scalar or has the same rank as allocate object.\n" },
+
 	// <BLOCK> statement
 	"<BLOCK> statement" :{
 		"prefix": "block",
@@ -330,6 +322,10 @@
 			"\nend block",
 		]
 	},
+
+	// <DEALLOCATE> statement
+	"Specifier of <DEALLOCATE> statement: errmsg" :{ "prefix": "deallocate errmsg", "body": "errmsg=${1:errmsg_variable }, $0", "description": "<DEALLOCATE> statement\nFrom Fortran 2003\nA scalar character variable.\n" },
+	"Specifier of <DEALLOCATE> statement: stat"   :{ "prefix": "deallocate stat",   "body": "stat=${1:stat_variable}, $0",      "description": "<DEALLOCATE> statement\nA scalar integer variable.\n" },
 
 	// <INTERFACE> statement
 	"interface" :{
@@ -350,16 +346,13 @@
 		]
 	},
 
-	// <TYPE> statement
-	"type" :{
-		"prefix": "type",
-		"body": [
-			"type ${1:type_name}",
-			"\t$0",
-			"end type ${1:type_name}"
-		]
-	},
+	// <LBOUND> statement
 
+	"<LBOUND> statement: multi-dimension" :{
+		"prefix"      : "lbound",
+		"body"        : "lbound(array= $1, dim= $2)",
+		"description" : "Returns the lower bounds of an array, or a single lower bound along the dim dimension.\n[array]\nShall be an array of any type.\n[dim]\n(Optional) Shall be a scalar `integer`.\n"
+	},
 
 	// <CLOSE> statement
 	"<CLOSE> statement: status: delete" :{ "prefix": "close status", "body": "status='delete', $0", "description": "<CLOSE> statement\n" },
@@ -375,7 +368,7 @@
 	"Specifier of <OPEN> statement: action: read"      :{ "prefix": "open action",  "body": "action='read', $0",                              "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: action: write"     :{ "prefix": "open action",  "body": "action='write', $0",                             "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: action: readwrite" :{ "prefix": "open action",  "body": "action='readwrite', $0",                         "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: newunit"           :{ "prefix": "open newunit", "body": "newunit='${1:unit}', $0",                        "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: newunit"           :{ "prefix": "open newunit", "body": "newunit=${1:unit}, $0",                          "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: status: old"       :{ "prefix": "open status",  "body": "status='old', $0",                               "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: status: new"       :{ "prefix": "open status",  "body": "status='new', $0",                               "description": "<OPEN> statement\n" },
 	"Specifier of <OPEN> statement: status: scratch"   :{ "prefix": "open status",  "body": "status='scratch', $0",                           "description": "<OPEN> statement\n" },
@@ -398,6 +391,23 @@
 	"<RESULT>": {
 		"prefix": "result",
 		"body": "result($1)"
+	},
+
+	// <SIZE> statement
+	"<SIZE> statement: multi-dimension" :{
+		"prefix"      : "size",
+		"body"        : "size(array= $1, dim= $2)",
+		"description" : "[array]\nShall be an array of any type.\nIf argument `array` is a pointer it must be associated and allocatable arrays must be allocated.\n[dim]\n(Optional) shall be a scalar of type `integer` and its value shall be in the range from 1 to n, where n equals the rank of the argument `array`.\n"
+	},
+
+	// <TYPE> statement
+	"type" :{
+		"prefix": "type",
+		"body": [
+			"type ${1:type_name}",
+			"\t$0",
+			"end type ${1:type_name}"
+		]
 	},
 	
 	// <WRITE> statement
