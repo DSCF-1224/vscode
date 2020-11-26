@@ -20,12 +20,46 @@
 		"body": "use, intrinsic :: ieee_arithmetic",
 		"description": "module which provides support for exceptions and IEEE arithmetic\nFortran 2003 and later\n"
 	},
+
+	"module: IEEE_ARITHMETIC and others":{
+		"prefix": "module ieee_arithmetic",
+		"body": [
+			"use,     intrinsic :: ieee_arithmetic",
+			"use, non_intrinsic :: $0"
+		],
+		"description": "module which provides support for exceptions and IEEE arithmetic\nFortran 2003 and later\n"
+	},
 	
 	"module: IEEE_ARITHMETIC: parameter: IEEE_DOWN"    :{ "prefix": "parameter IEEE_DOWN",    "body": "IEEE_DOWN",    "description": "parameter of the intrinsic module IEEE_ARITHMETIC\nFortran 2003 and later\n"},
 	"module: IEEE_ARITHMETIC: parameter: IEEE_NEAREST" :{ "prefix": "parameter IEEE_NEAREST", "body": "IEEE_NEAREST", "description": "parameter of the intrinsic module IEEE_ARITHMETIC\nFortran 2003 and later\n"},
 	"module: IEEE_ARITHMETIC: parameter: IEEE_TO_ZERO" :{ "prefix": "parameter IEEE_TO_ZERO", "body": "IEEE_TO_ZERO", "description": "parameter of the intrinsic module IEEE_ARITHMETIC\nFortran 2003 and later\n"},
 	"module: IEEE_ARITHMETIC: parameter: IEEE_UP"      :{ "prefix": "parameter IEEE_UP",      "body": "IEEE_UP",      "description": "parameter of the intrinsic module IEEE_ARITHMETIC\nFortran 2003 and later\n"},
 	"module: IEEE_ARITHMETIC: parameter: IEEE_OTHER"   :{ "prefix": "parameter IEEE_OTHER",   "body": "IEEE_OTHER",   "description": "parameter of the intrinsic module IEEE_ARITHMETIC\nFortran 2003 and later\n"},
+
+	"module: IEEE_ARITHMETIC: function: IEEE_IS_FINITE" :{
+		"prefix": "ieee_is_finite",
+		"body": "ieee_is_finite(${1:x})",
+	},
+
+	"module: IEEE_ARITHMETIC: function: IEEE_IS_NAN" :{
+		"prefix": "ieee_is_nan",
+		"body": "ieee_is_nan(${1:x})",
+	},
+
+	"module: IEEE_ARITHMETIC: function: IEEE_IS_NEGATIVE" :{
+		"prefix": "ieee_is_negative",
+		"body": "ieee_is_negative(${1:x})",
+	},
+
+	"module: IEEE_ARITHMETIC: function: IEEE_IS_NORMAL" :{
+		"prefix": "ieee_is_normal",
+		"body": "ieee_is_normal(${1:x})",
+	},
+
+	"module: IEEE_ARITHMETIC: function: IEEE_VALUE" :{
+		"prefix": "ieee_value",
+		"body": "ieee_value(${1:x}, ${2:class})",
+	},
 
 	"module: IEEE_EXCEPTIONS":{
 		"prefix": "module ieee_exceptions",
@@ -398,6 +432,12 @@
 		"prefix"      : "size",
 		"body"        : "size(array= $1, dim= $2)",
 		"description" : "[array]\nShall be an array of any type.\nIf argument `array` is a pointer it must be associated and allocatable arrays must be allocated.\n[dim]\n(Optional) shall be a scalar of type `integer` and its value shall be in the range from 1 to n, where n equals the rank of the argument `array`.\n"
+	},
+
+	// <SYSTEM_CLOCK> statement
+	"<SYSTEM_CLOCK> statement: all arguments" :{
+		"prefix"      : "system_clock",
+		"body"        : "system_clock(count= ${1:count}, count_rate= ${2:count_rate}, count_max= ${3:count_max})",
 	},
 
 	// <TYPE> statement
