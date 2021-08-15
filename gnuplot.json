@@ -29,19 +29,7 @@
 			"prefix": "pwd",
 			"body": "pwd",
 		},
-
-	/* set angles */
-
-		"set angles: degrees":{
-			"prefix": "angles",
-			"body": "set angles degrees $LINE_COMMENT {degrees | radians}"
-		},
-
-		"set angles: radians":{
-			"prefix": "angles",
-			"body": "set angles radians $LINE_COMMENT {degrees | radians}"
-		},
-
+	
 	/* set border */
 	
 		"set border: all":{
@@ -117,9 +105,12 @@
 				"set key $LINE_COMMENT {vertical|horizontal}",
 				"set key $LINE_COMMENT {Left|Right}",
 				"set key $LINE_COMMENT {noopaque|opaque}",
-				"set key $LINE_COMMENT {noreverse|reverse} {noinvert|invert}",
-				"set key $LINE_COMMENT {samplen <sample_length>} {spacing <vertical_spacing>}",
-				"set key $LINE_COMMENT {width <width_increment>} {height <height_increment>}",
+				"set key $LINE_COMMENT {noreverse|reverse}",
+				"set key $LINE_COMMENT {noinvert|invert}",
+				"set key $LINE_COMMENT {samplen <sample_length>}",
+				"set key $LINE_COMMENT {spacing <vertical_spacing>}",
+				"set key $LINE_COMMENT {width <width_increment>}",
+				"set key $LINE_COMMENT {height <height_increment>}",
 				"set key $LINE_COMMENT {noautotitle|autotitle {columnheader}}",
 				"set key $LINE_COMMENT {title \"<text>\"} {noenhanced|enhanced}",
 				"set key $LINE_COMMENT {font \"<face>,<size>\"} {textcolor <colorspec>}",
@@ -128,23 +119,6 @@
 				"set key $LINE_COMMENT {maxrows {<max no. of rows> | auto}}",
 			],
 			"description": "凡例 (key)\nVersion 5.0 patchlevel 6\n"
-		},
-
-	/* set logscale */
-
-		"set logscale":{
-			"prefix": "logscale",
-			"body": "set logscale ${1:<axes>} ${2:<base>} $LINE_COMMENT <axes> {<base>}",
-		},
-
-		"set logscale: 02":{
-			"prefix": "logscale",
-			"body": "set logscale ${1:<axes>} 2 $LINE_COMMENT <axes> {<base>}",
-		},
-
-		"set logscale: 10":{
-			"prefix": "logscale",
-			"body": "set logscale ${1:<axes>} 10 $LINE_COMMENT <axes> {<base>}",
 		},
 	
 	/* set margin */
@@ -246,13 +220,13 @@
 			"set term: pdfcairo":{
 				"prefix": "term pdfcairo",
 				"body": [
-					"set terminal pdfcairo enhanced       $LINE_COMMENT {noenhanced|enhanced}",
-					"set terminal pdfcairo                $LINE_COMMENT {mono|color}",
-					"set terminal pdfcairo                $LINE_COMMENT {font <font>}",
-					"set terminal pdfcairo fontscale 0.5  $LINE_COMMENT {fontscale <scale>}",
-					"set terminal pdfcairo                $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-					"set terminal pdfcairo                $LINE_COMMENT {background <rgbcolor>}",
-					"set terminal pdfcairo 5.00in, 3.00in $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+					"set terminal pdfcairo $LINE_COMMENT {noenhanced|enhanced}",
+					"set terminal pdfcairo $LINE_COMMENT {mono|color}",
+					"set terminal pdfcairo $LINE_COMMENT {font <font>}",
+					"set terminal pdfcairo $LINE_COMMENT {fontscale <scale>}",
+					"set terminal pdfcairo $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+					"set terminal pdfcairo $LINE_COMMENT {background <rgbcolor>}",
+					"set terminal pdfcairo $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 				],
 				"description": "terminal pdfcairo\nVersion 5.0 patchlevel 6\n"
 			},
@@ -262,38 +236,22 @@
 			"set term: pngcairo":{
 				"prefix": "term pngcairo",
 				"body": [
-					"set terminal pngcairo enhanced               $LINE_COMMENT {noenhanced|enhanced}",
-					"set terminal pngcairo                        $LINE_COMMENT {mono|color}",
+					"set terminal pngcairo enhanced             $LINE_COMMENT {noenhanced|enhanced}",
+					"set terminal pngcairo                      $LINE_COMMENT {mono|color}",
 					"set terminal pngcairo background \"#ffffff\" $LINE_COMMENT {notransparent|transparent} {background <rgbcolor>}",
-					"set terminal pngcairo                        $LINE_COMMENT {nocrop|crop}",
-					"set terminal pngcairo                        $LINE_COMMENT {font <font>}",
-					"set terminal pngcairo fontscale 1.0          $LINE_COMMENT {fontscale <scale>}",
-					"set terminal pngcairo                        $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
-					"set terminal pngcairo size 640, 480          $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
+					"set terminal pngcairo                      $LINE_COMMENT {nocrop|crop}",
+					"set terminal pngcairo                      $LINE_COMMENT {font <font>}",
+					"set terminal pngcairo fontscale 1.0        $LINE_COMMENT {fontscale <scale>}",
+					"set terminal pngcairo                      $LINE_COMMENT {linewidth <lw>} {rounded|butt|square} {dashlength <dl>}",
+					"set terminal pngcairo size 640, 480        $LINE_COMMENT {size <XX>{unit},<YY>{unit}}",
 				],
-				"description": "terminal pngcairo\nVersion 5.2 patchlevel 7\n"
+				"description": "terminal pngcairo\nVersion 5.0 patchlevel 6\n"
 			},
 	
 			"set term: pngcairo: crop/nocrop":{
 				"prefix": "term pngcairo crop",
 				"body": "set term pngcairo nocrop|crop $LINE_COMMENT {nocrop|crop}",
 				"description": "terminal pngcairo\ncrop は完成した描画グラフの端の空白領域を取り除いて、結果として画像 サイズを小さくします。デフォルトは nocrop です。\nVersion 5.0 patchlevel 6\n"
-			},
-
-		/* set terminal svg */
-
-			"set terminal svg":{
-				"prefix": "term svg",
-				"body": [
-					"set terminal svg size 600, 480 fixed $LINE_COMMENT {size <x>,<y> {|fixed|dynamic}}",
-					"set terminal svg {mouse} {standalone | jsdir <dirname>}",
-					"set terminal svg {name <plotname>}",
-					"set terminal svg {font \"<fontname>{,<fontsize>}\"} {{no}enhanced}",
-					"set terminal svg {fontscale <multiplier>}",
-					"set terminal svg {rounded|butt|square} {solid|dashed} {linewidth <lw>}",
-					"set terminal svg {background <rgb_color>}",
-				],
-				"description": "terminal svg\nVersion 5.2 patchlevel 7\n"
 			},
 	
 		/* set terminal wxt */
@@ -316,6 +274,44 @@
 				],
 				"description": "terminal wxt\nVersion 5.0 patchlevel 6\n"
 			},
+
+	/* line color */
+
+		"linecolor: cud: brown"   : { "prefix": "lc cud brown"     , "body": "linecolor \"#804000\"" , "description": "linecolor\n(R,G,B)=(128,064,000)\nCUD brown\""    },
+		"linecolor: cud: blue"    : { "prefix": "lc cud blue"      , "body": "linecolor \"#005AFF\"" , "description": "linecolor\n(R,G,B)=(255,075,000)\nCUD blue\n"     },
+		"linecolor: cud: green"   : { "prefix": "lc cud green"     , "body": "linecolor \"#03AF7A\"" , "description": "linecolor\n(R,G,B)=(003,175,122)\nCUD green\n"    },
+		"linecolor: cud: orange"  : { "prefix": "lc cud orange"    , "body": "linecolor \"#F6AA00\"" , "description": "linecolor\n(R,G,B)=(255,128,130)\nCUD pink\n"     },
+		"linecolor: cud: pink"    : { "prefix": "lc cud pink"      , "body": "linecolor \"#FF8082\"" , "description": "linecolor\n(R,G,B)=(255,128,130)\nCUD pink\n"     },
+		"linecolor: cud: purple"  : { "prefix": "lc cud purple"    , "body": "linecolor \"#990099\"" , "description": "linecolor\n(R,G,B)=(153,000,153)\nCUD purple\n"   },
+		"linecolor: cud: red"     : { "prefix": "lc cud red"       , "body": "linecolor \"#FF4B00\"" , "description": "linecolor\n(R,G,B)=(000,090,255)\nCUD red\n"      },
+		"linecolor: cud: sky blue": { "prefix": "lc cud sky blue"  , "body": "linecolor \"#4DC4FF\"" , "description": "linecolor\n(R,G,B)=(077,196,255)\nCUD sky blue\n" },
+		"linecolor: cud: yellow"  : { "prefix": "lc cud yellow"    , "body": "linecolor \"#FFF100\"" , "description": "linecolor\n(R,G,B)=(255,241,000)\nCUD yellow\n"   },
+
+	/* plotting style */
+
+		"with histeps": {
+			"prefix"      : "with histeps",
+			"body"        : "with histeps${0: }",
+			"description" : "The histeps style is only relevant to 2D plotting.\nIt is intended for plotting histograms.\nY-values are assumed to be centered at the x-values;\n"
+		},
+
+		"with lines": {
+			"prefix"      : "with lines",
+			"body"        : "with lines${0: }",
+			"description" : "The lines style connects adjacent points with straight line segments.\n"
+		},
+
+		"with linespoints": {
+			"prefix"      : "with linespoints", 
+			"body"        : "with linespoints${0: }",
+			"description" : "The linespoints style connects adjacent points with straight line segments and then goes back to draw a small symbol at each point.\n"
+		},
+
+		"with points": {
+			"prefix"      : "with points", 
+			"body"        : "with points${0: }",
+			"description" : "The points style displays a small symbol at each point.\nThe command set pointsize may be used to change the default size of the points.\n"
+		},
 	
 	/* reset */
 		"reset":{
@@ -395,6 +391,7 @@
 		"greek: chi: small"     :{ "prefix": "chi",     "body": "\\317\\207", "description": "small greek letter\nUnicode : U+CF87\navailable : Times New Roman\nchi\n" },
 		"greek: psi: small"     :{ "prefix": "psi",     "body": "\\317\\210", "description": "small greek letter\nUnicode : U+CF88\navailable : Times New Roman\npsi\n" },
 		"greek: omega: small"   :{ "prefix": "omega",   "body": "\\317\\211", "description": "small greek letter\nUnicode : U+CF89\navailable : Times New Roman\nomega\n" },
+
 	/* avaiable font */
 	
 		"font: Times New Roman: default":{
@@ -460,10 +457,10 @@
 		"Unicode: RIGHT ANGLE"          :{ "prefix": "RIGHT ANGLE",          "body": "\\342\\210\\237", "description": "Unicode : U+221F\nUTF-8 (hex) : e2 88 9f\navailable : Times New Roman\nName : RIGHT ANGLE\n" },
 		"Unicode: INTERSECTION"         :{ "prefix": "INTERSECTION",         "body": "\\342\\210\\251", "description": "Unicode : U+2229\nUTF-8 (hex) : e2 88 a9\navailable : Times New Roman\nName : INTERSECTION\n" },
 	
-		// private comments //
-		"private comments: comment as a header":{
-			"prefix": "comment header",
-			"body": "# --- ${0:contents} --- #",
-			"description": "private comment\ncomments as a header\n"
-		},
+	// private comments //
+	"private comments: comment as a header":{
+		"prefix": "comment header",
+		"body": "# --- ${0:contents} --- #",
+		"description": "private comment\ncomments as a header\n"
+	},
 }

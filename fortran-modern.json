@@ -149,9 +149,6 @@
 	"ISO_FORTRAN_ENV: Intrinsic types : REAL64 : for literal"  :{ "prefix": "literal integer REAL64",  "body": "${1:value}_REAL64$0",  "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 64 bits.\n" },
 	"ISO_FORTRAN_ENV: Intrinsic types : REAL128 : for literal" :{ "prefix": "literal integer REAL128", "body": "${1:value}_REAL128$0", "description": "parameter of the intrinsic module ISO_FORTRAN_ENV\nKind type parameters to specify an REAL type with a storage size of 128 bits.\n" },
 
-
-
-
 	/* OpenMP */
 	"OpenMP: use omp_lib":{
 		"prefix": "module omp_lib",
@@ -253,37 +250,38 @@
 	},
 
 	// private comment //
-	"private comments: arguments for this <function>"   :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <function>\n$0",   "description": "private comments\n" },
-	"private comments: arguments for this <subroutine>" :{"prefix": "comment arguments", "body": "$LINE_COMMENT arguments for this <subroutine>\n$0", "description": "private comments\n" },
-	"private comments: constants for this <function>"   :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <function>\n$0",   "description": "private comments\n" },
+	"private comments: argument(s) for this <function>"   :{"prefix": "comment argument", "body": "$LINE_COMMENT argument(s) for this <function>\n$0",   "description": "private comments\n" },
+	"private comments: argument(s) for this <subroutine>" :{"prefix": "comment argument", "body": "$LINE_COMMENT argument(s) for this <subroutine>\n$0", "description": "private comments\n" },
 
-	"private comments: constants for this <module>"  :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <module>\n$0",  "description": "private comments\n" },
-	"private comments: constants for this <program>" :{"prefix": "comment constants", "body": "$LINE_COMMENT constants for this <program>\n$0", "description": "private comments\n" },
+	"private comments: constant(s) for this <function>"  :{"prefix": "comment constant", "body": "$LINE_COMMENT constant(s) for this <function>\n$0"  , "description": "private comments\n" },
+	"private comments: constant(s) for this <module>"    :{"prefix": "comment constant", "body": "$LINE_COMMENT constant(s) for this <module>\n$0"    , "description": "private comments\n" },
+	"private comments: constant(s) for this <program>"   :{"prefix": "comment constant", "body": "$LINE_COMMENT constant(s) for this <program>\n$0"   , "description": "private comments\n" },
+	"private comments: constant(s) for this <submodule>" :{"prefix": "comment constant", "body": "$LINE_COMMENT constant(s) for this <submodule>\n$0" , "description": "private comments\n" },
 
 	"private comments: accessibility":{
 		"prefix": "comment accessibility",
 		"body": [
 			"$LINE_COMMENT accessibility of the <subroutine>s and <function>s in this <module>",
-			"\n$LINE_COMMENT kind: type",
-			"public  :: ",
+			"$LINE_COMMENT kind: type/function/subroutine/interface",
 			"private :: ",
-			"\n$LINE_COMMENT kind: function",
 			"public  :: ",
-			"private :: ",
-			"\n$LINE_COMMENT kind: subroutine",
-			"public  :: ",
-			"private :: ",
-			"\n$LINE_COMMENT kind: interface",
-			"public  :: ",
-			"private :: ",
 		],
 		"description": "private comments\n"
 	},
 
-	"private comments: contains":{
+	"private comments: contains (module)":{
 		"prefix": "comment contains",
 		"body": [
 			"$LINE_COMMENT contained <subroutine>s and <function>s are below",
+			"contains"
+		],
+		"description": "private comments\nbefore `contains`\n"
+	},
+
+	"private comments: contains (submodule)":{
+		"prefix": "comment contains",
+		"body": [
+			"$LINE_COMMENT contained <procedure>s, <subroutine>s and <function>s are below",
 			"contains"
 		],
 		"description": "private comments\nbefore `contains`\n"
@@ -313,11 +311,12 @@
 		"description": "private comments\nbefore `USE ...`\n"
 	},
 
-	"private comments: variables for this <block>"      :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <block>\n$0",      "description": "private comments\n" },
-	"private comments: variables for this <function>"   :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <function>\n$0",   "description": "private comments\n" },
-	"private comments: variables for this <module>"     :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <module>\n$0",     "description": "private comments\n" },
-	"private comments: variables for this <program>"    :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <program>\n$0",    "description": "private comments\n" },
-	"private comments: variables for this <subroutine>" :{ "prefix": "comment variables", "body": "$LINE_COMMENT ${1:support }variables for this <subroutine>\n$0", "description": "private comments\n" },
+	"private comments: variable(s) for this <block>"      :{ "prefix": "comment variable", "body": "$LINE_COMMENT ${1:support }variable(s) for this <block>\n$0"      , "description": "private comments\n" },
+	"private comments: variable(s) for this <function>"   :{ "prefix": "comment variable", "body": "$LINE_COMMENT ${1:support }variable(s) for this <function>\n$0"   , "description": "private comments\n" },
+	"private comments: variable(s) for this <module>"     :{ "prefix": "comment variable", "body": "$LINE_COMMENT ${1:support }variable(s) for this <module>\n$0"     , "description": "private comments\n" },
+	"private comments: variable(s) for this <program>"    :{ "prefix": "comment variable", "body": "$LINE_COMMENT ${1:support }variable(s) for this <program>\n$0"    , "description": "private comments\n" },
+	"private comments: variable(s) for this <submodule>"  :{ "prefix": "comment variable", "body": "$LINE_COMMENT ${1:support }variable(s) for this <submodule>\n$0"  , "description": "private comments\n" },
+	"private comments: variable(s) for this <subroutine>" :{ "prefix": "comment variable", "body": "$LINE_COMMENT ${1:support }variable(s) for this <subroutine>\n$0" , "description": "private comments\n" },
 
 	"private comments: <type>s for this <program>":{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <program>\n$0", "description": "private comments\n" },
 	"private comments: <type>s for this <module>" :{ "prefix": "comment type", "body": "$LINE_COMMENT <type>s for this <module>\n$0",  "description": "private comments\n" },
@@ -341,25 +340,31 @@
 	},
 
 
+
 	// <ALLOCATE> statement
-	"Specifier of <ALLOCATE> statement: errmsg" :{ "prefix": "allocate errmsg", "body": "errmsg=${1:errmsg_variable }, $0", "description": "<ALLOCATE> statement\nFrom Fortran 2003\nA scalar character variable.\n" },
-	"Specifier of <ALLOCATE> statement: stat"   :{ "prefix": "allocate stat",   "body": "stat=${1:stat_variable}, $0",      "description": "<ALLOCATE> statement\nA scalar integer variable.\n" },
-	"Specifier of <ALLOCATE> statement: mold"   :{ "prefix": "allocate mold",   "body": "mold=${1:source_expr}, $0",        "description": "<ALLOCATE> statement\nFrom Fortran 2003\nAn expression which is scalar or has the same rank as allocate object.\n" },
-	"Specifier of <ALLOCATE> statement: source" :{ "prefix": "allocate source", "body": "source=${1:source_expr}, $0",      "description": "<ALLOCATE> statement\nFrom Fortran 2003\nAn expression which is scalar or has the same rank as allocate object.\n" },
+	"Specifier of <ALLOCATE> statement: errmsg" :{ "prefix": "allocate errmsg", "body": "errmsg=${1:errmsg_variable }, $0"   , "description": "<ALLOCATE> statement\nFrom Fortran 2003\nA scalar character variable.\n" },
+	"Specifier of <ALLOCATE> statement: stat"   :{ "prefix": "allocate stat",   "body": "stat=${1:stat_variable}, $0"        , "description": "<ALLOCATE> statement\nA scalar integer variable.\n" },
+	"Specifier of <ALLOCATE> statement: mold"   :{ "prefix": "allocate mold",   "body": "mold=${1:source_expr_array}, $0"    , "description": "<ALLOCATE> statement\nFrom Fortran 2003\nAn expression which is scalar or has the same rank as allocate object.\n" },
+	"Specifier of <ALLOCATE> statement: source" :{ "prefix": "allocate source", "body": "source=${1:source_expr_scalar}, $0" , "description": "<ALLOCATE> statement\nFrom Fortran 2003\nAn expression which is scalar or has the same rank as allocate object.\n" },
+
 
 	// <BLOCK> statement
 	"<BLOCK> statement" :{
 		"prefix": "block",
 		"body": [
 			"block\n",
-			"\t$1",
 			"\nend block",
 		]
 	},
 
-	// <DEALLOCATE> statement
-	"Specifier of <DEALLOCATE> statement: errmsg" :{ "prefix": "deallocate errmsg", "body": "errmsg=${1:errmsg_variable }, $0", "description": "<DEALLOCATE> statement\nFrom Fortran 2003\nA scalar character variable.\n" },
-	"Specifier of <DEALLOCATE> statement: stat"   :{ "prefix": "deallocate stat",   "body": "stat=${1:stat_variable}, $0",      "description": "<DEALLOCATE> statement\nA scalar integer variable.\n" },
+	// <CLOSE> statement
+	"<CLOSE> statement: status: delete" :{ "prefix": "close status", "body": "status='delete', $0", "description": "<CLOSE> statement\n" },
+	"<CLOSE> statement: status: keep"   :{ "prefix": "close status", "body": "status='keep', $0",   "description": "<CLOSE> statement\n" },
+
+	// <INTENT> statement
+	"<INTENT> statement: in"    : { "prefix": "intent", "body": "intent(in)",    "description": "<INTENT> statement\nin only" },
+	"<INTENT> statement: inout" : { "prefix": "intent", "body": "intent(inout)", "description": "<INTENT> statement\nin & out" },
+	"<INTENT> statement: out"   : { "prefix": "intent", "body": "intent(out)",   "description": "<INTENT> statement\nout only" },
 
 	// <INTERFACE> statement
 	"interface" :{
@@ -368,6 +373,14 @@
 			"interface ${1:interface_name}",
 			"\tmodule procedure :: $0",
 			"end interface ${1:interface_name}"
+		]
+	},
+	"interface assignment" :{
+		"prefix": "interface assignment",
+		"body": [
+			"interface assignment(=)",
+			"\tmodule procedure :: $0",
+			"end interface assignment(=)"
 		]
 	},
 
@@ -381,37 +394,28 @@
 	},
 
 	// <LBOUND> statement
-
 	"<LBOUND> statement: multi-dimension" :{
 		"prefix"      : "lbound",
 		"body"        : "lbound(array= $1, dim= $2)",
 		"description" : "Returns the lower bounds of an array, or a single lower bound along the dim dimension.\n[array]\nShall be an array of any type.\n[dim]\n(Optional) Shall be a scalar `integer`.\n"
 	},
 
-	// <CLOSE> statement
-	"<CLOSE> statement: status: delete" :{ "prefix": "close status", "body": "status='delete', $0", "description": "<CLOSE> statement\n" },
-	"<CLOSE> statement: status: keep"   :{ "prefix": "close status", "body": "status='keep', $0",   "description": "<CLOSE> statement\n" },
-
-	// <INTENT> statement
-	"<INTENT> statement: in"    : { "prefix": "intent", "body": "intent(in)",    "description": "<INTENT> statement\nin only" },
-	"<INTENT> statement: inout" : { "prefix": "intent", "body": "intent(inout)", "description": "<INTENT> statement\nin & out" },
-	"<INTENT> statement: out"   : { "prefix": "intent", "body": "intent(out)",   "description": "<INTENT> statement\nout only" },
-
 	// <OPEN> statement
-	"Specifier of <OPEN> statement: access: stream"    :{ "prefix": "open access",  "body": "access='stream', $0",                            "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: action: read"      :{ "prefix": "open action",  "body": "action='read', $0",                              "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: action: write"     :{ "prefix": "open action",  "body": "action='write', $0",                             "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: action: readwrite" :{ "prefix": "open action",  "body": "action='readwrite', $0",                         "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: newunit"           :{ "prefix": "open newunit", "body": "newunit=${1:unit}, $0",                          "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: status: old"       :{ "prefix": "open status",  "body": "status='old', $0",                               "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: status: new"       :{ "prefix": "open status",  "body": "status='new', $0",                               "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: status: scratch"   :{ "prefix": "open status",  "body": "status='scratch', $0",                           "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: status: replace"   :{ "prefix": "open status",  "body": "status='replace', $0",                           "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: status: unknown"   :{ "prefix": "open status",  "body": "status='unknown', $0",                           "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: unit: implicit"    :{ "prefix": "open unit",    "body": "unit=${1:unit number}, $0",                      "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: file: implicit"    :{ "prefix": "open file",    "body": "file=${1:string which shows the file path}, $0", "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: form: formatted"   :{ "prefix": "open form",    "body": "form='formatted', $0",                           "description": "<OPEN> statement\n" },
-	"Specifier of <OPEN> statement: form: unformatted" :{ "prefix": "open form",    "body": "form='unformatted', $0",                         "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: access: stream"    :{ "prefix": "open access",  "body": "access='stream', $0",       "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: action: read"      :{ "prefix": "open action",  "body": "action='read', $0",         "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: action: write"     :{ "prefix": "open action",  "body": "action='write', $0",        "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: action: readwrite" :{ "prefix": "open action",  "body": "action='readwrite', $0",    "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: iostat"            :{ "prefix": "open iostat",  "body": "iostat=${1:unit}, $0",      "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: newunit"           :{ "prefix": "open newunit", "body": "newunit=${1:unit}, $0",     "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: old"       :{ "prefix": "open status",  "body": "status='old', $0",          "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: new"       :{ "prefix": "open status",  "body": "status='new', $0",          "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: scratch"   :{ "prefix": "open status",  "body": "status='scratch', $0",      "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: replace"   :{ "prefix": "open status",  "body": "status='replace', $0",      "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: status: unknown"   :{ "prefix": "open status",  "body": "status='unknown', $0",      "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: unit: implicit"    :{ "prefix": "open unit",    "body": "unit=${1:unit number}, $0", "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: file: implicit"    :{ "prefix": "open file",    "body": "file=${1:FilePath}, $0",    "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: form: formatted"   :{ "prefix": "open form",    "body": "form='formatted', $0",      "description": "<OPEN> statement\n" },
+	"Specifier of <OPEN> statement: form: unformatted" :{ "prefix": "open form",    "body": "form='unformatted', $0",    "description": "<OPEN> statement\n" },
 
 	// <READ> statement
 	"Specifier of <READ> statement: fmt: arbitrary"  :{ "prefix": "read fmt",  "body": "fmt=*, $0",           "description": "when read out something as an arbitrary format\n" },
@@ -422,7 +426,7 @@
 	"<READ> statement: unit=INPUT_UNIT, fmt='(A)'" :{ "prefix": "read", "body": "read(unit=INPUT_UNIT, fmt='(A)') ${1:variables}", "description": "<READ> statement\n" },
 
 	// <RESULT> statement
-	"<RESULT>": {
+	"<RESULT> statement": {
 		"prefix": "result",
 		"body": "result($1)"
 	},
@@ -449,10 +453,17 @@
 			"end type ${1:type_name}"
 		]
 	},
+
+	// <UBOUND> statement
+	"<UBOUND> statement: multi-dimension" :{
+		"prefix"      : "ubound",
+		"body"        : "ubound(array= $1, dim= $2)",
+		"description" : "Returns the upper bounds of an array, or a single upper bound along the dim dimension.\n[array]\nShall be an array of any type.\n[dim]\n(Optional) Shall be a scalar `integer`.\n"
+	},
 	
 	// <WRITE> statement
-	"Specifier of <WRITE> statement: advance: yes"   :{ "prefix": "write advance", "body": "advance='yes', $0", "description": "when the statement `WRITE` uses advancing input\nThe default value is 'yes'\n" },
-	"Specifier of <WRITE> statement: advance: no"    :{ "prefix": "write advance", "body": "advance='no', $0" , "description": "when the statement `WRITE` uses synchronous input\nThe default value is 'yes'\n" },
+	"Specifier of <WRITE> statement: advance: yes"   :{ "prefix": "write advance", "body": "advance='yes'${1:, }$0", "description": "when the statement `WRITE` uses advancing input\nThe default value is 'yes'\n" },
+	"Specifier of <WRITE> statement: advance: no"    :{ "prefix": "write advance", "body": "advance='no'${1:, }$0" , "description": "when the statement `WRITE` uses synchronous input\nThe default value is 'yes'\n" },
 	"Specifier of <WRITE> statement: fmt: arbitrary" :{ "prefix": "write fmt",     "body": "fmt=*, $0" ,        "description": "when the statement `WRITE` uses an arbitrary format\nThe default value is 'yes'\n" },
 	"Specifier of <WRITE> statement: fmt: default"   :{ "prefix": "write fmt",     "body": "fmt='($1)', $0" ,   "description": "when the statement `WRITE` uses a default format\nThe default value is 'yes'\n" },
 	"Specifier of <WRITE> statement: unit: default"  :{ "prefix": "write unit",    "body": "unit=*, $0" ,       "description": "when the statement `WRITE` uses a default unit\nThe default value is 'yes'\n" },
@@ -487,14 +498,23 @@
 	"Operator: .or."   : { "prefix": "or",  "body": ".or. $0",    "description": "logical or\r" },
 
 	// Format
-	"fmt: binary"                    : { "prefix": "fmt", "body": "B${1:w}",        "description": "Format\nTransfers binary values.\n`w` is the field width." },
-	"fmt: binary (zero filled)"      : { "prefix": "fmt", "body": "B${1:w}.${2:m}", "description": "Format\nTransfers binary values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
-	"fmt: decimal"                   : { "prefix": "fmt", "body": "I${1:w}",        "description": "Format\nTransfers decimal values.\n`w` is the field width." },
-	"fmt: decimal (zero filled)"     : { "prefix": "fmt", "body": "I${1:w}.${2:m}", "description": "Format\nTransfers decimal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
-	"fmt: octal"                     : { "prefix": "fmt", "body": "O${1:w}",        "description": "Format\nTransfers octal values.\n`w` is the field width." },
-	"fmt: octal (zero filled)"       : { "prefix": "fmt", "body": "O${1:w}.${2:m}", "description": "Format\nTransfers octal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
-	"fmt: hexadecimal"               : { "prefix": "fmt", "body": "O${1:w}",        "description": "Format\nTransfers hexadecimal values.\n`w` is the field width." },
-	"fmt: hexadecimal (zero filled)" : { "prefix": "fmt", "body": "O${1:w}.${2:m}", "description": "Format\nTransfers hexadecimal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+	"fmt binary"                    : { "prefix": "fmt", "body": "B${1:w}",        "description": "Format\nTransfers binary values.\n`w` is the field width." },
+	"fmt binary (zero filled)"      : { "prefix": "fmt", "body": "B${1:w}.${2:m}", "description": "Format\nTransfers binary values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+	"fmt decimal"                   : { "prefix": "fmt", "body": "I${1:w}",        "description": "Format\nTransfers decimal values.\n`w` is the field width." },
+	"fmt decimal (zero filled)"     : { "prefix": "fmt", "body": "I${1:w}.${2:m}", "description": "Format\nTransfers decimal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+	"fmt octal"                     : { "prefix": "fmt", "body": "O${1:w}",        "description": "Format\nTransfers octal values.\n`w` is the field width." },
+	"fmt octal (zero filled)"       : { "prefix": "fmt", "body": "O${1:w}.${2:m}", "description": "Format\nTransfers octal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+	"fmt hexadecimal"               : { "prefix": "fmt", "body": "O${1:w}",        "description": "Format\nTransfers hexadecimal values.\n`w` is the field width." },
+	"fmt hexadecimal (zero filled)" : { "prefix": "fmt", "body": "O${1:w}.${2:m}", "description": "Format\nTransfers hexadecimal values.\n`w` is the field width.\n`m` is the minimum number of digits that must be in the field (including zeros)." },
+
+	"fmt: REAL32: ES"  :{ "prefix": "ES32", "body": "ES16.8E3"  },
+	"fmt: REAL64: ES"  :{ "prefix": "ES32", "body": "ES24.16E3" },
+	"fmt: REAL128: ES" :{ "prefix": "ES32", "body": "ES43.35E3" },
+
+	// constants
+	"Binary Constants"      : { "prefix": "bin", "body": "B'${1:d}'", "description": "Binary Constants\n`d` is a hexiadecimal (base 2) digit.\n" },
+	"Hexadecimal Constants" : { "prefix": "hex", "body": "Z'${1:d}'", "description": "Hexadecimal Constants\n`d` is a hexiadecimal (base 16) digit.\n" },
+	"Octal Constants"       : { "prefix": "oct", "body": "O'${1:d}'", "description": "Octal Constants\n`d` is a hexiadecimal (base 16) digit.\n" },
 
 	// others //
 	"YYYY.MM.DD: ":{
@@ -502,4 +522,14 @@
 		"body": "$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
 		"description": "YYYY.MM.DD"
 	},
+
+	"line by equals (80)":{
+		"prefix": "comment line",
+		"body": "$LINE_COMMENT =============================================================================="
+	},
+
+	"line by equals (132)":{
+		"prefix": "comment line",
+		"body": "$LINE_COMMENT =================================================================================================================================="
+	}
 }
